@@ -1,0 +1,7 @@
+services:
+  hello-llm:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env   # put ANTHROPIC_API_KEY here (copy from .env.example)

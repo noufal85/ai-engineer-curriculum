@@ -1,0 +1,84 @@
+site_name: AI Engineer / FDE Curriculum
+site_description: A self-tracked syllabus for becoming an AI Engineer and Forward-Deployed Engineer.
+site_author: Noufal Edappanoli
+site_url: https://noufal85.github.io/ai-engineer-curriculum/
+repo_url: https://github.com/noufal85/ai-engineer-curriculum
+repo_name: noufal85/ai-engineer-curriculum
+
+theme:
+  name: material
+  icon:
+    logo: material/school
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - navigation.indexes
+    - navigation.footer
+    - toc.follow
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+
+nav:
+  - Home: index.md
+  - Progress: progress.md
+  - Curriculum:
+      - curriculum/index.md
+      - 0 · Foundations: curriculum/00-foundations.md
+      - 1 · LLM Internals: curriculum/01-llm-internals.md
+      - 2 · Prompting & Context: curriculum/02-prompting-context.md
+      - 3 · Retrieval, RAG & Memory: curriculum/03-rag-memory.md
+      - 4 · Agents, Tools & MCP: curriculum/04-agents-tools-mcp.md
+      - 5 · Evals & Observability: curriculum/05-evals-observability.md
+      - 6 · Production Systems: curriculum/06-production-systems.md
+      - 7 · The Forward-Deployed Craft: curriculum/07-forward-deployed.md
+      - 8 · Capstones: curriculum/08-capstones.md
+  - Talk Notes:
+      - notes/index.md
+      - CrabRAG / Graph Memory: notes/crabrag-graph-memory.md
+      - Your Moat Is Your Data Model: notes/moat-is-your-data-model.md
+  - Resources: resources.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/noufal85
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/
