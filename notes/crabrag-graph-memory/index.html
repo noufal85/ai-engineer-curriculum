@@ -1,0 +1,1426 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A self-tracked syllabus for becoming an AI Engineer and Forward-Deployed Engineer.">
+      
+      
+        <meta name="author" content="Noufal Edappanoli">
+      
+      
+        <link rel="canonical" href="https://noufal85.github.io/ai-engineer-curriculum/notes/crabrag-graph-memory/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../moat-is-your-data-model/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>CrabRAG / Graph Memory - AI Engineer / FDE Curriculum</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#crabrag-why-automated-assistants-need-graph-memory-not-more-tokens" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AI Engineer / FDE Curriculum" class="md-header__button md-logo" aria-label="AI Engineer / FDE Curriculum" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Engineer / FDE Curriculum
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CrabRAG / Graph Memory
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/noufal85/ai-engineer-curriculum" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    noufal85/ai-engineer-curriculum
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AI Engineer / FDE Curriculum" class="md-nav__button md-logo" aria-label="AI Engineer / FDE Curriculum" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg>
+
+    </a>
+    AI Engineer / FDE Curriculum
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/noufal85/ai-engineer-curriculum" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    noufal85/ai-engineer-curriculum
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../progress/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Progress
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../curriculum/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Curriculum
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Curriculum
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/00-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0 · Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/01-llm-internals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 · LLM Internals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/02-prompting-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 · Prompting & Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/03-rag-memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 · Retrieval, RAG & Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/04-agents-tools-mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 · Agents, Tools & MCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/05-evals-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 · Evals & Observability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/06-production-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 · Production Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/07-forward-deployed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 · The Forward-Deployed Craft
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/08-capstones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 · Capstones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Talk Notes
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Talk Notes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CrabRAG / Graph Memory
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CrabRAG / Graph Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#thesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thesis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-agent-memory-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The agent memory loop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#markdown-file-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Markdown-file memory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skills-are-also-markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skills are also markdown
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goose-memory-as-an-mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goose: memory as an MCP server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vector-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vector databases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graphs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demo-home-lab-digital-twin-ab-tested" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demo: home-lab digital twin, A/B tested
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Demo: home-lab digital twin, A/B tested">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#query-1-wan-exposed-end-of-life-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query 1 — WAN-exposed end-of-life software
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-2-exposed-0000-management-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query 2 — Exposed 0.0.0.0 management ports
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scale-argument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scale argument
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-technologies-named" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools &amp; technologies named
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../moat-is-your-data-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Your Moat Is Your Data Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#thesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thesis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-agent-memory-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The agent memory loop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#markdown-file-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Markdown-file memory
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#skills-are-also-markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skills are also markdown
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goose-memory-as-an-mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Goose: memory as an MCP server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vector-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vector databases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Graphs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demo-home-lab-digital-twin-ab-tested" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demo: home-lab digital twin, A/B tested
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Demo: home-lab digital twin, A/B tested">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#query-1-wan-exposed-end-of-life-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query 1 — WAN-exposed end-of-life software
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-2-exposed-0000-management-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query 2 — Exposed 0.0.0.0 management ports
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scale-argument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scale argument
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-technologies-named" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools &amp; technologies named
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="crabrag-why-automated-assistants-need-graph-memory-not-more-tokens">CrabRAG: Why Automated Assistants Need Graph Memory, Not More Tokens<a class="headerlink" href="#crabrag-why-automated-assistants-need-graph-memory-not-more-tokens" title="Permanent link">&para;</a></h1>
+<p><strong>Speaker:</strong> Stephen Chin — Head of Developer Relations, Neo4j
+<strong>Source:</strong> <a href="https://www.youtube.com/watch?v=Q0VkgCyNVUg">youtube.com/watch?v=Q0VkgCyNVUg</a></p>
+<hr />
+<h2 id="thesis">Thesis<a class="headerlink" href="#thesis" title="Permanent link">&para;</a></h2>
+<p>Two copies of the same agent were given the same facts about a home network. One stored them in a <strong>vector database</strong>, the other in a <strong>graph</strong>. Asked the same operational security questions, the vector agent couldn't produce specifics; the graph agent traversed the connections and returned precise, actionable answers. <strong>Same source data — the storage model is the only variable.</strong> Similarity in vector space is not a relationship, so multi-hop questions fail on vectors and succeed on graphs.</p>
+<h2 id="the-agent-memory-loop">The agent memory loop<a class="headerlink" href="#the-agent-memory-loop" title="Permanent link">&para;</a></h2>
+<p>The agent cycle is prompt → think about the response → call tools → observe what happens. The hard part is <strong>memory</strong>: what you put into context and what you recall from. Everything below is about how that memory is stored.</p>
+<h2 id="markdown-file-memory">Markdown-file memory<a class="headerlink" href="#markdown-file-memory" title="Permanent link">&para;</a></h2>
+<p>Most tools structure memory as <strong>markdown files</strong>. Taking OpenClaw as the example, you have:</p>
+<ul>
+<li>Agent memory (<code>AGENTS.md</code> / "solved" file)</li>
+<li>Memory files</li>
+<li>Tool files</li>
+<li>Daily memory files</li>
+</ul>
+<p>They are all markdown. Advantages: human-readable, easy to scan, easy to compact (spot what's not needed and drop it), and intentionally kept <strong>small</strong> — because the context window is limited and you need the right things at the <strong>top</strong> of context.</p>
+<p><strong>The cost:</strong> if your entire memory is markdown, you waste tokens. In practice these agents load <strong>at least ~100k tokens per round</strong>. They run many skills and add to context constantly; it's highly repetitive because the agent loads up <strong>everything</strong> in the hope that something in it turns out useful.</p>
+<ul>
+<li><strong>Small scale:</strong> works — with a high-quality model and small data you get the answers you want.</li>
+<li><strong>Large scale:</strong> does not work.</li>
+</ul>
+<h2 id="skills-are-also-markdown">Skills are also markdown<a class="headerlink" href="#skills-are-also-markdown" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Hermes agent</strong> has a stronger memory system: at the end of each task it <strong>reflects</strong> and adds back new skills / new things it needs. Powerful, but still relies heavily on markdown files.</li>
+<li><strong>Skills are basically markdown files.</strong> You can teach an agent a lot with skills, and if the <strong>right</strong> skill gets loaded, good things happen — but sometimes the wrong skill loads, or you need the right <strong>chain</strong> of skills rather than a single one.</li>
+<li>Neo4j (work by Bennet) has an <strong>arXiv paper on a "graph for skills"</strong> — using a graph to figure out which skills are the right ones.</li>
+</ul>
+<h2 id="goose-memory-as-an-mcp-server">Goose: memory as an MCP server<a class="headerlink" href="#goose-memory-as-an-mcp-server" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Goose</strong> is part of the <strong>Agentic AI Foundation</strong> — a new foundation that MCP is part of, backed by Anthropic; Neo4j is also a member.</li>
+<li>It's an automation tool for enterprise workflows, also usable as a personal assistant. It relies heavily on <strong>MCP as the layer</strong>, with <strong>over 70 MCP extensions</strong>.</li>
+<li>It treats <strong>memory as just another MCP server</strong> — pluggable, with commands to <strong>retrieve</strong>, <strong>remember</strong>, and <strong>forget</strong> memories.</li>
+<li>Memories are still <strong>plain files on disk</strong>, so they're directly manipulable. Same idea, same fundamental problem: agent memory is stored as markdown files on disk.</li>
+<li><strong>Failure mode:</strong> with MCP tools exposed, the agent is one step away from calling the <strong><code>forget</code></strong> command and wiping its own memory.</li>
+</ul>
+<h2 id="vector-databases">Vector databases<a class="headerlink" href="#vector-databases" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Store everything, create <strong>embeddings</strong>, put them in a <strong>vector database</strong>, and run <strong>similarity searches</strong> to pull back relevant information. A real improvement: large knowledge repository, related info retrievable.</li>
+<li><strong>OpenClaw ships with PGVector out of the box</strong> — given an embedding, you can start using it immediately.</li>
+<li><strong>LanceDB</strong> is another strong option. Both PGVector and LanceDB are used in the demo.</li>
+</ul>
+<p><strong>The core limitation:</strong> what a vector gives you is <strong>similarity in vector space, which is not the same as an actual relationship.</strong> Consequences:</p>
+<ul>
+<li><strong>Hallucinations</strong> and general problems when vector lookup is the <em>sole</em> source of the answer.</li>
+<li>The problem <strong>compounds</strong> in complex scenarios (e.g. a digital twin).</li>
+<li><strong>Large multi-hop reasoning chains don't work</strong> on similarity search — sometimes it's <strong>impossible to reach the answer even when all the facts are present</strong>, because the chain of hops isn't a similarity relationship.</li>
+<li>Multi-hop is also <strong>very expensive on traditional relational databases</strong>.</li>
+<li>Things that <strong>look similar aren't exactly the same</strong> — you retrieve facts that are "related in some way" but are not the correct item.</li>
+</ul>
+<h2 id="graphs">Graphs<a class="headerlink" href="#graphs" title="Permanent link">&para;</a></h2>
+<p>Graphs are built for <strong>connected data</strong> — finding relationships, resolving identities, mapping paths, and getting the <strong>full chain</strong>.</p>
+<ul>
+<li><strong>Structure:</strong> first-class <strong>nodes</strong> (entities), <strong>edges</strong> (relationships between objects), and <strong>properties</strong> on top to store information.</li>
+<li>You can also <strong>store embeddings inside the graph</strong>, which lets you use <strong>vectors and graphs together</strong>.</li>
+</ul>
+<p><strong>Demo architecture — hybrid vector + graph retrieval:</strong></p>
+<ol>
+<li><strong>Vector search</strong> selects the <strong>seed nodes</strong> where traversal starts.</li>
+<li><strong>Graph search</strong> pulls the <strong>nearest neighbors</strong> of those seeds and <strong>ranks them by how related they are</strong>.</li>
+</ol>
+<p>This combination solves <strong>complex multi-hop queries</strong> for more difficult, domain-specific problems.</p>
+<p><strong>Why graphs win on quality:</strong></p>
+<ul>
+<li><strong>Accurate</strong> — precise information.</li>
+<li><strong>Explainable</strong> — you can inspect the graph that was returned.</li>
+<li><strong>Auditable</strong> — you can point to the exact part of the graph that produced the answer.</li>
+</ul>
+<p>This gives the developer more control: when the answer is wrong you know where it came from, you can <strong>introspect the graph</strong>, change how <strong>extraction</strong> is done, <strong>reduce duplicate nodes</strong>, and <strong>converge quickly</strong> on a good answer.</p>
+<p><strong>Claude + Cypher:</strong></p>
+<ul>
+<li>You don't need to be a graph expert — <strong>Claude writes Cypher</strong> (per the speaker, better than he does), can <strong>build entity extractors</strong>, and can do most of what's needed to get started, as long as you know the basic model of what you want.</li>
+<li><strong>Working pattern:</strong> have Claude <strong>write each action into the graph as it works</strong>; then answer by <strong>traversing the graph, not re-reading</strong> it; in a <strong>fresh session</strong>, pull the results back out.</li>
+</ul>
+<h2 id="demo-home-lab-digital-twin-ab-tested">Demo: home-lab digital twin, A/B tested<a class="headerlink" href="#demo-home-lab-digital-twin-ab-tested" title="Permanent link">&para;</a></h2>
+<p><strong>Setup (built over the prior week or two):</strong></p>
+<ul>
+<li>A full <strong>digital twin</strong> of the speaker's home lab, modeled as a graph.</li>
+<li><strong>Two environments built from the same original markdown files:</strong></li>
+<li><strong>A test — vector database store</strong></li>
+<li><strong>B test — graph store</strong>, built on <strong>Cognee</strong> (a memory-space startup with a <strong>Neo4j backend</strong>)</li>
+<li><strong>Hardware/topology:</strong> a handful of <strong>Proxmox</strong> servers (a couple of computers around a desk). A <strong>separate VLAN</strong> was built for the demo, <strong>segmented off the real network</strong>.</li>
+<li>The model was <strong>trained on the real network</strong> but then <strong>cut off</strong> — it can <strong>only answer from memory</strong>, cannot look up hosts, and cannot pull dynamic information.</li>
+<li>Interface: a "GrabRAG cockpit" with <strong>five questions queued</strong>, each with schematics matching the home-lab diagram.</li>
+</ul>
+<h3 id="query-1-wan-exposed-end-of-life-software">Query 1 — WAN-exposed end-of-life software<a class="headerlink" href="#query-1-wan-exposed-end-of-life-software" title="Permanent link">&para;</a></h3>
+<p>Goal: find anything exposed to the WAN/internet running out-of-date software that puts the lab at risk.</p>
+<ul>
+<li><strong>Expected finding:</strong> a host named <strong>"Tinkster Lands"</strong> — the speaker's <strong>daughter's Minecraft server</strong>, running <strong>Debian 8 (Jessie)</strong>.</li>
+<li><strong>Vector agent:</strong> "couldn't find specific details… excluded by policy… check sources separately." Not useful.</li>
+<li><strong>Graph agent:</strong> fired off a series of <strong>Cypher queries</strong> and ran a <strong>graph traversal</strong>, color-coded:</li>
+<li><strong>Blue nodes</strong> = <strong>seed nodes</strong> (from the vector lookup + ranking) — traversal doesn't stop here.</li>
+<li><strong>Gray nodes</strong> = <strong>one-hop traversals</strong> from the seeds.</li>
+<li><strong>Green nodes</strong> = the ones that <strong>won</strong> and made it <strong>into context</strong>.</li>
+<li><strong>Answer:</strong> guest name <strong>Tinksterlin</strong>, <strong>OS version out of date</strong>, flagged — precise and actionable.</li>
+</ul>
+<h3 id="query-2-exposed-0000-management-ports">Query 2 — Exposed <code>0.0.0.0</code> management ports<a class="headerlink" href="#query-2-exposed-0000-management-ports" title="Permanent link">&para;</a></h3>
+<p>Goal: find management ports bound to <code>0.0.0.0</code> and exposed to the outside world (a bad configuration).</p>
+<ul>
+<li><strong>Ground truth:</strong> a newly set-up <strong>Matrix server</strong> and <strong>HAProxy</strong> were exposed to the internet (bad); other services (the Cognee demo, the OpenClaw instance) were <strong>inside the LAN</strong> and only reachable from within it (correct).</li>
+<li><strong>Vector agent:</strong> returned some info but told the user to go <strong>check the services configuration / expects a pfSense rule</strong> — i.e., punted the work back to the human.</li>
+<li><strong>Graph agent:</strong> found an <strong>open port exposed to the WAN</strong> on <strong>HAProxy and OpenVPN</strong> (the two expected). The <strong>shape of this graph was entirely different</strong> from Query 1: it located the <strong>pfSense router</strong> node and <strong>followed it directly</strong> to every result related to it, yielding a precise answer.</li>
+<li><strong>Aftermath:</strong> all the identified security holes were <strong>patched after the demo</strong>.</li>
+</ul>
+<h2 id="scale-argument">Scale argument<a class="headerlink" href="#scale-argument" title="Permanent link">&para;</a></h2>
+<p>A 3–4 node home lab is trivial. But for a <strong>large enterprise data center</strong>, <strong>financial services</strong> (huge sets of companies and customer records), or <strong>anything at a scale that doesn't fit into the ~1M-token context window</strong> of modern models, throwing everything into markdown files stops working — you need a real memory system (graph-backed).</p>
+<h2 id="tools-technologies-named">Tools &amp; technologies named<a class="headerlink" href="#tools-technologies-named" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>OpenClaw</strong> — markdown-file memory; ships with <strong>PGVector</strong>.</li>
+<li><strong>Hermes agent</strong> — reflect-and-write-back skill memory.</li>
+<li><strong>Goose</strong> (Agentic AI Foundation) — MCP-based, 70+ extensions, memory as an MCP server.</li>
+<li><strong>PGVector</strong>, <strong>LanceDB</strong> — vector stores used in the demo.</li>
+<li><strong>Cognee</strong> — memory startup, Neo4j backend; powers the graph store.</li>
+<li><strong>Neo4j</strong>, <strong>Cypher</strong> — graph DB and query language.</li>
+<li><strong>Proxmox</strong>, <strong>pfSense</strong>, <strong>HAProxy</strong>, <strong>OpenVPN</strong>, <strong>Matrix</strong> — home-lab infrastructure in the digital twin.</li>
+<li><strong>Neo4j GraphAcademy</strong> — free training (<code>dev.neo4j.com/ga-rag</code>), incl. agent-memory and context-graph courses.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Talk Notes">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Talk Notes
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../moat-is-your-data-model/" class="md-footer__link md-footer__link--next" aria-label="Next: Your Moat Is Your Data Model">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Your Moat Is Your Data Model
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/noufal85" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1557 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A self-tracked syllabus for becoming an AI Engineer and Forward-Deployed Engineer.">
+      
+      
+        <meta name="author" content="Noufal Edappanoli">
+      
+      
+        <link rel="canonical" href="https://noufal85.github.io/ai-engineer-curriculum/notes/moat-is-your-data-model/">
+      
+      
+        <link rel="prev" href="../crabrag-graph-memory/">
+      
+      
+        <link rel="next" href="../../resources/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Your Moat Is Your Data Model - AI Engineer / FDE Curriculum</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#your-moat-is-your-data-model" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AI Engineer / FDE Curriculum" class="md-header__button md-logo" aria-label="AI Engineer / FDE Curriculum" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Engineer / FDE Curriculum
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Your Moat Is Your Data Model
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/noufal85/ai-engineer-curriculum" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    noufal85/ai-engineer-curriculum
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AI Engineer / FDE Curriculum" class="md-nav__button md-logo" aria-label="AI Engineer / FDE Curriculum" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg>
+
+    </a>
+    AI Engineer / FDE Curriculum
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/noufal85/ai-engineer-curriculum" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    noufal85/ai-engineer-curriculum
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../progress/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Progress
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../curriculum/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Curriculum
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Curriculum
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/00-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0 · Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/01-llm-internals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 · LLM Internals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/02-prompting-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 · Prompting & Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/03-rag-memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 · Retrieval, RAG & Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/04-agents-tools-mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 · Agents, Tools & MCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/05-evals-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 · Evals & Observability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/06-production-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 · Production Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/07-forward-deployed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 · The Forward-Deployed Craft
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/08-capstones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 · Capstones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Talk Notes
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Talk Notes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crabrag-graph-memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CrabRAG / Graph Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Your Moat Is Your Data Model
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Your Moat Is Your Data Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#thesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thesis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-moat-argument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The moat argument
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-being-modeled-gates-foundation-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is being modeled (Gates Foundation scope)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sip-architecture-structuring-operational-data-for-agentic-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SIP architecture: structuring operational data for agentic retrieval
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engaging-data-owners-the-tacit-knowledge-capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engaging data owners (the tacit-knowledge capture)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#curation-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Curation pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-data-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The data model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The data model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hierarchy-1-funding-lens-additive-dag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hierarchy 1 — funding lens (additive DAG)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hierarchy-2-management-lens-each-level-matters-individually" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hierarchy 2 — management lens (each level matters individually)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hierarchy-3-people" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hierarchy 3 — people
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stitching-siloed-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stitching siloed systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combining-unstructured-documents-with-structured-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combining unstructured documents with structured data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-whole-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The whole model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serving-the-graph-to-claude-through-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Serving the graph to Claude through MCP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieval-evals-and-the-feedback-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retrieval evals and the feedback loop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-ahead-for-sip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's ahead for SIP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-technologies-named" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools &amp; technologies named
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#thesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thesis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-moat-argument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The moat argument
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-being-modeled-gates-foundation-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is being modeled (Gates Foundation scope)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sip-architecture-structuring-operational-data-for-agentic-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SIP architecture: structuring operational data for agentic retrieval
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engaging-data-owners-the-tacit-knowledge-capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engaging data owners (the tacit-knowledge capture)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#curation-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Curation pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-data-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The data model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The data model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hierarchy-1-funding-lens-additive-dag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hierarchy 1 — funding lens (additive DAG)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hierarchy-2-management-lens-each-level-matters-individually" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hierarchy 2 — management lens (each level matters individually)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hierarchy-3-people" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hierarchy 3 — people
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stitching-siloed-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stitching siloed systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combining-unstructured-documents-with-structured-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combining unstructured documents with structured data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-whole-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The whole model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serving-the-graph-to-claude-through-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Serving the graph to Claude through MCP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieval-evals-and-the-feedback-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retrieval evals and the feedback loop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-ahead-for-sip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's ahead for SIP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-technologies-named" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools &amp; technologies named
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="your-moat-is-your-data-model">Your Moat Is Your Data Model<a class="headerlink" href="#your-moat-is-your-data-model" title="Permanent link">&para;</a></h1>
+<p><strong>Speaker:</strong> Mike Phipps — Gates Foundation
+<strong>Source:</strong> <a href="https://www.youtube.com/watch?v=jt1Pbr_n6oU">youtube.com/watch?v=jt1Pbr_n6oU</a></p>
+<hr />
+<h2 id="thesis">Thesis<a class="headerlink" href="#thesis" title="Permanent link">&para;</a></h2>
+<p>Models, frontends, and agent frameworks all commoditize. The durable, defensible asset is your <strong>data model</strong> plus the <strong>tacit knowledge</strong> of how your organization's questions are supposed to be answered. At the Gates Foundation, 25 years of grantmaking was modeled into a single <strong>Neo4j knowledge graph</strong>, served to Claude through <strong>one MCP server</strong> — the <strong>Strategic Intelligence Platform (SIP)</strong>, rolled out to production for ~4,000 people in the month before the talk.</p>
+<h2 id="the-moat-argument">The moat argument<a class="headerlink" href="#the-moat-argument" title="Permanent link">&para;</a></h2>
+<p>As AI moves fast at the frontier, the question is what stays <strong>defensible</strong>. You can build quickly with Claude Code, but production imposes constraints — monitoring, upkeep, downstream dependencies others build on your stack. Open questions the team weighed:</p>
+<ul>
+<li>How much of the deployed stack do you actually want to <strong>own</strong>?</li>
+<li>How much appetite do users have for <strong>decentralized access</strong> — is the access point another chat app, Claude, ChatGPT, something else?</li>
+<li>What's your <strong>product differentiation</strong> vs. SaaS products?</li>
+</ul>
+<p><strong>Conclusion:</strong> their moat is their <strong>understanding of internal processes</strong> — the tacit knowledge needed to run successful AI. This holds no matter how good models get; new model or app releases don't threaten it because the defensible, durable part is the process/tacit-knowledge layer they've modeled into SIP.</p>
+<h2 id="what-is-being-modeled-gates-foundation-scope">What is being modeled (Gates Foundation scope)<a class="headerlink" href="#what-is-being-modeled-gates-foundation-scope" title="Permanent link">&para;</a></h2>
+<p>The foundation's work spans child mortality, nutrition, agriculture, education — via creating market incentives, spurring innovation, and public/private collaboration. The relevant lens here is the fourth: <strong>deriving data-driven insights from actual investments (grants).</strong> Over 25 years this produced enormous structure; extracting insights <strong>at scale</strong> is the problem being solved.</p>
+<p><strong>Scale (2023 snapshot):</strong></p>
+<ul>
+<li><strong>2,000+ grants</strong> in one year (many $5M+)</li>
+<li><strong>100+ countries</strong> targeted</li>
+<li><strong>~4,000 employees</strong></li>
+<li>Grants across almost <strong>all US states</strong> plus international</li>
+<li><strong>$7B+</strong> total annual disbursement</li>
+<li>Funding flows through multiple <strong>divisions</strong> — e.g. Global Development, Global Health, Gender Equality, USP</li>
+</ul>
+<h2 id="sip-architecture-structuring-operational-data-for-agentic-retrieval">SIP architecture: structuring operational data for agentic retrieval<a class="headerlink" href="#sip-architecture-structuring-operational-data-for-agentic-retrieval" title="Permanent link">&para;</a></h2>
+<p>A <strong>knowledge graph built for the agent consumer</strong> (not for dashboards). End-to-end flow:</p>
+<ol>
+<li><strong>Systems of record</strong> — structured and unstructured, traditionally <strong>siloed</strong>.</li>
+<li><strong>Data lakehouse</strong> — the team consolidated everything "under one roof": internal enterprise-wide data plus programmatic data that are outputs of investments.</li>
+<li><strong>Data curation layer</strong> — processing over that consolidated data.</li>
+<li><strong>SIP</strong> — the graph exposed as a <strong>cross-system semantic layer</strong> that agents reason across, with <strong>agentic chat / agentic workflow</strong> as the UX.</li>
+</ol>
+<h2 id="engaging-data-owners-the-tacit-knowledge-capture">Engaging data owners (the tacit-knowledge capture)<a class="headerlink" href="#engaging-data-owners-the-tacit-knowledge-capture" title="Permanent link">&para;</a></h2>
+<p>Critical and repeatedly reinforced: when dealing with complex systems of record, <strong>engagement with data owners is essential</strong> to model the tacit knowledge. You must understand:</p>
+<ul>
+<li>The full <strong>meaning of each field</strong></li>
+<li>The <strong>structure</strong> of the dataset and <strong>how to join</strong> things together</li>
+<li><strong>Limitations</strong> and <strong>systematics</strong> of the data</li>
+<li><strong>Safeguards, security trimmings, reporting conventions</strong></li>
+</ul>
+<p>The key point: it's not enough to answer a question <em>a</em> certain way — you have to answer it <strong>the way it has been answered in the past</strong>. That procedural understanding is the moat: the part they own.</p>
+<h2 id="curation-pipeline">Curation pipeline<a class="headerlink" href="#curation-pipeline" title="Permanent link">&para;</a></h2>
+<p>Three buckets of considerations feeding the pipeline:</p>
+<p><strong>1. Pre-processing</strong>
+- Filtering, <strong>deduplication</strong>
+- Handling document <strong>order</strong> and <strong>inconsistencies across documents</strong>, resolved up front</p>
+<p><strong>2. Extraction &amp; tagging</strong>
+- <strong>Structured field extraction</strong>
+- <strong>Semantic chunking</strong> for unstructured documents
+- <strong>Figures → text</strong> conversion so they're retrievable
+- Various <strong>tagging</strong> that forms connections in the graph
+- Extra <strong>metadata</strong> created during the pipeline → becomes <strong>node properties</strong> in the graph</p>
+<p><strong>3. Governance</strong>
+- AI makes previously-hard-to-access data much more accessible, so the <strong>risk sphere is larger</strong>
+- <strong>PII masking</strong>
+- Reclassifying <strong>sensitive data</strong>
+- Enforcing the right <strong>entitlements</strong> per user accessing the system</p>
+<h2 id="the-data-model">The data model<a class="headerlink" href="#the-data-model" title="Permanent link">&para;</a></h2>
+<p>Graph is a flexible, practical representation of a physical model. What's shown in the talk is a <strong>conceptual (flat) data model</strong> — the actual instantiated graph has far more nodes and one-to-N cardinality, so it's more complex.</p>
+<p><strong>Entry point:</strong> <strong>80+ strategy teams</strong>. Each team has <strong>annual reviews</strong> that drive that year's <strong>budgeting</strong>. These reviews are modeled as <strong>meetings</strong>, which are where <strong>unstructured documents enter</strong> the system — but they carry a <strong>structured connection</strong> to the other systems of record.</p>
+<h3 id="hierarchy-1-funding-lens-additive-dag">Hierarchy 1 — funding lens (additive DAG)<a class="headerlink" href="#hierarchy-1-funding-lens-additive-dag" title="Permanent link">&para;</a></h3>
+<ul>
+<li>An <strong>additive DAG</strong> where <strong>all five levels matter</strong> top to bottom, so you must consider everything together.</li>
+<li>Different <strong>rollup patterns</strong> work across it; they use an <strong>in-path shortcut</strong> connecting the funding path.</li>
+<li><strong><code>funds → bow</code></strong> is where the <strong>budget</strong> for each funding team is stored.</li>
+<li>Structure: internal <strong>funding teams → portfolios → investments</strong>. <strong>Multiple funding teams can fund a single investment</strong> (end-to-end relationship).</li>
+<li><strong>Investments are the product / the business.</strong> Internally, <strong>funds prioritize different types of investments.</strong></li>
+<li>Can be taken down to the <strong>transaction level</strong> or mapped as <strong>annual-based aggregations</strong>.</li>
+<li>From an investment you can map to <strong>organizations</strong> (of different types) and to <strong>observables</strong> investments produce — published reports, products, etc. — all structured and connected to the full organizational picture. (Noted as partly green space still to fill in.)</li>
+</ul>
+<h3 id="hierarchy-2-management-lens-each-level-matters-individually">Hierarchy 2 — management lens (each level matters individually)<a class="headerlink" href="#hierarchy-2-management-lens-each-level-matters-individually" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Here <strong>each level matters in and of itself</strong>, so it's <strong>not necessarily a DAG</strong> — which means you can <strong>precompute shortcuts</strong>.</li>
+<li>Edges: hierarchy goes top→bottom via <strong><code>contains</code> / <code>connects</code></strong>. This is the <strong>investment management</strong> side.</li>
+<li><strong>Direct management:</strong> e.g. a team at <strong>team-level-2 manages the investment</strong>.</li>
+<li><strong>Indirect management:</strong> children below team-level-2 should <strong>still be attributed</strong> to team-level-2.</li>
+<li><strong><code>rollup_manages</code></strong> is a <strong>derived edge</strong> created <em>after</em> the <code>contains</code> and <code>manages</code> edges, to play these rollup games.</li>
+<li>Net result: <strong>two lenses over one investment</strong> — the <strong>funding lens</strong> and the <strong>management lens</strong> — both modeled in the same graph.</li>
+</ul>
+<h3 id="hierarchy-3-people">Hierarchy 3 — people<a class="headerlink" href="#hierarchy-3-people" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Organizations, org charts, and people</strong> with many roles: owners, meeting attendees, directors, etc.</li>
+<li>Model <strong>who reports to whom</strong> and <strong>team structure</strong>.</li>
+<li>Traditionally lived only in an <strong>HR source system</strong>, but is relevant to the full story — so it's stitched into the graph as structured data spanning systems.</li>
+</ul>
+<h3 id="stitching-siloed-systems">Stitching siloed systems<a class="headerlink" href="#stitching-siloed-systems" title="Permanent link">&para;</a></h3>
+<p>Different source systems were siloed. To let the agent understand the whole picture correctly, you find the <strong>common entities</strong> across systems and <strong>stitch them together</strong> on those shared entities. Then the agent can <strong>traverse</strong> and understand the full, complicated organizational structure.</p>
+<h3 id="combining-unstructured-documents-with-structured-data">Combining unstructured documents with structured data<a class="headerlink" href="#combining-unstructured-documents-with-structured-data" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Meetings have documents</strong>; <strong>documents have semantic sections / chunks</strong> modeled in the graph.</li>
+<li><strong>Full-text indexes</strong> placed across chunks aid search/retrieval; the agent can also do <strong>pure graph retrieval</strong>.</li>
+<li>All of it <strong>connects back to the main organizational structure</strong>.</li>
+<li>(Only one document source ingested so far — flagged as an area with much more to do. This unstructured+structured combination is called out as the "magic" you can model with Neo4j.)</li>
+</ul>
+<h3 id="the-whole-model">The whole model<a class="headerlink" href="#the-whole-model" title="Permanent link">&para;</a></h3>
+<p>Four different systems → <strong>one graph, one semantic layer</strong>, exposed through <strong>MCP</strong> to the agents. From the <strong>agent's perspective</strong> this is the structure it can <strong>dynamically discover and reason across at query time</strong>. A side benefit for developers: modeling <strong>exposes gaps</strong> — you quickly discover what you don't know or a dataset you haven't fully included, which makes the process itself valuable.</p>
+<h2 id="serving-the-graph-to-claude-through-mcp">Serving the graph to Claude through MCP<a class="headerlink" href="#serving-the-graph-to-claude-through-mcp" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The graph is connected to AI via <strong>MCP</strong>.</li>
+<li>What was <strong>not defensible</strong>: the <strong>chat interface / UI</strong>, and in some cases the general chat and agent interaction. Users already live in Claude or ChatGPT, so the strategy is to <strong>serve the platform where the users already are</strong>.</li>
+<li>They started from <strong>Neo4j's off-the-shelf MCP servers</strong> but <strong>forked and heavily modified</strong> them:</li>
+<li>Various <strong>schema updates</strong></li>
+<li>Passing <strong>state back</strong> to their system — <strong>conversation IDs</strong>, <strong>message numbers</strong>, etc.</li>
+<li>That's one entry point (general chat). The other, actively being built: <strong>more constrained workflow experiences</strong>, offered through things like <strong>co-work / Claude chat</strong>:</li>
+<li><strong>MCP apps</strong> as the standard entry way, porting different UIs into the chat experience</li>
+<li><strong>Sandbox-based agents</strong> that run the workflow</li>
+<li>Constrains the experience vs. open chat while pulling from the <strong>same knowledge-graph backend</strong></li>
+</ul>
+<h2 id="retrieval-evals-and-the-feedback-loop">Retrieval evals and the feedback loop<a class="headerlink" href="#retrieval-evals-and-the-feedback-loop" title="Permanent link">&para;</a></h2>
+<p>Evals connect back to data modeling: running evals surfaces <strong>gaps and ambiguities</strong> in the data model and <strong>ambiguous user questions</strong>, and catches answers that <strong>don't conform to reporting standards</strong>.</p>
+<p><strong>Approach:</strong></p>
+<ul>
+<li>Work with <strong>data owners</strong> to build <strong>targeted eval questions that match their reporting standards</strong>.</li>
+<li>Separate questions into <strong>complexity tiers</strong>.</li>
+<li>Because the <strong>structured data constantly changes</strong>, each eval question stores the <strong>graph query</strong> itself; at runtime the eval <strong>pulls from the live graph</strong> and compares that to the agent's delivered answer.</li>
+<li><strong>Feedback loop with LLM-as-judge</strong>, measuring:</li>
+<li><strong>pass@1</strong></li>
+<li><strong>stability</strong> — ask the same question multiple times and check you get the same answer back</li>
+<li>The loop feeds updates to the <strong>data model</strong>, <strong>domain rules</strong>, and <strong>schema descriptions</strong> to fill the discovered gaps.</li>
+<li><strong>Reported results:</strong> pass@1 and stability are <strong>very strong</strong>. The remaining misses tend to be <strong>ambiguous</strong> questions — answers that are <strong>right but not what the user intended</strong> — the constant struggle.</li>
+</ul>
+<h2 id="whats-ahead-for-sip">What's ahead for SIP<a class="headerlink" href="#whats-ahead-for-sip" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Continue filling out data from systems of record that fit the current data model.</li>
+<li>Expand the <strong>primary graph to additional enterprise-wide datasets</strong>.</li>
+<li>Strong demand for a <strong>federated graph experience</strong>: a main enterprise system with <strong>specific teams linking their own data</strong> to it.</li>
+<li>More <strong>agentic experiences</strong> (the constrained-workflow / MCP-app direction above).</li>
+</ul>
+<h2 id="tools-technologies-named">Tools &amp; technologies named<a class="headerlink" href="#tools-technologies-named" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Neo4j</strong> — knowledge graph store; off-the-shelf <strong>MCP servers</strong> (forked and modified).</li>
+<li><strong>MCP</strong> — single semantic-layer interface exposing the graph to agents.</li>
+<li><strong>Claude / Claude Code / co-work / Claude chat</strong>, <strong>ChatGPT</strong> — where users already are; the serving surface.</li>
+<li><strong>Data lakehouse</strong> — consolidation layer over siloed systems of record.</li>
+<li><strong>LLM-as-judge</strong>, <strong>pass@1</strong>, <strong>stability</strong> — retrieval eval metrics.</li>
+<li><strong>Full-text indexes</strong>, <strong>semantic chunking</strong>, <strong>derived edges</strong> (<code>rollup_manages</code>), <strong>additive DAG</strong> — modeling/retrieval techniques.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../crabrag-graph-memory/" class="md-footer__link md-footer__link--prev" aria-label="Previous: CrabRAG / Graph Memory">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                CrabRAG / Graph Memory
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../resources/" class="md-footer__link md-footer__link--next" aria-label="Next: Resources">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Resources
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/noufal85" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
