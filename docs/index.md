@@ -13,6 +13,8 @@ A self-tracked, **build-first** path to AI engineering and the **forward-deploye
 
 The docs on this site are the **"explain" half**: what we built, how it works, the concept. The [`builds/`](https://github.com/noufal85/ai-engineer-curriculum/tree/main/builds) folder is the **"build" half**.
 
+Alongside the modules there's a **[Concepts](concepts/index.md)** glossary — the full vocabulary an AI engineer should know by the end (vector DBs, the model providers, OpenRouter, distillation, quantization, MCP, evals, prompt injection…), each pointing to the module where it's covered.
+
 ## Start here
 
 **[Build 00 · hello-llm](https://github.com/noufal85/ai-engineer-curriculum/tree/main/builds/00-hello-llm)** — the smallest useful LLM service (stream a response + extract a validated object), fully Dockerized. Run it, then read [Module 0](curriculum/00-foundations.md).

@@ -70,6 +70,16 @@ nav:
       - 6 · Production Systems: curriculum/06-production-systems.md
       - 7 · The Forward-Deployed Craft: curriculum/07-forward-deployed.md
       - 8 · Capstones: curriculum/08-capstones.md
+  - Concepts:
+      - concepts/index.md
+      - Foundations: concepts/foundations.md
+      - Models & Providers: concepts/models-and-providers.md
+      - Prompting & Context: concepts/prompting.md
+      - Retrieval & Data: concepts/retrieval-and-data.md
+      - Agents & Protocols: concepts/agents-and-protocols.md
+      - Evals & Observability: concepts/evals-and-observability.md
+      - Serving & Ops: concepts/serving-and-ops.md
+      - Safety & Security: concepts/safety-and-security.md
   - Talk Notes:
       - notes/index.md
       - CrabRAG / Graph Memory: notes/crabrag-graph-memory.md
