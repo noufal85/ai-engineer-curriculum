@@ -2,66 +2,102 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://noufal85.github.io/ai-engineer-curriculum/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://noufal85.github.io/ai-engineer-curriculum/progress/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://noufal85.github.io/ai-engineer-curriculum/resources/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
+    </url>
+    <url>
+         <loc>https://noufal85.github.io/ai-engineer-curriculum/concepts/</loc>
+         <lastmod>2026-08-08</lastmod>
+    </url>
+    <url>
+         <loc>https://noufal85.github.io/ai-engineer-curriculum/concepts/agents-and-protocols/</loc>
+         <lastmod>2026-08-08</lastmod>
+    </url>
+    <url>
+         <loc>https://noufal85.github.io/ai-engineer-curriculum/concepts/evals-and-observability/</loc>
+         <lastmod>2026-08-08</lastmod>
+    </url>
+    <url>
+         <loc>https://noufal85.github.io/ai-engineer-curriculum/concepts/foundations/</loc>
+         <lastmod>2026-08-08</lastmod>
+    </url>
+    <url>
+         <loc>https://noufal85.github.io/ai-engineer-curriculum/concepts/models-and-providers/</loc>
+         <lastmod>2026-08-08</lastmod>
+    </url>
+    <url>
+         <loc>https://noufal85.github.io/ai-engineer-curriculum/concepts/prompting/</loc>
+         <lastmod>2026-08-08</lastmod>
+    </url>
+    <url>
+         <loc>https://noufal85.github.io/ai-engineer-curriculum/concepts/retrieval-and-data/</loc>
+         <lastmod>2026-08-08</lastmod>
+    </url>
+    <url>
+         <loc>https://noufal85.github.io/ai-engineer-curriculum/concepts/safety-and-security/</loc>
+         <lastmod>2026-08-08</lastmod>
+    </url>
+    <url>
+         <loc>https://noufal85.github.io/ai-engineer-curriculum/concepts/serving-and-ops/</loc>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://noufal85.github.io/ai-engineer-curriculum/curriculum/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://noufal85.github.io/ai-engineer-curriculum/curriculum/00-foundations/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://noufal85.github.io/ai-engineer-curriculum/curriculum/01-llm-internals/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://noufal85.github.io/ai-engineer-curriculum/curriculum/02-prompting-context/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://noufal85.github.io/ai-engineer-curriculum/curriculum/03-rag-memory/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://noufal85.github.io/ai-engineer-curriculum/curriculum/04-agents-tools-mcp/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://noufal85.github.io/ai-engineer-curriculum/curriculum/05-evals-observability/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://noufal85.github.io/ai-engineer-curriculum/curriculum/06-production-systems/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://noufal85.github.io/ai-engineer-curriculum/curriculum/07-forward-deployed/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://noufal85.github.io/ai-engineer-curriculum/curriculum/08-capstones/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://noufal85.github.io/ai-engineer-curriculum/notes/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://noufal85.github.io/ai-engineer-curriculum/notes/crabrag-graph-memory/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
     <url>
          <loc>https://noufal85.github.io/ai-engineer-curriculum/notes/moat-is-your-data-model/</loc>
-         <lastmod>2026-08-07</lastmod>
+         <lastmod>2026-08-08</lastmod>
     </url>
 </urlset>

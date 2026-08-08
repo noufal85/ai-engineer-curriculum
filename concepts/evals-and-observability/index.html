@@ -12,31 +12,31 @@
         <meta name="author" content="Noufal Edappanoli">
       
       
-        <link rel="canonical" href="https://noufal85.github.io/ai-engineer-curriculum/notes/">
+        <link rel="canonical" href="https://noufal85.github.io/ai-engineer-curriculum/concepts/evals-and-observability/">
       
       
-        <link rel="prev" href="../concepts/safety-and-security/">
+        <link rel="prev" href="../agents-and-protocols/">
       
       
-        <link rel="next" href="crabrag-graph-memory/">
+        <link rel="next" href="../serving-and-ops/">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Talk Notes - AI Engineer / FDE Curriculum</title>
+        <title>Evals & Observability - AI Engineer / FDE Curriculum</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -55,7 +55,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#talk-notes" class="md-skip">
+        <a href="#evals-observability" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="AI Engineer / FDE Curriculum" class="md-header__button md-logo" aria-label="AI Engineer / FDE Curriculum" data-md-component="logo">
+    <a href="../.." title="AI Engineer / FDE Curriculum" class="md-header__button md-logo" aria-label="AI Engineer / FDE Curriculum" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg>
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Talk Notes
+              Evals & Observability
             
           </span>
         </div>
@@ -234,7 +234,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="AI Engineer / FDE Curriculum" class="md-nav__button md-logo" aria-label="AI Engineer / FDE Curriculum" data-md-component="logo">
+    <a href="../.." title="AI Engineer / FDE Curriculum" class="md-nav__button md-logo" aria-label="AI Engineer / FDE Curriculum" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg>
@@ -264,7 +264,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -291,7 +291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../progress/" class="md-nav__link">
+      <a href="../../progress/" class="md-nav__link">
         
   
   
@@ -354,7 +354,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../curriculum/" class="md-nav__link ">
+            <a href="../../curriculum/" class="md-nav__link ">
               
   
   
@@ -398,7 +398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../curriculum/00-foundations/" class="md-nav__link">
+      <a href="../../curriculum/00-foundations/" class="md-nav__link">
         
   
   
@@ -426,7 +426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../curriculum/01-llm-internals/" class="md-nav__link">
+      <a href="../../curriculum/01-llm-internals/" class="md-nav__link">
         
   
   
@@ -454,7 +454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../curriculum/02-prompting-context/" class="md-nav__link">
+      <a href="../../curriculum/02-prompting-context/" class="md-nav__link">
         
   
   
@@ -482,7 +482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../curriculum/03-rag-memory/" class="md-nav__link">
+      <a href="../../curriculum/03-rag-memory/" class="md-nav__link">
         
   
   
@@ -510,7 +510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../curriculum/04-agents-tools-mcp/" class="md-nav__link">
+      <a href="../../curriculum/04-agents-tools-mcp/" class="md-nav__link">
         
   
   
@@ -538,7 +538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../curriculum/05-evals-observability/" class="md-nav__link">
+      <a href="../../curriculum/05-evals-observability/" class="md-nav__link">
         
   
   
@@ -566,7 +566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../curriculum/06-production-systems/" class="md-nav__link">
+      <a href="../../curriculum/06-production-systems/" class="md-nav__link">
         
   
   
@@ -594,7 +594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../curriculum/07-forward-deployed/" class="md-nav__link">
+      <a href="../../curriculum/07-forward-deployed/" class="md-nav__link">
         
   
   
@@ -622,7 +622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../curriculum/08-capstones/" class="md-nav__link">
+      <a href="../../curriculum/08-capstones/" class="md-nav__link">
         
   
   
@@ -654,6 +654,8 @@
       
   
   
+    
+  
   
   
     
@@ -683,15 +685,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../concepts/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -715,7 +717,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -735,7 +737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../concepts/foundations/" class="md-nav__link">
+      <a href="../foundations/" class="md-nav__link">
         
   
   
@@ -763,7 +765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../concepts/models-and-providers/" class="md-nav__link">
+      <a href="../models-and-providers/" class="md-nav__link">
         
   
   
@@ -791,7 +793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../concepts/prompting/" class="md-nav__link">
+      <a href="../prompting/" class="md-nav__link">
         
   
   
@@ -819,7 +821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../concepts/retrieval-and-data/" class="md-nav__link">
+      <a href="../retrieval-and-data/" class="md-nav__link">
         
   
   
@@ -847,7 +849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../concepts/agents-and-protocols/" class="md-nav__link">
+      <a href="../agents-and-protocols/" class="md-nav__link">
         
   
   
@@ -872,10 +874,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../concepts/evals-and-observability/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Evals & Observability
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -891,6 +920,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evaluation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#benchmarks-know-the-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benchmarks (know the names)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observability
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -903,7 +985,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../concepts/serving-and-ops/" class="md-nav__link">
+      <a href="../serving-and-ops/" class="md-nav__link">
         
   
   
@@ -931,7 +1013,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../concepts/safety-and-security/" class="md-nav__link">
+      <a href="../safety-and-security/" class="md-nav__link">
         
   
   
@@ -963,8 +1045,6 @@
       
   
   
-    
-  
   
   
     
@@ -982,15 +1062,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../../notes/" class="md-nav__link ">
               
   
   
@@ -1008,13 +1088,13 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_5" id="__nav_5_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1034,7 +1114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="crabrag-graph-memory/" class="md-nav__link">
+      <a href="../../notes/crabrag-graph-memory/" class="md-nav__link">
         
   
   
@@ -1062,7 +1142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="moat-is-your-data-model/" class="md-nav__link">
+      <a href="../../notes/moat-is-your-data-model/" class="md-nav__link">
         
   
   
@@ -1097,7 +1177,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../resources/" class="md-nav__link">
+      <a href="../../resources/" class="md-nav__link">
         
   
   
@@ -1137,6 +1217,47 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evaluation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#benchmarks-know-the-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Benchmarks (know the names)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observability
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1155,15 +1276,37 @@
   
 
 
-<h1 id="talk-notes">Talk Notes<a class="headerlink" href="#talk-notes" title="Permanent link">&para;</a></h1>
-<p>Full, code-verified write-ups of talks that feed directly into the curriculum. The format is the standard I hold myself to for a "ticked" learning item: <strong>capture every technical detail, cut the fluff, and be able to defend the design.</strong></p>
+<h1 id="evals-observability">Evals &amp; Observability<a class="headerlink" href="#evals-observability" title="Permanent link">&para;</a></h1>
+<p>How you know it works, and catch it when it stops. Mostly <strong><code>→ M5</code></strong>.</p>
+<h2 id="evaluation">Evaluation<a class="headerlink" href="#evaluation" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="crabrag-graph-memory/"><strong>CrabRAG: Why Automated Assistants Need Graph Memory, Not More Tokens</strong></a> — Stephen Chin (Neo4j). Vector vs. graph agent memory; why similarity isn't a relationship; the hybrid vector-seed → graph-traverse pattern. Feeds <a href="../curriculum/03-rag-memory/">Module 3</a>.</li>
-<li><a href="moat-is-your-data-model/"><strong>Your Moat Is Your Data Model</strong></a> — Mike Phipps (Gates Foundation). Modeling a domain as a graph, stitching siloed systems, serving via MCP, and the eval feedback loop. Feeds <a href="../curriculum/03-rag-memory/">Module 3</a>, <a href="../curriculum/05-evals-observability/">Module 5</a>, and especially <a href="../curriculum/07-forward-deployed/">Module 7</a>.</li>
+<li><strong>Eval</strong> — a repeatable test of an LLM system's quality on representative + adversarial cases. <em>→ M5</em></li>
+<li><strong>Golden dataset / ground truth</strong> — the reference answers you grade against. <em>→ M5</em></li>
+<li><strong>LLM-as-judge</strong> — using a model to grade outputs; powerful but has biases to watch. <em>→ M5</em></li>
+<li><strong>Pass@k</strong> — probability a correct answer appears within k tries. <em>→ M5</em></li>
+<li><strong>Stability / consistency</strong> — same question × N → same answer? A key reliability metric. <em>→ M5</em></li>
+<li><strong>Faithfulness / groundedness</strong> — does a RAG answer actually follow from the retrieved sources? <em>→ M5</em></li>
+<li><strong>Precision / recall / F1</strong> — standard retrieval/classification quality metrics. <em>→ M5</em></li>
+<li><strong>Complexity tiers</strong> — grouping eval questions by difficulty to see where a system breaks. <em>→ M5</em></li>
+<li><strong>Offline vs online eval</strong> — pre-deploy test suites vs production monitoring + user feedback. <em>→ M5</em></li>
+<li><strong>A/B test</strong> — comparing two variants on live traffic. <em>→ M5, M6</em></li>
+<li><strong>Live-data eval</strong> — storing the query and comparing against the live source when data changes constantly. <em>→ M5</em></li>
+<li><strong>Regression suite</strong> — evals that gate every prompt/model/data change. <em>→ M5, M6</em></li>
 </ul>
-<blockquote>
-<p>Add new write-ups here as you work through talks and papers. When a note is thorough enough that you can defend the design from it, that's a signal you've actually learned the thing.</p>
-</blockquote>
+<h2 id="benchmarks-know-the-names">Benchmarks (know the names)<a class="headerlink" href="#benchmarks-know-the-names" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>MMLU</strong> — broad knowledge; <strong>GSM8K</strong> — grade-school math; <strong>HumanEval / MBPP</strong> — code generation; <strong>SWE-bench</strong> — real GitHub issue fixing; <strong>MMMU</strong> — multimodal; <strong>ARC / HellaSwag</strong> — reasoning/commonsense. Useful signal, not a substitute for your own evals. <em>→ M5</em></li>
+</ul>
+<h2 id="observability">Observability<a class="headerlink" href="#observability" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Tracing</strong> — recording each step of a multi-step run (prompts, tools, tokens, latency). <em>→ M5</em></li>
+<li><strong>Span</strong> — one unit of work within a trace. <em>→ M5</em></li>
+<li><strong>Observability tools</strong> — <strong>LangSmith, Langfuse, Phoenix/Arize, Helicone, Braintrust</strong> — trace, evaluate, and monitor LLM apps. <em>→ M5</em></li>
+<li><strong>Cost / latency / token metrics</strong> — the operational numbers you log per request. <em>→ M5, M6</em></li>
+<li><strong>Feedback loop</strong> — evals surface gaps → you fix data/prompts/schema → re-run. Evals drive the system, not just report on it. <em>→ M5, M7</em></li>
+<li><strong>Human feedback / rubric</strong> — structured human grading against explicit criteria. <em>→ M5</em></li>
+<li><strong>Red-teaming</strong> — deliberately trying to break the system to find failures. <em>→ M5, M8</em></li>
+</ul>
 
 
 
@@ -1199,7 +1342,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../concepts/safety-and-security/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Safety &amp; Security">
+          <a href="../agents-and-protocols/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Agents &amp; Protocols">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1209,20 +1352,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Safety & Security
+                Agents & Protocols
               </div>
             </div>
           </a>
         
         
           
-          <a href="crabrag-graph-memory/" class="md-footer__link md-footer__link--next" aria-label="Next: CrabRAG / Graph Memory">
+          <a href="../serving-and-ops/" class="md-footer__link md-footer__link--next" aria-label="Next: Serving &amp; Ops">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                CrabRAG / Graph Memory
+                Serving & Ops
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1286,10 +1429,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
