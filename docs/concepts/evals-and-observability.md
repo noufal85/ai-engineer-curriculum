@@ -1,32 +1,32 @@
 # Evals & Observability
 
-How you know it works, and catch it when it stops. Mostly **`→ M5`**.
+How you know an AI system works and catch it when it stops. Mostly **→ M5**.
 
 ## Evaluation
 
-- **Eval** — a repeatable test of an LLM system's quality on representative + adversarial cases. *→ M5*
-- **Golden dataset / ground truth** — the reference answers you grade against. *→ M5*
-- **LLM-as-judge** — using a model to grade outputs; powerful but has biases to watch. *→ M5*
-- **Pass@k** — probability a correct answer appears within k tries. *→ M5*
-- **Stability / consistency** — same question × N → same answer? A key reliability metric. *→ M5*
-- **Faithfulness / groundedness** — does a RAG answer actually follow from the retrieved sources? *→ M5*
-- **Precision / recall / F1** — standard retrieval/classification quality metrics. *→ M5*
-- **Complexity tiers** — grouping eval questions by difficulty to see where a system breaks. *→ M5*
-- **Offline vs online eval** — pre-deploy test suites vs production monitoring + user feedback. *→ M5*
-- **A/B test** — comparing two variants on live traffic. *→ M5, M6*
-- **Live-data eval** — storing the query and comparing against the live source when data changes constantly. *→ M5*
-- **Regression suite** — evals that gate every prompt/model/data change. *→ M5, M6*
+- **Eval** — a repeatable test of quality on representative and adversarial cases. *→ M5*
+- **Golden dataset / ground truth** — reference behavior or evidence used for grading. *→ M5*
+- **Eval dataset version** — a named, reviewable snapshot of cases and expected behavior.
+- **LLM-as-judge** — using a model to grade outputs; powerful but biased. *→ M5*
+- **Judge calibration** — checking model grading against human decisions and known counterexamples.
+- **Pass@k** — the chance a correct answer appears within k attempts. *→ M5*
+- **Stability / consistency** — whether repeated runs answer the same question consistently. *→ M5*
+- **Faithfulness / groundedness** — whether a RAG answer follows from its evidence. *→ M5*
+- **Precision / recall / F1** — standard retrieval and classification metrics. *→ M5*
+- **Complexity tiers** — grouping cases by difficulty. *→ M5*
+- **Offline versus online eval** — pre-deploy suites versus production monitoring and feedback. *→ M5*
+- **Regression suite** — evals that gate prompt, model, schema, routing, or data changes. *→ M5, M6*
+- **Red-teaming** — deliberately trying to break the system. *→ M5, M8*
 
-## Benchmarks (know the names)
+## Benchmarks
 
-- **MMLU** — broad knowledge; **GSM8K** — grade-school math; **HumanEval / MBPP** — code generation; **SWE-bench** — real GitHub issue fixing; **MMMU** — multimodal; **ARC / HellaSwag** — reasoning/commonsense. Useful signal, not a substitute for your own evals. *→ M5*
+- **MMLU**, **GSM8K**, **HumanEval / MBPP**, **SWE-bench**, **MMMU**, **ARC**, and **HellaSwag** are useful signals, not substitutes for domain evals.
 
 ## Observability
 
-- **Tracing** — recording each step of a multi-step run (prompts, tools, tokens, latency). *→ M5*
+- **Trace** — a complete record of one request or workflow. *→ M5*
 - **Span** — one unit of work within a trace. *→ M5*
-- **Observability tools** — **LangSmith, Langfuse, Phoenix/Arize, Helicone, Braintrust** — trace, evaluate, and monitor LLM apps. *→ M5*
-- **Cost / latency / token metrics** — the operational numbers you log per request. *→ M5, M6*
-- **Feedback loop** — evals surface gaps → you fix data/prompts/schema → re-run. Evals drive the system, not just report on it. *→ M5, M7*
-- **Human feedback / rubric** — structured human grading against explicit criteria. *→ M5*
-- **Red-teaming** — deliberately trying to break the system to find failures. *→ M5, M8*
+- **Correlation ID** — an identifier connecting logs, tools, model calls, and user-visible work.
+- **Cost / latency / token metrics** — operational numbers logged per request or step. *→ M5, M6*
+- **Human rubric** — explicit criteria for structured human grading. *→ M5*
+- **Feedback loop** — failures feed changes to data, prompts, schemas, tools, or domain rules. *→ M5, M7*

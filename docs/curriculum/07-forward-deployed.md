@@ -1,44 +1,60 @@
-# Module 7 · The Forward-Deployed Craft
+# Module 7 · Forward-Deployed Craft
 
 ## 🔨 The build
 
-**`builds/07-domain-twin`** _(planned)_ — pick a domain you *don't* know, run a **discovery interview**, model it as a **graph** (entities + ≥2 hierarchy lenses, stitched from ≥2 sources), serve it via **MCP**, and run an **A/B demo** answering a multi-hop question the owner cares about — your approach vs. a vector baseline. The [Gates Foundation "moat" talk](../notes/moat-is-your-data-model.md), reproduced at small scale. Dockerized (`docker compose up`).
-
-Build it, then the sections below explain the craft around it.
+**`builds/07-domain-twin`** _(planned)_ — pick a domain you do not know, run a discovery interview, model it as a graph with at least two hierarchy lenses, stitch at least two sources, serve it via MCP, and run an A/B demo answering a question the domain owner actually cares about.
 
 ## Why it matters
 
-This is the FDE differentiator and, per the [Your Moat Is Your Data Model](../notes/moat-is-your-data-model.md) talk, the **durable** skill: models and UIs commoditize, but understanding a customer's real process — the tacit knowledge of how the work actually gets done — does not. An FDE turns that understanding into a deployed solution against messy, siloed, half-documented systems. The technical modules make you an AI engineer; this one makes you *deployable at a customer*.
+This is the FDE differentiator. Models, interfaces, and agent frameworks commoditize quickly. Understanding how a customer actually works — including tacit rules, reporting conventions, data limitations, and ownership — is what makes a deployed solution useful and durable.
 
 ## Understand in depth
 
-- **Discovery** — sitting with domain owners to extract tacit knowledge: what each field *really* means, how systems join, the limitations/systematics of the data, safeguards, and **reporting conventions**. The goal isn't just a correct answer — it's the answer *the way it's always been given*.
-- **Scoping** — finding the wedge: the narrow, high-value use case that's demoable in days, not the boil-the-ocean platform. Sequencing from wedge to platform.
-- **Domain data modeling** — turning a messy org into entities, relationships, and hierarchies (funding vs. management vs. people lenses); **stitching siloed source systems** on shared entities. The modeling itself surfaces gaps in your understanding — that's a feature.
-- **Demos that land** — showing the A/B contrast (naive vs. your approach) on a real question the customer cares about; the live "find the thing they didn't know" moment.
-- **Integration reality** — dealing with legacy systems, dirty data, access controls, and change requests without owning the customer's whole stack. Fork-and-extend over rebuild.
-- **Serving where they are** — MCP into Claude/ChatGPT/co-work surfaces instead of forcing another app; when the UI is deliberately *not* the deliverable.
-- **Measuring impact & making it stick** — evals tied to the customer's reporting standards, a feedback loop with data owners, and handoff/change management so the thing survives after you leave.
-- **Communication** — translating between the domain expert and the system; writing the doc that captures the tacit knowledge you extracted (this is the asset).
+### Discovery and scoping
+
+- Stakeholder mapping: users, data owners, approvers, operators, and affected teams.
+- Discovery interviews that uncover field meaning, joins, exceptions, safeguards, and reporting conventions.
+- Workflow mapping: decisions, handoffs, queues, and where the current process loses time or quality.
+- Finding a narrow wedge with measurable value instead of building a platform too early.
+- Turning discovery findings into acceptance criteria and customer-language eval questions.
+
+### Domain modeling
+
+- Entities, relationships, hierarchies, ontologies, ownership, and source-of-truth boundaries.
+- Multiple lenses over one domain: funding, management, people, geography, or time.
+- Stitching siloed systems on common entities and documenting unresolved identity ambiguity.
+- Combining structured data with unstructured documents and derived relationships.
+- Using modeling to expose gaps in understanding rather than hiding them.
+
+### Delivery and adoption
+
+- Serving through the surface where users already work: MCP, existing chat, workflow tools, or APIs.
+- Trust UX: evidence, uncertainty, correction, approval, and human handoff.
+- Measuring activation, adoption, time saved, quality, risk reduction, and business impact.
+- Training, change management, ownership, runbooks, and a handoff package.
+- Maintaining the feedback loop after the FDE leaves.
 
 ## Build
 
-- [ ] Pick a domain you *don't* know (a friend's business, an open dataset with real structure). Run a **discovery interview** and produce a written tacit-knowledge doc.
-- [ ] Model that domain as a graph (entities + ≥2 hierarchy lenses), stitching ≥2 separate data sources.
-- [ ] Ship it as an MCP-served assistant and run a **demo** answering a multi-hop question the owner cares about; capture their reaction and the gaps it exposed.
-- [ ] Write customer-facing eval questions in *their* language and run the feedback loop once.
+- [ ] Pick a domain you do not know and run a documented discovery interview.
+- [ ] Produce a tacit-knowledge document with terms, rules, exceptions, owners, and open questions.
+- [ ] Model the domain as a graph with two hierarchy lenses and at least two stitched sources.
+- [ ] Serve it through MCP or an existing user surface rather than inventing a standalone UI first.
+- [ ] Run an A/B demo against a vector or keyword baseline on real domain questions.
+- [ ] Write customer-facing evals in the owner's language and run one feedback loop.
+- [ ] Define an adoption/impact measure and a post-handoff ownership plan.
 
 ## Checklist
 
-- [ ] I can run a discovery interview and extract non-obvious tacit knowledge
-- [ ] I can find the demoable wedge instead of scoping a platform
-- [ ] I can model a real domain as entities/relationships and stitch siloed systems
-- [ ] I can run an A/B demo that shows my approach beating the naive one on a real question
-- [ ] I can serve into the customer's existing surface (MCP) instead of a new UI
-- [ ] I produce the tacit-knowledge doc and eval set that make the work durable
+- [ ] I can run discovery and extract non-obvious tacit knowledge.
+- [ ] I can find a demoable wedge and define acceptance criteria.
+- [ ] I can model a real domain and stitch siloed sources.
+- [ ] I can run an A/B demo showing a meaningful quality or workflow gain.
+- [ ] I can serve the capability into the customer's existing surface.
+- [ ] I can document ownership, adoption, feedback, and handoff.
 
 ## Resources
 
-- [Your Moat Is Your Data Model](../notes/moat-is-your-data-model.md) (talk notes in this site).
-- Palantir FDE writing/talks — the canonical framing of the role.
-- Domain-modeling references (Neo4j graph modeling; event storming / domain-driven design basics).
+- [Your Moat Is Your Data Model](../notes/moat-is-your-data-model.md).
+- Palantir FDE writing and talks.
+- Domain-driven design, event storming, graph modeling, and service blueprinting.

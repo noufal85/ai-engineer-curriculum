@@ -1,44 +1,78 @@
-# Module 6 · Production Systems
+# Module 6 · Production Systems, Platform & Security
 
 ## 🔨 The build
 
-**`builds/06-serving-layer`** _(planned)_ — harden an earlier build for production: **streaming, timeouts, retries, a fallback model, model routing** (cheap→expensive), **per-user entitlement trimming**, and a **prompt-injection defense**. Simulate a provider outage and show graceful degradation. Dockerized (`docker compose up`).
-
-Build it, then the sections below explain each guardrail.
+**`builds/06-serving-layer`** _(planned)_ — harden an earlier build for production with streaming, timeouts, retries, fallback providers, model routing, SLOs, per-user entitlements, PII handling, and prompt-injection defenses. Simulate a provider outage, traffic spike, unauthorized access, and stale data. Dockerized.
 
 ## Why it matters
 
-"Works on my machine with one user" is not a product. Production means latency budgets, cost ceilings, rate limits, fallbacks, security, and data pipelines that don't fall over. This is the AI-engineer half of "forward-deployed" — the system has to survive contact with real load and real data.
+“Works on my machine with one user” is not a product. Production means latency budgets, cost ceilings, rate limits, deployment discipline, security, data freshness, and a recovery story.
 
 ## Understand in depth
 
-- **Serving & latency** — streaming responses, time-to-first-token vs. total time, and where latency actually comes from (retrieval, model, tools, network). Budgeting each.
-- **Cost control** — token accounting, prompt caching, model routing (small model for easy cases, escalate for hard ones), batching, and capping runaway agents.
-- **Reliability** — timeouts, retries with backoff, **fallback models/providers**, graceful degradation, and idempotency for anything that writes.
-- **Rate limits & quotas** — provider limits, queueing, and backpressure so a traffic spike doesn't cascade.
-- **Data pipelines** — ingestion → curation → indexing; the **lakehouse / "everything under one roof"** pattern; dedup, ordering, extraction, and metadata that becomes graph properties (see the [moat notes](../notes/moat-is-your-data-model.md)).
-- **Security & governance** — **prompt injection** and the untrusted-content boundary (data ≠ instructions); **PII masking**, sensitive-data classification, and **per-user entitlements / security trimming** so retrieval never returns what a user shouldn't see. This is non-negotiable, not a v2 feature.
-- **Prompt/version management** — treating prompts, schemas, and model versions as versioned artifacts with CI and eval gates (ties to Module 5).
-- **Deployment surface** — meeting users where they are (Claude/ChatGPT/MCP apps) vs. building your own UI; when the UI is *not* your moat.
+### Runtime reliability
+
+- Time-to-first-token, total latency, retrieval latency, tool latency, and end-to-end budgets.
+- Timeouts, exponential backoff, fallbacks, circuit breakers, graceful degradation, and idempotency.
+- Rate limits, queues, backpressure, batching, continuous batching, and runaway-agent caps.
+- Health versus readiness, graceful shutdown, load testing, and capacity planning.
+
+### Cost and model operations
+
+- Token accounting, prompt/context caching, semantic caching, batch APIs, and cost budgets.
+- Model routing from cheap to expensive, escalation policies, and quality protection.
+- Model gateways and provider adapters.
+- Prompt, schema, model, routing-policy, and index versions as release artifacts.
+- Local/open-model serving, quantization, GPU/VRAM constraints, and when hosted inference is simpler.
+
+### Platform and SRE
+
+- Environments, CI/CD, deployment promotion, feature flags, rollback, and migrations.
+- SLIs, SLOs, error budgets, alerts, runbooks, and incident response.
+- Autoscaling, cold starts, disaster recovery, backups, and configuration drift.
+- Multi-tenant isolation and operational ownership after launch.
+
+### Data pipelines
+
+- Ingestion → curation → indexing, deduplication, ordering, extraction, and metadata.
+- Freshness, incremental updates, source-of-truth ownership, and schema evolution.
+- Data quality checks and the lakehouse or “everything under one roof” pattern.
+
+### Security and governance
+
+- Authentication, authorization, tenant isolation, RBAC/ABAC, service identities, and audit logs.
+- Prompt injection, data exfiltration, unsafe output handling, tool injection, SSRF, data poisoning, and denial-wallet attacks.
+- PII masking, sensitive-data classification, retention, secrets management, and access-aware retrieval.
+- Least privilege, approval gates, red-teaming, and abuse prevention.
+
+### Delivery surface
+
+- Meeting users where they already work: APIs, MCP clients, ChatGPT/Claude surfaces, or a dedicated UI.
+- Trust UX: citations, uncertainty, corrections, human handoff, and safe action confirmation.
 
 ## Build
 
-- [ ] Add **streaming, timeouts, retries, and a fallback model** to a prior build; simulate a provider outage and show graceful degradation.
-- [ ] Implement **model routing** (cheap→expensive escalation) and measure the cost drop at equal quality.
-- [ ] Add **entitlement/security trimming** to your RAG so two users with different permissions get different retrievable sets.
-- [ ] Write a prompt-injection test that tries to make your agent ignore its instructions via retrieved content; defend against it.
+- [ ] Add streaming, timeouts, retries, and fallback behavior; simulate a provider outage.
+- [ ] Implement model routing and measure cost reduction at equivalent quality.
+- [ ] Add a per-user cost budget and rate limit.
+- [ ] Add entitlement/security trimming so users retrieve different permitted sets.
+- [ ] Add PII-safe logging and audit events for sensitive actions.
+- [ ] Write prompt-injection, tool-injection, and unauthorized-access tests.
+- [ ] Define an SLO, run a load test, and show a graceful-degradation path.
+- [ ] Version prompts/schemas/models and gate changes on Module 5 evals.
 
 ## Checklist
 
-- [ ] I can budget and attribute end-to-end latency across retrieval/model/tools
-- [ ] I implement fallbacks + graceful degradation for provider failures
-- [ ] I route across models to control cost without losing quality
-- [ ] I enforce PII masking and per-user entitlements in retrieval
-- [ ] I can demonstrate a prompt-injection defense on untrusted content
-- [ ] I version prompts/schemas/models and gate changes on evals
+- [ ] I can budget and attribute end-to-end latency.
+- [ ] I implement fallbacks and graceful degradation for provider failures.
+- [ ] I route across models to control cost without losing quality.
+- [ ] I understand SLOs, backpressure, capacity, and rollback.
+- [ ] I enforce PII handling and per-user entitlements in retrieval and logs.
+- [ ] I can demonstrate defenses against prompt and tool injection.
+- [ ] I can explain the deployment, ownership, and incident-recovery story.
 
 ## Resources
 
-- Your provider's production/best-practices + prompt-caching docs.
-- OWASP Top 10 for LLM Applications (prompt injection, data leakage, etc.).
-- A tracing/observability tool from Module 5, now pointed at a live service.
+- Provider production best-practices and prompt-caching documentation.
+- OWASP Top 10 for LLM Applications.
+- A tracing/observability tool from Module 5 pointed at a live service.

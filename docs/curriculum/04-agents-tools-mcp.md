@@ -1,42 +1,72 @@
-# Module 4 · Agents, Tools & MCP
+# Module 4 · Agents, Workflows, Tools & MCP
 
 ## 🔨 The build
 
-**`builds/04-agent-and-mcp`** _(planned)_ — a **hand-rolled agent loop** (no framework) with 2–3 tools, a step limit, and full step logging; expose one tool as an **MCP server** and add a **human-in-the-loop gate** before any irreversible action. Dockerized (`docker compose up`).
+**`builds/04-agent-and-mcp`** _(planned)_ — a hand-rolled bounded workflow that uses 2–3 tools, persists state, logs every step, exposes one capability as an MCP server, and pauses for human approval before an irreversible action. Dockerized.
 
 Build it, then the sections below explain the loop and why bounds matter.
 
 ## Why it matters
 
-An agent is a model that can *act* — call tools, read results, decide the next step. This is where AI stops being a chatbot and starts doing work. It's also where reliability gets hard: loops, wrong tool choices, runaway cost. Designing agents that are bounded and debuggable is the skill.
+An agent can act: it calls tools, reads results, and decides what to do next. But many useful systems are better modeled as explicit workflows with a few model-powered steps. Choosing between a deterministic workflow and an open-ended agent is a core engineering decision.
 
 ## Understand in depth
 
-- **Tool/function calling** — how the model requests a call, how you execute and feed results back, and why clean tool schemas + descriptions are half the battle.
-- **The agent loop** — plan → act → observe → repeat. Termination conditions, step limits, and why an unbounded loop is a bug waiting to happen.
-- **Planning & decomposition** — single-shot tool use vs. multi-step plans vs. ReAct-style interleaving. When each is appropriate.
-- **MCP (Model Context Protocol)** — the standard for exposing tools/data/prompts to any model. Servers vs. clients, why a **single semantic layer over your systems** (see the [moat notes](../notes/moat-is-your-data-model.md)) beats bespoke integrations. Forking/extending off-the-shelf MCP servers, passing state (conversation/message IDs).
-- **Multi-agent** — orchestrator/worker patterns, when splitting agents helps vs. adds failure surface. Default to *one* good agent until you can prove you need more.
-- **Sandboxing & safety** — running tool code and untrusted output safely; least-privilege tools; human-in-the-loop for irreversible actions.
-- **Reliability engineering** — retries, idempotent tools, guarding against the model calling `delete` / destructive tools, and making every step traceable (→ Module 5).
-- **Frameworks vs. hand-rolled** — what LangGraph/Agents SDKs give you vs. the cost of the abstraction. Know how to build the loop by hand first.
+### Tool use and the loop
+
+- Tool/function calling, typed arguments, validation, descriptions, and result envelopes.
+- Plan → act → observe → repeat, termination conditions, step limits, budgets, and cancellation.
+- Tool errors as data the model can recover from, versus errors that must stop the run.
+- Retries, idempotent writes, compensation, and safe handling of partial completion.
+
+### Workflow versus agent
+
+- Deterministic workflows for known sequences and predictable approvals.
+- Single-shot tool use for simple lookups or actions.
+- Bounded agents for tasks with uncertain paths but clear tools and stop conditions.
+- Multi-agent orchestration only when one good agent cannot do the work cleanly.
+
+### State and durability
+
+- Conversation state, task state, checkpoints, resumability, and expiration.
+- Queues and background workers for long-running work.
+- Exactly-once as an aspiration: design practical idempotency and reconciliation instead.
+- Human approval, cancellation, escalation, and recovery after a process restart.
+
+### MCP and protocols
+
+- MCP servers and clients; tools, resources, prompts, lifecycle, transports, and capability negotiation.
+- Authentication, authorization, versioning, compatibility, error handling, and observability.
+- A semantic layer over systems versus one bespoke integration per application.
+- Forking and extending an MCP server while preserving a stable contract.
+
+### Safety and isolation
+
+- Least-privilege tools, per-user permissions, sandboxing, untrusted tool output, and human gates.
+- Browser/computer use versus defined tool calls.
+- Preventing destructive actions, data exfiltration, prompt injection, and runaway spend.
 
 ## Build
 
-- [ ] Hand-roll an agent loop (no framework) with 2–3 tools, a step limit, and full step logging.
-- [ ] Expose one of your tools as an **MCP server** and drive it from an MCP client.
-- [ ] Add a **human-in-the-loop gate** before any irreversible tool call; prove the agent can't act without approval.
+- [ ] Hand-roll an agent/workflow loop with 2–3 tools, bounded steps, cancellation, and full logging.
+- [ ] Persist task state and resume after a simulated process restart.
+- [ ] Expose one tool as an MCP server and drive it from an MCP client.
+- [ ] Add tool authorization based on the requesting user.
+- [ ] Add a human gate before an irreversible call and prove the gate cannot be bypassed.
+- [ ] Inject a tool failure and show recovery, escalation, or safe termination.
 
 ## Checklist
 
-- [ ] I can build an agent loop from scratch with bounded steps and logging
-- [ ] I can write clean tool schemas and explain why descriptions matter
-- [ ] I can build and consume an MCP server
-- [ ] I gate irreversible actions behind human approval
-- [ ] I can justify single-agent vs. multi-agent for a task instead of defaulting to multi
+- [ ] I can build an agent loop from scratch with bounded steps and logging.
+- [ ] I can identify when a deterministic workflow is better than an agent.
+- [ ] I can write clean tool schemas and explain why descriptions matter.
+- [ ] I can persist, resume, cancel, and reconcile a long-running task.
+- [ ] I can build and consume an MCP server with an explicit compatibility contract.
+- [ ] I gate irreversible actions behind authorization and human approval.
+- [ ] I can justify single-agent versus multi-agent design.
 
 ## Resources
 
-- Anthropic *"Building effective agents"* (patterns, not hype).
-- MCP spec + a reference server/client; Claude Code as a real-world MCP client example.
-- Read one agent framework's source (LangGraph or the Agents SDK) *after* hand-rolling.
+- Anthropic, *Building effective agents*.
+- The MCP specification and a reference server/client.
+- Read one agent framework's runtime source after hand-rolling the loop.

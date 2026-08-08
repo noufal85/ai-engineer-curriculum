@@ -1,5 +1,7 @@
 # Module 0 · Foundations & Environment
 
+If HTTP, async programming, SQL, testing, or Docker are unfamiliar, complete the [Engineering Core prerequisite track](engineering-core.md) first.
+
 ## 🔨 The build
 
 **[`builds/00-hello-llm`](https://github.com/noufal85/ai-engineer-curriculum/tree/main/builds/00-hello-llm)** — a Dockerized FastAPI service with two endpoints: one **streams** a model response token-by-token, the other returns a **schema-validated object** from free text.

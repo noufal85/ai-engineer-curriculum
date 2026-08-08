@@ -1,53 +1,57 @@
 # Module 8 · Capstones
 
-## 🔨 The builds
+## 🔨 Builds
 
-Each capstone is its own build under [`builds/`](https://github.com/noufal85/ai-engineer-curriculum/tree/main/builds) — Dockerized, deployed at a public URL, with an eval suite and a design doc. Pick **one or two** and go deep; a finished capstone beats ten started tutorials.
+Each capstone is a Dockerized build with a public or reviewable deployment, an eval suite, tracing, a design document, and a customer-value narrative. Pick one or two and go deep; a finished capstone is worth more than ten started tutorials.
 
 ## Why it matters
 
-Modules build skills in isolation; capstones prove you can integrate them into something that works end to end, under real constraints, with evals to back the claim. Pick **one or two** and go deep — a finished capstone is worth more than ten started tutorials.
+The modules build skills in isolation. A capstone proves you can integrate retrieval quality, latency, cost, reliability, security, evaluation, and real user value under constraints.
 
-## Understand in depth
+## Capstone options
 
-The point of a capstone is to force the tradeoffs together: retrieval quality *and* latency *and* cost *and* evals *and* security *and* a real user. Each capstone below is scoped to exercise most of the stack.
+### A · Grounded RAG assistant
 
-## The capstones
+Hybrid retrieval + reranking, citations, streaming UI, faithfulness and retrieval evals, tracing, PII handling, and per-user entitlements.
 
-### A · Grounded RAG assistant with evals
-A production-shaped RAG app over a real corpus: hybrid retrieval + reranking, citations, streaming UI, an eval suite (`pass@1` + faithfulness), tracing, and per-user entitlements.
+### B · Bounded agent and MCP tools
 
-- [ ] Retrieval quality measured and improved against a baseline
-- [ ] Eval suite gates every prompt/model change
-- [ ] Entitlement trimming + PII masking in place
-- [ ] Deployed publicly, streamed, traced
+A hand-rolled workflow/agent performs real multi-step work through at least three MCP-exposed tools, with state, step limits, authorization, human approval, tracing, and task-success evals.
 
-### B · Bounded agent with MCP tools
-A hand-rolled agent that does real multi-step work through ≥3 tools exposed via MCP, with step limits, human-in-the-loop on irreversible actions, full tracing, and a task-success eval.
+### C · GraphRAG domain twin
 
-- [ ] Agent loop is bounded and fully logged
-- [ ] Tools exposed via a real MCP server
-- [ ] Irreversible actions gated on approval
-- [ ] Task-success eval with stability measured
+Discovery → tacit-knowledge document → multi-lens graph model → stitched sources → MCP-served customer-language experience → feedback loop.
 
-### C · GraphRAG domain twin (FDE capstone)
-The Module 7 build, taken to production: discovery → tacit-knowledge doc → graph model (multi-lens, stitched sources) → MCP-served assistant → A/B demo vs. vector baseline → customer-language evals + feedback loop.
+### D · Cost and latency optimized serving
 
-- [ ] Tacit-knowledge doc produced from real discovery
-- [ ] Multi-hop question the graph answers and vectors don't, demonstrated
-- [ ] Served into an existing surface (MCP)
-- [ ] Evals in the domain owner's language, feedback loop run once
-
-### D · Cost/latency-optimized serving layer
-Take capstone A or B and make it *cheap and fast*: model routing, prompt caching, fallbacks, batching, and a load test — with a before/after report on cost, p50/p95 latency, and quality held constant.
-
-- [ ] Model routing + caching implemented
-- [ ] Fallback/degradation proven under simulated outage
-- [ ] Before/after cost + latency report at equal quality
+Take A or B and make it cheaper and faster through routing, caching, batching, fallbacks, load testing, and a before/after report at equal quality.
 
 ## Definition of done
 
-- [ ] The capstone is deployed at a public URL
-- [ ] It has an eval suite and a tracing dashboard
-- [ ] There's a written design doc defending the key tradeoffs
-- [ ] I can demo it live and explain every layer
+- [ ] The system has a clear user, workflow, wedge, and acceptance criteria.
+- [ ] A representative and adversarial eval suite exists and runs repeatably.
+- [ ] Prompt, model, schema, data, and routing changes are versioned.
+- [ ] Quality, stability, latency, cost, and security are measured.
+- [ ] The deployment has auth, secrets handling, logs, traces, health checks, and a rollback path.
+- [ ] The system handles at least one provider, data, tool, or permission failure safely.
+- [ ] The design document defends the major architectural tradeoffs.
+- [ ] The demo shows evidence, uncertainty, correction, and human handoff where relevant.
+- [ ] There is an ownership, runbook, adoption, and post-launch feedback plan.
+
+## Capstone rubric
+
+Score each area from 0–3: 0 = absent, 1 = demonstrated locally, 2 = measured and repeatable, 3 = production-shaped and defended.
+
+| Area | What good looks like |
+|---|---|
+| User value | A real workflow, clear wedge, and measurable outcome |
+| Quality | Representative, adversarial, and regression-tested behavior |
+| Reliability | Bounded failure modes, recovery, SLOs, and rollback |
+| Security | Auth, least privilege, data protection, and abuse tests |
+| Operations | Deployment, observability, cost controls, and ownership |
+| Communication | Clear demo, design doc, tradeoff reasoning, and handoff |
+
+## Resources
+
+- Reuse the build templates and eval conventions from Modules 0–7.
+- Prefer a narrow domain with realistic constraints over a generic chatbot.

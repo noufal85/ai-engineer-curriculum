@@ -61,6 +61,7 @@ nav:
   - Progress: progress.md
   - Curriculum:
       - curriculum/index.md
+      - Engineering Core: curriculum/engineering-core.md
       - 0 · Foundations: curriculum/00-foundations.md
       - 1 · LLM Internals: curriculum/01-llm-internals.md
       - 2 · Prompting & Context: curriculum/02-prompting-context.md
@@ -70,8 +71,10 @@ nav:
       - 6 · Production Systems: curriculum/06-production-systems.md
       - 7 · The Forward-Deployed Craft: curriculum/07-forward-deployed.md
       - 8 · Capstones: curriculum/08-capstones.md
+      - Optional Specializations: curriculum/specializations.md
   - Concepts:
       - concepts/index.md
+      - Engineering Core: concepts/engineering-core.md
       - Foundations: concepts/foundations.md
       - Models & Providers: concepts/models-and-providers.md
       - Prompting & Context: concepts/prompting.md
@@ -79,6 +82,8 @@ nav:
       - Agents & Protocols: concepts/agents-and-protocols.md
       - Evals & Observability: concepts/evals-and-observability.md
       - Serving & Ops: concepts/serving-and-ops.md
+      - Platform & SRE: concepts/platform-and-sre.md
+      - Product & Adoption: concepts/product-and-adoption.md
       - Safety & Security: concepts/safety-and-security.md
   - Talk Notes:
       - notes/index.md

@@ -1,21 +1,23 @@
 # Concepts
 
-The **target vocabulary** for this course — the terms and concepts an AI engineer should be fluent in by the time it ends. This is the reference half; the [modules](../curriculum/index.md) are where you build them.
+This is the target vocabulary for the course — the terms and concepts an AI engineer should be fluent in by the time it ends. The glossary is the reference half; the [curriculum](../curriculum/index.md) is where you build them.
 
 !!! note "How to read this"
-    Each entry is a one-line definition plus a pointer to where it's covered: **`→ M3`** means "covered in [Module 3](../curriculum/index.md)." A concept can show up in several modules — the pointers list all the relevant ones. Concepts with no pointer are background vocabulary you'll pick up along the way.
 
-    Use the search box (top of the page) to jump to any term. This is a living list — add terms as you meet them.
+    Each entry has a short definition plus a pointer to where it is covered. **`→ M3`** means “covered in Module 3.” A term may appear in several modules. If a term has no module pointer, it is background vocabulary or a future specialization.
 
-## The categories
+## Categories
 
-- [**Foundations**](foundations.md) — how LLMs work: tokens, embeddings, context windows, sampling, hallucination.
-- [**Models & providers**](models-and-providers.md) — OpenAI, Anthropic, Google/Gemini, open models, gateways (OpenRouter), clouds, and model-level concepts (fine-tuning, distillation, quantization).
-- [**Prompting & context**](prompting.md) — prompt engineering, structured output, tool calling, caching, context engineering.
-- [**Retrieval & data**](retrieval-and-data.md) — embeddings, vector databases, RAG, hybrid search, reranking, knowledge graphs, GraphRAG, memory.
-- [**Agents & protocols**](agents-and-protocols.md) — agent loops, tool use, MCP, orchestration frameworks, multi-agent.
-- [**Evals & observability**](evals-and-observability.md) — evals, benchmarks, LLM-as-judge, tracing, metrics.
-- [**Serving & ops**](serving-and-ops.md) — streaming, latency, batching, caching, routing, inference engines and providers.
-- [**Safety & security**](safety-and-security.md) — prompt injection, jailbreaks, PII, guardrails, the OWASP LLM Top 10.
+- [**Engineering core**](engineering-core.md) — APIs, persistence, testing, delivery, and the software foundations around AI features.
+- [**Foundations**](foundations.md) — how LLMs work: tokens, embeddings, context windows, sampling, and hallucination.
+- [**Models & providers**](models-and-providers.md) — model families, gateways, open weights, adaptation, and inference.
+- [**Prompting & context**](prompting.md) — prompt engineering, structured output, tool calling, caching, and context engineering.
+- [**Retrieval & data**](retrieval-and-data.md) — embeddings, vector databases, RAG, hybrid search, reranking, knowledge graphs, and memory.
+- [**Agents & protocols**](agents-and-protocols.md) — agent loops, workflows, tool use, MCP, orchestration, and multi-agent systems.
+- [**Evals & observability**](evals-and-observability.md) — evals, benchmarks, judges, tracing, metrics, and feedback loops.
+- [**Serving & ops**](serving-and-ops.md) — streaming, latency, batching, caching, routing, inference, and runtime operations.
+- [**Platform & SRE**](platform-and-sre.md) — SLOs, backpressure, deployment, rollback, scaling, and AI runtime policy.
+- [**Product & adoption**](product-and-adoption.md) — discovery, trust UX, workflows, impact, adoption, and handoff.
+- [**Safety & security**](safety-and-security.md) — prompt injection, data protection, authorization, red-teaming, and governance.
 
-> **M0–M8** throughout refer to [curriculum modules](../curriculum/index.md).
+This is a living list. Add terms when they appear in a build, a design decision, or a production incident.

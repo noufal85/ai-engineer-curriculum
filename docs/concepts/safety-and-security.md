@@ -1,32 +1,43 @@
 # Safety & Security
 
-Non-negotiable, not a v2 feature. Mostly **`→ M6`**, with red-teaming in [M5](../curriculum/05-evals-observability.md)/[M8](../curriculum/08-capstones.md).
+Non-negotiable, not a v2 feature. Mostly **→ M6**, with red-teaming in [M5](../curriculum/05-evals-observability.md) and [M8](../curriculum/08-capstones.md).
 
-## Attacks
+## Attacks and untrusted input
 
-- **Prompt injection** — untrusted content in the context overriding your instructions. **Direct** (in the user input) vs **indirect** (hidden in a retrieved doc, web page, or tool output). *→ M2, M6, M8*
-- **Jailbreak** — coaxing a model past its safety training. *→ M6*
-- **Prompt / system-prompt leaking** — tricking the model into revealing its hidden instructions. *→ M6*
-- **Data exfiltration** — using the model/agent to leak private data out of the system. *→ M6*
-- **Denial of wallet** — driving up token cost as an attack. *→ M6*
-- **The data ≠ instructions boundary** — the core defense mindset: everything the model reads is data, not commands. *→ M2, M6*
-- **OWASP LLM Top 10** — the canonical catalog of LLM app risks (injection, data leakage, insecure output handling, etc.). *→ M6*
+- **Prompt injection** — untrusted content overriding instructions. **Direct** injection appears in user input; **indirect** injection is hidden in retrieved documents, web pages, or tool output. *→ M2, M6, M8*
+- **Jailbreak** — coaxing a model past its safety behavior. *→ M6*
+- **Prompt leaking** — tricking a system into revealing hidden instructions or sensitive context. *→ M6*
+- **Data exfiltration** — using a model or agent to move private data outside its authorized boundary. *→ M6*
+- **Tool injection** — malicious or malformed tool results steering later actions. *→ M4, M6*
+- **SSRF** — inducing a server-side request to an internal or unintended network target. *→ M6*
+- **Data poisoning** — inserting or altering source data to influence retrieval or model behavior. *→ M3, M6*
+- **Denial wallet** — driving up token or tool costs through adversarial requests. *→ M6*
+- **The data ≠ instructions boundary** — treat everything the model reads as data unless the application explicitly authorizes it as a command. *→ M2, M6*
+- **OWASP LLM Top 10** — a catalog of common LLM application risks. *→ M6*
 
-## Data protection
+## Identity and authorization
 
-- **PII (personally identifiable information)** — must be masked/handled per regulation (GDPR, CCPA). *→ M6*
-- **PII masking / redaction** — removing sensitive data before it reaches the model or logs. *→ M6*
-- **Entitlements / security trimming** — ensuring retrieval never returns what a user isn't allowed to see. *→ M6, M7*
-- **Secrets management** — keeping API keys/tokens out of prompts, code, and logs. *→ M0, M6*
-- **Least privilege** — giving tools/agents only the access they need. *→ M4, M6*
-- **Output filtering / moderation** — screening generations for unsafe or disallowed content. *→ M6*
+- **Authentication** — proving who a user or service is.
+- **Authorization** — deciding what that identity may read or do.
+- **RBAC / ABAC** — permissions based on roles / attributes such as tenant, project, or sensitivity.
+- **Tenant isolation** — ensuring one customer cannot observe or influence another customer's data or budget.
+- **Least privilege** — giving a model, tool, worker, or service only the access it needs. *→ M4, M6*
+- **Security trimming** — applying authorization filters before retrieval results enter model context. *→ M6, M7*
+- **Audit log** — an append-only record of sensitive reads, writes, approvals, and policy decisions.
 
-## Model & org safety
+## Data protection and governance
 
-- **Guardrails** — input/output checks that constrain what a model can accept or produce. *→ M6*
-- **Alignment** — training a model to be helpful, honest, and harmless. *→ M1*
-- **Red-teaming** — adversarial testing to find failures before attackers do. *→ M5, M8*
-- **Bias & toxicity** — systematic unfairness or harmful output to test and mitigate. *→ M5*
-- **Hallucination as a safety issue** — confident wrong answers in high-stakes settings. *→ M1, M3, M5*
-- **Provenance / watermarking** — tracing or marking AI-generated content.
-- **Authorization for actions** — confirm irreversible/outward-facing actions before an agent takes them. *→ M4, M6*
+- **PII** — personally identifiable information that must be handled according to policy and regulation. *→ M6*
+- **PII masking / redaction** — removing or transforming sensitive data before it reaches models or logs. *→ M6*
+- **Secrets management** — keeping API keys, tokens, and credentials out of code, prompts, and logs. *→ Engineering Core, M6*
+- **Data retention** — defining how long prompts, outputs, traces, and source data are kept.
+- **Output handling** — validating and escaping model output before it reaches a database, browser, shell, or external system.
+- **Moderation** — screening inputs or outputs for prohibited or unsafe content.
+
+## Safety controls
+
+- **Red-teaming** — deliberately trying to break a system and documenting the resulting failures. *→ M5, M8*
+- **Threat model** — a structured analysis of assets, actors, attack paths, and mitigations.
+- **Human approval** — requiring a person before an irreversible or outward-facing action. *→ M4, M6*
+- **Sandboxing** — isolating code execution and untrusted content from sensitive systems. *→ M4, M6*
+- **Policy enforcement point** — the application boundary that checks identity, permissions, budgets, and action policy before execution.
