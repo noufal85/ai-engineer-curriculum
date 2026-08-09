@@ -1606,6 +1606,33 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../image-credits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Image Credits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1893,20 +1920,22 @@
 <h2 id="what-is-ai">What is AI?<a class="headerlink" href="#what-is-ai" title="Permanent link">&para;</a></h2>
 <p><strong>Artificial intelligence (AI)</strong> is the broad field of building computer systems that perform tasks we associate with human intelligence: recognizing patterns, understanding language, making predictions, planning, or choosing an action.</p>
 <p>AI is not one single technology. It is an umbrella term:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>flowchart LR
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    AI[&quot;Artificial intelligence&quot;] --&gt; ML[&quot;Machine learning&quot;]
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    ML --&gt; DL[&quot;Deep learning&quot;]
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    DL --&gt; FM[&quot;Foundation models&quot;]
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    FM --&gt; LLM[&quot;Large language models&quot;]
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    LLM --&gt; Apps[&quot;AI applications&quot;]
-</code></pre></div>
+<pre class="mermaid"><code>flowchart LR
+    AI["Artificial intelligence"] --&gt; ML["Machine learning"]
+    ML --&gt; DL["Deep learning"]
+    DL --&gt; FM["Foundation models"]
+    FM --&gt; LLM["Large language models"]
+    LLM --&gt; Apps["AI applications"]</code></pre>
+<p>Here is the same relationship as a real-world reference diagram:</p>
+<p><img alt="AI, machine learning, and deep learning relationships" src="../../assets/images/ai-ml-dl.svg" /></p>
+<p><em>Image credit: <a href="../../image-credits/">AI-ML-DL.svg</a>.</em></p>
 <h3 id="machine-learning">Machine learning<a class="headerlink" href="#machine-learning" title="Permanent link">&para;</a></h3>
 <p>In traditional programming, a person writes rules that transform inputs into outputs:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>rules + input → output
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>rules + input → output
 </code></pre></div>
 <p>In <strong>machine learning</strong>, we give a system examples and let it learn patterns that help it produce outputs for new inputs:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>examples → learned model
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>learned model + new input → prediction
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>examples → learned model
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>learned model + new input → prediction
 </code></pre></div>
 <p>The model is not “thinking” in the human sense. It is calculating a prediction from patterns learned during training.</p>
 <h3 id="deep-learning">Deep learning<a class="headerlink" href="#deep-learning" title="Permanent link">&para;</a></h3>
@@ -1915,15 +1944,14 @@
 <p><strong>Generative AI</strong> produces new content: text, code, images, audio, or video. Instead of only classifying an input as “spam” or “not spam,” a generative model can write an email, summarize a document, or generate an image.</p>
 <h2 id="what-is-an-llm">What is an LLM?<a class="headerlink" href="#what-is-an-llm" title="Permanent link">&para;</a></h2>
 <p>An <strong>LLM</strong>, or <strong>large language model</strong>, is a deep-learning model trained on a very large collection of text and code. Its core job is to predict what token is likely to come next:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>flowchart LR
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    Text[&quot;Text so far&quot;] --&gt; Tokens[&quot;Tokens&quot;]
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    Tokens --&gt; Model[&quot;Language model&quot;]
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    Model --&gt; Probabilities[&quot;Next-token probabilities&quot;]
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    Probabilities --&gt; Next[&quot;One selected token&quot;]
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    Next --&gt; Text
-</code></pre></div>
+<pre class="mermaid"><code>flowchart LR
+    Text["Text so far"] --&gt; Tokens["Tokens"]
+    Tokens --&gt; Model["Language model"]
+    Model --&gt; Probabilities["Next-token probabilities"]
+    Probabilities --&gt; Next["One selected token"]
+    Next --&gt; Text</code></pre>
 <p>For example, after seeing:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>The capital of France is
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>The capital of France is
 </code></pre></div>
 <p>the model assigns a high probability to the token <code>Paris</code>. It then repeats the process for the next token.</p>
 <p>This simple description explains several important facts:</p>
@@ -1956,21 +1984,23 @@
 </tr>
 </tbody>
 </table>
+<p>This training-to-inference split is also shown in the following workflow diagram:</p>
+<p><img alt="Machine-learning system workflow" src="../../assets/images/ml-system-workflow.png" /></p>
+<p><em>Image credit: <a href="../../image-credits/">Workflow of a machine-learning-based AI system</a>.</em></p>
 <p>This course focuses on <strong>inference and application engineering</strong>. You will learn how to choose models, provide useful context, validate outputs, connect tools, evaluate behavior, and operate the result.</p>
 <h2 id="what-happens-when-our-app-uses-an-llm">What happens when our app uses an LLM?<a class="headerlink" href="#what-happens-when-our-app-uses-an-llm" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sequenceDiagram
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    participant U as User
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    participant A as Your application
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    participant P as Model provider
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    participant V as Validator
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    U-&gt;&gt;A: Send question
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    A-&gt;&gt;P: Prompt + context + settings
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    P--&gt;&gt;A: Stream or structured response
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    A-&gt;&gt;V: Validate output
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    V--&gt;&gt;A: Accepted object or error
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    A--&gt;&gt;U: Useful response
-</code></pre></div>
+<pre class="mermaid"><code>sequenceDiagram
+    participant U as User
+    participant A as Your application
+    participant P as Model provider
+    participant V as Validator
+
+    U-&gt;&gt;A: Send question
+    A-&gt;&gt;P: Prompt + context + settings
+    P--&gt;&gt;A: Stream or structured response
+    A-&gt;&gt;V: Validate output
+    V--&gt;&gt;A: Accepted object or error
+    A--&gt;&gt;U: Useful response</code></pre>
 <p>Your code is the layer that makes the model useful and safe. It decides what to send, which model to use, what tools or data are available, how to validate the result, and what the user sees when something fails.</p>
 <h2 id="tokens-context-and-prompts">Tokens, context, and prompts<a class="headerlink" href="#tokens-context-and-prompts" title="Permanent link">&para;</a></h2>
 <h3 id="tokens">Tokens<a class="headerlink" href="#tokens" title="Permanent link">&para;</a></h3>
@@ -2009,9 +2039,9 @@
 <h2 id="the-build">🔨 The build<a class="headerlink" href="#the-build" title="Permanent link">&para;</a></h2>
 <p><strong><a href="https://github.com/noufal85/ai-engineer-curriculum/tree/main/builds/00-hello-llm"><code>builds/00-hello-llm</code></a></strong> — a Dockerized FastAPI service with two endpoints: one <strong>streams</strong> a model response token-by-token, the other returns a <strong>schema-validated object</strong> from free text.</p>
 <p>New to API keys or environment variables? Read <a href="../environment-and-programming/">Developer Environment &amp; Programming Basics</a> first.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">cd</span><span class="w"> </span>builds/00-hello-llm
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>cp<span class="w"> </span>.env.example<span class="w"> </span>.env<span class="w">      </span><span class="c1"># add ANTHROPIC_API_KEY</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>--build<span class="w"> </span><span class="c1"># open http://localhost:8000</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span>builds/00-hello-llm
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>cp<span class="w"> </span>.env.example<span class="w"> </span>.env<span class="w">      </span><span class="c1"># add ANTHROPIC_API_KEY</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>--build<span class="w"> </span><span class="c1"># open http://localhost:8000</span>
 </code></pre></div>
 <p>Run it before reading on. Every later build is a variation on these two moves.</p>
 <h2 id="what-we-built">What we built<a class="headerlink" href="#what-we-built" title="Permanent link">&para;</a></h2>
