@@ -176,7 +176,7 @@ cp .env.example .env      # add ANTHROPIC_API_KEY
 docker compose up --build # open http://localhost:8000
 ```
 
-Run it before reading on. Every later build is a variation on these two moves.
+Run it before reading on. Many later artifacts are variations on these two moves, but some topics will stay as small snippets or local experiments.
 
 ## What we built
 

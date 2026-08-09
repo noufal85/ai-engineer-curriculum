@@ -2,7 +2,7 @@
 
 ## 🔨 The build
 
-**`builds/01-model-playground`** _(planned)_ — a Dockerized app that runs the same prompt across models (Opus/Haiku) and sampling settings, and shows the **quality / cost / latency deltas side by side**. You *see* the internals instead of reading about them.
+**`snippets/01-model-playground.py`** _(planned)_ — a small local script that runs the same prompt across models and sampling settings, and shows the **quality / cost / latency deltas side by side**. Docker is optional if the experiment later becomes a service.
 
 Build it, then the sections below explain what you just watched — reference, not a lecture.
 

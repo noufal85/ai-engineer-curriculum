@@ -2,7 +2,7 @@
 
 ## 🔨 The build
 
-**`builds/02-reliable-extractor`** _(planned)_ — take a flaky "please return JSON" prompt and make it **reliable** with tool-calling + schema validation and a **cache-friendly** prompt layout; the app measures the failure-rate drop and the latency/cost win over 100 runs. Dockerized (`docker compose up`).
+**`builds/02-reliable-extractor`** _(planned)_ — take a flaky "please return JSON" prompt and make it **reliable** with tool-calling + schema validation and a **cache-friendly** prompt layout; the local lab measures the failure-rate drop and the latency/cost win over 100 runs. Dockerize it only if the experiment becomes a reusable service.
 
 Build it, then the sections below explain the levers you pulled.
 

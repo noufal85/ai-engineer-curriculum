@@ -14,7 +14,7 @@ By the end, you should be able to:
 - Set an API key as an environment variable for one command, one terminal session, or a project.
 - Check whether a variable exists without printing the secret.
 - Explain why secrets should not be hard-coded or committed to Git.
-- Start a Dockerized build and understand how its variables reach the application.
+- Start a snippet, local script, or Dockerized build and understand how its variables reach the application.
 
 ## The small mental model
 
@@ -180,7 +180,14 @@ Never use `print(os.environ["ANTHROPIC_API_KEY"])` as a setup check.
 
 ## A first setup exercise
 
-Run this from the repository root:
+Start with the smallest setup snippet:
+
+```bash
+python snippets/00-hello-env.py
+MODEL=demo-model python snippets/00-hello-env.py
+```
+
+Then run the Dockerized example from the repository root:
 
 ```bash
 cd builds/00-hello-llm

@@ -49,7 +49,7 @@ It is intentionally practical: learn each topic while building a small service, 
 
 ## Why this track matters
 
-The later modules assume you can build and operate a small service. This track prevents the course from becoming a collection of isolated LLM demos and gives every later build a shared engineering baseline.
+The later modules assume you can build and operate a small service. This track prevents the course from becoming a collection of isolated LLM demos and gives every later artifact a shared engineering baseline.
 
 ## Exit criteria
 

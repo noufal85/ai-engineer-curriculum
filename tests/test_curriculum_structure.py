@@ -98,6 +98,16 @@ class CurriculumStructureTests(unittest.TestCase):
         self.assertIn("name: mermaid", mkdocs)
         self.assertIn("class: mermaid", mkdocs)
 
+    def test_course_supports_snippets_and_tiered_build_formats(self) -> None:
+        builds = self.read("builds/README.md")
+        home = self.read("docs/index.md")
+        curriculum = self.read("docs/curriculum/index.md")
+
+        combined = (builds + home + curriculum).lower()
+        self.assertIn("snippet", combined)
+        self.assertIn("dockerized only when", combined)
+        self.assertNotIn("everything is dockerized", builds.lower())
+
 
 if __name__ == "__main__":
     unittest.main()

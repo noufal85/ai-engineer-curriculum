@@ -4,7 +4,7 @@ A self-tracked, **build-first** path through AI engineering and the forward-depl
 
 !!! quote "How this works"
 
-    **Build first, explain second.** Every core topic is anchored to a small app you can run. You build the thing, observe where it breaks, then study the concept underneath.
+    **Do the smallest useful experiment first.** Some topics use a five-line snippet, some use a local script, and some need a service or multi-component build. You run the artifact, observe where it breaks, then study the concept underneath.
 
 ## The learning path
 
@@ -16,9 +16,17 @@ A self-tracked, **build-first** path through AI engineering and the forward-depl
 
 ## Three rules
 
-1. **Everything important gets built.** Reference vocabulary can stay lightweight; working knowledge must have a lab.
-2. **Every build is self-contained.** Code lives in [`builds/`](https://github.com/noufal85/ai-engineer-curriculum), with a README, Docker setup, acceptance criteria, and a failure case.
+1. **Everything important gets practiced.** Reference vocabulary can stay lightweight; working knowledge gets a snippet, lab, or build.
+2. **Use the lightest format that teaches the idea.** Snippets should stay small. Docker is reserved for services, multi-component systems, isolation, and reproducibility.
 3. **Every claim is measured.** Track quality, latency, cost, security, and user value instead of relying on a successful demo.
+
+## Learning formats
+
+| Format | Use it when | Typical shape |
+|---|---|---|
+| **Snippet** | One concept can be demonstrated in minutes | One file, standard library or one small dependency |
+| **Local lab** | The learner needs a few files or repeated experiments | A small folder, virtual environment, and a local command |
+| **Dockerized build** | The lesson needs a service boundary, multiple dependencies, or reproducibility | A self-contained folder with Docker and an operational README |
 
 ## Start here
 

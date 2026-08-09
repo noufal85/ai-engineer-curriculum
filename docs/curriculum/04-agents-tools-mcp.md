@@ -2,7 +2,7 @@
 
 ## 🔨 The build
 
-**`builds/04-agent-and-mcp`** _(planned)_ — a hand-rolled bounded workflow that uses 2–3 tools, persists state, logs every step, exposes one capability as an MCP server, and pauses for human approval before an irreversible action. Dockerized.
+**`builds/04-agent-and-mcp`** _(planned)_ — a hand-rolled bounded workflow that uses 2–3 tools, persists state, logs every step, exposes one capability as an MCP server, and pauses for human approval before an irreversible action. Start as a local lab; Dockerize it when the server boundary or reproducibility becomes part of the lesson.
 
 Build it, then the sections below explain the loop and why bounds matter.
 

@@ -1,6 +1,6 @@
 # Build 00 · hello-llm
 
-The smallest LLM service worth running: **stream a response** and **extract a validated object from text**. Every later build is a variation on these two moves.
+The smallest LLM service worth running: **stream a response** and **extract a validated object from text**. Many later artifacts are variations on these two moves; simpler concepts may stay as snippets or local experiments.
 
 ## Run it
 
@@ -11,7 +11,7 @@ cp .env.example .env      # then paste your ANTHROPIC_API_KEY into .env
 docker compose up --build
 ```
 
-Open <http://localhost:8000> — a tiny page with two boxes to try both endpoints. Tear it down with `docker compose down`. That's the whole point of Dockerizing every build: `up` to play, `down` to forget it.
+Open <http://localhost:8000> — a tiny page with two boxes to try both endpoints. Tear it down with `docker compose down`. This service is Dockerized because it has a network boundary and a repeatable runtime; simpler lessons do not need the same setup.
 
 Prefer curl:
 

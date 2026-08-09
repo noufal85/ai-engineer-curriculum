@@ -1,6 +1,6 @@
 # AI Engineer / FDE Curriculum
 
-A self-tracked, **build-first** path to AI engineering and the forward-deployed engineer (FDE) craft. Build a small Dockerized app for each topic, run it, then read the concept it makes concrete.
+A self-tracked, **learn-by-doing** path to AI engineering and the forward-deployed engineer (FDE) craft. Use the lightest useful format for each topic: a snippet, a local script, a small lab, or a Dockerized application.
 
 **📖 Site:** <https://noufal85.github.io/ai-engineer-curriculum/>
 
@@ -15,7 +15,8 @@ docker compose up --build # open http://localhost:8000
 ## Structure
 
 - `docs/` — the "explain" half (MkDocs Material site). Curriculum, progress tracker, talk notes.
-- `builds/` — the "build" half. One self-contained, Dockerized folder per build.
+- `snippets/` — short, dependency-light exercises for one concept at a time.
+- `builds/` — larger labs and services. Docker is used when isolation, multiple services, or reproducibility make it worthwhile.
 - `docs/curriculum/environment-and-programming.md` — beginner-friendly setup for terminals, environment variables, API keys, and Docker.
 - `docs/curriculum/engineering-core.md` — prerequisite software-engineering track before Module 0.
 - `docs/curriculum/specializations.md` — optional multimodal, adaptation, local-inference, and coding-agent tracks.
