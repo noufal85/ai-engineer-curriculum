@@ -12,13 +12,13 @@
         <meta name="author" content="Noufal Edappanoli">
       
       
-        <link rel="canonical" href="https://noufal85.github.io/ai-engineer-curriculum/curriculum/06-production-systems/">
+        <link rel="canonical" href="https://noufal85.github.io/ai-engineer-curriculum/papers/alexnet/">
       
       
-        <link rel="prev" href="../05-evals-observability/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../07-forward-deployed/">
+        <link rel="next" href="../generative-adversarial-networks/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>6 · Production Systems - AI Engineer / FDE Curriculum</title>
+        <title>AlexNet - AI Engineer / FDE Curriculum</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#module-6-production-systems-platform-security" class="md-skip">
+        <a href="#alexnet" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              6 · Production Systems
+              AlexNet
             
           </span>
         </div>
@@ -315,8 +315,6 @@
       
   
   
-    
-  
   
   
     
@@ -354,15 +352,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../curriculum/" class="md-nav__link ">
               
   
   
@@ -386,7 +384,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -406,7 +404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../environment-and-programming/" class="md-nav__link">
+      <a href="../../curriculum/environment-and-programming/" class="md-nav__link">
         
   
   
@@ -434,7 +432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../engineering-core/" class="md-nav__link">
+      <a href="../../curriculum/engineering-core/" class="md-nav__link">
         
   
   
@@ -462,7 +460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../00-foundations/" class="md-nav__link">
+      <a href="../../curriculum/00-foundations/" class="md-nav__link">
         
   
   
@@ -490,7 +488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-llm-internals/" class="md-nav__link">
+      <a href="../../curriculum/01-llm-internals/" class="md-nav__link">
         
   
   
@@ -518,7 +516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-prompting-context/" class="md-nav__link">
+      <a href="../../curriculum/02-prompting-context/" class="md-nav__link">
         
   
   
@@ -546,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03-rag-memory/" class="md-nav__link">
+      <a href="../../curriculum/03-rag-memory/" class="md-nav__link">
         
   
   
@@ -574,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04-agents-tools-mcp/" class="md-nav__link">
+      <a href="../../curriculum/04-agents-tools-mcp/" class="md-nav__link">
         
   
   
@@ -602,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05-evals-observability/" class="md-nav__link">
+      <a href="../../curriculum/05-evals-observability/" class="md-nav__link">
         
   
   
@@ -627,37 +625,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    6 · Production Systems
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../curriculum/06-production-systems/" class="md-nav__link">
         
   
   
@@ -673,164 +644,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#the-build" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔨 The build
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-it-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why it matters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#understand-in-depth" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Understand in depth
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Understand in depth">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#runtime-reliability" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Runtime reliability
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cost-and-model-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cost and model operations
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#platform-and-sre" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Platform and SRE
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-pipelines" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data pipelines
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#security-and-governance" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Security and governance
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#delivery-surface" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Delivery surface
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Build
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Checklist
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Resources
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -843,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07-forward-deployed/" class="md-nav__link">
+      <a href="../../curriculum/07-forward-deployed/" class="md-nav__link">
         
   
   
@@ -871,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../08-capstones/" class="md-nav__link">
+      <a href="../../curriculum/08-capstones/" class="md-nav__link">
         
   
   
@@ -899,7 +712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../specializations/" class="md-nav__link">
+      <a href="../../curriculum/specializations/" class="md-nav__link">
         
   
   
@@ -1360,6 +1173,8 @@
       
   
   
+    
+  
   
   
     
@@ -1385,15 +1200,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../papers/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -1417,7 +1232,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1434,10 +1249,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../papers/alexnet/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AlexNet
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1453,6 +1295,186 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-paper-in-one-sentence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The paper in one sentence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-core-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The core idea
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How it works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-convolution-searches-for-a-pattern-everywhere" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Convolution searches for a pattern everywhere
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-layers-build-a-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Layers build a hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-pooling-reduces-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Pooling reduces detail
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-relu-keeps-useful-gradients-flowing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. ReLU keeps useful gradients flowing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-regularization-fights-memorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Regularization fights memorization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-gpus-make-the-experiment-practical" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. GPUs make the experiment practical
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-changed-after-this-paper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What changed after this paper
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-paper-does-not-solve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the paper does not solve
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-your-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check your understanding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-the-original" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read the original
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1465,7 +1487,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/generative-adversarial-networks/" class="md-nav__link">
+      <a href="../generative-adversarial-networks/" class="md-nav__link">
         
   
   
@@ -1493,7 +1515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/resnet/" class="md-nav__link">
+      <a href="../resnet/" class="md-nav__link">
         
   
   
@@ -1521,7 +1543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/attention-is-all-you-need/" class="md-nav__link">
+      <a href="../attention-is-all-you-need/" class="md-nav__link">
         
   
   
@@ -1549,7 +1571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/bert/" class="md-nav__link">
+      <a href="../bert/" class="md-nav__link">
         
   
   
@@ -1577,7 +1599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/gpt-3/" class="md-nav__link">
+      <a href="../gpt-3/" class="md-nav__link">
         
   
   
@@ -1845,10 +1867,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-build" class="md-nav__link">
+  <a href="#the-paper-in-one-sentence" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔨 The build
+        The paper in one sentence
       
     </span>
   </a>
@@ -1856,10 +1878,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-it-matters" class="md-nav__link">
+  <a href="#the-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why it matters
+        The problem
       
     </span>
   </a>
@@ -1867,22 +1889,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#understand-in-depth" class="md-nav__link">
+  <a href="#the-core-idea" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Understand in depth
+        The core idea
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Understand in depth">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How it works">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#runtime-reliability" class="md-nav__link">
+  <a href="#1-convolution-searches-for-a-pattern-everywhere" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Runtime reliability
+        1. Convolution searches for a pattern everywhere
       
     </span>
   </a>
@@ -1890,10 +1923,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cost-and-model-operations" class="md-nav__link">
+  <a href="#2-layers-build-a-hierarchy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cost and model operations
+        2. Layers build a hierarchy
       
     </span>
   </a>
@@ -1901,10 +1934,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#platform-and-sre" class="md-nav__link">
+  <a href="#3-pooling-reduces-detail" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Platform and SRE
+        3. Pooling reduces detail
       
     </span>
   </a>
@@ -1912,10 +1945,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#data-pipelines" class="md-nav__link">
+  <a href="#4-relu-keeps-useful-gradients-flowing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data pipelines
+        4. ReLU keeps useful gradients flowing
       
     </span>
   </a>
@@ -1923,10 +1956,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#security-and-governance" class="md-nav__link">
+  <a href="#5-regularization-fights-memorization" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Security and governance
+        5. Regularization fights memorization
       
     </span>
   </a>
@@ -1934,10 +1967,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#delivery-surface" class="md-nav__link">
+  <a href="#6-gpus-make-the-experiment-practical" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Delivery surface
+        6. GPUs make the experiment practical
       
     </span>
   </a>
@@ -1950,10 +1983,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#build" class="md-nav__link">
+  <a href="#what-changed-after-this-paper" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Build
+        What changed after this paper
       
     </span>
   </a>
@@ -1961,10 +1994,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#checklist" class="md-nav__link">
+  <a href="#what-the-paper-does-not-solve" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Checklist
+        What the paper does not solve
       
     </span>
   </a>
@@ -1972,10 +2005,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
+  <a href="#check-your-understanding" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Resources
+        Check your understanding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-the-original" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read the original
       
     </span>
   </a>
@@ -2002,80 +2046,68 @@
   
 
 
-<h1 id="module-6-production-systems-platform-security">Module 6 · Production Systems, Platform &amp; Security<a class="headerlink" href="#module-6-production-systems-platform-security" title="Permanent link">&para;</a></h1>
-<h2 id="the-build">🔨 The build<a class="headerlink" href="#the-build" title="Permanent link">&para;</a></h2>
-<p><strong><code>builds/06-serving-layer</code></strong> <em>(planned)</em> — harden an earlier build for production with streaming, timeouts, retries, fallback providers, model routing, SLOs, per-user entitlements, PII handling, and prompt-injection defenses. Simulate a provider outage, traffic spike, unauthorized access, and stale data. Dockerized.</p>
-<h2 id="why-it-matters">Why it matters<a class="headerlink" href="#why-it-matters" title="Permanent link">&para;</a></h2>
-<p>“Works on my machine with one user” is not a product. Production means latency budgets, cost ceilings, rate limits, deployment discipline, security, data freshness, and a recovery story.</p>
-<h2 id="understand-in-depth">Understand in depth<a class="headerlink" href="#understand-in-depth" title="Permanent link">&para;</a></h2>
-<h3 id="runtime-reliability">Runtime reliability<a class="headerlink" href="#runtime-reliability" title="Permanent link">&para;</a></h3>
+<h1 id="alexnet">AlexNet<a class="headerlink" href="#alexnet" title="Permanent link">&para;</a></h1>
+<p><strong>Paper:</strong> <em>ImageNet Classification with Deep Convolutional Neural Networks</em> · Alex Krizhevsky, Ilya Sutskever, Geoffrey Hinton · 2012</p>
+<h2 id="the-paper-in-one-sentence">The paper in one sentence<a class="headerlink" href="#the-paper-in-one-sentence" title="Permanent link">&para;</a></h2>
+<p>A large convolutional neural network, trained efficiently on GPUs with several practical tricks, dramatically improved large-scale image classification.</p>
+<h2 id="the-problem">The problem<a class="headerlink" href="#the-problem" title="Permanent link">&para;</a></h2>
+<p>An image is a grid containing millions of numbers. A classifier must turn those pixels into a label such as <code>tiger</code>, <code>school bus</code>, or <code>coffee mug</code>, even when the object moves, changes size, or appears against a different background.</p>
+<p>Earlier systems often depended on human-designed visual features. Researchers chose rules for detecting edges, textures, and shapes, then passed those features to a classifier. The question was whether a deep network could learn the useful features directly from enough labeled images.</p>
+<h2 id="the-core-idea">The core idea<a class="headerlink" href="#the-core-idea" title="Permanent link">&para;</a></h2>
+<p>AlexNet stacks <strong>convolutional layers</strong>. Early layers learn small local patterns such as edges. Later layers combine them into textures, parts, and object-level evidence.</p>
+<pre class="mermaid"><code>flowchart LR
+    A["Pixels"] --&gt; B["Edges and colors"]
+    B --&gt; C["Textures and corners"]
+    C --&gt; D["Object parts"]
+    D --&gt; E["Class scores"]
+    E --&gt; F["Predicted label"]</code></pre>
+<p>The breakthrough was not one isolated invention. It was a combination that worked at scale: a deep CNN, a huge dataset, GPU training, ReLU activations, data augmentation, and dropout.</p>
+<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
+<h3 id="1-convolution-searches-for-a-pattern-everywhere">1. Convolution searches for a pattern everywhere<a class="headerlink" href="#1-convolution-searches-for-a-pattern-everywhere" title="Permanent link">&para;</a></h3>
+<p>A small learned filter slides across an image. The same filter is reused at every location, so an edge detector can recognize an edge near the top or bottom without learning two separate rules.</p>
+<h3 id="2-layers-build-a-hierarchy">2. Layers build a hierarchy<a class="headerlink" href="#2-layers-build-a-hierarchy" title="Permanent link">&para;</a></h3>
+<p>One layer's output becomes the next layer's input. A later detector can combine several earlier patterns—for example, curves and texture—to recognize something more meaningful.</p>
+<h3 id="3-pooling-reduces-detail">3. Pooling reduces detail<a class="headerlink" href="#3-pooling-reduces-detail" title="Permanent link">&para;</a></h3>
+<p>Max pooling keeps strong signals while shrinking the spatial grid. It reduces computation and makes small movements matter less, although some exact location information is lost.</p>
+<h3 id="4-relu-keeps-useful-gradients-flowing">4. ReLU keeps useful gradients flowing<a class="headerlink" href="#4-relu-keeps-useful-gradients-flowing" title="Permanent link">&para;</a></h3>
+<p>The activation <code>max(0, x)</code> is simple: negative values become zero and positive values pass through. It was faster and easier to optimize than commonly used saturating activations of the time.</p>
+<h3 id="5-regularization-fights-memorization">5. Regularization fights memorization<a class="headerlink" href="#5-regularization-fights-memorization" title="Permanent link">&para;</a></h3>
+<p><strong>Data augmentation</strong> creates altered training views by cropping and reflecting images. <strong>Dropout</strong> randomly hides some activations during training so the network cannot depend too heavily on a single pathway.</p>
+<h3 id="6-gpus-make-the-experiment-practical">6. GPUs make the experiment practical<a class="headerlink" href="#6-gpus-make-the-experiment-practical" title="Permanent link">&para;</a></h3>
+<p>Convolutions contain many repeated numeric operations. GPUs perform this kind of parallel work well. AlexNet split the model across two GPUs because of the hardware limits available at the time.</p>
+<div class="admonition note">
+<p class="admonition-title">One level deeper</p>
+<p>The network had five convolutional layers followed by three fully connected layers and a 1,000-class softmax output. Its importance is less about copying that exact layout today and more about proving that learned hierarchical features, sufficient data, and accelerator compute could decisively outperform the previous approach.</p>
+</div>
+<h2 id="what-changed-after-this-paper">What changed after this paper<a class="headerlink" href="#what-changed-after-this-paper" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Time-to-first-token, total latency, retrieval latency, tool latency, and end-to-end budgets.</li>
-<li>Timeouts, exponential backoff, fallbacks, circuit breakers, graceful degradation, and idempotency.</li>
-<li>Rate limits, queues, backpressure, batching, continuous batching, and runaway-agent caps.</li>
-<li>Health versus readiness, graceful shutdown, load testing, and capacity planning.</li>
+<li>Deep learning became the dominant direction in computer vision.</li>
+<li>GPUs became central tools for training neural networks.</li>
+<li>Learned representations displaced many hand-engineered vision pipelines.</li>
+<li>ImageNet performance became a major architecture benchmark.</li>
+<li>The practical recipe—data, compute, architecture, and regularization—became as important as any single algorithm.</li>
 </ul>
-<h3 id="cost-and-model-operations">Cost and model operations<a class="headerlink" href="#cost-and-model-operations" title="Permanent link">&para;</a></h3>
+<h2 id="what-the-paper-does-not-solve">What the paper does not solve<a class="headerlink" href="#what-the-paper-does-not-solve" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Token accounting, prompt/context caching, semantic caching, batch APIs, and cost budgets.</li>
-<li>Model routing from cheap to expensive, escalation policies, and quality protection.</li>
-<li>Model gateways and provider adapters.</li>
-<li>Prompt, schema, model, routing-policy, and index versions as release artifacts.</li>
-<li>Local/open-model serving, quantization, GPU/VRAM constraints, and when hosted inference is simpler.</li>
+<li>The model needs many labeled examples.</li>
+<li>It can learn dataset shortcuts rather than robust visual understanding.</li>
+<li>Classification gives one label; it does not automatically locate or describe every object.</li>
+<li>The model is expensive and large by the standards of its time.</li>
+<li>Better benchmark accuracy does not guarantee safe or fair behavior in a real application.</li>
 </ul>
-<h3 id="platform-and-sre">Platform and SRE<a class="headerlink" href="#platform-and-sre" title="Permanent link">&para;</a></h3>
+<h2 id="check-your-understanding">Check your understanding<a class="headerlink" href="#check-your-understanding" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Why is reusing one convolutional filter across an image useful?</li>
+<li>What kinds of patterns might early and late layers learn?</li>
+<li>Why do data augmentation and dropout help?</li>
+<li>Was AlexNet's success caused by one new idea or by a working combination?</li>
+</ol>
+<h2 id="read-the-original">Read the original<a class="headerlink" href="#read-the-original" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Environments, CI/CD, deployment promotion, feature flags, rollback, and migrations.</li>
-<li>SLIs, SLOs, error budgets, alerts, runbooks, and incident response.</li>
-<li>Autoscaling, cold starts, disaster recovery, backups, and configuration drift.</li>
-<li>Multi-tenant isolation and operational ownership after launch.</li>
+<li><a href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks">Paper page and PDF</a></li>
+<li>Recommended first pass: abstract → Figure 2 → Sections 3–4 → conclusion</li>
 </ul>
-<h3 id="data-pipelines">Data pipelines<a class="headerlink" href="#data-pipelines" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Ingestion → curation → indexing, deduplication, ordering, extraction, and metadata.</li>
-<li>Freshness, incremental updates, source-of-truth ownership, and schema evolution.</li>
-<li>Data quality checks and the lakehouse or “everything under one roof” pattern.</li>
-</ul>
-<h3 id="security-and-governance">Security and governance<a class="headerlink" href="#security-and-governance" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Authentication, authorization, tenant isolation, RBAC/ABAC, service identities, and audit logs.</li>
-<li>Prompt injection, data exfiltration, unsafe output handling, tool injection, SSRF, data poisoning, and denial-wallet attacks.</li>
-<li>PII masking, sensitive-data classification, retention, secrets management, and access-aware retrieval.</li>
-<li>Least privilege, approval gates, red-teaming, and abuse prevention.</li>
-<li>Responsible AI: bias and fairness checks, harmful-content policy and moderation, transparency and disclosure, and regulatory awareness (for example, the EU AI Act).</li>
-</ul>
-<h3 id="delivery-surface">Delivery surface<a class="headerlink" href="#delivery-surface" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Meeting users where they already work: APIs, MCP clients, ChatGPT/Claude surfaces, or a dedicated UI.</li>
-<li>Trust UX: citations, uncertainty, corrections, human handoff, and safe action confirmation.</li>
-</ul>
-<h2 id="build">Build<a class="headerlink" href="#build" title="Permanent link">&para;</a></h2>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add streaming, timeouts, retries, and fallback behavior; simulate a provider outage.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Implement model routing and measure cost reduction at equivalent quality.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add a per-user cost budget and rate limit.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add entitlement/security trimming so users retrieve different permitted sets.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add PII-safe logging and audit events for sensitive actions.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Write prompt-injection, tool-injection, and unauthorized-access tests.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Define an SLO, run a load test, and show a graceful-degradation path.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Version prompts/schemas/models and gate changes on Module 5 evals.</li>
-</ul>
-<h2 id="checklist">Checklist<a class="headerlink" href="#checklist" title="Permanent link">&para;</a></h2>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> I can budget and attribute end-to-end latency.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> I implement fallbacks and graceful degradation for provider failures.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> I route across models to control cost without losing quality.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> I understand SLOs, backpressure, capacity, and rollback.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> I enforce PII handling and per-user entitlements in retrieval and logs.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> I can demonstrate defenses against prompt and tool injection.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> I can explain the deployment, ownership, and incident-recovery story.</li>
-</ul>
-<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Provider production best-practices and prompt-caching documentation.</li>
-<li>OWASP Top 10 for LLM Applications.</li>
-<li>A tracing/observability tool from Module 5 pointed at a live service.</li>
-</ul>
+<p><a href="../">← Back to the paper catalog</a> · <a href="../generative-adversarial-networks/">Next: Generative Adversarial Networks →</a></p>
 
 
 
@@ -2111,7 +2143,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../05-evals-observability/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 5 · Evals &amp; Observability">
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Famous AI Papers, Explained">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2121,20 +2153,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                5 · Evals & Observability
+                Famous AI Papers, Explained
               </div>
             </div>
           </a>
         
         
           
-          <a href="../07-forward-deployed/" class="md-footer__link md-footer__link--next" aria-label="Next: 7 · The Forward-Deployed Craft">
+          <a href="../generative-adversarial-networks/" class="md-footer__link md-footer__link--next" aria-label="Next: Generative Adversarial Networks">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                7 · The Forward-Deployed Craft
+                Generative Adversarial Networks
               </div>
             </div>
             <div class="md-footer__button md-icon">

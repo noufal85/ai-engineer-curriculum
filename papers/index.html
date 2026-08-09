@@ -12,31 +12,31 @@
         <meta name="author" content="Noufal Edappanoli">
       
       
-        <link rel="canonical" href="https://noufal85.github.io/ai-engineer-curriculum/curriculum/06-production-systems/">
+        <link rel="canonical" href="https://noufal85.github.io/ai-engineer-curriculum/papers/">
       
       
-        <link rel="prev" href="../05-evals-observability/">
+        <link rel="prev" href="../concepts/safety-and-security/">
       
       
-        <link rel="next" href="../07-forward-deployed/">
+        <link rel="next" href="alexnet/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>6 · Production Systems - AI Engineer / FDE Curriculum</title>
+        <title>Famous AI Papers, Explained - AI Engineer / FDE Curriculum</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -55,7 +55,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#module-6-production-systems-platform-security" class="md-skip">
+        <a href="#famous-ai-papers-explained" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="AI Engineer / FDE Curriculum" class="md-header__button md-logo" aria-label="AI Engineer / FDE Curriculum" data-md-component="logo">
+    <a href=".." title="AI Engineer / FDE Curriculum" class="md-header__button md-logo" aria-label="AI Engineer / FDE Curriculum" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg>
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              6 · Production Systems
+              Famous AI Papers, Explained
             
           </span>
         </div>
@@ -234,7 +234,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="AI Engineer / FDE Curriculum" class="md-nav__button md-logo" aria-label="AI Engineer / FDE Curriculum" data-md-component="logo">
+    <a href=".." title="AI Engineer / FDE Curriculum" class="md-nav__button md-logo" aria-label="AI Engineer / FDE Curriculum" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg>
@@ -264,7 +264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -291,7 +291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../progress/" class="md-nav__link">
+      <a href="../progress/" class="md-nav__link">
         
   
   
@@ -315,8 +315,6 @@
       
   
   
-    
-  
   
   
     
@@ -354,15 +352,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../curriculum/" class="md-nav__link ">
               
   
   
@@ -386,7 +384,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -406,7 +404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../environment-and-programming/" class="md-nav__link">
+      <a href="../curriculum/environment-and-programming/" class="md-nav__link">
         
   
   
@@ -434,7 +432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../engineering-core/" class="md-nav__link">
+      <a href="../curriculum/engineering-core/" class="md-nav__link">
         
   
   
@@ -462,7 +460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../00-foundations/" class="md-nav__link">
+      <a href="../curriculum/00-foundations/" class="md-nav__link">
         
   
   
@@ -490,7 +488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-llm-internals/" class="md-nav__link">
+      <a href="../curriculum/01-llm-internals/" class="md-nav__link">
         
   
   
@@ -518,7 +516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-prompting-context/" class="md-nav__link">
+      <a href="../curriculum/02-prompting-context/" class="md-nav__link">
         
   
   
@@ -546,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03-rag-memory/" class="md-nav__link">
+      <a href="../curriculum/03-rag-memory/" class="md-nav__link">
         
   
   
@@ -574,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04-agents-tools-mcp/" class="md-nav__link">
+      <a href="../curriculum/04-agents-tools-mcp/" class="md-nav__link">
         
   
   
@@ -602,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05-evals-observability/" class="md-nav__link">
+      <a href="../curriculum/05-evals-observability/" class="md-nav__link">
         
   
   
@@ -627,37 +625,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    6 · Production Systems
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../curriculum/06-production-systems/" class="md-nav__link">
         
   
   
@@ -673,164 +644,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#the-build" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔨 The build
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-it-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why it matters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#understand-in-depth" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Understand in depth
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Understand in depth">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#runtime-reliability" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Runtime reliability
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cost-and-model-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cost and model operations
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#platform-and-sre" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Platform and SRE
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-pipelines" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data pipelines
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#security-and-governance" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Security and governance
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#delivery-surface" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Delivery surface
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Build
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Checklist
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Resources
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -843,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07-forward-deployed/" class="md-nav__link">
+      <a href="../curriculum/07-forward-deployed/" class="md-nav__link">
         
   
   
@@ -871,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../08-capstones/" class="md-nav__link">
+      <a href="../curriculum/08-capstones/" class="md-nav__link">
         
   
   
@@ -899,7 +712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../specializations/" class="md-nav__link">
+      <a href="../curriculum/specializations/" class="md-nav__link">
         
   
   
@@ -976,7 +789,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../concepts/" class="md-nav__link ">
+            <a href="../concepts/" class="md-nav__link ">
               
   
   
@@ -1020,7 +833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/developer-environment/" class="md-nav__link">
+      <a href="../concepts/developer-environment/" class="md-nav__link">
         
   
   
@@ -1048,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/engineering-core/" class="md-nav__link">
+      <a href="../concepts/engineering-core/" class="md-nav__link">
         
   
   
@@ -1076,7 +889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/foundations/" class="md-nav__link">
+      <a href="../concepts/foundations/" class="md-nav__link">
         
   
   
@@ -1104,7 +917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/models-and-providers/" class="md-nav__link">
+      <a href="../concepts/models-and-providers/" class="md-nav__link">
         
   
   
@@ -1132,7 +945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/prompting/" class="md-nav__link">
+      <a href="../concepts/prompting/" class="md-nav__link">
         
   
   
@@ -1160,7 +973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/retrieval-and-data/" class="md-nav__link">
+      <a href="../concepts/retrieval-and-data/" class="md-nav__link">
         
   
   
@@ -1188,7 +1001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/agents-and-protocols/" class="md-nav__link">
+      <a href="../concepts/agents-and-protocols/" class="md-nav__link">
         
   
   
@@ -1216,7 +1029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/evals-and-observability/" class="md-nav__link">
+      <a href="../concepts/evals-and-observability/" class="md-nav__link">
         
   
   
@@ -1244,7 +1057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/serving-and-ops/" class="md-nav__link">
+      <a href="../concepts/serving-and-ops/" class="md-nav__link">
         
   
   
@@ -1272,7 +1085,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/platform-and-sre/" class="md-nav__link">
+      <a href="../concepts/platform-and-sre/" class="md-nav__link">
         
   
   
@@ -1300,7 +1113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/product-and-adoption/" class="md-nav__link">
+      <a href="../concepts/product-and-adoption/" class="md-nav__link">
         
   
   
@@ -1328,7 +1141,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts/safety-and-security/" class="md-nav__link">
+      <a href="../concepts/safety-and-security/" class="md-nav__link">
         
   
   
@@ -1360,6 +1173,8 @@
       
   
   
+    
+  
   
   
     
@@ -1385,15 +1200,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../papers/" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   
@@ -1411,13 +1226,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+              <label class="md-nav__link md-nav__link--active" for="__nav_5" id="__nav_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1437,7 +1252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/alexnet/" class="md-nav__link">
+      <a href="alexnet/" class="md-nav__link">
         
   
   
@@ -1465,7 +1280,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/generative-adversarial-networks/" class="md-nav__link">
+      <a href="generative-adversarial-networks/" class="md-nav__link">
         
   
   
@@ -1493,7 +1308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/resnet/" class="md-nav__link">
+      <a href="resnet/" class="md-nav__link">
         
   
   
@@ -1521,7 +1336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/attention-is-all-you-need/" class="md-nav__link">
+      <a href="attention-is-all-you-need/" class="md-nav__link">
         
   
   
@@ -1549,7 +1364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/bert/" class="md-nav__link">
+      <a href="bert/" class="md-nav__link">
         
   
   
@@ -1577,7 +1392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/gpt-3/" class="md-nav__link">
+      <a href="gpt-3/" class="md-nav__link">
         
   
   
@@ -1636,7 +1451,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../notes/" class="md-nav__link ">
+            <a href="../notes/" class="md-nav__link ">
               
   
   
@@ -1680,7 +1495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes/intro-to-large-language-models/" class="md-nav__link">
+      <a href="../notes/intro-to-large-language-models/" class="md-nav__link">
         
   
   
@@ -1708,7 +1523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes/crabrag-graph-memory/" class="md-nav__link">
+      <a href="../notes/crabrag-graph-memory/" class="md-nav__link">
         
   
   
@@ -1736,7 +1551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes/moat-is-your-data-model/" class="md-nav__link">
+      <a href="../notes/moat-is-your-data-model/" class="md-nav__link">
         
   
   
@@ -1771,7 +1586,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/" class="md-nav__link">
+      <a href="../resources/" class="md-nav__link">
         
   
   
@@ -1798,7 +1613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../image-credits/" class="md-nav__link">
+      <a href="../image-credits/" class="md-nav__link">
         
   
   
@@ -1845,10 +1660,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-build" class="md-nav__link">
+  <a href="#how-to-use-this-catalog" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔨 The build
+        How to use this catalog
       
     </span>
   </a>
@@ -1856,10 +1671,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-it-matters" class="md-nav__link">
+  <a href="#the-first-collection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why it matters
+        The first collection
       
     </span>
   </a>
@@ -1867,93 +1682,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#understand-in-depth" class="md-nav__link">
+  <a href="#the-story-these-papers-tell" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Understand in depth
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Understand in depth">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#runtime-reliability" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Runtime reliability
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cost-and-model-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cost and model operations
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#platform-and-sre" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Platform and SRE
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-pipelines" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data pipelines
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#security-and-governance" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Security and governance
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#delivery-surface" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Delivery surface
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Build
+        The story these papers tell
       
     </span>
   </a>
@@ -1961,10 +1693,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#checklist" class="md-nav__link">
+  <a href="#vocabulary-you-will-meet" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Checklist
+        Vocabulary you will meet
       
     </span>
   </a>
@@ -1972,10 +1704,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
+  <a href="#suggested-reading-paths" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Resources
+        Suggested reading paths
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-papers-for-the-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next papers for the catalog
       
     </span>
   </a>
@@ -2002,80 +1745,143 @@
   
 
 
-<h1 id="module-6-production-systems-platform-security">Module 6 · Production Systems, Platform &amp; Security<a class="headerlink" href="#module-6-production-systems-platform-security" title="Permanent link">&para;</a></h1>
-<h2 id="the-build">🔨 The build<a class="headerlink" href="#the-build" title="Permanent link">&para;</a></h2>
-<p><strong><code>builds/06-serving-layer</code></strong> <em>(planned)</em> — harden an earlier build for production with streaming, timeouts, retries, fallback providers, model routing, SLOs, per-user entitlements, PII handling, and prompt-injection defenses. Simulate a provider outage, traffic spike, unauthorized access, and stale data. Dockerized.</p>
-<h2 id="why-it-matters">Why it matters<a class="headerlink" href="#why-it-matters" title="Permanent link">&para;</a></h2>
-<p>“Works on my machine with one user” is not a product. Production means latency budgets, cost ceilings, rate limits, deployment discipline, security, data freshness, and a recovery story.</p>
-<h2 id="understand-in-depth">Understand in depth<a class="headerlink" href="#understand-in-depth" title="Permanent link">&para;</a></h2>
-<h3 id="runtime-reliability">Runtime reliability<a class="headerlink" href="#runtime-reliability" title="Permanent link">&para;</a></h3>
+<h1 id="famous-ai-papers-explained">Famous AI Papers, Explained<a class="headerlink" href="#famous-ai-papers-explained" title="Permanent link">&para;</a></h1>
+<p>Research papers are written to communicate new results to other researchers. That makes them precise, but not always friendly to a first-time reader. This catalog takes a different route: <strong>start with the problem, build an intuition, trace the mechanism, and only then introduce the paper's vocabulary.</strong></p>
+<p>You do not need advanced mathematics to begin. Each guide tells you which details matter, which can wait, what the paper changed, and what it did <em>not</em> solve.</p>
+<h2 id="how-to-use-this-catalog">How to use this catalog<a class="headerlink" href="#how-to-use-this-catalog" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Read <strong>The paper in one sentence</strong> and <strong>The problem</strong>.</li>
+<li>Study the diagram before the terminology.</li>
+<li>Explain the core idea aloud in your own words.</li>
+<li>Use <strong>One level deeper</strong> when you want the technical bridge.</li>
+<li>Answer the checkpoint questions without looking back.</li>
+<li>Open the original paper and try its abstract, diagrams, and conclusion.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">A paper is an argument, not a textbook</p>
+<p>Ask four questions: <strong>What was hard before? What is the new idea? What evidence supports it? What remains unsolved?</strong> You can understand the contribution without decoding every equation.</p>
+</div>
+<h2 id="the-first-collection">The first collection<a class="headerlink" href="#the-first-collection" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Year</th>
+<th>Paper</th>
+<th>Field</th>
+<th>The lasting idea</th>
+<th>Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2012</td>
+<td><a href="alexnet/"><strong>AlexNet</strong></a></td>
+<td>Computer vision</td>
+<td>Deep convolutional networks became practical at ImageNet scale</td>
+<td>Gentle</td>
+</tr>
+<tr>
+<td style="text-align: right;">2014</td>
+<td><a href="generative-adversarial-networks/"><strong>Generative Adversarial Networks</strong></a></td>
+<td>Generative AI</td>
+<td>A generator can learn by trying to fool a discriminator</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td style="text-align: right;">2015</td>
+<td><a href="resnet/"><strong>Deep Residual Learning (ResNet)</strong></a></td>
+<td>Deep learning</td>
+<td>Shortcut connections make very deep networks easier to optimize</td>
+<td>Gentle</td>
+</tr>
+<tr>
+<td style="text-align: right;">2017</td>
+<td><a href="attention-is-all-you-need/"><strong>Attention Is All You Need</strong></a></td>
+<td>Language / architecture</td>
+<td>Attention can replace recurrence in sequence models</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td style="text-align: right;">2018</td>
+<td><a href="bert/"><strong>BERT</strong></a></td>
+<td>Language understanding</td>
+<td>Pretrain a bidirectional Transformer, then adapt it to many tasks</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td style="text-align: right;">2020</td>
+<td><a href="gpt-3/"><strong>Language Models are Few-Shot Learners (GPT-3)</strong></a></td>
+<td>Language generation</td>
+<td>A large autoregressive model can learn tasks from instructions and examples in its prompt</td>
+<td>Moderate</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-story-these-papers-tell">The story these papers tell<a class="headerlink" href="#the-story-these-papers-tell" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>flowchart LR
+    A["AlexNet&lt;br/&gt;learn visual features"] --&gt; B["GANs&lt;br/&gt;learn to generate"]
+    A --&gt; C["ResNet&lt;br/&gt;train much deeper networks"]
+    C --&gt; D["Transformer&lt;br/&gt;connect information with attention"]
+    D --&gt; E["BERT&lt;br/&gt;pretrain for understanding"]
+    D --&gt; F["GPT-3&lt;br/&gt;scale generation and in-context learning"]</code></pre>
+<p>This is not a complete history of AI. It is a useful path through six ideas that still shape modern systems.</p>
+<h2 id="vocabulary-you-will-meet">Vocabulary you will meet<a class="headerlink" href="#vocabulary-you-will-meet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Plain-language meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Architecture</strong></td>
+<td>The arrangement of layers and information flow in a model</td>
+</tr>
+<tr>
+<td><strong>Parameter</strong></td>
+<td>A learned number that changes during training</td>
+</tr>
+<tr>
+<td><strong>Representation</strong></td>
+<td>An internal numeric description useful for a task</td>
+</tr>
+<tr>
+<td><strong>Training objective</strong></td>
+<td>The score the training process tries to improve</td>
+</tr>
+<tr>
+<td><strong>Optimization</strong></td>
+<td>Adjusting parameters to reduce error</td>
+</tr>
+<tr>
+<td><strong>Pretraining</strong></td>
+<td>Learning broadly from a large dataset before specializing</td>
+</tr>
+<tr>
+<td><strong>Fine-tuning</strong></td>
+<td>Continuing training for a narrower task or behavior</td>
+</tr>
+<tr>
+<td><strong>Inference</strong></td>
+<td>Using a trained model to make a prediction or generate output</td>
+</tr>
+</tbody>
+</table>
+<h2 id="suggested-reading-paths">Suggested reading paths<a class="headerlink" href="#suggested-reading-paths" title="Permanent link">&para;</a></h2>
+<p><strong>If you care about LLMs:</strong> ResNet → Attention Is All You Need → BERT → GPT-3. ResNet is included because residual connections became a standard part of Transformers.</p>
+<p><strong>If you care about images:</strong> AlexNet → ResNet → GANs.</p>
+<p><strong>If you are completely new:</strong> AlexNet → ResNet → Attention Is All You Need. These build the clearest progression from layers to information flow.</p>
+<h2 id="next-papers-for-the-catalog">Next papers for the catalog<a class="headerlink" href="#next-papers-for-the-catalog" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Time-to-first-token, total latency, retrieval latency, tool latency, and end-to-end budgets.</li>
-<li>Timeouts, exponential backoff, fallbacks, circuit breakers, graceful degradation, and idempotency.</li>
-<li>Rate limits, queues, backpressure, batching, continuous batching, and runaway-agent caps.</li>
-<li>Health versus readiness, graceful shutdown, load testing, and capacity planning.</li>
+<li><em>Efficient Estimation of Word Representations in Vector Space</em> — Word2Vec and meaningful vector relationships</li>
+<li><em>Sequence to Sequence Learning with Neural Networks</em> — encoder-decoder learning before the Transformer</li>
+<li><em>Neural Machine Translation by Jointly Learning to Align and Translate</em> — the attention idea before self-attention</li>
+<li><em>Denoising Diffusion Probabilistic Models</em> — the foundation of modern diffusion image generation</li>
+<li><em>Learning Transferable Visual Models From Natural Language Supervision</em> — CLIP and shared image-text representations</li>
+<li><em>Training Compute-Optimal Large Language Models</em> — why model size and training data must scale together</li>
 </ul>
-<h3 id="cost-and-model-operations">Cost and model operations<a class="headerlink" href="#cost-and-model-operations" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Token accounting, prompt/context caching, semantic caching, batch APIs, and cost budgets.</li>
-<li>Model routing from cheap to expensive, escalation policies, and quality protection.</li>
-<li>Model gateways and provider adapters.</li>
-<li>Prompt, schema, model, routing-policy, and index versions as release artifacts.</li>
-<li>Local/open-model serving, quantization, GPU/VRAM constraints, and when hosted inference is simpler.</li>
-</ul>
-<h3 id="platform-and-sre">Platform and SRE<a class="headerlink" href="#platform-and-sre" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Environments, CI/CD, deployment promotion, feature flags, rollback, and migrations.</li>
-<li>SLIs, SLOs, error budgets, alerts, runbooks, and incident response.</li>
-<li>Autoscaling, cold starts, disaster recovery, backups, and configuration drift.</li>
-<li>Multi-tenant isolation and operational ownership after launch.</li>
-</ul>
-<h3 id="data-pipelines">Data pipelines<a class="headerlink" href="#data-pipelines" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Ingestion → curation → indexing, deduplication, ordering, extraction, and metadata.</li>
-<li>Freshness, incremental updates, source-of-truth ownership, and schema evolution.</li>
-<li>Data quality checks and the lakehouse or “everything under one roof” pattern.</li>
-</ul>
-<h3 id="security-and-governance">Security and governance<a class="headerlink" href="#security-and-governance" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Authentication, authorization, tenant isolation, RBAC/ABAC, service identities, and audit logs.</li>
-<li>Prompt injection, data exfiltration, unsafe output handling, tool injection, SSRF, data poisoning, and denial-wallet attacks.</li>
-<li>PII masking, sensitive-data classification, retention, secrets management, and access-aware retrieval.</li>
-<li>Least privilege, approval gates, red-teaming, and abuse prevention.</li>
-<li>Responsible AI: bias and fairness checks, harmful-content policy and moderation, transparency and disclosure, and regulatory awareness (for example, the EU AI Act).</li>
-</ul>
-<h3 id="delivery-surface">Delivery surface<a class="headerlink" href="#delivery-surface" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Meeting users where they already work: APIs, MCP clients, ChatGPT/Claude surfaces, or a dedicated UI.</li>
-<li>Trust UX: citations, uncertainty, corrections, human handoff, and safe action confirmation.</li>
-</ul>
-<h2 id="build">Build<a class="headerlink" href="#build" title="Permanent link">&para;</a></h2>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add streaming, timeouts, retries, and fallback behavior; simulate a provider outage.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Implement model routing and measure cost reduction at equivalent quality.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add a per-user cost budget and rate limit.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add entitlement/security trimming so users retrieve different permitted sets.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add PII-safe logging and audit events for sensitive actions.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Write prompt-injection, tool-injection, and unauthorized-access tests.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Define an SLO, run a load test, and show a graceful-degradation path.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Version prompts/schemas/models and gate changes on Module 5 evals.</li>
-</ul>
-<h2 id="checklist">Checklist<a class="headerlink" href="#checklist" title="Permanent link">&para;</a></h2>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> I can budget and attribute end-to-end latency.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> I implement fallbacks and graceful degradation for provider failures.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> I route across models to control cost without losing quality.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> I understand SLOs, backpressure, capacity, and rollback.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> I enforce PII handling and per-user entitlements in retrieval and logs.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> I can demonstrate defenses against prompt and tool injection.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> I can explain the deployment, ownership, and incident-recovery story.</li>
-</ul>
-<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Provider production best-practices and prompt-caching documentation.</li>
-<li>OWASP Top 10 for LLM Applications.</li>
-<li>A tracing/observability tool from Module 5 pointed at a live service.</li>
-</ul>
+<p>The catalog favors papers that provide a reusable mental model, not merely papers with a high citation count.</p>
 
 
 
@@ -2111,7 +1917,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../05-evals-observability/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 5 · Evals &amp; Observability">
+          <a href="../concepts/safety-and-security/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Safety &amp; Security">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2121,20 +1927,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                5 · Evals & Observability
+                Safety & Security
               </div>
             </div>
           </a>
         
         
           
-          <a href="../07-forward-deployed/" class="md-footer__link md-footer__link--next" aria-label="Next: 7 · The Forward-Deployed Craft">
+          <a href="alexnet/" class="md-footer__link md-footer__link--next" aria-label="Next: AlexNet">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                7 · The Forward-Deployed Craft
+                AlexNet
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2198,10 +2004,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

@@ -12,13 +12,13 @@
         <meta name="author" content="Noufal Edappanoli">
       
       
-        <link rel="canonical" href="https://noufal85.github.io/ai-engineer-curriculum/curriculum/06-production-systems/">
+        <link rel="canonical" href="https://noufal85.github.io/ai-engineer-curriculum/papers/attention-is-all-you-need/">
       
       
-        <link rel="prev" href="../05-evals-observability/">
+        <link rel="prev" href="../resnet/">
       
       
-        <link rel="next" href="../07-forward-deployed/">
+        <link rel="next" href="../bert/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>6 · Production Systems - AI Engineer / FDE Curriculum</title>
+        <title>Attention Is All You Need - AI Engineer / FDE Curriculum</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#module-6-production-systems-platform-security" class="md-skip">
+        <a href="#attention-is-all-you-need" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              6 · Production Systems
+              Attention Is All You Need
             
           </span>
         </div>
@@ -315,8 +315,6 @@
       
   
   
-    
-  
   
   
     
@@ -354,15 +352,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../curriculum/" class="md-nav__link ">
               
   
   
@@ -386,7 +384,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -406,7 +404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../environment-and-programming/" class="md-nav__link">
+      <a href="../../curriculum/environment-and-programming/" class="md-nav__link">
         
   
   
@@ -434,7 +432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../engineering-core/" class="md-nav__link">
+      <a href="../../curriculum/engineering-core/" class="md-nav__link">
         
   
   
@@ -462,7 +460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../00-foundations/" class="md-nav__link">
+      <a href="../../curriculum/00-foundations/" class="md-nav__link">
         
   
   
@@ -490,7 +488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-llm-internals/" class="md-nav__link">
+      <a href="../../curriculum/01-llm-internals/" class="md-nav__link">
         
   
   
@@ -518,7 +516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-prompting-context/" class="md-nav__link">
+      <a href="../../curriculum/02-prompting-context/" class="md-nav__link">
         
   
   
@@ -546,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03-rag-memory/" class="md-nav__link">
+      <a href="../../curriculum/03-rag-memory/" class="md-nav__link">
         
   
   
@@ -574,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04-agents-tools-mcp/" class="md-nav__link">
+      <a href="../../curriculum/04-agents-tools-mcp/" class="md-nav__link">
         
   
   
@@ -602,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05-evals-observability/" class="md-nav__link">
+      <a href="../../curriculum/05-evals-observability/" class="md-nav__link">
         
   
   
@@ -627,37 +625,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    6 · Production Systems
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../curriculum/06-production-systems/" class="md-nav__link">
         
   
   
@@ -673,164 +644,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#the-build" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔨 The build
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-it-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why it matters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#understand-in-depth" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Understand in depth
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Understand in depth">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#runtime-reliability" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Runtime reliability
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cost-and-model-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cost and model operations
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#platform-and-sre" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Platform and SRE
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-pipelines" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data pipelines
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#security-and-governance" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Security and governance
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#delivery-surface" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Delivery surface
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Build
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Checklist
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Resources
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -843,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07-forward-deployed/" class="md-nav__link">
+      <a href="../../curriculum/07-forward-deployed/" class="md-nav__link">
         
   
   
@@ -871,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../08-capstones/" class="md-nav__link">
+      <a href="../../curriculum/08-capstones/" class="md-nav__link">
         
   
   
@@ -899,7 +712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../specializations/" class="md-nav__link">
+      <a href="../../curriculum/specializations/" class="md-nav__link">
         
   
   
@@ -1360,6 +1173,8 @@
       
   
   
+    
+  
   
   
     
@@ -1385,15 +1200,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../papers/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -1417,7 +1232,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1437,7 +1252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/alexnet/" class="md-nav__link">
+      <a href="../alexnet/" class="md-nav__link">
         
   
   
@@ -1465,7 +1280,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/generative-adversarial-networks/" class="md-nav__link">
+      <a href="../generative-adversarial-networks/" class="md-nav__link">
         
   
   
@@ -1493,7 +1308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/resnet/" class="md-nav__link">
+      <a href="../resnet/" class="md-nav__link">
         
   
   
@@ -1518,10 +1333,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../papers/attention-is-all-you-need/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attention Is All You Need
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1537,6 +1379,219 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-paper-in-one-sentence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The paper in one sentence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-core-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The core idea
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How it works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-tokens-become-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Tokens become vectors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-position-is-added" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Position is added
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-each-token-creates-a-query-key-and-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Each token creates a query, key, and value
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-scaled-dot-product-attention-produces-the-mixture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Scaled dot-product attention produces the mixture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-multi-head-attention-asks-several-questions-at-once" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Multi-head attention asks several questions at once
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-the-encoder-repeats-two-sublayers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. The encoder repeats two sublayers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-the-decoder-uses-three-sublayers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. The decoder uses three sublayers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-the-model-predicts-one-target-token-at-a-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. The model predicts one target token at a time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-whole-transformer-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The whole Transformer block
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-changed-after-this-paper" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What changed after this paper
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-paper-does-not-solve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the paper does not solve
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-your-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check your understanding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-the-original" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read the original
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1549,7 +1604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/bert/" class="md-nav__link">
+      <a href="../bert/" class="md-nav__link">
         
   
   
@@ -1577,7 +1632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../papers/gpt-3/" class="md-nav__link">
+      <a href="../gpt-3/" class="md-nav__link">
         
   
   
@@ -1845,10 +1900,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-build" class="md-nav__link">
+  <a href="#the-paper-in-one-sentence" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔨 The build
+        The paper in one sentence
       
     </span>
   </a>
@@ -1856,10 +1911,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-it-matters" class="md-nav__link">
+  <a href="#the-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why it matters
+        The problem
       
     </span>
   </a>
@@ -1867,22 +1922,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#understand-in-depth" class="md-nav__link">
+  <a href="#the-core-idea" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Understand in depth
+        The core idea
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Understand in depth">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How it works">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#runtime-reliability" class="md-nav__link">
+  <a href="#1-tokens-become-vectors" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Runtime reliability
+        1. Tokens become vectors
       
     </span>
   </a>
@@ -1890,10 +1956,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cost-and-model-operations" class="md-nav__link">
+  <a href="#2-position-is-added" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cost and model operations
+        2. Position is added
       
     </span>
   </a>
@@ -1901,10 +1967,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#platform-and-sre" class="md-nav__link">
+  <a href="#3-each-token-creates-a-query-key-and-value" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Platform and SRE
+        3. Each token creates a query, key, and value
       
     </span>
   </a>
@@ -1912,10 +1978,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#data-pipelines" class="md-nav__link">
+  <a href="#4-scaled-dot-product-attention-produces-the-mixture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data pipelines
+        4. Scaled dot-product attention produces the mixture
       
     </span>
   </a>
@@ -1923,10 +1989,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#security-and-governance" class="md-nav__link">
+  <a href="#5-multi-head-attention-asks-several-questions-at-once" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Security and governance
+        5. Multi-head attention asks several questions at once
       
     </span>
   </a>
@@ -1934,10 +2000,43 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#delivery-surface" class="md-nav__link">
+  <a href="#6-the-encoder-repeats-two-sublayers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Delivery surface
+        6. The encoder repeats two sublayers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-the-decoder-uses-three-sublayers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. The decoder uses three sublayers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-the-model-predicts-one-target-token-at-a-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. The model predicts one target token at a time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-whole-transformer-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The whole Transformer block
       
     </span>
   </a>
@@ -1950,10 +2049,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#build" class="md-nav__link">
+  <a href="#what-changed-after-this-paper" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Build
+        What changed after this paper
       
     </span>
   </a>
@@ -1961,10 +2060,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#checklist" class="md-nav__link">
+  <a href="#what-the-paper-does-not-solve" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Checklist
+        What the paper does not solve
       
     </span>
   </a>
@@ -1972,10 +2071,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#resources" class="md-nav__link">
+  <a href="#check-your-understanding" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Resources
+        Check your understanding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-the-original" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read the original
       
     </span>
   </a>
@@ -2002,80 +2112,137 @@
   
 
 
-<h1 id="module-6-production-systems-platform-security">Module 6 · Production Systems, Platform &amp; Security<a class="headerlink" href="#module-6-production-systems-platform-security" title="Permanent link">&para;</a></h1>
-<h2 id="the-build">🔨 The build<a class="headerlink" href="#the-build" title="Permanent link">&para;</a></h2>
-<p><strong><code>builds/06-serving-layer</code></strong> <em>(planned)</em> — harden an earlier build for production with streaming, timeouts, retries, fallback providers, model routing, SLOs, per-user entitlements, PII handling, and prompt-injection defenses. Simulate a provider outage, traffic spike, unauthorized access, and stale data. Dockerized.</p>
-<h2 id="why-it-matters">Why it matters<a class="headerlink" href="#why-it-matters" title="Permanent link">&para;</a></h2>
-<p>“Works on my machine with one user” is not a product. Production means latency budgets, cost ceilings, rate limits, deployment discipline, security, data freshness, and a recovery story.</p>
-<h2 id="understand-in-depth">Understand in depth<a class="headerlink" href="#understand-in-depth" title="Permanent link">&para;</a></h2>
-<h3 id="runtime-reliability">Runtime reliability<a class="headerlink" href="#runtime-reliability" title="Permanent link">&para;</a></h3>
+<h1 id="attention-is-all-you-need">Attention Is All You Need<a class="headerlink" href="#attention-is-all-you-need" title="Permanent link">&para;</a></h1>
+<p><strong>Paper:</strong> <em>Attention Is All You Need</em> · Ashish Vaswani and collaborators · 2017</p>
+<h2 id="the-paper-in-one-sentence">The paper in one sentence<a class="headerlink" href="#the-paper-in-one-sentence" title="Permanent link">&para;</a></h2>
+<p>The Transformer processes sequences using attention instead of recurrence, making relationships between words direct and training far more parallelizable.</p>
+<h2 id="the-problem">The problem<a class="headerlink" href="#the-problem" title="Permanent link">&para;</a></h2>
+<p>Machine translation maps one sequence to another—for example, an English sentence to a French sentence. Before the Transformer, strong systems commonly used recurrent neural networks. An RNN reads tokens in order and carries a changing memory from one step to the next.</p>
+<p>That creates two difficulties:</p>
+<ol>
+<li><strong>Limited parallelism:</strong> step 8 depends on the result of step 7, so training cannot process every position at once.</li>
+<li><strong>Long paths:</strong> information from distant words must travel through many sequential steps.</li>
+</ol>
+<p>Attention already helped translation models choose relevant source words. The paper's bold move was to remove recurrence and convolution from the main sequence-processing architecture.</p>
+<h2 id="the-core-idea">The core idea<a class="headerlink" href="#the-core-idea" title="Permanent link">&para;</a></h2>
+<p>For each token, calculate how strongly it should gather information from other tokens. Do this for all positions, through multiple attention heads, and stack the result with small feed-forward networks.</p>
+<pre class="mermaid"><code>flowchart LR
+    S["Source tokens"] --&gt; E["Encoder stack"]
+    E --&gt; M["Contextual representations"]
+    T["Earlier target tokens"] --&gt; D["Decoder stack"]
+    M --&gt; D
+    D --&gt; P["Probability of next token"]</code></pre>
+<p>The encoder builds context-rich representations of the input. The decoder uses those representations plus the target tokens generated so far to predict the next token.</p>
+<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
+<h3 id="1-tokens-become-vectors">1. Tokens become vectors<a class="headerlink" href="#1-tokens-become-vectors" title="Permanent link">&para;</a></h3>
+<p>An embedding converts each token ID into a learned vector. At this stage, the same word starts with the same embedding regardless of its sentence.</p>
+<h3 id="2-position-is-added">2. Position is added<a class="headerlink" href="#2-position-is-added" title="Permanent link">&para;</a></h3>
+<p>Attention alone does not know whether a word came first or fifth. The model adds a <strong>positional encoding</strong> to each embedding so order is available to later layers.</p>
+<pre class="mermaid"><code>flowchart LR
+    A["Token embedding"] --&gt; C["Add"]
+    B["Positional encoding"] --&gt; C
+    C --&gt; D["Position-aware representation"]</code></pre>
+<p>The original paper used sine and cosine patterns at different frequencies. The important intuition is simpler: each position receives a distinctive signal that also helps the model reason about relative distance.</p>
+<h3 id="3-each-token-creates-a-query-key-and-value">3. Each token creates a query, key, and value<a class="headerlink" href="#3-each-token-creates-a-query-key-and-value" title="Permanent link">&para;</a></h3>
+<p>The model learns three projections of every token representation:</p>
 <ul>
-<li>Time-to-first-token, total latency, retrieval latency, tool latency, and end-to-end budgets.</li>
-<li>Timeouts, exponential backoff, fallbacks, circuit breakers, graceful degradation, and idempotency.</li>
-<li>Rate limits, queues, backpressure, batching, continuous batching, and runaway-agent caps.</li>
-<li>Health versus readiness, graceful shutdown, load testing, and capacity planning.</li>
+<li><strong>Query:</strong> what information am I looking for?</li>
+<li><strong>Key:</strong> what kind of information do I contain?</li>
+<li><strong>Value:</strong> what information should I pass along if selected?</li>
 </ul>
-<h3 id="cost-and-model-operations">Cost and model operations<a class="headerlink" href="#cost-and-model-operations" title="Permanent link">&para;</a></h3>
+<p>For a particular token, its query is compared with every relevant key. Strong matches receive larger weights. Those weights create a weighted mixture of the values.</p>
+<p>Consider:</p>
+<blockquote>
+<p>The animal did not cross the street because <strong>it</strong> was tired.</p>
+</blockquote>
+<p>When building the representation for <code>it</code>, one attention pattern may place strong weight on <code>animal</code>. The model learns such relationships from data; nobody writes a pronoun rule into the network.</p>
+<h3 id="4-scaled-dot-product-attention-produces-the-mixture">4. Scaled dot-product attention produces the mixture<a class="headerlink" href="#4-scaled-dot-product-attention-produces-the-mixture" title="Permanent link">&para;</a></h3>
+<p>At one level deeper, the paper describes attention as:</p>
+<p><code>Attention(Q, K, V) = softmax(QKᵀ / √dₖ)V</code></p>
+<p>Read it as a procedure:</p>
+<ol>
+<li>Compare queries with keys using dot products.</li>
+<li>Divide by a scale factor so large vectors do not make the softmax overly sharp.</li>
+<li>Turn scores into weights with softmax.</li>
+<li>Use the weights to mix the values.</li>
+</ol>
+<p>You can understand the Transformer without calculating a matrix by hand. The essential idea is <strong>content-based information routing</strong>.</p>
+<h3 id="5-multi-head-attention-asks-several-questions-at-once">5. Multi-head attention asks several questions at once<a class="headerlink" href="#5-multi-head-attention-asks-several-questions-at-once" title="Permanent link">&para;</a></h3>
+<p>One attention pattern may track pronouns. Another may track nearby phrases, verb relationships, or punctuation. <strong>Multi-head attention</strong> runs several smaller attention operations in parallel, then combines their outputs.</p>
+<pre class="mermaid"><code>flowchart TD
+    X["Token representations"] --&gt; H1["Head 1: one learned relation"]
+    X --&gt; H2["Head 2: another relation"]
+    X --&gt; H3["Head 3: another relation"]
+    H1 --&gt; C["Concatenate and project"]
+    H2 --&gt; C
+    H3 --&gt; C</code></pre>
+<p>Heads are not guaranteed to match neat human grammar categories, but multiple heads give the model different representation subspaces in which to route information.</p>
+<h3 id="6-the-encoder-repeats-two-sublayers">6. The encoder repeats two sublayers<a class="headerlink" href="#6-the-encoder-repeats-two-sublayers" title="Permanent link">&para;</a></h3>
+<p>Each original encoder block contains:</p>
+<ol>
+<li>multi-head <strong>self-attention</strong>, where source tokens attend to source tokens</li>
+<li>a position-wise <strong>feed-forward network</strong>, applied independently to every position</li>
+</ol>
+<p>Each sublayer has a <strong>residual connection</strong> and layer normalization. The residual path carries the input around the transformation, echoing the key idea from ResNet.</p>
+<h3 id="7-the-decoder-uses-three-sublayers">7. The decoder uses three sublayers<a class="headerlink" href="#7-the-decoder-uses-three-sublayers" title="Permanent link">&para;</a></h3>
+<p>Each decoder block contains:</p>
+<ol>
+<li><strong>masked self-attention</strong> over earlier target positions</li>
+<li>encoder-decoder attention, where decoder queries attend to encoder keys and values</li>
+<li>a feed-forward network</li>
+</ol>
+<p>The mask prevents a position from seeing future target words during training. Without it, the model could cheat by looking at the answer it is supposed to predict.</p>
+<h3 id="8-the-model-predicts-one-target-token-at-a-time">8. The model predicts one target token at a time<a class="headerlink" href="#8-the-model-predicts-one-target-token-at-a-time" title="Permanent link">&para;</a></h3>
+<p>The final decoder representation becomes vocabulary scores and then probabilities. During inference, a token is selected, appended, and used to predict the following token.</p>
+<div class="admonition note">
+<p class="admonition-title">Training parallelism versus generation</p>
+<p>During training, known target tokens allow many positions to be processed in parallel while the mask preserves the prediction task. During generation, the decoder is still autoregressive: it produces one new token after another.</p>
+</div>
+<h3 id="the-whole-transformer-block">The whole Transformer block<a class="headerlink" href="#the-whole-transformer-block" title="Permanent link">&para;</a></h3>
+<pre class="mermaid"><code>flowchart TD
+    I["Input tokens + positions"] --&gt; ES["Encoder self-attention"]
+    ES --&gt; EF["Encoder feed-forward"]
+    EF --&gt; R["Encoded source"]
+    O["Previous output tokens + positions"] --&gt; MS["Masked decoder self-attention"]
+    MS --&gt; ED["Attend to encoded source"]
+    R --&gt; ED
+    ED --&gt; DF["Decoder feed-forward"]
+    DF --&gt; N["Next-token probabilities"]</code></pre>
+<h2 id="what-changed-after-this-paper">What changed after this paper<a class="headerlink" href="#what-changed-after-this-paper" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Token accounting, prompt/context caching, semantic caching, batch APIs, and cost budgets.</li>
-<li>Model routing from cheap to expensive, escalation policies, and quality protection.</li>
-<li>Model gateways and provider adapters.</li>
-<li>Prompt, schema, model, routing-policy, and index versions as release artifacts.</li>
-<li>Local/open-model serving, quantization, GPU/VRAM constraints, and when hosted inference is simpler.</li>
+<li>Transformers became the central architecture for modern language models.</li>
+<li>Training sequence models became much more parallelizable.</li>
+<li>BERT used the encoder side for bidirectional language understanding.</li>
+<li>GPT-style models used the decoder pattern for autoregressive generation.</li>
+<li>The architecture expanded into images, audio, video, biology, robotics, and multimodal systems.</li>
+<li>Attention, residual pathways, normalization, and feed-forward blocks became a reusable general-purpose design.</li>
 </ul>
-<h3 id="platform-and-sre">Platform and SRE<a class="headerlink" href="#platform-and-sre" title="Permanent link">&para;</a></h3>
+<h2 id="what-the-paper-does-not-solve">What the paper does not solve<a class="headerlink" href="#what-the-paper-does-not-solve" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Environments, CI/CD, deployment promotion, feature flags, rollback, and migrations.</li>
-<li>SLIs, SLOs, error budgets, alerts, runbooks, and incident response.</li>
-<li>Autoscaling, cold starts, disaster recovery, backups, and configuration drift.</li>
-<li>Multi-tenant isolation and operational ownership after launch.</li>
+<li>Standard self-attention compares many token pairs, making long sequences expensive.</li>
+<li>Positional representation remains an active design choice.</li>
+<li>Attention weights are not a complete explanation of model reasoning.</li>
+<li>The original model was built for translation, not chat, factual retrieval, or tool use.</li>
+<li>The architecture does not itself prevent hallucination, bias, misuse, or unsafe outputs.</li>
+<li>Generation remains sequential in autoregressive models.</li>
 </ul>
-<h3 id="data-pipelines">Data pipelines<a class="headerlink" href="#data-pipelines" title="Permanent link">&para;</a></h3>
+<h2 id="check-your-understanding">Check your understanding<a class="headerlink" href="#check-your-understanding" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Why could Transformers train more parallelly than recurrent models?</li>
+<li>What roles do a query, key, and value play?</li>
+<li>Why does the model need positional information?</li>
+<li>What is the difference between encoder self-attention and encoder-decoder attention?</li>
+<li>Why is decoder self-attention masked?</li>
+<li>What do residual connections and feed-forward networks contribute?</li>
+<li>Does “attention is all you need” mean the model contains only attention layers?</li>
+</ol>
+<h2 id="read-the-original">Read the original<a class="headerlink" href="#read-the-original" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Ingestion → curation → indexing, deduplication, ordering, extraction, and metadata.</li>
-<li>Freshness, incremental updates, source-of-truth ownership, and schema evolution.</li>
-<li>Data quality checks and the lakehouse or “everything under one roof” pattern.</li>
+<li><a href="https://arxiv.org/abs/1706.03762">arXiv paper page</a></li>
+<li>Recommended first pass: abstract → Figures 1–2 → Sections 3.1–3.5 → Table 1 → conclusion</li>
+<li>On the first pass, skip detailed training hyperparameters and return to them when implementing a Transformer.</li>
 </ul>
-<h3 id="security-and-governance">Security and governance<a class="headerlink" href="#security-and-governance" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Authentication, authorization, tenant isolation, RBAC/ABAC, service identities, and audit logs.</li>
-<li>Prompt injection, data exfiltration, unsafe output handling, tool injection, SSRF, data poisoning, and denial-wallet attacks.</li>
-<li>PII masking, sensitive-data classification, retention, secrets management, and access-aware retrieval.</li>
-<li>Least privilege, approval gates, red-teaming, and abuse prevention.</li>
-<li>Responsible AI: bias and fairness checks, harmful-content policy and moderation, transparency and disclosure, and regulatory awareness (for example, the EU AI Act).</li>
-</ul>
-<h3 id="delivery-surface">Delivery surface<a class="headerlink" href="#delivery-surface" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Meeting users where they already work: APIs, MCP clients, ChatGPT/Claude surfaces, or a dedicated UI.</li>
-<li>Trust UX: citations, uncertainty, corrections, human handoff, and safe action confirmation.</li>
-</ul>
-<h2 id="build">Build<a class="headerlink" href="#build" title="Permanent link">&para;</a></h2>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add streaming, timeouts, retries, and fallback behavior; simulate a provider outage.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Implement model routing and measure cost reduction at equivalent quality.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add a per-user cost budget and rate limit.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add entitlement/security trimming so users retrieve different permitted sets.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add PII-safe logging and audit events for sensitive actions.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Write prompt-injection, tool-injection, and unauthorized-access tests.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Define an SLO, run a load test, and show a graceful-degradation path.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Version prompts/schemas/models and gate changes on Module 5 evals.</li>
-</ul>
-<h2 id="checklist">Checklist<a class="headerlink" href="#checklist" title="Permanent link">&para;</a></h2>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> I can budget and attribute end-to-end latency.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> I implement fallbacks and graceful degradation for provider failures.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> I route across models to control cost without losing quality.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> I understand SLOs, backpressure, capacity, and rollback.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> I enforce PII handling and per-user entitlements in retrieval and logs.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> I can demonstrate defenses against prompt and tool injection.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> I can explain the deployment, ownership, and incident-recovery story.</li>
-</ul>
-<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Provider production best-practices and prompt-caching documentation.</li>
-<li>OWASP Top 10 for LLM Applications.</li>
-<li>A tracing/observability tool from Module 5 pointed at a live service.</li>
-</ul>
+<p><a href="../">← Back to the paper catalog</a> · <a href="../bert/">Next: BERT →</a></p>
 
 
 
@@ -2111,7 +2278,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../05-evals-observability/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 5 · Evals &amp; Observability">
+          <a href="../resnet/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Deep Residual Learning (ResNet)">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2121,20 +2288,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                5 · Evals & Observability
+                Deep Residual Learning (ResNet)
               </div>
             </div>
           </a>
         
         
           
-          <a href="../07-forward-deployed/" class="md-footer__link md-footer__link--next" aria-label="Next: 7 · The Forward-Deployed Craft">
+          <a href="../bert/" class="md-footer__link md-footer__link--next" aria-label="Next: BERT">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                7 · The Forward-Deployed Craft
+                BERT
               </div>
             </div>
             <div class="md-footer__button md-icon">
