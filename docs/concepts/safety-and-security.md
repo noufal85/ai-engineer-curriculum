@@ -41,3 +41,12 @@ Non-negotiable, not a v2 feature. Mostly **→ M6**, with red-teaming in [M5](..
 - **Human approval** — requiring a person before an irreversible or outward-facing action. *→ M4, M6*
 - **Sandboxing** — isolating code execution and untrusted content from sensitive systems. *→ M4, M6*
 - **Policy enforcement point** — the application boundary that checks identity, permissions, budgets, and action policy before execution.
+
+## Responsible AI
+
+- **Bias and fairness** — systematic skew in model behavior across groups, dialects, or contexts; measure it on your own data, not just published benchmarks. *→ M5, M6*
+- **Harmful-content policy** — the categories your product refuses or restricts, and the moderation layer that enforces them on inputs and outputs. *→ M6*
+- **Transparency and disclosure** — telling users when they are interacting with AI and what the system can and cannot do. *→ M6, M7*
+- **Human oversight** — keeping a person accountable for consequential decisions rather than fully delegating them. *→ M4, M6*
+- **Regulatory awareness** — the EU AI Act, sector rules, and customer AI policies that constrain what a deployed system may do. *→ M6, M7*
+- **Model behavior provenance** — knowing what alignment, system prompts, and safety layers shape the output you ship. *→ M1, M6*

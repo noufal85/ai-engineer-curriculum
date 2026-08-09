@@ -10,6 +10,7 @@ The human and organizational side of shipping AI systems. Mostly **→ M7**, wit
 - **Acceptance criteria** — observable conditions that define whether a feature is useful and complete.
 - **Reporting standard** — the domain-specific way an organization expects a result to be expressed.
 - **Tacit knowledge** — undocumented rules and habits that determine how work actually gets done.
+- **Low-code / no-code AI builders** — workflow tools that assemble AI features without custom code; know when they beat a bespoke build and when they cap out.
 
 ## Trust and interaction
 

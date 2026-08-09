@@ -38,6 +38,7 @@ Environment variables are the main configuration mechanism introduced in this tr
 - **Standard output / standard error** — the normal and error streams a command writes to.
 - **Exit code** — the numeric result a process returns to indicate success or failure.
 - **Stack trace** — a structured description of where an error occurred in a program.
+- **AI coding assistant** — a tool such as Claude Code, Cursor, or Copilot that reads, writes, and runs code with you; a daily productivity multiplier and a preview of the agent patterns built later in the course.
 
 ## Configuration boundaries
 

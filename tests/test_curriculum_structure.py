@@ -98,6 +98,19 @@ class CurriculumStructureTests(unittest.TestCase):
         self.assertIn("name: mermaid", mkdocs)
         self.assertIn("class: mermaid", mkdocs)
 
+    def test_roadmap_gap_topics_are_covered(self) -> None:
+        retrieval = self.read("docs/curriculum/03-rag-memory.md")
+        security = self.read("docs/concepts/safety-and-security.md")
+        production = self.read("docs/curriculum/06-production-systems.md")
+        specializations = self.read("docs/curriculum/specializations.md")
+        dev_env = self.read("docs/concepts/developer-environment.md")
+
+        self.assertIn("text-to-sql", retrieval.lower())
+        self.assertIn("responsible ai", security.lower())
+        self.assertIn("responsible ai", production.lower())
+        self.assertIn("image generation", specializations.lower())
+        self.assertIn("coding assistant", dev_env.lower())
+
     def test_course_supports_snippets_and_tiered_build_formats(self) -> None:
         builds = self.read("builds/README.md")
         home = self.read("docs/index.md")

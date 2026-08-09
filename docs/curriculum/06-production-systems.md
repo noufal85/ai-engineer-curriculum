@@ -44,6 +44,7 @@
 - Prompt injection, data exfiltration, unsafe output handling, tool injection, SSRF, data poisoning, and denial-wallet attacks.
 - PII masking, sensitive-data classification, retention, secrets management, and access-aware retrieval.
 - Least privilege, approval gates, red-teaming, and abuse prevention.
+- Responsible AI: bias and fairness checks, harmful-content policy and moderation, transparency and disclosure, and regulatory awareness (for example, the EU AI Act).
 
 ### Delivery surface
 

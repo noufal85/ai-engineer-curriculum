@@ -10,6 +10,7 @@ Making AI systems fast, cheap, reliable, and operable. Mostly **→ M6**.
 - **Batching / continuous batching** — serving multiple requests together for efficiency. *→ M6*
 - **KV cache** — cached attention state that speeds long generations.
 - **Speculative decoding** — a draft model proposes tokens a larger model verifies. *→ M6*
+- **Attention optimizations** — Flash Attention and MQA/GQA reduce memory and compute inside the model; recognize the names when tuning a self-hosted stack.
 
 ## Cost and reliability
 

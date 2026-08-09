@@ -21,6 +21,7 @@ How a system knows things it was not trained on. Mostly **→ M3**, with data-pi
 - **RAG** — retrieve relevant context, then generate an answer grounded in it. *→ M3*
 - **Chunking** — splitting documents into retrievable pieces; boundaries and overlap matter. *→ M3*
 - **Top-k** — how many candidates are retrieved.
+- **Text-to-SQL / text-to-Cypher (query construction)** — generating a validated database query from natural language when the answer lives in structured data. *→ M3, M7*
 - **Query rewriting** — transforming a user question into a retrieval-friendly query. *→ M3*
 - **Query decomposition** — splitting a multi-part question into smaller retrieval tasks. *→ M3*
 - **Multi-query retrieval** — issuing several reformulations to improve recall.

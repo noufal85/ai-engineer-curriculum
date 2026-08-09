@@ -23,6 +23,7 @@ Models do not know your private data, and you cannot fit everything into the con
 ### Retrieval and query planning
 
 - Embeddings, cosine/dot-product similarity, vector databases, ANN, HNSW, and IVF.
+- **Query construction: text-to-SQL and text-to-Cypher** — translating natural language into validated database queries when the answer lives in structured data rather than documents. One of the most requested enterprise skills; always validate and sandbox the generated query before execution.
 - Metadata filtering, lexical/BM25 search, hybrid retrieval, and reranking.
 - Query rewriting, query decomposition, multi-query retrieval, and hypothetical-document techniques.
 - Top-k selection, context budgets, citation assembly, and query-specific retrieval policies.
@@ -48,6 +49,7 @@ Models do not know your private data, and you cannot fit everything into the con
 - [ ] Build baseline RAG: ingest → chunk → embed → vector search → answer with citations.
 - [ ] Add hybrid search, metadata filters, and a reranker; measure retrieval quality before and after.
 - [ ] Add query rewriting or decomposition and show one case where it changes retrieval.
+- [ ] Add a text-to-SQL (or text-to-Cypher) path for one structured question; validate the generated query before executing it.
 - [ ] Build a GraphRAG variant over the same corpus and find a multi-hop question the vector version misses.
 - [ ] Add a stale-document or permission test and prove the system handles it.
 

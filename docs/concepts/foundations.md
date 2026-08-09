@@ -40,6 +40,7 @@ Core vocabulary for how AI and large language models work. Start with [Module 0]
 - **Sampling** — how a token is picked from the distribution.
 - **Temperature** — randomness knob: 0 ≈ deterministic, higher = more varied/creative. *→ M1*
 - **Top-p (nucleus) / Top-k** — restrict sampling to the most probable tokens. *→ M1*
+- **Repetition / frequency penalties** — knobs that discourage repeating tokens; useful when generations loop.
 - **Greedy / deterministic decoding** — always take the most likely token; note it still isn't bit-for-bit reproducible.
 - **Stop sequence** — a string that ends generation when produced.
 - **Streaming** — sending tokens as they're generated instead of all at once. *→ M0, M6*
