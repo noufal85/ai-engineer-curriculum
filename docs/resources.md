@@ -42,3 +42,4 @@ A short, curated shelf. Module pages carry their own targeted references; this p
 
 - Check provider changelogs for model releases, pricing, context limits, and API behavior before making model-choice decisions.
 - Prefer a small number of deep sources over a large feed of shallow updates.
+- See [Image Credits](image-credits.md) for the license and attribution of sourced lesson images.

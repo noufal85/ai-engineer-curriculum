@@ -76,6 +76,28 @@ class CurriculumStructureTests(unittest.TestCase):
         self.assertIn("```mermaid", foundations_lower)
         self.assertIn("why this matters", foundations_lower)
 
+    def test_foundations_has_attributed_web_images(self) -> None:
+        foundations = self.read("docs/curriculum/00-foundations.md")
+        credits = self.read("docs/image-credits.md")
+
+        for relative_path in (
+            "docs/assets/images/ai-ml-dl.svg",
+            "docs/assets/images/ml-system-workflow.png",
+        ):
+            self.assertTrue((ROOT / relative_path).exists(), relative_path)
+
+        self.assertIn("ai-ml-dl.svg", foundations)
+        self.assertIn("ml-system-workflow.png", foundations)
+        self.assertIn("Wikimedia Commons", credits)
+        self.assertIn("CC BY-SA 4.0", credits)
+
+    def test_mermaid_fence_is_configured_for_rendering(self) -> None:
+        mkdocs = self.read("mkdocs.yml")
+
+        self.assertIn("custom_fences:", mkdocs)
+        self.assertIn("name: mermaid", mkdocs)
+        self.assertIn("class: mermaid", mkdocs)
+
 
 if __name__ == "__main__":
     unittest.main()

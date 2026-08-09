@@ -25,6 +25,12 @@ flowchart LR
     LLM --> Apps["AI applications"]
 ```
 
+Here is the same relationship as a real-world reference diagram:
+
+![AI, machine learning, and deep learning relationships](../assets/images/ai-ml-dl.svg)
+
+*Image credit: [AI-ML-DL.svg](../image-credits.md).*
+
 ### Machine learning
 
 In traditional programming, a person writes rules that transform inputs into outputs:
@@ -86,6 +92,12 @@ There are two different activities:
 |---|---|---|
 | **Training** | The model's parameters are adjusted using many examples | Model labs and research teams |
 | **Inference** | The trained model generates an answer for a new request | Your application at runtime |
+
+This training-to-inference split is also shown in the following workflow diagram:
+
+![Machine-learning system workflow](../assets/images/ml-system-workflow.png)
+
+*Image credit: [Workflow of a machine-learning-based AI system](../image-credits.md).*
 
 This course focuses on **inference and application engineering**. You will learn how to choose models, provide useful context, validate outputs, connect tools, evaluate behavior, and operate the result.
 

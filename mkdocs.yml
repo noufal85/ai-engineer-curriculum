@@ -44,7 +44,11 @@ markdown_extensions:
   - toc:
       permalink: true
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
@@ -92,6 +96,7 @@ nav:
       - CrabRAG / Graph Memory: notes/crabrag-graph-memory.md
       - Your Moat Is Your Data Model: notes/moat-is-your-data-model.md
   - Resources: resources.md
+  - Image Credits: image-credits.md
 
 extra:
   social:
