@@ -1619,6 +1619,7 @@
 <li><strong>Sampling</strong> — how a token is picked from the distribution.</li>
 <li><strong>Temperature</strong> — randomness knob: 0 ≈ deterministic, higher = more varied/creative. <em>→ M1</em></li>
 <li><strong>Top-p (nucleus) / Top-k</strong> — restrict sampling to the most probable tokens. <em>→ M1</em></li>
+<li><strong>Repetition / frequency penalties</strong> — knobs that discourage repeating tokens; useful when generations loop.</li>
 <li><strong>Greedy / deterministic decoding</strong> — always take the most likely token; note it still isn't bit-for-bit reproducible.</li>
 <li><strong>Stop sequence</strong> — a string that ends generation when produced.</li>
 <li><strong>Streaming</strong> — sending tokens as they're generated instead of all at once. <em>→ M0, M6</em></li>

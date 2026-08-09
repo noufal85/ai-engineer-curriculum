@@ -1697,6 +1697,7 @@
 <h3 id="retrieval-and-query-planning">Retrieval and query planning<a class="headerlink" href="#retrieval-and-query-planning" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Embeddings, cosine/dot-product similarity, vector databases, ANN, HNSW, and IVF.</li>
+<li><strong>Query construction: text-to-SQL and text-to-Cypher</strong> — translating natural language into validated database queries when the answer lives in structured data rather than documents. One of the most requested enterprise skills; always validate and sandbox the generated query before execution.</li>
 <li>Metadata filtering, lexical/BM25 search, hybrid retrieval, and reranking.</li>
 <li>Query rewriting, query decomposition, multi-query retrieval, and hypothetical-document techniques.</li>
 <li>Top-k selection, context budgets, citation assembly, and query-specific retrieval policies.</li>
@@ -1722,6 +1723,7 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Build baseline RAG: ingest → chunk → embed → vector search → answer with citations.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add hybrid search, metadata filters, and a reranker; measure retrieval quality before and after.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add query rewriting or decomposition and show one case where it changes retrieval.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add a text-to-SQL (or text-to-Cypher) path for one structured question; validate the generated query before executing it.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Build a GraphRAG variant over the same corpus and find a multi-hop question the vector version misses.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add a stale-document or permission test and prove the system handles it.</li>
 </ul>
