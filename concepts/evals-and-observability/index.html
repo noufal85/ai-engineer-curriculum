@@ -1268,6 +1268,8 @@
       
         
       
+        
+      
     
     
     
@@ -1315,6 +1317,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/intro-to-large-language-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intro to Large Language Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -1514,22 +1544,22 @@
 
 
 <h1 id="evals-observability">Evals &amp; Observability<a class="headerlink" href="#evals-observability" title="Permanent link">&para;</a></h1>
-<p>How you know an AI system works and catch it when it stops. Mostly <strong>→ M5</strong>.</p>
+<p>How you know an AI system works and catch it when it stops. Mostly <strong>→ <a href="../../curriculum/05-evals-observability/">M5</a></strong>.</p>
 <h2 id="evaluation">Evaluation<a class="headerlink" href="#evaluation" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Eval</strong> — a repeatable test of quality on representative and adversarial cases. <em>→ M5</em></li>
-<li><strong>Golden dataset / ground truth</strong> — reference behavior or evidence used for grading. <em>→ M5</em></li>
+<li><strong>Eval</strong> — a repeatable test of quality on representative and adversarial cases. <em>→ <a href="../../curriculum/05-evals-observability/">M5</a></em></li>
+<li><strong>Golden dataset / ground truth</strong> — reference behavior or evidence used for grading. <em>→ <a href="../../curriculum/05-evals-observability/">M5</a></em></li>
 <li><strong>Eval dataset version</strong> — a named, reviewable snapshot of cases and expected behavior.</li>
-<li><strong>LLM-as-judge</strong> — using a model to grade outputs; powerful but biased. <em>→ M5</em></li>
+<li><strong>LLM-as-judge</strong> — using a model to grade outputs; powerful but biased. <em>→ <a href="../../curriculum/05-evals-observability/">M5</a></em></li>
 <li><strong>Judge calibration</strong> — checking model grading against human decisions and known counterexamples.</li>
-<li><strong>Pass@k</strong> — the chance a correct answer appears within k attempts. <em>→ M5</em></li>
-<li><strong>Stability / consistency</strong> — whether repeated runs answer the same question consistently. <em>→ M5</em></li>
-<li><strong>Faithfulness / groundedness</strong> — whether a RAG answer follows from its evidence. <em>→ M5</em></li>
-<li><strong>Precision / recall / F1</strong> — standard retrieval and classification metrics. <em>→ M5</em></li>
-<li><strong>Complexity tiers</strong> — grouping cases by difficulty. <em>→ M5</em></li>
-<li><strong>Offline versus online eval</strong> — pre-deploy suites versus production monitoring and feedback. <em>→ M5</em></li>
-<li><strong>Regression suite</strong> — evals that gate prompt, model, schema, routing, or data changes. <em>→ M5, M6</em></li>
-<li><strong>Red-teaming</strong> — deliberately trying to break the system. <em>→ M5, M8</em></li>
+<li><strong>Pass@k</strong> — the chance a correct answer appears within k attempts. <em>→ <a href="../../curriculum/05-evals-observability/">M5</a></em></li>
+<li><strong>Stability / consistency</strong> — whether repeated runs answer the same question consistently. <em>→ <a href="../../curriculum/05-evals-observability/">M5</a></em></li>
+<li><strong>Faithfulness / groundedness</strong> — whether a RAG answer follows from its evidence. <em>→ <a href="../../curriculum/05-evals-observability/">M5</a></em></li>
+<li><strong>Precision / recall / F1</strong> — standard retrieval and classification metrics. <em>→ <a href="../../curriculum/05-evals-observability/">M5</a></em></li>
+<li><strong>Complexity tiers</strong> — grouping cases by difficulty. <em>→ <a href="../../curriculum/05-evals-observability/">M5</a></em></li>
+<li><strong>Offline versus online eval</strong> — pre-deploy suites versus production monitoring and feedback. <em>→ <a href="../../curriculum/05-evals-observability/">M5</a></em></li>
+<li><strong>Regression suite</strong> — evals that gate prompt, model, schema, routing, or data changes. <em>→ <a href="../../curriculum/05-evals-observability/">M5</a>, <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Red-teaming</strong> — deliberately trying to break the system. <em>→ <a href="../../curriculum/05-evals-observability/">M5</a>, <a href="../../curriculum/08-capstones/">M8</a></em></li>
 </ul>
 <h2 id="benchmarks">Benchmarks<a class="headerlink" href="#benchmarks" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1537,12 +1567,12 @@
 </ul>
 <h2 id="observability">Observability<a class="headerlink" href="#observability" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Trace</strong> — a complete record of one request or workflow. <em>→ M5</em></li>
-<li><strong>Span</strong> — one unit of work within a trace. <em>→ M5</em></li>
+<li><strong>Trace</strong> — a complete record of one request or workflow. <em>→ <a href="../../curriculum/05-evals-observability/">M5</a></em></li>
+<li><strong>Span</strong> — one unit of work within a trace. <em>→ <a href="../../curriculum/05-evals-observability/">M5</a></em></li>
 <li><strong>Correlation ID</strong> — an identifier connecting logs, tools, model calls, and user-visible work.</li>
-<li><strong>Cost / latency / token metrics</strong> — operational numbers logged per request or step. <em>→ M5, M6</em></li>
-<li><strong>Human rubric</strong> — explicit criteria for structured human grading. <em>→ M5</em></li>
-<li><strong>Feedback loop</strong> — failures feed changes to data, prompts, schemas, tools, or domain rules. <em>→ M5, M7</em></li>
+<li><strong>Cost / latency / token metrics</strong> — operational numbers logged per request or step. <em>→ <a href="../../curriculum/05-evals-observability/">M5</a>, <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Human rubric</strong> — explicit criteria for structured human grading. <em>→ <a href="../../curriculum/05-evals-observability/">M5</a></em></li>
+<li><strong>Feedback loop</strong> — failures feed changes to data, prompts, schemas, tools, or domain rules. <em>→ <a href="../../curriculum/05-evals-observability/">M5</a>, <a href="../../curriculum/07-forward-deployed/">M7</a></em></li>
 </ul>
 
 

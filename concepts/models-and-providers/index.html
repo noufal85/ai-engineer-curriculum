@@ -1312,6 +1312,8 @@
       
         
       
+        
+      
     
     
     
@@ -1359,6 +1361,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/intro-to-large-language-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intro to Large Language Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -1609,7 +1639,7 @@
 <li><strong>Anthropic</strong> — maker of <strong>Claude</strong>. Model tiers: <strong>Opus</strong> (most capable), <strong>Sonnet</strong> (balanced), <strong>Haiku</strong> (fast/cheap), plus frontier tiers. Strong on tool use, structured output, and long context. Powers the builds in this course.</li>
 <li><strong>Google</strong> — the <strong>Gemini</strong> family (e.g. Pro / Flash tiers), natively multimodal, very large context windows; served via the Gemini API and Vertex AI.</li>
 <li><strong>xAI</strong> — the <strong>Grok</strong> family.</li>
-<li><strong>Cohere</strong> — enterprise focus; notable for strong <strong>embedding</strong> and <strong>reranking</strong> models. <em>→ M3</em></li>
+<li><strong>Cohere</strong> — enterprise focus; notable for strong <strong>embedding</strong> and <strong>reranking</strong> models. <em>→ <a href="../../curriculum/03-rag-memory/">M3</a></em></li>
 </ul>
 <h2 id="open-weights-model-families">Open-weights model families<a class="headerlink" href="#open-weights-model-families" title="Permanent link">&para;</a></h2>
 <p>Downloadable weights you can self-host or run through a provider.</p>
@@ -1623,44 +1653,44 @@
 </ul>
 <h2 id="gateways-aggregators-hubs">Gateways, aggregators &amp; hubs<a class="headerlink" href="#gateways-aggregators-hubs" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>OpenRouter</strong> — a single API/endpoint that routes to hundreds of models across many providers; switch models by changing a string, with unified billing and fallbacks. <em>→ M6</em></li>
-<li><strong>LiteLLM</strong> — open-source proxy/SDK that normalizes 100+ providers to one OpenAI-style API; common for model routing. <em>→ M6</em></li>
+<li><strong>OpenRouter</strong> — a single API/endpoint that routes to hundreds of models across many providers; switch models by changing a string, with unified billing and fallbacks. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>LiteLLM</strong> — open-source proxy/SDK that normalizes 100+ providers to one OpenAI-style API; common for model routing. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
 <li><strong>Hugging Face</strong> — the model &amp; dataset <strong>hub</strong>, plus hosted <strong>Inference</strong> and the <code>transformers</code> library; where most open models live.</li>
-<li><strong>Model routing</strong> — sending each request to the cheapest model that can handle it, escalating when needed. <em>→ M6</em></li>
+<li><strong>Model routing</strong> — sending each request to the cheapest model that can handle it, escalating when needed. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
 </ul>
 <h2 id="cloud-model-platforms">Cloud model platforms<a class="headerlink" href="#cloud-model-platforms" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>AWS Bedrock</strong> — multi-provider model API on AWS (includes Claude, Llama, others).</li>
 <li><strong>Google Vertex AI</strong> — Google Cloud's model platform (Gemini + others).</li>
 <li><strong>Azure AI Foundry / Azure OpenAI</strong> — Microsoft's hosted OpenAI and open models.</li>
-<li><strong>Why they exist</strong> — enterprise data residency, IAM, and billing inside an existing cloud. <em>→ M6</em></li>
+<li><strong>Why they exist</strong> — enterprise data residency, IAM, and billing inside an existing cloud. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
 </ul>
 <h2 id="inference-providers-fastcheap-hosting-of-open-models">Inference providers (fast/cheap hosting of open models)<a class="headerlink" href="#inference-providers-fastcheap-hosting-of-open-models" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Groq</strong> — custom hardware (LPU) for very low-latency inference.</li>
-<li><strong>Together, Fireworks, Baseten, Replicate, Modal, Anyscale</strong> — host open-weights models behind an API so you don't manage GPUs. <em>→ M6</em></li>
+<li><strong>Together, Fireworks, Baseten, Replicate, Modal, Anyscale</strong> — host open-weights models behind an API so you don't manage GPUs. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
 </ul>
 <h2 id="model-level-concepts">Model-level concepts<a class="headerlink" href="#model-level-concepts" title="Permanent link">&para;</a></h2>
 <p>How models are made smaller, cheaper, or specialized.</p>
 <ul>
-<li><strong>Pretraining</strong> — the giant self-supervised phase that produces a base model. <em>→ M1</em></li>
-<li><strong>Fine-tuning (SFT)</strong> — further training on curated examples to specialize behavior. <em>→ M1</em></li>
-<li><strong>RLHF / RLAIF / DPO</strong> — preference optimization: aligning a model to human (or AI) preferences after SFT. <em>→ M1</em></li>
+<li><strong>Pretraining</strong> — the giant self-supervised phase that produces a base model. <em>→ <a href="../../curriculum/01-llm-internals/">M1</a></em></li>
+<li><strong>Fine-tuning (SFT)</strong> — further training on curated examples to specialize behavior. <em>→ <a href="../../curriculum/01-llm-internals/">M1</a></em></li>
+<li><strong>RLHF / RLAIF / DPO</strong> — preference optimization: aligning a model to human (or AI) preferences after SFT. <em>→ <a href="../../curriculum/01-llm-internals/">M1</a></em></li>
 <li><strong>Model distillation</strong> — training a smaller <strong>student</strong> model to mimic a larger <strong>teacher</strong>; cheaper/faster inference for much of the quality. (Your example — very common for shipping small fast models.)</li>
-<li><strong>Quantization</strong> — storing weights at lower precision (int8/int4; GGUF, AWQ, GPTQ) to shrink memory and speed up inference, trading a little quality. <em>→ M6</em></li>
+<li><strong>Quantization</strong> — storing weights at lower precision (int8/int4; GGUF, AWQ, GPTQ) to shrink memory and speed up inference, trading a little quality. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
 <li><strong>LoRA / QLoRA / PEFT</strong> — parameter-efficient fine-tuning: train a few small adapter weights instead of the whole model — cheap to train and swap.</li>
 <li><strong>Mixture-of-Experts (MoE)</strong> — only a subset of the network ("experts") runs per token; more capacity at lower inference cost.</li>
 <li><strong>Context-length extension</strong> — techniques (e.g. RoPE scaling) to grow a model's usable context window.</li>
-<li><strong>Speculative decoding</strong> — a small draft model proposes tokens a big model verifies, speeding generation. <em>→ M6</em></li>
-<li><strong>Embedding model</strong> — a model that turns text into vectors for search (a different job than a chat model). <em>→ M3</em></li>
-<li><strong>Reranker (cross-encoder)</strong> — a model that re-scores retrieved candidates for relevance. <em>→ M3</em></li>
-<li><strong>Choosing a model</strong> — pick by context window, cost, latency, tool-use quality, and structured-output reliability — not "which is best." <em>→ M1, M6</em></li>
+<li><strong>Speculative decoding</strong> — a small draft model proposes tokens a big model verifies, speeding generation. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Embedding model</strong> — a model that turns text into vectors for search (a different job than a chat model). <em>→ <a href="../../curriculum/03-rag-memory/">M3</a></em></li>
+<li><strong>Reranker (cross-encoder)</strong> — a model that re-scores retrieved candidates for relevance. <em>→ <a href="../../curriculum/03-rag-memory/">M3</a></em></li>
+<li><strong>Choosing a model</strong> — pick by context window, cost, latency, tool-use quality, and structured-output reliability — not "which is best." <em>→ <a href="../../curriculum/01-llm-internals/">M1</a>, <a href="../../curriculum/06-production-systems/">M6</a></em></li>
 </ul>
 <h2 id="standards-interop">Standards &amp; interop<a class="headerlink" href="#standards-interop" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>OpenAI-compatible API</strong> — the request/response shape many providers and tools adopt so clients are swappable.</li>
-<li><strong>Model ID / alias</strong> — the exact string that selects a model+version (e.g. a dated snapshot vs a rolling alias). Wrong string = error. <em>→ M6</em></li>
-<li><strong>Tokenizer differences</strong> — the same text is a different token count per model family, so re-baseline cost/limits when you switch. <em>→ M1</em></li>
+<li><strong>Model ID / alias</strong> — the exact string that selects a model+version (e.g. a dated snapshot vs a rolling alias). Wrong string = error. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Tokenizer differences</strong> — the same text is a different token count per model family, so re-baseline cost/limits when you switch. <em>→ <a href="../../curriculum/01-llm-internals/">M1</a></em></li>
 </ul>
 
 

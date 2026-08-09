@@ -1,0 +1,2590 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A self-tracked syllabus for becoming an AI Engineer and Forward-Deployed Engineer.">
+      
+      
+        <meta name="author" content="Noufal Edappanoli">
+      
+      
+        <link rel="canonical" href="https://noufal85.github.io/ai-engineer-curriculum/notes/intro-to-large-language-models/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../crabrag-graph-memory/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Intro to Large Language Models - AI Engineer / FDE Curriculum</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#intro-to-large-language-models" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AI Engineer / FDE Curriculum" class="md-header__button md-logo" aria-label="AI Engineer / FDE Curriculum" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Engineer / FDE Curriculum
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Intro to Large Language Models
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/noufal85/ai-engineer-curriculum" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    noufal85/ai-engineer-curriculum
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AI Engineer / FDE Curriculum" class="md-nav__button md-logo" aria-label="AI Engineer / FDE Curriculum" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"/></svg>
+
+    </a>
+    AI Engineer / FDE Curriculum
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/noufal85/ai-engineer-curriculum" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    noufal85/ai-engineer-curriculum
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../progress/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Progress
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../curriculum/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Curriculum
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Curriculum
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/environment-and-programming/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/engineering-core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineering Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/00-foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0 · Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/01-llm-internals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1 · LLM Internals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/02-prompting-context/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2 · Prompting & Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/03-rag-memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 · Retrieval, RAG & Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/04-agents-tools-mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4 · Agents, Tools & MCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/05-evals-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5 · Evals & Observability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/06-production-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6 · Production Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/07-forward-deployed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7 · The Forward-Deployed Craft
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/08-capstones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8 · Capstones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../curriculum/specializations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optional Specializations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../concepts/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/developer-environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/engineering-core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineering Core
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/foundations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/models-and-providers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Models & Providers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/prompting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompting & Context
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/retrieval-and-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retrieval & Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/agents-and-protocols/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agents & Protocols
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/evals-and-observability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Evals & Observability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/serving-and-ops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Serving & Ops
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/platform-and-sre/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform & SRE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/product-and-adoption/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Product & Adoption
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/safety-and-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Safety & Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Talk Notes
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Talk Notes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intro to Large Language Models
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intro to Large Language Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#thesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thesis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-model-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The model lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-an-llm-is-0020" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What an LLM is — 00:20
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. What an LLM is — 00:20">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-two-files-abstraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The "two files" abstraction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inference-is-the-cheap-side-training-is-the-expensive-side-0417" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inference is the cheap side; training is the expensive side — 04:17
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-next-token-prediction-creates-surprising-capability-0644" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Next-token prediction creates surprising capability — 06:44
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-generation-dreaming-and-hallucination-0900" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Generation, "dreaming," and hallucination — 09:00
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-known-mathematics-opaque-learned-computation-1122" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Known mathematics, opaque learned computation — 11:22
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-from-document-generator-to-assistant-1414" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. From document generator to assistant — 14:14
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. From document generator to assistant — 14:14">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supervised-fine-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supervised fine-tuning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-improvement-loop-1752" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The improvement loop — 17:52
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preference-comparisons-and-rlhf-2105" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preference comparisons and RLHF — 21:05
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-why-models-were-expected-to-keep-improving-2543" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Why models were expected to keep improving — 25:43
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-tools-turn-a-model-into-a-problem-solving-system-2743" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Tools turn a model into a problem-solving system — 27:43
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-multimodality-and-slower-reasoning-3332" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Multimodality and slower reasoning — 33:32
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Multimodality and slower reasoning — 33:32">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multimodality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multimodality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-1-versus-system-2-3500" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System 1 versus System 2 — 35:00
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-self-improvement-needs-a-verifiable-reward-3802" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Self-improvement needs a verifiable reward — 38:02
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-customization-retrieval-and-the-llm-operating-system-4045" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Customization, retrieval, and the LLM operating system — 40:45
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Customization, retrieval, and the LLM operating system — 40:45">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-llm-os-mental-model-4215" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The LLM OS mental model — 42:15
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-security-the-same-flexibility-becomes-an-attack-surface-4544" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Security: the same flexibility becomes an attack surface — 45:44
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Security: the same flexibility becomes an attack surface — 45:44">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jailbreaks-4614" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jailbreaks — 46:14
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-injection-5130" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt injection — 51:30
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-poisoning-and-backdoors-5623" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data poisoning and backdoors — 56:23
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-conclusion-5837" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security conclusion — 58:37
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-distinctions-to-retain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key distinctions to retain
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineering-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engineering takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#curriculum-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Curriculum connections
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crabrag-graph-memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CrabRAG / Graph Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../moat-is-your-data-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Your Moat Is Your Data Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../image-credits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Image Credits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#thesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thesis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-model-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The model lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-an-llm-is-0020" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What an LLM is — 00:20
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. What an LLM is — 00:20">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-two-files-abstraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The "two files" abstraction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inference-is-the-cheap-side-training-is-the-expensive-side-0417" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inference is the cheap side; training is the expensive side — 04:17
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-next-token-prediction-creates-surprising-capability-0644" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Next-token prediction creates surprising capability — 06:44
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-generation-dreaming-and-hallucination-0900" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Generation, "dreaming," and hallucination — 09:00
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-known-mathematics-opaque-learned-computation-1122" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Known mathematics, opaque learned computation — 11:22
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-from-document-generator-to-assistant-1414" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. From document generator to assistant — 14:14
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. From document generator to assistant — 14:14">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supervised-fine-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supervised fine-tuning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-improvement-loop-1752" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The improvement loop — 17:52
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preference-comparisons-and-rlhf-2105" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preference comparisons and RLHF — 21:05
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-why-models-were-expected-to-keep-improving-2543" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Why models were expected to keep improving — 25:43
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-tools-turn-a-model-into-a-problem-solving-system-2743" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Tools turn a model into a problem-solving system — 27:43
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-multimodality-and-slower-reasoning-3332" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Multimodality and slower reasoning — 33:32
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Multimodality and slower reasoning — 33:32">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multimodality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multimodality
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-1-versus-system-2-3500" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System 1 versus System 2 — 35:00
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-self-improvement-needs-a-verifiable-reward-3802" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Self-improvement needs a verifiable reward — 38:02
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-customization-retrieval-and-the-llm-operating-system-4045" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Customization, retrieval, and the LLM operating system — 40:45
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Customization, retrieval, and the LLM operating system — 40:45">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-llm-os-mental-model-4215" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The LLM OS mental model — 42:15
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-security-the-same-flexibility-becomes-an-attack-surface-4544" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Security: the same flexibility becomes an attack surface — 45:44
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Security: the same flexibility becomes an attack surface — 45:44">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jailbreaks-4614" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jailbreaks — 46:14
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prompt-injection-5130" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt injection — 51:30
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-poisoning-and-backdoors-5623" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data poisoning and backdoors — 56:23
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-conclusion-5837" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security conclusion — 58:37
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-distinctions-to-retain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key distinctions to retain
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#engineering-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Engineering takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#curriculum-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Curriculum connections
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="intro-to-large-language-models">Intro to Large Language Models<a class="headerlink" href="#intro-to-large-language-models" title="Permanent link">&para;</a></h1>
+<p><strong>Speaker:</strong> Andrej Karpathy<br />
+<strong>Source:</strong> <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g">youtube.com/watch?v=zjkBMFhNj_g</a><br />
+<strong>Published:</strong> November 23, 2023 · <strong>Duration:</strong> 59:48</p>
+<hr />
+<div class="admonition note">
+<p class="admonition-title">Scope and date</p>
+<p>This is a condensed, structured transcript: technical content is preserved while greetings, repetition, and presentation filler are removed. Product names, model rankings, costs, and claims about what models can do "currently" are a <strong>November 2023 snapshot</strong>, not a current leaderboard.</p>
+</div>
+<h2 id="thesis">Thesis<a class="headerlink" href="#thesis" title="Permanent link">&para;</a></h2>
+<p>An LLM is easy to describe and comparatively straightforward to run once it exists, but enormously expensive to create. <strong>Pretraining compresses patterns from a huge text corpus into parameters by predicting the next token. Fine-tuning reshapes that base model into an assistant. Retrieval, tools, and multiple modalities turn the assistant into a broader problem-solving system.</strong> Because the learned computation is probabilistic and mostly opaque, useful LLM systems need behavioral evals, external verification, and security boundaries around untrusted inputs and tool access.</p>
+<h2 id="the-model-lifecycle">The model lifecycle<a class="headerlink" href="#the-model-lifecycle" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>flowchart LR
+    A["Internet-scale text"] --&gt;|"Next-token pretraining"| B["Base model"]
+    B --&gt;|"Supervised fine-tuning"| C["Assistant model"]
+    D["Curated demonstrations"] --&gt; C
+    C --&gt;|"Preference optimization / RLHF"| E["Refined assistant"]
+    F["Retrieval, tools, and modalities"] --&gt;|"Runtime orchestration"| G["Useful LLM application"]
+    E --&gt; G</code></pre>
+<p>The stages solve different problems:</p>
+<ul>
+<li><strong>Pretraining:</strong> acquire statistical structure, language ability, and broad knowledge.</li>
+<li><strong>Supervised fine-tuning (SFT):</strong> learn the format and behavior of a helpful assistant.</li>
+<li><strong>Preference optimization / RLHF:</strong> prefer responses people judge as better.</li>
+<li><strong>Runtime augmentation:</strong> retrieve current or private information, call reliable tools, and act through software.</li>
+</ul>
+<h2 id="1-what-an-llm-is-0020">1. What an LLM is — <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g&amp;t=20s">00:20</a><a class="headerlink" href="#1-what-an-llm-is-0020" title="Permanent link">&para;</a></h2>
+<h3 id="the-two-files-abstraction">The "two files" abstraction<a class="headerlink" href="#the-two-files-abstraction" title="Permanent link">&para;</a></h3>
+<p>Conceptually, an open-weight LLM can be reduced to:</p>
+<ol>
+<li>A <strong>parameter/checkpoint file</strong> containing the learned weights.</li>
+<li>A <strong>runner</strong> implementing the neural-network architecture and forward pass.</li>
+</ol>
+<p>Karpathy uses Llama 2 70B as the concrete example:</p>
+<ul>
+<li><strong>70 billion parameters × 2 bytes per FP16 parameter ≈ 140 GB</strong> of weights.</li>
+<li>A minimal Transformer runner can fit in roughly <strong>500 lines of dependency-free C</strong>.</li>
+<li>Once the weights exist, the package is self-contained: compile the runner, point it at the checkpoint, and generate text without an internet connection.</li>
+<li>The laptop demo actually used the smaller <strong>7B</strong> model; the 70B model would have generated much more slowly on that setup.</li>
+</ul>
+<p>This is deliberately simplified. Real deployments also need a tokenizer, model configuration, enough memory, and usually an optimized inference runtime. The useful distinction is still valid: <strong>the architecture is explicit code; the expensive learned capability lives in the weights.</strong></p>
+<h3 id="inference-is-the-cheap-side-training-is-the-expensive-side-0417">Inference is the cheap side; training is the expensive side — <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g&amp;t=257s">04:17</a><a class="headerlink" href="#inference-is-the-cheap-side-training-is-the-expensive-side-0417" title="Permanent link">&para;</a></h3>
+<p>The talk's rough Llama 2 70B training figures are:</p>
+<table>
+<thead>
+<tr>
+<th>Input / resource</th>
+<th style="text-align: right;">Approximate figure in the talk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Training text</td>
+<td style="text-align: right;">10 TB</td>
+</tr>
+<tr>
+<td>GPUs</td>
+<td style="text-align: right;">6,000</td>
+</tr>
+<tr>
+<td>Training time</td>
+<td style="text-align: right;">12 days</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td style="text-align: right;">$2 million</td>
+</tr>
+<tr>
+<td>Resulting FP16 checkpoint</td>
+<td style="text-align: right;">140 GB</td>
+</tr>
+</tbody>
+</table>
+<p>Karpathy describes the checkpoint as a <strong>lossy compression of the internet</strong>. It is not a ZIP archive that can reproduce every document. It captures enough statistical structure—a rough "gestalt" of the corpus—to predict plausible continuations and reconstruct some learned knowledge.</p>
+<p>The figures were already small relative to frontier training runs at the time. The durable lesson is not the exact price: <strong>creating the parameters requires vastly more computation than using an already-trained model.</strong></p>
+<h2 id="2-next-token-prediction-creates-surprising-capability-0644">2. Next-token prediction creates surprising capability — <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g&amp;t=404s">06:44</a><a class="headerlink" href="#2-next-token-prediction-creates-surprising-capability-0644" title="Permanent link">&para;</a></h2>
+<p>The training objective is simple: given the preceding context, predict a probability distribution for the <strong>next token</strong>. The talk says "word" for accessibility, but models operate on tokens, which may be whole words, fragments, punctuation, or other units.</p>
+<p>Why can such a narrow objective produce a capable model?</p>
+<ul>
+<li>Predicting ordinary syntax requires learning grammar and style.</li>
+<li>Predicting information-rich text requires encoding entities, facts, dates, and relationships.</li>
+<li>Predicting code requires learning recurring program structure.</li>
+<li>Better prediction is closely related to better compression: if a model can anticipate what comes next, the data contains less surprise.</li>
+</ul>
+<p>The network is therefore pressured to build internal representations of language and the world—not because those concepts were explicitly programmed, but because they help reduce next-token prediction error.</p>
+<h2 id="3-generation-dreaming-and-hallucination-0900">3. Generation, "dreaming," and hallucination — <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g&amp;t=540s">09:00</a><a class="headerlink" href="#3-generation-dreaming-and-hallucination-0900" title="Permanent link">&para;</a></h2>
+<p>Inference repeats one loop:</p>
+<ol>
+<li>Predict probabilities for the next token.</li>
+<li>Select or sample a token.</li>
+<li>Append it to the context.</li>
+<li>Run the model again.</li>
+</ol>
+<p>A pretrained base model consequently <strong>dreams documents from its training distribution</strong>: source code, product listings, encyclopedia articles, and other internet-like forms.</p>
+<p>The crucial failure mode is that learning a form is not the same as verifying its content. A model may generate a realistic book listing and invent a correctly shaped but nonexistent ISBN. It may also generate a novel description of a real subject that is roughly accurate. From the prose alone, the user often cannot tell whether a detail was:</p>
+<ul>
+<li>memorized from training,</li>
+<li>reconstructed from compressed knowledge, or</li>
+<li>fabricated because it was statistically plausible.</li>
+</ul>
+<p><strong>Hallucination is therefore not an accidental add-on to generation. It follows naturally from asking a probabilistic document generator to produce plausible continuations without a truth-checking mechanism or source of record.</strong></p>
+<h2 id="4-known-mathematics-opaque-learned-computation-1122">4. Known mathematics, opaque learned computation — <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g&amp;t=682s">11:22</a><a class="headerlink" href="#4-known-mathematics-opaque-learned-computation-1122" title="Permanent link">&para;</a></h2>
+<p>We know the Transformer's architecture and every mathematical operation in its forward pass. What we do not know in full is how billions of optimized parameters collaborate to produce a specific fact, plan, or failure.</p>
+<p>The talk uses the <strong>reversal curse</strong> as an illustration: a model may know that person A is related to person B when asked in the direction seen frequently in training, yet fail when the same relationship is queried in reverse. Its knowledge is not stored like a clean relational database with guaranteed bidirectional lookup.</p>
+<p>Mechanistic interpretability can explain pieces of a model, but not the entire learned program. The practical stance is to treat an LLM as an <strong>empirical artifact</strong>:</p>
+<ul>
+<li>define the behaviors you need,</li>
+<li>test them over representative inputs,</li>
+<li>measure failure rates and stability,</li>
+<li>and do not infer reliability merely from architectural understanding.</li>
+</ul>
+<h2 id="5-from-document-generator-to-assistant-1414">5. From document generator to assistant — <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g&amp;t=854s">14:14</a><a class="headerlink" href="#5-from-document-generator-to-assistant-1414" title="Permanent link">&para;</a></h2>
+<p>Pretraining produces a base model that continues documents. It is not inherently a helpful question-answering system. If prompted with a question, a base model may continue with more questions or imitate whatever document pattern the prompt resembles.</p>
+<h3 id="supervised-fine-tuning">Supervised fine-tuning<a class="headerlink" href="#supervised-fine-tuning" title="Permanent link">&para;</a></h3>
+<p>SFT keeps the same next-token objective but changes the dataset:</p>
+<ul>
+<li><strong>Pretraining:</strong> enormous quantity, mixed quality, mostly internet text.</li>
+<li><strong>Fine-tuning:</strong> much smaller quantity, high quality, deliberately written conversations.</li>
+</ul>
+<p>Human labelers receive behavioral instructions, write prompts, and produce ideal assistant responses. The talk uses roughly <strong>100,000 conversations</strong> as an illustrative scale. By imitating these examples, the model learns the user/assistant format, response style, and desired behavior while retaining knowledge acquired during pretraining.</p>
+<p>A useful shorthand is:</p>
+<ul>
+<li><strong>Pretraining teaches knowledge and capabilities.</strong></li>
+<li><strong>Fine-tuning teaches role, format, and alignment.</strong></li>
+</ul>
+<h3 id="the-improvement-loop-1752">The improvement loop — <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g&amp;t=1072s">17:52</a><a class="headerlink" href="#the-improvement-loop-1752" title="Permanent link">&para;</a></h3>
+<p>Fine-tuning is much cheaper and faster than pretraining, so teams can iterate more frequently:</p>
+<ol>
+<li>Deploy and evaluate the assistant.</li>
+<li>Collect a conversation where it failed or misbehaved.</li>
+<li>Replace the bad answer with a high-quality target response.</li>
+<li>Add that example to the training set.</li>
+<li>Fine-tune and evaluate again.</li>
+</ol>
+<p>This also explains why an open-weight <strong>base</strong> model is valuable: another team can reuse the expensive pretrained checkpoint and perform its own comparatively cheap domain or behavior fine-tuning. An <strong>assistant</strong> checkpoint is already tuned for direct conversation.</p>
+<h3 id="preference-comparisons-and-rlhf-2105">Preference comparisons and RLHF — <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g&amp;t=1265s">21:05</a><a class="headerlink" href="#preference-comparisons-and-rlhf-2105" title="Permanent link">&para;</a></h3>
+<p>Writing an ideal response from scratch can be difficult; choosing the best of several candidates is often easier. Preference training asks people to rank model-generated answers and uses those comparisons to improve the model. The talk identifies OpenAI's version of this stage as <strong>reinforcement learning from human feedback (RLHF)</strong>.</p>
+<p>Important details:</p>
+<ul>
+<li>High-level labeling goals such as <strong>helpful, truthful, and harmless</strong> expand into detailed instruction manuals that may span tens or hundreds of pages.</li>
+<li>Models increasingly help create training data by drafting, critiquing, or comparing answers.</li>
+<li>Humans can move from writing every answer toward selecting, editing, and supervising—but the quality standard still comes from the labeling policy and oversight process.</li>
+</ul>
+<p>The talk's model leaderboard is best read only as a historical snapshot. Its more durable comparison is the tradeoff: <strong>closed models offered stronger hosted performance, while open-weight models offered local control, inspection, and custom fine-tuning.</strong></p>
+<h2 id="6-why-models-were-expected-to-keep-improving-2543">6. Why models were expected to keep improving — <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g&amp;t=1543s">25:43</a><a class="headerlink" href="#6-why-models-were-expected-to-keep-improving-2543" title="Permanent link">&para;</a></h2>
+<p>Karpathy highlights <strong>scaling laws</strong>: next-token prediction loss changes in a surprisingly smooth, predictable way with model size and training-data volume. At the time of the talk, the observed trends showed no clear plateau.</p>
+<p>Downstream evaluations also tended to improve as prediction improved, so organizations had a relatively dependable route to a stronger model:</p>
+<ul>
+<li>use more parameters,</li>
+<li>train on more data,</li>
+<li>spend more compute,</li>
+<li>and add algorithmic improvements on top.</li>
+</ul>
+<p>This predictability—not just speculative excitement—helped drive the competition for larger GPU clusters and better datasets. Scaling laws predict aggregate training behavior; they do <strong>not</strong> guarantee that every capability, safety property, or application-specific metric improves uniformly.</p>
+<h2 id="7-tools-turn-a-model-into-a-problem-solving-system-2743">7. Tools turn a model into a problem-solving system — <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g&amp;t=1663s">27:43</a><a class="headerlink" href="#7-tools-turn-a-model-into-a-problem-solving-system-2743" title="Permanent link">&para;</a></h2>
+<p>An LLM does not need to solve every task using only facts and arithmetic encoded in its weights. It can learn to request external tools:</p>
+<ol>
+<li>The model emits a special token or structured tool call.</li>
+<li>The surrounding application executes the browser, calculator, interpreter, or other tool.</li>
+<li>The tool result is inserted back into the model's context.</li>
+<li>The model continues from that observation.</li>
+</ol>
+<p>The demonstration chains several capabilities:</p>
+<ul>
+<li>browse for company funding information and cite sources,</li>
+<li>use a calculator for missing values,</li>
+<li>write Python/Matplotlib code to graph the data,</li>
+<li>revise the analysis through follow-up instructions,</li>
+<li>call an image generator using the accumulated context.</li>
+</ul>
+<p>The point is not that the model has become a perfect browser, mathematician, or plotting library. <strong>It has become an orchestrator of existing computing infrastructure through language.</strong> The tool can provide current information or deterministic computation; the LLM decides when and how to use it and explains the result.</p>
+<h2 id="8-multimodality-and-slower-reasoning-3332">8. Multimodality and slower reasoning — <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g&amp;t=2012s">33:32</a><a class="headerlink" href="#8-multimodality-and-slower-reasoning-3332" title="Permanent link">&para;</a></h2>
+<h3 id="multimodality">Multimodality<a class="headerlink" href="#multimodality" title="Permanent link">&para;</a></h3>
+<p>The same interface is expanding beyond text:</p>
+<ul>
+<li>consume an image and turn a hand-drawn website sketch into HTML/JavaScript,</li>
+<li>generate images from natural-language descriptions,</li>
+<li>hear speech and produce spoken responses.</li>
+</ul>
+<p>Adding modalities improves usefulness, but every input channel also creates another surface for ambiguity and attack.</p>
+<h3 id="system-1-versus-system-2-3500">System 1 versus System 2 — <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g&amp;t=2100s">35:00</a><a class="headerlink" href="#system-1-versus-system-2-3500" title="Permanent link">&para;</a></h3>
+<p>Karpathy characterizes the models available in November 2023 as mostly <strong>System 1</strong> systems: they immediately generate the next token at roughly fixed cost, resembling fast and instinctive thought.</p>
+<p>The research goal he calls <strong>System 2</strong> is to convert more inference time into more reliable answers. Instead of committing immediately to one continuation, a system could:</p>
+<ul>
+<li>explore multiple candidate paths,</li>
+<li>reflect on intermediate work,</li>
+<li>rephrase or critique a draft,</li>
+<li>search a tree of possibilities,</li>
+<li>and return only after confidence improves.</li>
+</ul>
+<p>The desired property is a useful time/accuracy tradeoff: when a user permits more time and compute, answer quality should rise predictably.</p>
+<h2 id="9-self-improvement-needs-a-verifiable-reward-3802">9. Self-improvement needs a verifiable reward — <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g&amp;t=2282s">38:02</a><a class="headerlink" href="#9-self-improvement-needs-a-verifiable-reward-3802" title="Permanent link">&para;</a></h2>
+<p>AlphaGo first learned by imitating strong human games, then surpassed human play through self-play. Go made this possible because it provides:</p>
+<ul>
+<li>a closed environment,</li>
+<li>unlimited automatically generated games,</li>
+<li>and a cheap, objective reward: win or lose.</li>
+</ul>
+<p>Assistant training mostly imitates human-written or human-preferred answers. Broad self-improvement is harder because open-ended language tasks lack a single fast, reliable scoring function. The promising cases are narrower domains where outcomes can be checked automatically—for example, tasks with executable tests, formal verification, or another trustworthy reward signal.</p>
+<h2 id="10-customization-retrieval-and-the-llm-operating-system-4045">10. Customization, retrieval, and the LLM operating system — <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g&amp;t=2445s">40:45</a><a class="headerlink" href="#10-customization-retrieval-and-the-llm-operating-system-4045" title="Permanent link">&para;</a></h2>
+<p>General models can become specialists through several layers:</p>
+<ul>
+<li><strong>Custom instructions</strong> define a role or workflow.</li>
+<li><strong>Retrieval-augmented generation (RAG)</strong> brings relevant passages from uploaded or external files into context.</li>
+<li><strong>Fine-tuning</strong> changes the model itself using task-specific training data.</li>
+</ul>
+<p>Retrieval is analogous to browsing a private corpus: the model does not need every fact encoded in its parameters if the runtime can fetch the right evidence when needed.</p>
+<h3 id="the-llm-os-mental-model-4215">The LLM OS mental model — <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g&amp;t=2535s">42:15</a><a class="headerlink" href="#the-llm-os-mental-model-4215" title="Permanent link">&para;</a></h3>
+<p>The talk's broadest claim is that an LLM is better understood as the <strong>kernel of an emerging operating system</strong> than as a chatbot. It coordinates resources for problem-solving through a natural-language interface:</p>
+<ul>
+<li>the <strong>context window</strong> is scarce working memory, analogous to RAM;</li>
+<li>web and file retrieval act like access to external storage;</li>
+<li>calculators, interpreters, browsers, and generators act like tools or peripherals;</li>
+<li>specialized models or agents resemble applications and processes;</li>
+<li>the LLM decides what information to page into context and what capability to invoke next.</li>
+</ul>
+<p>The analogy also extends to the ecosystem: a small number of proprietary model families coexist with a diverse open-weight ecosystem, much as proprietary desktop operating systems coexist with Linux distributions.</p>
+<p>The engineering implication is clear: performance depends on more than the kernel/model. It depends on <strong>memory management, tool contracts, permissions, orchestration, and the quality of the surrounding software.</strong></p>
+<h2 id="11-security-the-same-flexibility-becomes-an-attack-surface-4544">11. Security: the same flexibility becomes an attack surface — <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g&amp;t=2744s">45:44</a><a class="headerlink" href="#11-security-the-same-flexibility-becomes-an-attack-surface-4544" title="Permanent link">&para;</a></h2>
+<h3 id="jailbreaks-4614">Jailbreaks — <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g&amp;t=2774s">46:14</a><a class="headerlink" href="#jailbreaks-4614" title="Permanent link">&para;</a></h3>
+<p>A jailbreak is a user input designed to bypass behavior learned during safety fine-tuning. The examples show several families:</p>
+<ul>
+<li>role-play that reframes a prohibited request,</li>
+<li>alternative encodings such as Base64,</li>
+<li>automatically optimized adversarial suffixes,</li>
+<li>carefully optimized noise embedded in an image.</li>
+</ul>
+<p>The deeper problem is generalization. Refusal training may cover a harmful request in ordinary English but fail when the same intent arrives through a different language, encoding, framing, or modality. Patching one known string does not eliminate the surrounding class of attacks; an attacker may optimize a new one.</p>
+<h3 id="prompt-injection-5130">Prompt injection — <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g&amp;t=3090s">51:30</a><a class="headerlink" href="#prompt-injection-5130" title="Permanent link">&para;</a></h3>
+<p>Prompt injection occurs when <strong>untrusted content is interpreted as instructions</strong>. The talk shows increasingly consequential examples:</p>
+<ul>
+<li>faint text inside an image changes the requested answer,</li>
+<li>hidden instructions on a webpage hijack a browsing assistant,</li>
+<li>a malicious shared document attempts to make an integrated assistant exfiltrate private data.</li>
+</ul>
+<p>This differs from a jailbreak. A jailbreak usually comes from the user trying to override safety; indirect prompt injection comes from data the system retrieves while performing an otherwise legitimate task.</p>
+<p>Tool access raises the stakes. A compromised text-only model may emit bad text; a compromised agent may browse, load remote content, access private documents, call APIs, or transmit data. Controls therefore have to live outside the model as well:</p>
+<ul>
+<li>treat retrieved text, images, and documents as untrusted data,</li>
+<li>give tools least-privilege access,</li>
+<li>restrict network destinations and data flows,</li>
+<li>require confirmation for consequential actions,</li>
+<li>and test the full application against injected instructions.</li>
+</ul>
+<h3 id="data-poisoning-and-backdoors-5623">Data poisoning and backdoors — <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g&amp;t=3383s">56:23</a><a class="headerlink" href="#data-poisoning-and-backdoors-5623" title="Permanent link">&para;</a></h3>
+<p>If an attacker can influence training data, they may teach the model a hidden trigger that changes behavior. The cited experiment inserted a <strong>"James Bond"</strong> trigger during fine-tuning; prompts containing the phrase then corrupted unrelated classifications or generations.</p>
+<p>The scope caveat matters: the example demonstrated a fine-tuning backdoor. Karpathy says he was not aware of a convincing equivalent demonstrated at full pretraining scale at the time, though the possibility warranted study.</p>
+<h3 id="security-conclusion-5837">Security conclusion — <a href="https://www.youtube.com/watch?v=zjkBMFhNj_g&amp;t=3517s">58:37</a><a class="headerlink" href="#security-conclusion-5837" title="Permanent link">&para;</a></h3>
+<p>Jailbreaks, prompt injection, and poisoned training data create the same kind of ongoing attacker/defender cycle seen in traditional software security. Specific exploits can be patched, but a patch is not a proof that the underlying class has been solved.</p>
+<h2 id="key-distinctions-to-retain">Key distinctions to retain<a class="headerlink" href="#key-distinctions-to-retain" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Do not conflate</th>
+<th>Difference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Base model vs. assistant</td>
+<td>Document continuation learned in pretraining vs. conversational behavior learned through fine-tuning</td>
+</tr>
+<tr>
+<td>Knowledge vs. truth</td>
+<td>A model can encode broad knowledge yet still generate an unsupported plausible detail</td>
+</tr>
+<tr>
+<td>Weights vs. context</td>
+<td>Long-term learned parameters vs. temporary working information supplied for this request</td>
+</tr>
+<tr>
+<td>Fine-tuning vs. retrieval</td>
+<td>Change the model's behavior/parameters vs. fetch evidence into context at runtime</td>
+</tr>
+<tr>
+<td>Model vs. application</td>
+<td>Probabilistic token generator vs. the complete system with tools, memory, permissions, and verification</td>
+</tr>
+<tr>
+<td>Jailbreak vs. prompt injection</td>
+<td>User tries to bypass policy vs. untrusted retrieved content hijacks instructions</td>
+</tr>
+<tr>
+<td>Capability vs. authority</td>
+<td>A model may know how to propose an action without being allowed to perform it</td>
+</tr>
+</tbody>
+</table>
+<h2 id="engineering-takeaways">Engineering takeaways<a class="headerlink" href="#engineering-takeaways" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Use the model for language and coordination, not as the sole source of truth.</strong> Ground factual work in retrieval and use deterministic tools for arithmetic, code execution, and structured operations.</li>
+<li><strong>Evaluate behavior empirically.</strong> Architecture knowledge cannot substitute for task-specific evals, regression suites, and repeated trials.</li>
+<li><strong>Treat context as a scarce resource.</strong> Retrieval quality and context selection are part of the system's core design, not plumbing.</li>
+<li><strong>Separate capability from permission.</strong> Tool calls need schemas, validation, least privilege, auditability, and approval gates.</li>
+<li><strong>Assume external content is adversarial.</strong> Browsing, RAG, images, email, and shared documents can all carry injected instructions.</li>
+<li><strong>Keep historical claims dated.</strong> The talk's model names and leaderboard positions will age; the lifecycle, orchestration, and security mental models are the durable value.</li>
+</ol>
+<h2 id="curriculum-connections">Curriculum connections<a class="headerlink" href="#curriculum-connections" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../curriculum/01-llm-internals/">Module 1 · LLM Internals</a> — tokens, next-token prediction, training stages, hallucination, and empirical evals.</li>
+<li><a href="../../curriculum/02-prompting-context/">Module 2 · Prompting &amp; Context</a> — context as working memory and the separation of instructions from untrusted content.</li>
+<li><a href="../../curriculum/03-rag-memory/">Module 3 · Retrieval, RAG &amp; Memory</a> — retrieval as external knowledge paged into context.</li>
+<li><a href="../../curriculum/04-agents-tools-mcp/">Module 4 · Agents, Tools &amp; MCP</a> — models as tool-using orchestrators rather than standalone answer generators.</li>
+<li><a href="../../curriculum/06-production-systems/">Module 6 · Production Systems, Platform &amp; Security</a> — prompt injection, least privilege, data poisoning, and system-level defenses.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Talk Notes">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Talk Notes
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../crabrag-graph-memory/" class="md-footer__link md-footer__link--next" aria-label="Next: CrabRAG / Graph Memory">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                CrabRAG / Graph Memory
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/noufal85" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.footer", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

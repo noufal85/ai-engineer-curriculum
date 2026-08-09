@@ -1301,6 +1301,8 @@
       
         
       
+        
+      
     
     
     
@@ -1348,6 +1350,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/intro-to-large-language-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intro to Large Language Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -1580,65 +1610,65 @@
 
 
 <h1 id="foundations">Foundations<a class="headerlink" href="#foundations" title="Permanent link">&para;</a></h1>
-<p>Core vocabulary for how AI and large language models work. Start with <a href="../../curriculum/00-foundations/">Module 0</a> for the friendly introduction, then use this page as the deeper reference. Mostly <strong><code>→ M1</code></strong>, with pieces in <a href="../../curriculum/00-foundations/">M0</a>.</p>
+<p>Core vocabulary for how AI and large language models work. Start with <a href="../../curriculum/00-foundations/">Module 0</a> for the friendly introduction, then use this page as the deeper reference. Mostly <strong>→ <a href="../../curriculum/01-llm-internals/">M1</a></strong>, with pieces in <a href="../../curriculum/00-foundations/">M0</a>.</p>
 <h2 id="the-ladder-from-ai-to-llms">The ladder from AI to LLMs<a class="headerlink" href="#the-ladder-from-ai-to-llms" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Artificial intelligence (AI)</strong> — the broad field of building systems that perform tasks associated with human intelligence, such as recognizing patterns, understanding language, or choosing actions. <em>→ M0</em></li>
-<li><strong>Machine learning (ML)</strong> — a way to build systems by learning patterns from examples instead of writing every rule by hand. <em>→ M0</em></li>
-<li><strong>Deep learning</strong> — machine learning using large neural networks with learned parameters. <em>→ M0, M1</em></li>
-<li><strong>Generative AI</strong> — models that generate new text, code, images, audio, or video. <em>→ M0</em></li>
-<li><strong>Foundation model</strong> — a large pretrained model that can be adapted to many tasks. <em>→ M1</em></li>
-<li><strong>LLM (Large Language Model)</strong> — a model trained to predict the next token in text. <em>→ M0, M1</em></li>
-<li><strong>Inference</strong> — using a trained model to produce an output for a new request. <em>→ M0</em></li>
-<li><strong>Training</strong> — adjusting model parameters using many examples. <em>→ M0, M1</em></li>
+<li><strong>Artificial intelligence (AI)</strong> — the broad field of building systems that perform tasks associated with human intelligence, such as recognizing patterns, understanding language, or choosing actions. <em>→ <a href="../../curriculum/00-foundations/">M0</a></em></li>
+<li><strong>Machine learning (ML)</strong> — a way to build systems by learning patterns from examples instead of writing every rule by hand. <em>→ <a href="../../curriculum/00-foundations/">M0</a></em></li>
+<li><strong>Deep learning</strong> — machine learning using large neural networks with learned parameters. <em>→ <a href="../../curriculum/00-foundations/">M0</a>, <a href="../../curriculum/01-llm-internals/">M1</a></em></li>
+<li><strong>Generative AI</strong> — models that generate new text, code, images, audio, or video. <em>→ <a href="../../curriculum/00-foundations/">M0</a></em></li>
+<li><strong>Foundation model</strong> — a large pretrained model that can be adapted to many tasks. <em>→ <a href="../../curriculum/01-llm-internals/">M1</a></em></li>
+<li><strong>LLM (Large Language Model)</strong> — a model trained to predict the next token in text. <em>→ <a href="../../curriculum/00-foundations/">M0</a>, <a href="../../curriculum/01-llm-internals/">M1</a></em></li>
+<li><strong>Inference</strong> — using a trained model to produce an output for a new request. <em>→ <a href="../../curriculum/00-foundations/">M0</a></em></li>
+<li><strong>Training</strong> — adjusting model parameters using many examples. <em>→ <a href="../../curriculum/00-foundations/">M0</a>, <a href="../../curriculum/01-llm-internals/">M1</a></em></li>
 </ul>
 <h2 id="the-model">The model<a class="headerlink" href="#the-model" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>LLM (Large Language Model)</strong> — a neural network trained to predict the next token; the engine under every build here.</li>
-<li><strong>Transformer</strong> — the architecture behind modern LLMs; uses <em>attention</em> to relate every token to every other. <em>→ M1</em></li>
-<li><strong>Attention</strong> — the mechanism that lets the model weigh which earlier tokens matter for the next one. <em>→ M1</em></li>
+<li><strong>Transformer</strong> — the architecture behind modern LLMs; uses <em>attention</em> to relate every token to every other. <em>→ <a href="../../curriculum/01-llm-internals/">M1</a></em></li>
+<li><strong>Attention</strong> — the mechanism that lets the model weigh which earlier tokens matter for the next one. <em>→ <a href="../../curriculum/01-llm-internals/">M1</a></em></li>
 <li><strong>Parameters (weights)</strong> — the learned numbers in the model; "7B", "70B", "405B" count them (billions). More ≈ more capable and more expensive.</li>
-<li><strong>Base model</strong> — a raw pretrained model that just continues text. <strong>Instruct / chat model</strong> — a base model post-trained to follow instructions and hold a conversation. <em>→ M1</em></li>
-<li><strong>Reasoning model</strong> — a model trained to spend extra compute "thinking" before answering (test-time compute / chain-of-thought). Better on hard problems, slower and pricier. <em>→ M1</em></li>
+<li><strong>Base model</strong> — a raw pretrained model that just continues text. <strong>Instruct / chat model</strong> — a base model post-trained to follow instructions and hold a conversation. <em>→ <a href="../../curriculum/01-llm-internals/">M1</a></em></li>
+<li><strong>Reasoning model</strong> — a model trained to spend extra compute "thinking" before answering (test-time compute / chain-of-thought). Better on hard problems, slower and pricier. <em>→ <a href="../../curriculum/01-llm-internals/">M1</a></em></li>
 <li><strong>Multimodal</strong> — handles more than text: images, audio, video in and/or out.</li>
 <li><strong>Model card</strong> — the datasheet for a model: capabilities, training data, limits, intended use.</li>
 </ul>
 <h2 id="tokens-context">Tokens &amp; context<a class="headerlink" href="#tokens-context" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Token</strong> — the unit an LLM reads and writes; roughly ¾ of a word. Cost and limits are counted in tokens. <em>→ M1</em></li>
-<li><strong>Tokenization / BPE</strong> — splitting text into tokens (Byte-Pair Encoding is common). Explains odd failures like letter-counting. <em>→ M1</em></li>
-<li><strong>Context window</strong> — the max tokens a model can consider at once (input + output). The hard constraint behind retrieval and memory. <em>→ M1, M3</em></li>
+<li><strong>Token</strong> — the unit an LLM reads and writes; roughly ¾ of a word. Cost and limits are counted in tokens. <em>→ <a href="../../curriculum/01-llm-internals/">M1</a></em></li>
+<li><strong>Tokenization / BPE</strong> — splitting text into tokens (Byte-Pair Encoding is common). Explains odd failures like letter-counting. <em>→ <a href="../../curriculum/01-llm-internals/">M1</a></em></li>
+<li><strong>Context window</strong> — the max tokens a model can consider at once (input + output). The hard constraint behind retrieval and memory. <em>→ <a href="../../curriculum/01-llm-internals/">M1</a>, <a href="../../curriculum/03-rag-memory/">M3</a></em></li>
 <li><strong>Prompt / completion tokens</strong> — input tokens vs generated output tokens; usually priced differently.</li>
 <li><strong>Max tokens</strong> — the cap you set on output length; hitting it truncates the response.</li>
-<li><strong>"Lost in the middle"</strong> — models attend best to the start and end of a long context; ordering matters. <em>→ M2</em></li>
+<li><strong>"Lost in the middle"</strong> — models attend best to the start and end of a long context; ordering matters. <em>→ <a href="../../curriculum/02-prompting-context/">M2</a></em></li>
 </ul>
 <h2 id="generation-sampling">Generation &amp; sampling<a class="headerlink" href="#generation-sampling" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Next-token prediction</strong> — the model outputs a probability distribution over the next token; everything else follows from this. <em>→ M1</em></li>
+<li><strong>Next-token prediction</strong> — the model outputs a probability distribution over the next token; everything else follows from this. <em>→ <a href="../../curriculum/01-llm-internals/">M1</a></em></li>
 <li><strong>Logits</strong> — the raw pre-probability scores over the vocabulary for the next token.</li>
 <li><strong>Sampling</strong> — how a token is picked from the distribution.</li>
-<li><strong>Temperature</strong> — randomness knob: 0 ≈ deterministic, higher = more varied/creative. <em>→ M1</em></li>
-<li><strong>Top-p (nucleus) / Top-k</strong> — restrict sampling to the most probable tokens. <em>→ M1</em></li>
+<li><strong>Temperature</strong> — randomness knob: 0 ≈ deterministic, higher = more varied/creative. <em>→ <a href="../../curriculum/01-llm-internals/">M1</a></em></li>
+<li><strong>Top-p (nucleus) / Top-k</strong> — restrict sampling to the most probable tokens. <em>→ <a href="../../curriculum/01-llm-internals/">M1</a></em></li>
 <li><strong>Repetition / frequency penalties</strong> — knobs that discourage repeating tokens; useful when generations loop.</li>
 <li><strong>Greedy / deterministic decoding</strong> — always take the most likely token; note it still isn't bit-for-bit reproducible.</li>
 <li><strong>Stop sequence</strong> — a string that ends generation when produced.</li>
-<li><strong>Streaming</strong> — sending tokens as they're generated instead of all at once. <em>→ M0, M6</em></li>
+<li><strong>Streaming</strong> — sending tokens as they're generated instead of all at once. <em>→ <a href="../../curriculum/00-foundations/">M0</a>, <a href="../../curriculum/06-production-systems/">M6</a></em></li>
 </ul>
 <h2 id="behavior-limits">Behavior &amp; limits<a class="headerlink" href="#behavior-limits" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Hallucination</strong> — a fluent, confident, wrong output; a direct consequence of next-token prediction. <em>→ M1, M3, M5</em></li>
-<li><strong>Grounding</strong> — tying answers to provided/retrieved sources to reduce hallucination. <em>→ M3</em></li>
-<li><strong>In-context learning</strong> — the model "learns" a task from examples in the prompt, without weight updates. <em>→ M2</em></li>
-<li><strong>Zero-shot / one-shot / few-shot</strong> — zero, one, or several examples given in the prompt. <em>→ M2</em></li>
-<li><strong>Chain-of-thought (CoT)</strong> — prompting or training the model to reason step-by-step before answering. <em>→ M1, M2</em></li>
-<li><strong>Knowledge cutoff</strong> — the date the training data ends; the model doesn't know newer facts without retrieval/tools. <em>→ M3, M4</em></li>
+<li><strong>Hallucination</strong> — a fluent, confident, wrong output; a direct consequence of next-token prediction. <em>→ <a href="../../curriculum/01-llm-internals/">M1</a>, <a href="../../curriculum/03-rag-memory/">M3</a>, <a href="../../curriculum/05-evals-observability/">M5</a></em></li>
+<li><strong>Grounding</strong> — tying answers to provided/retrieved sources to reduce hallucination. <em>→ <a href="../../curriculum/03-rag-memory/">M3</a></em></li>
+<li><strong>In-context learning</strong> — the model "learns" a task from examples in the prompt, without weight updates. <em>→ <a href="../../curriculum/02-prompting-context/">M2</a></em></li>
+<li><strong>Zero-shot / one-shot / few-shot</strong> — zero, one, or several examples given in the prompt. <em>→ <a href="../../curriculum/02-prompting-context/">M2</a></em></li>
+<li><strong>Chain-of-thought (CoT)</strong> — prompting or training the model to reason step-by-step before answering. <em>→ <a href="../../curriculum/01-llm-internals/">M1</a>, <a href="../../curriculum/02-prompting-context/">M2</a></em></li>
+<li><strong>Knowledge cutoff</strong> — the date the training data ends; the model doesn't know newer facts without retrieval/tools. <em>→ <a href="../../curriculum/03-rag-memory/">M3</a>, <a href="../../curriculum/04-agents-tools-mcp/">M4</a></em></li>
 </ul>
 <h2 id="cost-latency-quality">Cost, latency, quality<a class="headerlink" href="#cost-latency-quality" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Cost/latency/quality triangle</strong> — the recurring trade: you optimize two, every design picks a corner. <em>→ M0, M6</em></li>
-<li><strong>TTFT (time-to-first-token)</strong> — how long until streaming starts; a big part of perceived speed. <em>→ M6</em></li>
-<li><strong>Throughput</strong> — tokens generated per second. <em>→ M6</em></li>
-<li><strong>Token accounting</strong> — counting/estimating tokens to predict cost and stay under limits. <em>→ M6</em></li>
+<li><strong>Cost/latency/quality triangle</strong> — the recurring trade: you optimize two, every design picks a corner. <em>→ <a href="../../curriculum/00-foundations/">M0</a>, <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>TTFT (time-to-first-token)</strong> — how long until streaming starts; a big part of perceived speed. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Throughput</strong> — tokens generated per second. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Token accounting</strong> — counting/estimating tokens to predict cost and stay under limits. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
 </ul>
 
 

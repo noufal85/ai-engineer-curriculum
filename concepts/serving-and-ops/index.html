@@ -1279,6 +1279,8 @@
       
         
       
+        
+      
     
     
     
@@ -1326,6 +1328,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/intro-to-large-language-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intro to Large Language Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -1536,44 +1566,44 @@
 
 
 <h1 id="serving-ops">Serving &amp; Ops<a class="headerlink" href="#serving-ops" title="Permanent link">&para;</a></h1>
-<p>Making AI systems fast, cheap, reliable, and operable. Mostly <strong>→ M6</strong>.</p>
+<p>Making AI systems fast, cheap, reliable, and operable. Mostly <strong>→ <a href="../../curriculum/06-production-systems/">M6</a></strong>.</p>
 <h2 id="latency-and-throughput">Latency and throughput<a class="headerlink" href="#latency-and-throughput" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Inference</strong> — running a model to produce output. <em>→ M6</em></li>
-<li><strong>TTFT</strong> versus <strong>total latency</strong> — time until streaming begins versus time until completion. <em>→ M6</em></li>
-<li><strong>Throughput</strong> — generated tokens or completed requests per second. <em>→ M6</em></li>
-<li><strong>Batching / continuous batching</strong> — serving multiple requests together for efficiency. <em>→ M6</em></li>
+<li><strong>Inference</strong> — running a model to produce output. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>TTFT</strong> versus <strong>total latency</strong> — time until streaming begins versus time until completion. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Throughput</strong> — generated tokens or completed requests per second. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Batching / continuous batching</strong> — serving multiple requests together for efficiency. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
 <li><strong>KV cache</strong> — cached attention state that speeds long generations.</li>
-<li><strong>Speculative decoding</strong> — a draft model proposes tokens a larger model verifies. <em>→ M6</em></li>
+<li><strong>Speculative decoding</strong> — a draft model proposes tokens a larger model verifies. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
 <li><strong>Attention optimizations</strong> — Flash Attention and MQA/GQA reduce memory and compute inside the model; recognize the names when tuning a self-hosted stack.</li>
 </ul>
 <h2 id="cost-and-reliability">Cost and reliability<a class="headerlink" href="#cost-and-reliability" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Prompt/context caching</strong> — reusing an unchanged prefix. <em>→ M2, M6</em></li>
+<li><strong>Prompt/context caching</strong> — reusing an unchanged prefix. <em>→ <a href="../../curriculum/02-prompting-context/">M2</a>, <a href="../../curriculum/06-production-systems/">M6</a></em></li>
 <li><strong>Semantic caching</strong> — reusing a result for a sufficiently similar query, subject to freshness and authorization.</li>
-<li><strong>Model routing</strong> — sending each request to the cheapest capable model. <em>→ M6</em></li>
-<li><strong>Fallback / graceful degradation</strong> — switching to a reduced or alternate experience when a dependency fails. <em>→ M6</em></li>
-<li><strong>Rate limits</strong> — requests- and tokens-per-minute caps. <em>→ M6</em></li>
-<li><strong>Retries + exponential backoff</strong> — surviving transient failures within a bounded policy. <em>→ Engineering Core, M6</em></li>
-<li><strong>Backpressure</strong> — controlling admission when downstream capacity is exhausted. <em>→ M6</em></li>
+<li><strong>Model routing</strong> — sending each request to the cheapest capable model. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Fallback / graceful degradation</strong> — switching to a reduced or alternate experience when a dependency fails. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Rate limits</strong> — requests- and tokens-per-minute caps. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Retries + exponential backoff</strong> — surviving transient failures within a bounded policy. <em>→ <a href="../../curriculum/engineering-core/">Engineering Core</a>, <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Backpressure</strong> — controlling admission when downstream capacity is exhausted. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
 <li><strong>Circuit breaker</strong> — temporarily stopping calls to a failing dependency.</li>
-<li><strong>Cost budget</strong> — a per-request, per-user, or per-workflow spend limit. <em>→ M6</em></li>
-<li><strong>Idempotency</strong> — making repeated writes safe. <em>→ Engineering Core, M6</em></li>
+<li><strong>Cost budget</strong> — a per-request, per-user, or per-workflow spend limit. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Idempotency</strong> — making repeated writes safe. <em>→ <a href="../../curriculum/engineering-core/">Engineering Core</a>, <a href="../../curriculum/06-production-systems/">M6</a></em></li>
 </ul>
 <h2 id="self-hosting-and-infrastructure">Self-hosting and infrastructure<a class="headerlink" href="#self-hosting-and-infrastructure" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Inference engine</strong> — vLLM, TGI, TensorRT-LLM, llama.cpp, or Ollama serving model weights.</li>
-<li><strong>Quantization</strong> — lower-precision weights that reduce memory and may trade quality. <em>→ M6</em></li>
+<li><strong>Quantization</strong> — lower-precision weights that reduce memory and may trade quality. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
 <li><strong>GPU / VRAM</strong> — hardware and memory constraints for self-hosted inference.</li>
 <li><strong>Inference provider</strong> — a service hosting open-weight models behind an API.</li>
 <li><strong>Edge / on-device</strong> — running a small model locally for privacy or latency.</li>
-<li><strong>Autoscaling / cold start</strong> — changing capacity with demand and the startup delay when capacity is absent. <em>→ M6</em></li>
+<li><strong>Autoscaling / cold start</strong> — changing capacity with demand and the startup delay when capacity is absent. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
 </ul>
 <h2 id="configuration-and-delivery">Configuration and delivery<a class="headerlink" href="#configuration-and-delivery" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Prompt/model release artifact</strong> — a versioned prompt, schema, model ID, or routing policy gated by evals. <em>→ M5, M6</em></li>
+<li><strong>Prompt/model release artifact</strong> — a versioned prompt, schema, model ID, or routing policy gated by evals. <em>→ <a href="../../curriculum/05-evals-observability/">M5</a>, <a href="../../curriculum/06-production-systems/">M6</a></em></li>
 <li><strong>Model gateway</strong> — a normalization, routing, fallback, and usage-accounting layer.</li>
-<li><strong>Serving surface</strong> — the place users access the capability: API, UI, MCP app, or existing chat. <em>→ M6, M7</em></li>
+<li><strong>Serving surface</strong> — the place users access the capability: API, UI, MCP app, or existing chat. <em>→ <a href="../../curriculum/06-production-systems/">M6</a>, <a href="../../curriculum/07-forward-deployed/">M7</a></em></li>
 </ul>
 
 

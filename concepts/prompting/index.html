@@ -1279,6 +1279,8 @@
       
         
       
+        
+      
     
     
     
@@ -1326,6 +1328,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/intro-to-large-language-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intro to Large Language Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -1536,41 +1566,41 @@
 
 
 <h1 id="prompting-context">Prompting &amp; Context<a class="headerlink" href="#prompting-context" title="Permanent link">&para;</a></h1>
-<p>The highest-leverage, lowest-cost skill. Mostly <strong><code>→ M2</code></strong>.</p>
+<p>The highest-leverage, lowest-cost skill. Mostly <strong>→ <a href="../../curriculum/02-prompting-context/">M2</a></strong>.</p>
 <h2 id="prompt-anatomy">Prompt anatomy<a class="headerlink" href="#prompt-anatomy" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Prompt</strong> — the full input you send the model. <strong>Completion</strong> — what it generates back.</li>
-<li><strong>System / user / assistant roles</strong> — the message roles: system sets behavior, user asks, assistant answers. <em>→ M2</em></li>
-<li><strong>System prompt</strong> — the standing instructions that shape every turn (persona, rules, output spec). <em>→ M2</em></li>
+<li><strong>System / user / assistant roles</strong> — the message roles: system sets behavior, user asks, assistant answers. <em>→ <a href="../../curriculum/02-prompting-context/">M2</a></em></li>
+<li><strong>System prompt</strong> — the standing instructions that shape every turn (persona, rules, output spec). <em>→ <a href="../../curriculum/02-prompting-context/">M2</a></em></li>
 <li><strong>Prompt template</strong> — a reusable prompt with slots for variables.</li>
-<li><strong>Delimiters</strong> — clear markers (XML tags, fences) that separate instructions from data and reduce confusion/injection. <em>→ M2, M8</em></li>
+<li><strong>Delimiters</strong> — clear markers (XML tags, fences) that separate instructions from data and reduce confusion/injection. <em>→ <a href="../../curriculum/02-prompting-context/">M2</a>, <a href="../../curriculum/08-capstones/">M8</a></em></li>
 </ul>
 <h2 id="techniques">Techniques<a class="headerlink" href="#techniques" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Prompt engineering</strong> — iterating on wording/structure to get reliable outputs. <em>→ M2</em></li>
-<li><strong>Few-shot prompting</strong> — including examples of the task in the prompt. <em>→ M2</em></li>
-<li><strong>Chain-of-thought (CoT)</strong> — asking the model to reason step-by-step. <em>→ M1, M2</em></li>
+<li><strong>Prompt engineering</strong> — iterating on wording/structure to get reliable outputs. <em>→ <a href="../../curriculum/02-prompting-context/">M2</a></em></li>
+<li><strong>Few-shot prompting</strong> — including examples of the task in the prompt. <em>→ <a href="../../curriculum/02-prompting-context/">M2</a></em></li>
+<li><strong>Chain-of-thought (CoT)</strong> — asking the model to reason step-by-step. <em>→ <a href="../../curriculum/01-llm-internals/">M1</a>, <a href="../../curriculum/02-prompting-context/">M2</a></em></li>
 <li><strong>Self-consistency</strong> — sampling several reasoning paths and taking the majority answer.</li>
-<li><strong>Decomposition / prompt chaining</strong> — splitting one hard prompt into a chain of reliable steps. <em>→ M2</em></li>
+<li><strong>Decomposition / prompt chaining</strong> — splitting one hard prompt into a chain of reliable steps. <em>→ <a href="../../curriculum/02-prompting-context/">M2</a></em></li>
 <li><strong>Role prompting</strong> — telling the model who to act as.</li>
 <li><strong>Meta-prompting</strong> — using an LLM to write or improve prompts.</li>
 </ul>
 <h2 id="structured-output">Structured output<a class="headerlink" href="#structured-output" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Structured output / JSON mode</strong> — constraining the model to return valid JSON. <em>→ M0, M2</em></li>
-<li><strong>JSON Schema</strong> — the contract the output must satisfy; validated at the boundary. <em>→ M0, M2</em></li>
-<li><strong>Tool / function calling</strong> — the reliable way to get structured data and let the model trigger actions; the model returns a typed call your code executes. <em>→ M2, M4</em></li>
+<li><strong>Structured output / JSON mode</strong> — constraining the model to return valid JSON. <em>→ <a href="../../curriculum/00-foundations/">M0</a>, <a href="../../curriculum/02-prompting-context/">M2</a></em></li>
+<li><strong>JSON Schema</strong> — the contract the output must satisfy; validated at the boundary. <em>→ <a href="../../curriculum/00-foundations/">M0</a>, <a href="../../curriculum/02-prompting-context/">M2</a></em></li>
+<li><strong>Tool / function calling</strong> — the reliable way to get structured data and let the model trigger actions; the model returns a typed call your code executes. <em>→ <a href="../../curriculum/02-prompting-context/">M2</a>, <a href="../../curriculum/04-agents-tools-mcp/">M4</a></em></li>
 <li><strong>Constrained / structured decoding</strong> — forcing the generator to only produce tokens valid under a schema/grammar.</li>
-<li><strong>Strict mode</strong> — a guarantee that tool/output arguments exactly match the schema. <em>→ M2</em></li>
-<li><strong>Output parsing</strong> — extracting and validating fields from a response (don't trust raw text). <em>→ M0</em></li>
+<li><strong>Strict mode</strong> — a guarantee that tool/output arguments exactly match the schema. <em>→ <a href="../../curriculum/02-prompting-context/">M2</a></em></li>
+<li><strong>Output parsing</strong> — extracting and validating fields from a response (don't trust raw text). <em>→ <a href="../../curriculum/00-foundations/">M0</a></em></li>
 </ul>
 <h2 id="context-engineering">Context engineering<a class="headerlink" href="#context-engineering" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Context engineering</strong> — deciding what goes into the window, in what order, and what to leave out — the real discipline behind reliable prompts. <em>→ M2, M3</em></li>
-<li><strong>Prompt caching</strong> — reusing an unchanged prompt prefix across requests to cut cost and latency; put stable content first. <em>→ M2, M6</em></li>
-<li><strong>Context compaction / trimming</strong> — summarizing or dropping old turns to stay within the window on long runs. <em>→ M4, M6</em></li>
-<li><strong>Instruction drift</strong> — a model gradually ignoring earlier instructions over a long conversation. <em>→ M2</em></li>
-<li><strong>Prompt injection</strong> — untrusted text in the context hijacking the model's instructions (the dark side of context). <em>→ M2, M6, M8</em></li>
+<li><strong>Context engineering</strong> — deciding what goes into the window, in what order, and what to leave out — the real discipline behind reliable prompts. <em>→ <a href="../../curriculum/02-prompting-context/">M2</a>, <a href="../../curriculum/03-rag-memory/">M3</a></em></li>
+<li><strong>Prompt caching</strong> — reusing an unchanged prompt prefix across requests to cut cost and latency; put stable content first. <em>→ <a href="../../curriculum/02-prompting-context/">M2</a>, <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Context compaction / trimming</strong> — summarizing or dropping old turns to stay within the window on long runs. <em>→ <a href="../../curriculum/04-agents-tools-mcp/">M4</a>, <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Instruction drift</strong> — a model gradually ignoring earlier instructions over a long conversation. <em>→ <a href="../../curriculum/02-prompting-context/">M2</a></em></li>
+<li><strong>Prompt injection</strong> — untrusted text in the context hijacking the model's instructions (the dark side of context). <em>→ <a href="../../curriculum/02-prompting-context/">M2</a>, <a href="../../curriculum/06-production-systems/">M6</a>, <a href="../../curriculum/08-capstones/">M8</a></em></li>
 </ul>
 
 

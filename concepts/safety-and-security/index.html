@@ -1290,6 +1290,8 @@
       
         
       
+        
+      
     
     
     
@@ -1337,6 +1339,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/intro-to-large-language-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intro to Large Language Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -1558,19 +1588,19 @@
 
 
 <h1 id="safety-security">Safety &amp; Security<a class="headerlink" href="#safety-security" title="Permanent link">&para;</a></h1>
-<p>Non-negotiable, not a v2 feature. Mostly <strong>→ M6</strong>, with red-teaming in <a href="../../curriculum/05-evals-observability/">M5</a> and <a href="../../curriculum/08-capstones/">M8</a>.</p>
+<p>Non-negotiable, not a v2 feature. Mostly <strong>→ <a href="../../curriculum/06-production-systems/">M6</a></strong>, with red-teaming in <a href="../../curriculum/05-evals-observability/">M5</a> and <a href="../../curriculum/08-capstones/">M8</a>.</p>
 <h2 id="attacks-and-untrusted-input">Attacks and untrusted input<a class="headerlink" href="#attacks-and-untrusted-input" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Prompt injection</strong> — untrusted content overriding instructions. <strong>Direct</strong> injection appears in user input; <strong>indirect</strong> injection is hidden in retrieved documents, web pages, or tool output. <em>→ M2, M6, M8</em></li>
-<li><strong>Jailbreak</strong> — coaxing a model past its safety behavior. <em>→ M6</em></li>
-<li><strong>Prompt leaking</strong> — tricking a system into revealing hidden instructions or sensitive context. <em>→ M6</em></li>
-<li><strong>Data exfiltration</strong> — using a model or agent to move private data outside its authorized boundary. <em>→ M6</em></li>
-<li><strong>Tool injection</strong> — malicious or malformed tool results steering later actions. <em>→ M4, M6</em></li>
-<li><strong>SSRF</strong> — inducing a server-side request to an internal or unintended network target. <em>→ M6</em></li>
-<li><strong>Data poisoning</strong> — inserting or altering source data to influence retrieval or model behavior. <em>→ M3, M6</em></li>
-<li><strong>Denial wallet</strong> — driving up token or tool costs through adversarial requests. <em>→ M6</em></li>
-<li><strong>The data ≠ instructions boundary</strong> — treat everything the model reads as data unless the application explicitly authorizes it as a command. <em>→ M2, M6</em></li>
-<li><strong>OWASP LLM Top 10</strong> — a catalog of common LLM application risks. <em>→ M6</em></li>
+<li><strong>Prompt injection</strong> — untrusted content overriding instructions. <strong>Direct</strong> injection appears in user input; <strong>indirect</strong> injection is hidden in retrieved documents, web pages, or tool output. <em>→ <a href="../../curriculum/02-prompting-context/">M2</a>, <a href="../../curriculum/06-production-systems/">M6</a>, <a href="../../curriculum/08-capstones/">M8</a></em></li>
+<li><strong>Jailbreak</strong> — coaxing a model past its safety behavior. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Prompt leaking</strong> — tricking a system into revealing hidden instructions or sensitive context. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Data exfiltration</strong> — using a model or agent to move private data outside its authorized boundary. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Tool injection</strong> — malicious or malformed tool results steering later actions. <em>→ <a href="../../curriculum/04-agents-tools-mcp/">M4</a>, <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>SSRF</strong> — inducing a server-side request to an internal or unintended network target. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Data poisoning</strong> — inserting or altering source data to influence retrieval or model behavior. <em>→ <a href="../../curriculum/03-rag-memory/">M3</a>, <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Denial wallet</strong> — driving up token or tool costs through adversarial requests. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>The data ≠ instructions boundary</strong> — treat everything the model reads as data unless the application explicitly authorizes it as a command. <em>→ <a href="../../curriculum/02-prompting-context/">M2</a>, <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>OWASP LLM Top 10</strong> — a catalog of common LLM application risks. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
 </ul>
 <h2 id="identity-and-authorization">Identity and authorization<a class="headerlink" href="#identity-and-authorization" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1578,35 +1608,35 @@
 <li><strong>Authorization</strong> — deciding what that identity may read or do.</li>
 <li><strong>RBAC / ABAC</strong> — permissions based on roles / attributes such as tenant, project, or sensitivity.</li>
 <li><strong>Tenant isolation</strong> — ensuring one customer cannot observe or influence another customer's data or budget.</li>
-<li><strong>Least privilege</strong> — giving a model, tool, worker, or service only the access it needs. <em>→ M4, M6</em></li>
-<li><strong>Security trimming</strong> — applying authorization filters before retrieval results enter model context. <em>→ M6, M7</em></li>
+<li><strong>Least privilege</strong> — giving a model, tool, worker, or service only the access it needs. <em>→ <a href="../../curriculum/04-agents-tools-mcp/">M4</a>, <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Security trimming</strong> — applying authorization filters before retrieval results enter model context. <em>→ <a href="../../curriculum/06-production-systems/">M6</a>, <a href="../../curriculum/07-forward-deployed/">M7</a></em></li>
 <li><strong>Audit log</strong> — an append-only record of sensitive reads, writes, approvals, and policy decisions.</li>
 </ul>
 <h2 id="data-protection-and-governance">Data protection and governance<a class="headerlink" href="#data-protection-and-governance" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>PII</strong> — personally identifiable information that must be handled according to policy and regulation. <em>→ M6</em></li>
-<li><strong>PII masking / redaction</strong> — removing or transforming sensitive data before it reaches models or logs. <em>→ M6</em></li>
-<li><strong>Secrets management</strong> — keeping API keys, tokens, and credentials out of code, prompts, and logs. <em>→ Engineering Core, M6</em></li>
+<li><strong>PII</strong> — personally identifiable information that must be handled according to policy and regulation. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>PII masking / redaction</strong> — removing or transforming sensitive data before it reaches models or logs. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Secrets management</strong> — keeping API keys, tokens, and credentials out of code, prompts, and logs. <em>→ <a href="../../curriculum/engineering-core/">Engineering Core</a>, <a href="../../curriculum/06-production-systems/">M6</a></em></li>
 <li><strong>Data retention</strong> — defining how long prompts, outputs, traces, and source data are kept.</li>
 <li><strong>Output handling</strong> — validating and escaping model output before it reaches a database, browser, shell, or external system.</li>
 <li><strong>Moderation</strong> — screening inputs or outputs for prohibited or unsafe content.</li>
 </ul>
 <h2 id="safety-controls">Safety controls<a class="headerlink" href="#safety-controls" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Red-teaming</strong> — deliberately trying to break a system and documenting the resulting failures. <em>→ M5, M8</em></li>
+<li><strong>Red-teaming</strong> — deliberately trying to break a system and documenting the resulting failures. <em>→ <a href="../../curriculum/05-evals-observability/">M5</a>, <a href="../../curriculum/08-capstones/">M8</a></em></li>
 <li><strong>Threat model</strong> — a structured analysis of assets, actors, attack paths, and mitigations.</li>
-<li><strong>Human approval</strong> — requiring a person before an irreversible or outward-facing action. <em>→ M4, M6</em></li>
-<li><strong>Sandboxing</strong> — isolating code execution and untrusted content from sensitive systems. <em>→ M4, M6</em></li>
+<li><strong>Human approval</strong> — requiring a person before an irreversible or outward-facing action. <em>→ <a href="../../curriculum/04-agents-tools-mcp/">M4</a>, <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Sandboxing</strong> — isolating code execution and untrusted content from sensitive systems. <em>→ <a href="../../curriculum/04-agents-tools-mcp/">M4</a>, <a href="../../curriculum/06-production-systems/">M6</a></em></li>
 <li><strong>Policy enforcement point</strong> — the application boundary that checks identity, permissions, budgets, and action policy before execution.</li>
 </ul>
 <h2 id="responsible-ai">Responsible AI<a class="headerlink" href="#responsible-ai" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Bias and fairness</strong> — systematic skew in model behavior across groups, dialects, or contexts; measure it on your own data, not just published benchmarks. <em>→ M5, M6</em></li>
-<li><strong>Harmful-content policy</strong> — the categories your product refuses or restricts, and the moderation layer that enforces them on inputs and outputs. <em>→ M6</em></li>
-<li><strong>Transparency and disclosure</strong> — telling users when they are interacting with AI and what the system can and cannot do. <em>→ M6, M7</em></li>
-<li><strong>Human oversight</strong> — keeping a person accountable for consequential decisions rather than fully delegating them. <em>→ M4, M6</em></li>
-<li><strong>Regulatory awareness</strong> — the EU AI Act, sector rules, and customer AI policies that constrain what a deployed system may do. <em>→ M6, M7</em></li>
-<li><strong>Model behavior provenance</strong> — knowing what alignment, system prompts, and safety layers shape the output you ship. <em>→ M1, M6</em></li>
+<li><strong>Bias and fairness</strong> — systematic skew in model behavior across groups, dialects, or contexts; measure it on your own data, not just published benchmarks. <em>→ <a href="../../curriculum/05-evals-observability/">M5</a>, <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Harmful-content policy</strong> — the categories your product refuses or restricts, and the moderation layer that enforces them on inputs and outputs. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Transparency and disclosure</strong> — telling users when they are interacting with AI and what the system can and cannot do. <em>→ <a href="../../curriculum/06-production-systems/">M6</a>, <a href="../../curriculum/07-forward-deployed/">M7</a></em></li>
+<li><strong>Human oversight</strong> — keeping a person accountable for consequential decisions rather than fully delegating them. <em>→ <a href="../../curriculum/04-agents-tools-mcp/">M4</a>, <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Regulatory awareness</strong> — the EU AI Act, sector rules, and customer AI policies that constrain what a deployed system may do. <em>→ <a href="../../curriculum/06-production-systems/">M6</a>, <a href="../../curriculum/07-forward-deployed/">M7</a></em></li>
+<li><strong>Model behavior provenance</strong> — knowing what alignment, system prompts, and safety layers shape the output you ship. <em>→ <a href="../../curriculum/01-llm-internals/">M1</a>, <a href="../../curriculum/06-production-systems/">M6</a></em></li>
 </ul>
 
 

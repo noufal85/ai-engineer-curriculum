@@ -1290,6 +1290,8 @@
       
         
       
+        
+      
     
     
     
@@ -1337,6 +1339,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/intro-to-large-language-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intro to Large Language Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -1558,44 +1588,44 @@
 
 
 <h1 id="agents-protocols">Agents &amp; Protocols<a class="headerlink" href="#agents-protocols" title="Permanent link">&para;</a></h1>
-<p>Letting the model act — safely. Mostly <strong>→ M4</strong>.</p>
+<p>Letting the model act — safely. Mostly <strong>→ <a href="../../curriculum/04-agents-tools-mcp/">M4</a></strong>.</p>
 <h2 id="core-ideas">Core ideas<a class="headerlink" href="#core-ideas" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Agent</strong> — an LLM that can call tools, read results, and decide the next step toward a goal. <em>→ M4</em></li>
-<li><strong>Workflow</strong> — an explicit sequence of steps with known transitions; usually easier to test and operate than an open-ended agent. <em>→ M4</em></li>
-<li><strong>Agent loop</strong> — plan → act → observe → repeat until a stop condition. <em>→ M4</em></li>
-<li><strong>Tool / function calling</strong> — the model requests a typed call; application code executes it and returns a result. <em>→ M2, M4</em></li>
-<li><strong>Tool schema</strong> — the name, description, and input schema that tell the model when and how to use a tool. <em>→ M4</em></li>
-<li><strong>ReAct</strong> — an interleaved reason-then-act prompting pattern. <em>→ M4</em></li>
-<li><strong>Planning</strong> — breaking a goal into steps before or while acting. <em>→ M4</em></li>
-<li><strong>Termination / step limit</strong> — the guard that stops an agent looping forever. <em>→ M4</em></li>
+<li><strong>Agent</strong> — an LLM that can call tools, read results, and decide the next step toward a goal. <em>→ <a href="../../curriculum/04-agents-tools-mcp/">M4</a></em></li>
+<li><strong>Workflow</strong> — an explicit sequence of steps with known transitions; usually easier to test and operate than an open-ended agent. <em>→ <a href="../../curriculum/04-agents-tools-mcp/">M4</a></em></li>
+<li><strong>Agent loop</strong> — plan → act → observe → repeat until a stop condition. <em>→ <a href="../../curriculum/04-agents-tools-mcp/">M4</a></em></li>
+<li><strong>Tool / function calling</strong> — the model requests a typed call; application code executes it and returns a result. <em>→ <a href="../../curriculum/02-prompting-context/">M2</a>, <a href="../../curriculum/04-agents-tools-mcp/">M4</a></em></li>
+<li><strong>Tool schema</strong> — the name, description, and input schema that tell the model when and how to use a tool. <em>→ <a href="../../curriculum/04-agents-tools-mcp/">M4</a></em></li>
+<li><strong>ReAct</strong> — an interleaved reason-then-act prompting pattern. <em>→ <a href="../../curriculum/04-agents-tools-mcp/">M4</a></em></li>
+<li><strong>Planning</strong> — breaking a goal into steps before or while acting. <em>→ <a href="../../curriculum/04-agents-tools-mcp/">M4</a></em></li>
+<li><strong>Termination / step limit</strong> — the guard that stops an agent looping forever. <em>→ <a href="../../curriculum/04-agents-tools-mcp/">M4</a></em></li>
 <li><strong>Budget</strong> — a limit on tokens, cost, time, tool calls, or risk.</li>
-<li><strong>Human-in-the-loop</strong> — requiring approval before irreversible actions. <em>→ M4, M6</em></li>
-<li><strong>Sandboxing</strong> — running tool code or untrusted output in isolation. <em>→ M4, M6</em></li>
+<li><strong>Human-in-the-loop</strong> — requiring approval before irreversible actions. <em>→ <a href="../../curriculum/04-agents-tools-mcp/">M4</a>, <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Sandboxing</strong> — running tool code or untrusted output in isolation. <em>→ <a href="../../curriculum/04-agents-tools-mcp/">M4</a>, <a href="../../curriculum/06-production-systems/">M6</a></em></li>
 </ul>
 <h2 id="state-and-reliability">State and reliability<a class="headerlink" href="#state-and-reliability" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Task state</strong> — durable status, inputs, outputs, approvals, and errors for one piece of work.</li>
 <li><strong>Checkpoint</strong> — persisted progress from which a workflow can resume.</li>
 <li><strong>Durable execution</strong> — running long workflows through restarts, retries, and delays without losing state.</li>
-<li><strong>Idempotent tool</strong> — a tool whose repeated invocation has one intended effect. <em>→ Engineering Core, M6</em></li>
+<li><strong>Idempotent tool</strong> — a tool whose repeated invocation has one intended effect. <em>→ <a href="../../curriculum/engineering-core/">Engineering Core</a>, <a href="../../curriculum/06-production-systems/">M6</a></em></li>
 <li><strong>Compensation</strong> — a corrective action for a partially completed workflow.</li>
 <li><strong>Escalation</strong> — handing a task to a person or safer path when the model cannot proceed.</li>
 </ul>
 <h2 id="multi-agent">Multi-agent<a class="headerlink" href="#multi-agent" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Multi-agent</strong> — several agents cooperating, such as an orchestrator and workers; use only when one good agent cannot do the work. <em>→ M4</em></li>
-<li><strong>Subagent</strong> — a child agent spawned for a bounded sub-task. <em>→ M4</em></li>
-<li><strong>Orchestration</strong> — coordinating steps, tools, agents, approvals, and state. <em>→ M4</em></li>
+<li><strong>Multi-agent</strong> — several agents cooperating, such as an orchestrator and workers; use only when one good agent cannot do the work. <em>→ <a href="../../curriculum/04-agents-tools-mcp/">M4</a></em></li>
+<li><strong>Subagent</strong> — a child agent spawned for a bounded sub-task. <em>→ <a href="../../curriculum/04-agents-tools-mcp/">M4</a></em></li>
+<li><strong>Orchestration</strong> — coordinating steps, tools, agents, approvals, and state. <em>→ <a href="../../curriculum/04-agents-tools-mcp/">M4</a></em></li>
 </ul>
 <h2 id="protocols-and-standards">Protocols and standards<a class="headerlink" href="#protocols-and-standards" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>MCP (Model Context Protocol)</strong> — an open standard for exposing tools, resources, and prompts to models through servers and clients. <em>→ M4, M7</em></li>
-<li><strong>MCP server / client</strong> — the server publishes capabilities; the client consumes them. <em>→ M4</em></li>
+<li><strong>MCP (Model Context Protocol)</strong> — an open standard for exposing tools, resources, and prompts to models through servers and clients. <em>→ <a href="../../curriculum/04-agents-tools-mcp/">M4</a>, <a href="../../curriculum/07-forward-deployed/">M7</a></em></li>
+<li><strong>MCP server / client</strong> — the server publishes capabilities; the client consumes them. <em>→ <a href="../../curriculum/04-agents-tools-mcp/">M4</a></em></li>
 <li><strong>MCP resource</strong> — data or context a client can retrieve through the protocol.</li>
 <li><strong>MCP prompt</strong> — a reusable prompt or interaction template published by a server.</li>
 <li><strong>Capability negotiation</strong> — clients and servers declaring supported protocol features.</li>
-<li><strong>Tool use versus computer use</strong> — calling defined tools versus driving a GUI/browser through screenshots and actions. <em>→ M4</em></li>
+<li><strong>Tool use versus computer use</strong> — calling defined tools versus driving a GUI/browser through screenshots and actions. <em>→ <a href="../../curriculum/04-agents-tools-mcp/">M4</a></em></li>
 <li><strong>Agent-to-agent (A2A)</strong> — patterns or standards for agents communicating with each other.</li>
 </ul>
 <h2 id="frameworks">Frameworks<a class="headerlink" href="#frameworks" title="Permanent link">&para;</a></h2>
@@ -1605,7 +1635,7 @@
 <li><strong>CrewAI, AutoGen, Semantic Kernel</strong> — orchestration frameworks.</li>
 <li><strong>Claude Agent SDK, OpenAI Agents SDK, Pydantic AI</strong> — provider or first-class agent SDKs.</li>
 <li><strong>DSPy</strong> — programming LLM pipelines with optimizable modules.</li>
-<li><strong>Frameworks versus hand-rolled</strong> — know the loop by hand before adopting an abstraction. <em>→ M4</em></li>
+<li><strong>Frameworks versus hand-rolled</strong> — know the loop by hand before adopting an abstraction. <em>→ <a href="../../curriculum/04-agents-tools-mcp/">M4</a></em></li>
 </ul>
 
 

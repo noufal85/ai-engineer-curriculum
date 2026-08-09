@@ -1290,6 +1290,8 @@
       
         
       
+        
+      
     
     
     
@@ -1337,6 +1339,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/intro-to-large-language-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intro to Large Language Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -1558,53 +1588,53 @@
 
 
 <h1 id="retrieval-data">Retrieval &amp; Data<a class="headerlink" href="#retrieval-data" title="Permanent link">&para;</a></h1>
-<p>How a system knows things it was not trained on. Mostly <strong>→ M3</strong>, with data-pipeline pieces in <a href="../../curriculum/06-production-systems/">M6</a> and <a href="../../curriculum/07-forward-deployed/">M7</a>.</p>
+<p>How a system knows things it was not trained on. Mostly <strong>→ <a href="../../curriculum/03-rag-memory/">M3</a></strong>, with data-pipeline pieces in <a href="../../curriculum/06-production-systems/">M6</a> and <a href="../../curriculum/07-forward-deployed/">M7</a>.</p>
 <h2 id="embeddings-and-similarity">Embeddings and similarity<a class="headerlink" href="#embeddings-and-similarity" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Embedding</strong> — a vector that encodes the meaning of text or another modality. <em>→ M3</em></li>
-<li><strong>Embedding model</strong> — a model that produces embeddings, separate from a chat model. <em>→ M3</em></li>
-<li><strong>Cosine similarity / dot product</strong> — measures of vector closeness. <em>→ M3</em></li>
+<li><strong>Embedding</strong> — a vector that encodes the meaning of text or another modality. <em>→ <a href="../../curriculum/03-rag-memory/">M3</a></em></li>
+<li><strong>Embedding model</strong> — a model that produces embeddings, separate from a chat model. <em>→ <a href="../../curriculum/03-rag-memory/">M3</a></em></li>
+<li><strong>Cosine similarity / dot product</strong> — measures of vector closeness. <em>→ <a href="../../curriculum/03-rag-memory/">M3</a></em></li>
 <li><strong>Dimensions</strong> — the length of a vector; higher is not automatically better.</li>
 </ul>
 <h2 id="vector-databases-and-indexing">Vector databases and indexing<a class="headerlink" href="#vector-databases-and-indexing" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Vector database</strong> — a store built for nearest-neighbor search over embeddings. <em>→ M3</em></li>
-<li><strong>ANN</strong> — approximate nearest-neighbor search that trades a little exactness for speed. <em>→ M3</em></li>
-<li><strong>HNSW / IVF</strong> — common ANN index structures. <em>→ M3</em></li>
-<li><strong>Metadata filtering</strong> — narrowing retrieval by structured fields such as date, owner, tenant, or type. <em>→ M3, M6</em></li>
+<li><strong>Vector database</strong> — a store built for nearest-neighbor search over embeddings. <em>→ <a href="../../curriculum/03-rag-memory/">M3</a></em></li>
+<li><strong>ANN</strong> — approximate nearest-neighbor search that trades a little exactness for speed. <em>→ <a href="../../curriculum/03-rag-memory/">M3</a></em></li>
+<li><strong>HNSW / IVF</strong> — common ANN index structures. <em>→ <a href="../../curriculum/03-rag-memory/">M3</a></em></li>
+<li><strong>Metadata filtering</strong> — narrowing retrieval by structured fields such as date, owner, tenant, or type. <em>→ <a href="../../curriculum/03-rag-memory/">M3</a>, <a href="../../curriculum/06-production-systems/">M6</a></em></li>
 </ul>
 <h2 id="rag-and-search">RAG and search<a class="headerlink" href="#rag-and-search" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>RAG</strong> — retrieve relevant context, then generate an answer grounded in it. <em>→ M3</em></li>
-<li><strong>Chunking</strong> — splitting documents into retrievable pieces; boundaries and overlap matter. <em>→ M3</em></li>
+<li><strong>RAG</strong> — retrieve relevant context, then generate an answer grounded in it. <em>→ <a href="../../curriculum/03-rag-memory/">M3</a></em></li>
+<li><strong>Chunking</strong> — splitting documents into retrievable pieces; boundaries and overlap matter. <em>→ <a href="../../curriculum/03-rag-memory/">M3</a></em></li>
 <li><strong>Top-k</strong> — how many candidates are retrieved.</li>
-<li><strong>Text-to-SQL / text-to-Cypher (query construction)</strong> — generating a validated database query from natural language when the answer lives in structured data. <em>→ M3, M7</em></li>
-<li><strong>Query rewriting</strong> — transforming a user question into a retrieval-friendly query. <em>→ M3</em></li>
-<li><strong>Query decomposition</strong> — splitting a multi-part question into smaller retrieval tasks. <em>→ M3</em></li>
+<li><strong>Text-to-SQL / text-to-Cypher (query construction)</strong> — generating a validated database query from natural language when the answer lives in structured data. <em>→ <a href="../../curriculum/03-rag-memory/">M3</a>, <a href="../../curriculum/07-forward-deployed/">M7</a></em></li>
+<li><strong>Query rewriting</strong> — transforming a user question into a retrieval-friendly query. <em>→ <a href="../../curriculum/03-rag-memory/">M3</a></em></li>
+<li><strong>Query decomposition</strong> — splitting a multi-part question into smaller retrieval tasks. <em>→ <a href="../../curriculum/03-rag-memory/">M3</a></em></li>
 <li><strong>Multi-query retrieval</strong> — issuing several reformulations to improve recall.</li>
-<li><strong>Lexical / BM25 search</strong> — keyword search; precise where vectors are fuzzy. <em>→ M3</em></li>
-<li><strong>Hybrid search</strong> — combining lexical and vector retrieval. <em>→ M3</em></li>
-<li><strong>Reranking</strong> — a cross-encoder re-scores candidates for relevance. <em>→ M3</em></li>
-<li><strong>Citations / grounding</strong> — pointing an answer back to evidence. <em>→ M3</em></li>
-<li><strong>Multi-hop question</strong> — a question requiring several facts or relationships. <em>→ M3</em></li>
+<li><strong>Lexical / BM25 search</strong> — keyword search; precise where vectors are fuzzy. <em>→ <a href="../../curriculum/03-rag-memory/">M3</a></em></li>
+<li><strong>Hybrid search</strong> — combining lexical and vector retrieval. <em>→ <a href="../../curriculum/03-rag-memory/">M3</a></em></li>
+<li><strong>Reranking</strong> — a cross-encoder re-scores candidates for relevance. <em>→ <a href="../../curriculum/03-rag-memory/">M3</a></em></li>
+<li><strong>Citations / grounding</strong> — pointing an answer back to evidence. <em>→ <a href="../../curriculum/03-rag-memory/">M3</a></em></li>
+<li><strong>Multi-hop question</strong> — a question requiring several facts or relationships. <em>→ <a href="../../curriculum/03-rag-memory/">M3</a></em></li>
 </ul>
 <h2 id="graphs-and-knowledge">Graphs and knowledge<a class="headerlink" href="#graphs-and-knowledge" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Knowledge graph</strong> — nodes, edges, and properties representing connected data. <em>→ M3, M7</em></li>
-<li><strong>GraphRAG</strong> — vector-seeded retrieval followed by graph traversal. <em>→ M3, M7</em></li>
-<li><strong>Similarity ≠ relationship</strong> — the reason vector-only retrieval struggles with connected facts. <em>→ M3</em></li>
-<li><strong>Ontology / schema</strong> — entity and relationship types in a graph. <em>→ M7</em></li>
-<li><strong>Entity resolution / stitching</strong> — identifying the same real-world thing across sources. <em>→ M7</em></li>
-<li><strong>Semantic layer</strong> — a unified queryable model over several systems. <em>→ M7</em></li>
+<li><strong>Knowledge graph</strong> — nodes, edges, and properties representing connected data. <em>→ <a href="../../curriculum/03-rag-memory/">M3</a>, <a href="../../curriculum/07-forward-deployed/">M7</a></em></li>
+<li><strong>GraphRAG</strong> — vector-seeded retrieval followed by graph traversal. <em>→ <a href="../../curriculum/03-rag-memory/">M3</a>, <a href="../../curriculum/07-forward-deployed/">M7</a></em></li>
+<li><strong>Similarity ≠ relationship</strong> — the reason vector-only retrieval struggles with connected facts. <em>→ <a href="../../curriculum/03-rag-memory/">M3</a></em></li>
+<li><strong>Ontology / schema</strong> — entity and relationship types in a graph. <em>→ <a href="../../curriculum/07-forward-deployed/">M7</a></em></li>
+<li><strong>Entity resolution / stitching</strong> — identifying the same real-world thing across sources. <em>→ <a href="../../curriculum/07-forward-deployed/">M7</a></em></li>
+<li><strong>Semantic layer</strong> — a unified queryable model over several systems. <em>→ <a href="../../curriculum/07-forward-deployed/">M7</a></em></li>
 </ul>
 <h2 id="memory-and-pipelines">Memory and pipelines<a class="headerlink" href="#memory-and-pipelines" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Agent memory</strong> — short-term context plus persisted or retrieved knowledge across sessions. <em>→ M3, M4</em></li>
-<li><strong>Data pipeline / ingestion</strong> — getting source data cleaned, enriched, and indexed. <em>→ M3, M6, M7</em></li>
-<li><strong>Data contract</strong> — an agreement on field meaning, ownership, and change behavior. <em>→ Engineering Core, M6, M7</em></li>
-<li><strong>Freshness / point-in-time</strong> — whether retrieved facts match the required time. <em>→ M5, M6</em></li>
-<li><strong>Deduplication</strong> — removing repeated content before it pollutes retrieval. <em>→ M6</em></li>
-<li><strong>Tacit knowledge</strong> — undocumented rules needed to model a domain correctly. <em>→ M7</em></li>
+<li><strong>Agent memory</strong> — short-term context plus persisted or retrieved knowledge across sessions. <em>→ <a href="../../curriculum/03-rag-memory/">M3</a>, <a href="../../curriculum/04-agents-tools-mcp/">M4</a></em></li>
+<li><strong>Data pipeline / ingestion</strong> — getting source data cleaned, enriched, and indexed. <em>→ <a href="../../curriculum/03-rag-memory/">M3</a>, <a href="../../curriculum/06-production-systems/">M6</a>, <a href="../../curriculum/07-forward-deployed/">M7</a></em></li>
+<li><strong>Data contract</strong> — an agreement on field meaning, ownership, and change behavior. <em>→ <a href="../../curriculum/engineering-core/">Engineering Core</a>, <a href="../../curriculum/06-production-systems/">M6</a>, <a href="../../curriculum/07-forward-deployed/">M7</a></em></li>
+<li><strong>Freshness / point-in-time</strong> — whether retrieved facts match the required time. <em>→ <a href="../../curriculum/05-evals-observability/">M5</a>, <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Deduplication</strong> — removing repeated content before it pollutes retrieval. <em>→ <a href="../../curriculum/06-production-systems/">M6</a></em></li>
+<li><strong>Tacit knowledge</strong> — undocumented rules needed to model a domain correctly. <em>→ <a href="../../curriculum/07-forward-deployed/">M7</a></em></li>
 </ul>
 
 
