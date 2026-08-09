@@ -1581,7 +1581,7 @@
 
 <h1 id="module-1-llm-internals">Module 1 · LLM Internals<a class="headerlink" href="#module-1-llm-internals" title="Permanent link">&para;</a></h1>
 <h2 id="the-build">🔨 The build<a class="headerlink" href="#the-build" title="Permanent link">&para;</a></h2>
-<p><strong><code>builds/01-model-playground</code></strong> <em>(planned)</em> — a Dockerized app that runs the same prompt across models (Opus/Haiku) and sampling settings, and shows the <strong>quality / cost / latency deltas side by side</strong>. You <em>see</em> the internals instead of reading about them.</p>
+<p><strong><code>snippets/01-model-playground.py</code></strong> <em>(planned)</em> — a small local script that runs the same prompt across models and sampling settings, and shows the <strong>quality / cost / latency deltas side by side</strong>. Docker is optional if the experiment later becomes a service.</p>
 <p>Build it, then the sections below explain what you just watched — reference, not a lecture.</p>
 <h2 id="why-it-matters">Why it matters<a class="headerlink" href="#why-it-matters" title="Permanent link">&para;</a></h2>
 <p>You don't need to train a model, but you need a <strong>correct mental model</strong> of what it does — otherwise every failure looks like magic. Hallucination, context limits, cost, and latency all fall out of the internals. Understand the machine and the rest of the curriculum stops being guesswork.</p>

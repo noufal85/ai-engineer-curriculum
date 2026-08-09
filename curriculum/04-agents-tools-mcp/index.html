@@ -1703,7 +1703,7 @@
 
 <h1 id="module-4-agents-workflows-tools-mcp">Module 4 · Agents, Workflows, Tools &amp; MCP<a class="headerlink" href="#module-4-agents-workflows-tools-mcp" title="Permanent link">&para;</a></h1>
 <h2 id="the-build">🔨 The build<a class="headerlink" href="#the-build" title="Permanent link">&para;</a></h2>
-<p><strong><code>builds/04-agent-and-mcp</code></strong> <em>(planned)</em> — a hand-rolled bounded workflow that uses 2–3 tools, persists state, logs every step, exposes one capability as an MCP server, and pauses for human approval before an irreversible action. Dockerized.</p>
+<p><strong><code>builds/04-agent-and-mcp</code></strong> <em>(planned)</em> — a hand-rolled bounded workflow that uses 2–3 tools, persists state, logs every step, exposes one capability as an MCP server, and pauses for human approval before an irreversible action. Start as a local lab; Dockerize it when the server boundary or reproducibility becomes part of the lesson.</p>
 <p>Build it, then the sections below explain the loop and why bounds matter.</p>
 <h2 id="why-it-matters">Why it matters<a class="headerlink" href="#why-it-matters" title="Permanent link">&para;</a></h2>
 <p>An agent can act: it calls tools, reads results, and decides what to do next. But many useful systems are better modeled as explicit workflows with a few model-powered steps. Choosing between a deterministic workflow and an open-ended agent is a core engineering decision.</p>

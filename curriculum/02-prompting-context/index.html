@@ -1581,7 +1581,7 @@
 
 <h1 id="module-2-prompting-context-engineering">Module 2 · Prompting &amp; Context Engineering<a class="headerlink" href="#module-2-prompting-context-engineering" title="Permanent link">&para;</a></h1>
 <h2 id="the-build">🔨 The build<a class="headerlink" href="#the-build" title="Permanent link">&para;</a></h2>
-<p><strong><code>builds/02-reliable-extractor</code></strong> <em>(planned)</em> — take a flaky "please return JSON" prompt and make it <strong>reliable</strong> with tool-calling + schema validation and a <strong>cache-friendly</strong> prompt layout; the app measures the failure-rate drop and the latency/cost win over 100 runs. Dockerized (<code>docker compose up</code>).</p>
+<p><strong><code>builds/02-reliable-extractor</code></strong> <em>(planned)</em> — take a flaky "please return JSON" prompt and make it <strong>reliable</strong> with tool-calling + schema validation and a <strong>cache-friendly</strong> prompt layout; the local lab measures the failure-rate drop and the latency/cost win over 100 runs. Dockerize it only if the experiment becomes a reusable service.</p>
 <p>Build it, then the sections below explain the levers you pulled.</p>
 <h2 id="why-it-matters">Why it matters<a class="headerlink" href="#why-it-matters" title="Permanent link">&para;</a></h2>
 <p>The prompt <em>is</em> the program. Before you reach for fine-tuning or a bigger model, most quality problems are solved by better context engineering. This is the highest-leverage, lowest-cost skill in the whole stack.</p>

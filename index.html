@@ -344,6 +344,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#learning-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning formats
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#start-here" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1501,6 +1512,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#learning-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning formats
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#start-here" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1557,7 +1579,7 @@
 <p>A self-tracked, <strong>build-first</strong> path through AI engineering and the forward-deployed engineer (FDE) craft.</p>
 <div class="admonition quote">
 <p class="admonition-title">How this works</p>
-<p><strong>Build first, explain second.</strong> Every core topic is anchored to a small app you can run. You build the thing, observe where it breaks, then study the concept underneath.</p>
+<p><strong>Do the smallest useful experiment first.</strong> Some topics use a five-line snippet, some use a local script, and some need a service or multi-component build. You run the artifact, observe where it breaks, then study the concept underneath.</p>
 </div>
 <h2 id="the-learning-path">The learning path<a class="headerlink" href="#the-learning-path" title="Permanent link">&para;</a></h2>
 <ol>
@@ -1569,10 +1591,37 @@
 </ol>
 <h2 id="three-rules">Three rules<a class="headerlink" href="#three-rules" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>Everything important gets built.</strong> Reference vocabulary can stay lightweight; working knowledge must have a lab.</li>
-<li><strong>Every build is self-contained.</strong> Code lives in <a href="https://github.com/noufal85/ai-engineer-curriculum"><code>builds/</code></a>, with a README, Docker setup, acceptance criteria, and a failure case.</li>
+<li><strong>Everything important gets practiced.</strong> Reference vocabulary can stay lightweight; working knowledge gets a snippet, lab, or build.</li>
+<li><strong>Use the lightest format that teaches the idea.</strong> Snippets should stay small. Docker is reserved for services, multi-component systems, isolation, and reproducibility.</li>
 <li><strong>Every claim is measured.</strong> Track quality, latency, cost, security, and user value instead of relying on a successful demo.</li>
 </ol>
+<h2 id="learning-formats">Learning formats<a class="headerlink" href="#learning-formats" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Use it when</th>
+<th>Typical shape</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Snippet</strong></td>
+<td>One concept can be demonstrated in minutes</td>
+<td>One file, standard library or one small dependency</td>
+</tr>
+<tr>
+<td><strong>Local lab</strong></td>
+<td>The learner needs a few files or repeated experiments</td>
+<td>A small folder, virtual environment, and a local command</td>
+</tr>
+<tr>
+<td><strong>Dockerized build</strong></td>
+<td>The lesson needs a service boundary, multiple dependencies, or reproducibility</td>
+<td>A self-contained folder with Docker and an operational README</td>
+</tr>
+</tbody>
+</table>
 <h2 id="start-here">Start here<a class="headerlink" href="#start-here" title="Permanent link">&para;</a></h2>
 <p>If you are new to development, begin with <a href="curriculum/environment-and-programming/">Developer Environment &amp; Programming Basics</a>. Then continue through <a href="curriculum/engineering-core/">Engineering Core</a>, run <a href="https://github.com/noufal85/ai-engineer-curriculum/tree/main/builds/00-hello-llm">Build 00 · hello-llm</a>, and read <a href="curriculum/00-foundations/">Module 0 · Foundations</a>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/noufal85/ai-engineer-curriculum
