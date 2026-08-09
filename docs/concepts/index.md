@@ -4,7 +4,7 @@ This is the target vocabulary for the course — the terms and concepts an AI en
 
 !!! note "How to read this"
 
-    Each entry has a short definition plus a pointer to where it is covered. **`→ M3`** means “covered in Module 3.” A term may appear in several modules. If a term has no module pointer, it is background vocabulary or a future specialization.
+    Each entry has a short definition plus a pointer to where it is covered. **→ [M3](../curriculum/03-rag-memory.md)** means “covered in Module 3,” and the pointer links straight to that module. A term may appear in several modules. If a term has no module pointer, it is background vocabulary or a future specialization.
 
 ## Categories
 

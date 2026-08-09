@@ -1,6 +1,6 @@
 # Product, UX & Adoption
 
-The human and organizational side of shipping AI systems. Mostly **→ M7**, with trust and feedback patterns used in every capstone.
+The human and organizational side of shipping AI systems. Mostly **→ [M7](../curriculum/07-forward-deployed.md)**, with trust and feedback patterns used in every capstone.
 
 ## Discovery and product design
 

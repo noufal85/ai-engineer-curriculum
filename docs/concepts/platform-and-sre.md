@@ -1,6 +1,6 @@
 # Platform & SRE
 
-The operational vocabulary for keeping AI systems reliable, observable, secure, and affordable. Mostly **→ M6**, with evaluation gates in [M5](../curriculum/05-evals-observability.md).
+The operational vocabulary for keeping AI systems reliable, observable, secure, and affordable. Mostly **→ [M6](../curriculum/06-production-systems.md)**, with evaluation gates in [M5](../curriculum/05-evals-observability.md).
 
 ## Reliability
 

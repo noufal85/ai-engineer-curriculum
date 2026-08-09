@@ -1,6 +1,6 @@
 # Developer Environment
 
-The vocabulary for getting a program running on your computer. Mostly **→ Developer Environment & Programming Basics**, with project and deployment applications in [Engineering Core](engineering-core.md) and [M6](../curriculum/06-production-systems.md).
+The vocabulary for getting a program running on your computer. Mostly **→ [Developer Environment & Programming Basics](../curriculum/environment-and-programming.md)**, with project and deployment applications in [Engineering Core](engineering-core.md) and [M6](../curriculum/06-production-systems.md).
 
 ## Computers and processes
 
