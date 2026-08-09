@@ -91,6 +91,14 @@ nav:
       - Platform & SRE: concepts/platform-and-sre.md
       - Product & Adoption: concepts/product-and-adoption.md
       - Safety & Security: concepts/safety-and-security.md
+  - Papers:
+      - papers/index.md
+      - AlexNet: papers/alexnet.md
+      - Generative Adversarial Networks: papers/generative-adversarial-networks.md
+      - Deep Residual Learning (ResNet): papers/resnet.md
+      - Attention Is All You Need: papers/attention-is-all-you-need.md
+      - BERT: papers/bert.md
+      - GPT-3: papers/gpt-3.md
   - Talk Notes:
       - notes/index.md
       - Intro to Large Language Models: notes/intro-to-large-language-models.md

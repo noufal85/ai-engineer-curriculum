@@ -121,6 +121,72 @@ class CurriculumStructureTests(unittest.TestCase):
         self.assertIn("dockerized only when", combined)
         self.assertNotIn("everything is dockerized", builds.lower())
 
+    def test_paper_catalog_and_guides_are_discoverable(self) -> None:
+        nav = self.read("mkdocs.yml")
+        catalog = self.read("docs/papers/index.md")
+
+        guides = {
+            "alexnet.md": "AlexNet",
+            "generative-adversarial-networks.md": "Generative Adversarial Networks",
+            "resnet.md": "Deep Residual Learning",
+            "attention-is-all-you-need.md": "Attention Is All You Need",
+            "bert.md": "BERT",
+            "gpt-3.md": "Language Models are Few-Shot Learners",
+        }
+
+        self.assertIn("Papers:", nav)
+        self.assertIn("papers/index.md", nav)
+        for filename, title in guides.items():
+            relative_path = f"docs/papers/{filename}"
+            self.assertTrue((ROOT / relative_path).exists(), relative_path)
+            self.assertIn(filename, nav)
+            self.assertIn(title, catalog)
+
+    def test_paper_guides_use_a_consistent_beginner_friendly_structure(self) -> None:
+        guide_paths = (
+            "docs/papers/alexnet.md",
+            "docs/papers/generative-adversarial-networks.md",
+            "docs/papers/resnet.md",
+            "docs/papers/attention-is-all-you-need.md",
+            "docs/papers/bert.md",
+            "docs/papers/gpt-3.md",
+        )
+
+        required_sections = (
+            "## The paper in one sentence",
+            "## The problem",
+            "## The core idea",
+            "## How it works",
+            "## What changed after this paper",
+            "## What the paper does not solve",
+            "## Check your understanding",
+            "## Read the original",
+        )
+
+        for relative_path in guide_paths:
+            content = self.read(relative_path)
+            for section in required_sections:
+                self.assertIn(section, content, f"{section} missing from {relative_path}")
+            self.assertIn("```mermaid", content, relative_path)
+
+    def test_attention_guide_explains_transformers_without_hiding_key_concepts(self) -> None:
+        attention = self.read("docs/papers/attention-is-all-you-need.md").lower()
+
+        for term in (
+            "query",
+            "key",
+            "value",
+            "self-attention",
+            "multi-head attention",
+            "positional encoding",
+            "encoder",
+            "decoder",
+            "residual",
+            "feed-forward",
+            "mask",
+        ):
+            self.assertIn(term, attention)
+
 
 if __name__ == "__main__":
     unittest.main()
