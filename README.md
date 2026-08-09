@@ -16,6 +16,7 @@ docker compose up --build # open http://localhost:8000
 
 - `docs/` — the "explain" half (MkDocs Material site). Curriculum, progress tracker, talk notes.
 - `builds/` — the "build" half. One self-contained, Dockerized folder per build.
+- `docs/curriculum/environment-and-programming.md` — beginner-friendly setup for terminals, environment variables, API keys, and Docker.
 - `docs/curriculum/engineering-core.md` — prerequisite software-engineering track before Module 0.
 - `docs/curriculum/specializations.md` — optional multimodal, adaptation, local-inference, and coding-agent tracks.
 

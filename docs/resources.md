@@ -4,6 +4,7 @@ A short, curated shelf. Module pages carry their own targeted references; this p
 
 ## Engineering and production
 
+- A beginner terminal/shell tutorial for your operating system, plus Python installation and virtual-environment documentation.
 - Documentation for the language, HTTP framework, SQL database, Docker, testing stack, and CI system you choose.
 - One SRE reference covering SLOs, backpressure, incident response, and graceful degradation.
 - Your cloud provider's identity, secrets, logging, deployment, and database guidance.

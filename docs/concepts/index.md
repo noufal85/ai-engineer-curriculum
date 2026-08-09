@@ -9,6 +9,7 @@ This is the target vocabulary for the course — the terms and concepts an AI en
 ## Categories
 
 - [**Engineering core**](engineering-core.md) — APIs, persistence, testing, delivery, and the software foundations around AI features.
+- [**Developer environment**](developer-environment.md) — terminals, processes, paths, environment variables, secrets, and runtime setup.
 - [**Foundations**](foundations.md) — how LLMs work: tokens, embeddings, context windows, sampling, and hallucination.
 - [**Models & providers**](models-and-providers.md) — model families, gateways, open weights, adaptation, and inference.
 - [**Prompting & context**](prompting.md) — prompt engineering, structured output, tool calling, caching, and context engineering.

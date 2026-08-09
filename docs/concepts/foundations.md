@@ -1,6 +1,17 @@
 # Foundations
 
-Core vocabulary for how large language models actually work. Mostly **`→ M1`**, with pieces in [M0](../curriculum/00-foundations.md).
+Core vocabulary for how AI and large language models work. Start with [Module 0](../curriculum/00-foundations.md) for the friendly introduction, then use this page as the deeper reference. Mostly **`→ M1`**, with pieces in [M0](../curriculum/00-foundations.md).
+
+## The ladder from AI to LLMs
+
+- **Artificial intelligence (AI)** — the broad field of building systems that perform tasks associated with human intelligence, such as recognizing patterns, understanding language, or choosing actions. *→ M0*
+- **Machine learning (ML)** — a way to build systems by learning patterns from examples instead of writing every rule by hand. *→ M0*
+- **Deep learning** — machine learning using large neural networks with learned parameters. *→ M0, M1*
+- **Generative AI** — models that generate new text, code, images, audio, or video. *→ M0*
+- **Foundation model** — a large pretrained model that can be adapted to many tasks. *→ M1*
+- **LLM (Large Language Model)** — a model trained to predict the next token in text. *→ M0, M1*
+- **Inference** — using a trained model to produce an output for a new request. *→ M0*
+- **Training** — adjusting model parameters using many examples. *→ M0, M1*
 
 ## The model
 

@@ -56,6 +56,26 @@ class CurriculumStructureTests(unittest.TestCase):
             self.assertIn(term, specializations_lower)
         self.assertIn("specializations.md", nav)
 
+    def test_beginner_environment_track_is_discoverable(self) -> None:
+        curriculum = self.read("docs/curriculum/environment-and-programming.md")
+        concepts = self.read("docs/concepts/developer-environment.md")
+        nav = self.read("mkdocs.yml")
+
+        curriculum_lower = curriculum.lower()
+        for term in ("environment variable", "export", ".env", "api key", "docker"):
+            self.assertIn(term, curriculum_lower)
+        self.assertIn("developer-environment.md", nav)
+        self.assertIn("environment variables", concepts.lower())
+
+    def test_foundations_has_beginner_ai_onramp_and_visuals(self) -> None:
+        foundations = self.read("docs/curriculum/00-foundations.md")
+        foundations_lower = foundations.lower()
+
+        for term in ("what is ai", "machine learning", "large language model", "tokens"):
+            self.assertIn(term, foundations_lower)
+        self.assertIn("```mermaid", foundations_lower)
+        self.assertIn("why this matters", foundations_lower)
+
 
 if __name__ == "__main__":
     unittest.main()

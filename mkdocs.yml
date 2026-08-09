@@ -61,6 +61,7 @@ nav:
   - Progress: progress.md
   - Curriculum:
       - curriculum/index.md
+      - Developer Environment: curriculum/environment-and-programming.md
       - Engineering Core: curriculum/engineering-core.md
       - 0 · Foundations: curriculum/00-foundations.md
       - 1 · LLM Internals: curriculum/01-llm-internals.md
@@ -74,6 +75,7 @@ nav:
       - Optional Specializations: curriculum/specializations.md
   - Concepts:
       - concepts/index.md
+      - Developer Environment: concepts/developer-environment.md
       - Engineering Core: concepts/engineering-core.md
       - Foundations: concepts/foundations.md
       - Models & Providers: concepts/models-and-providers.md

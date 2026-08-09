@@ -8,10 +8,11 @@ A self-tracked, **build-first** path through AI engineering and the forward-depl
 
 ## The learning path
 
-1. **Engineering Core** — APIs, data, tests, Docker, CI, and operational habits.
-2. **Shared AI-engineering core** — models, prompting, retrieval, agents, evals, and production systems.
-3. **FDE craft** — discovery, tacit knowledge, domain modeling, customer delivery, and adoption.
-4. **Capstones and specializations** — integrate the system end to end or go deeper in a chosen area.
+1. **Developer Environment** — terminals, processes, environment variables, API keys, and local setup.
+2. **Engineering Core** — APIs, data, tests, Docker, CI, and operational habits.
+3. **Shared AI-engineering core** — models, prompting, retrieval, agents, evals, and production systems.
+4. **FDE craft** — discovery, tacit knowledge, domain modeling, customer delivery, and adoption.
+5. **Capstones and specializations** — integrate the system end to end or go deeper in a chosen area.
 
 ## Three rules
 
@@ -21,7 +22,7 @@ A self-tracked, **build-first** path through AI engineering and the forward-depl
 
 ## Start here
 
-If you need the software baseline, begin with [Engineering Core](curriculum/engineering-core.md). Then run [Build 00 · hello-llm](https://github.com/noufal85/ai-engineer-curriculum/tree/main/builds/00-hello-llm) and read [Module 0 · Foundations](curriculum/00-foundations.md).
+If you are new to development, begin with [Developer Environment & Programming Basics](curriculum/environment-and-programming.md). Then continue through [Engineering Core](curriculum/engineering-core.md), run [Build 00 · hello-llm](https://github.com/noufal85/ai-engineer-curriculum/tree/main/builds/00-hello-llm), and read [Module 0 · Foundations](curriculum/00-foundations.md).
 
 ```bash
 git clone https://github.com/noufal85/ai-engineer-curriculum

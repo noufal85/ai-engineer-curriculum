@@ -15,6 +15,7 @@ Every curriculum module is anchored by a small, self-contained, Dockerized app. 
 
 | Track | Build | Curriculum | What it teaches |
 |---|---|---|---|
+| Setup | _planned_ | [Developer Environment](../docs/curriculum/environment-and-programming.md) | Terminal, environment variables, API keys, `.env`, and Docker configuration |
 | Core | _planned_ | [Engineering Core](../docs/curriculum/engineering-core.md) | API, database, tests, Docker, CI, and operational seams |
 | 00 | [`hello-llm`](00-hello-llm/) | [0](../docs/curriculum/00-foundations.md) | Streaming + schema-validated output |
 | 01 | _planned_ | 1 | Model/sampling/cost tradeoffs, hands-on |

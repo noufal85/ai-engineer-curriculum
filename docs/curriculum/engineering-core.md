@@ -1,6 +1,6 @@
 # Engineering Core · Prerequisite Track
 
-This unnumbered track sits before Module 0. It is the minimum software-engineering foundation needed to get value from the AI-engineering modules without treating APIs, databases, tests, and deployment as magic.
+This unnumbered track follows [Developer Environment & Programming Basics](environment-and-programming.md) and sits before Module 0. It is the minimum software-engineering foundation needed to get value from the AI-engineering modules without treating APIs, databases, tests, and deployment as magic.
 
 It is intentionally practical: learn each topic while building a small service, then reuse the same patterns throughout the course.
 

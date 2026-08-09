@@ -13,4 +13,4 @@ Each module page contains:
 
 All build code lives in [`builds/`](https://github.com/noufal85/ai-engineer-curriculum/tree/main/builds), one Dockerized folder per build.
 
-Start with the [Engineering Core prerequisite track](engineering-core.md), then run [Module 0 · Foundations](00-foundations.md) and its build, [`00-hello-llm`](https://github.com/noufal85/ai-engineer-curriculum/tree/main/builds/00-hello-llm).
+Start with [Developer Environment & Programming Basics](environment-and-programming.md), continue through the [Engineering Core prerequisite track](engineering-core.md), then run [Module 0 · Foundations](00-foundations.md) and its build, [`00-hello-llm`](https://github.com/noufal85/ai-engineer-curriculum/tree/main/builds/00-hello-llm).

@@ -2,8 +2,9 @@
 
 Tick an item only when the build runs and you can explain the design tradeoff. Commit the checklist change so git history becomes the learning log.
 
-## Prerequisite track
+## Prerequisite tracks
 
+- [ ] **Developer Environment** — terminal, filesystem, processes, environment variables, API keys, `.env`, and Docker configuration.
 - [ ] **Engineering Core** — API, SQL, testing, async work, Docker, CI/CD, logs, health checks, and operational seams.
 
 ## Build status

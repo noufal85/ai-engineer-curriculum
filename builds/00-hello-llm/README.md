@@ -4,6 +4,8 @@ The smallest LLM service worth running: **stream a response** and **extract a va
 
 ## Run it
 
+New to API keys or environment variables? Read [Developer Environment & Programming Basics](../../docs/curriculum/environment-and-programming.md) first. It explains `.env`, shell variables, Docker Compose, and how to check a key without printing it.
+
 ```bash
 cp .env.example .env      # then paste your ANTHROPIC_API_KEY into .env
 docker compose up --build
