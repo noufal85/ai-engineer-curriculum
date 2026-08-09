@@ -93,6 +93,7 @@ nav:
       - Safety & Security: concepts/safety-and-security.md
   - Talk Notes:
       - notes/index.md
+      - Intro to Large Language Models: notes/intro-to-large-language-models.md
       - CrabRAG / Graph Memory: notes/crabrag-graph-memory.md
       - Your Moat Is Your Data Model: notes/moat-is-your-data-model.md
   - Resources: resources.md

@@ -17,7 +17,7 @@ A short, curated shelf. Module pages carry their own targeted references; this p
 
 ## Foundational intuition
 
-- Karpathy, *Intro to LLMs* and *Let's build GPT tokenizer* — mental model for Module 1.
+- Karpathy, [*Intro to Large Language Models*](notes/intro-to-large-language-models.md) and *Let's build GPT tokenizer* — mental model for Module 1.
 - *Lost in the Middle* (Liu et al.) — context ordering for Module 2.
 - Anthropic, *Building effective agents* — agent patterns without hype for Module 4.
 

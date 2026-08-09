@@ -547,7 +547,7 @@ Use a table like this:
 ## Resources
 
 - Andrej Karpathy, *Let's build the GPT tokenizer* — build intuition for tokenization.
-- Andrej Karpathy, *Intro to Large Language Models* — a broad mental model of training and inference.
+- Andrej Karpathy, [*Intro to Large Language Models*](../notes/intro-to-large-language-models.md) — a broad mental model of training and inference.
 - 3Blue1Brown's transformer and attention explainers — visual intuition for the model architecture.
 - Your model provider's tokenizer and sampling documentation — verify model-specific behavior.
 - [Models & Providers](../concepts/models-and-providers.md) — vocabulary for model families, hosting, and optimization techniques.
