@@ -45,7 +45,9 @@ Letting the model act — safely. Mostly **→ [M4](../curriculum/04-agents-tool
 
 - **LangChain / LangGraph** — building blocks and graph-based agent runtimes.
 - **LlamaIndex** — retrieval/RAG-centric framework.
-- **CrewAI, AutoGen, Semantic Kernel** — orchestration frameworks.
-- **Claude Agent SDK, OpenAI Agents SDK, Pydantic AI** — provider or first-class agent SDKs.
+- **CrewAI, AutoGen, Semantic Kernel** — multi-agent orchestration frameworks: role-based crews, conversation-driven teams, and plugin pipelines. *→ [M4](../curriculum/04-agents-tools-mcp.md)*
+- **Strands Agents** — AWS's model-driven agent framework; the loop is delegated to the model with tools and a prompt.
+- **Vercel AI SDK** — TypeScript toolkit for AI apps: streaming UI, tool calls, structured output, and agent loops inside web frameworks.
+- **Claude Agent SDK, OpenAI Agents SDK, Google ADK, Pydantic AI** — provider or first-class agent SDKs.
 - **DSPy** — programming LLM pipelines with optimizable modules.
 - **Frameworks versus hand-rolled** — know the loop by hand before adopting an abstraction. *→ [M4](../curriculum/04-agents-tools-mcp.md)*

@@ -69,4 +69,4 @@ An agent can act: it calls tools, reads results, and decides what to do next. Bu
 
 - Anthropic, *Building effective agents*.
 - The MCP specification and a reference server/client.
-- Read one agent framework's runtime source after hand-rolling the loop.
+- Read one agent framework's runtime source after hand-rolling the loop — LangGraph, CrewAI, Strands Agents, the Vercel AI SDK, or a provider agent SDK — and map it back to the loop you built.
