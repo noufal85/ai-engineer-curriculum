@@ -187,6 +187,19 @@ class CurriculumStructureTests(unittest.TestCase):
         ):
             self.assertIn(term, attention)
 
+    def test_career_page_tracks_ai_engineer_and_fde_jobs_to_linkedin(self) -> None:
+        career = self.read("docs/career.md")
+        nav = self.read("mkdocs.yml")
+
+        self.assertIn("Career: career.md", nav)
+        self.assertIn("AI Engineer", career)
+        self.assertIn("Forward-Deployed Engineer", career)
+        self.assertIn("Live LinkedIn searches", career)
+        self.assertIn("Tracked openings", career)
+        self.assertGreaterEqual(career.count("https://www.linkedin.com/jobs/view/"), 6)
+        self.assertGreaterEqual(career.count("https://www.linkedin.com/jobs/search/"), 4)
+        self.assertIn("Last reviewed: August 10, 2026", career)
+
 
 if __name__ == "__main__":
     unittest.main()

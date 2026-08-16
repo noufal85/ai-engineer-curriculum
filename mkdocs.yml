@@ -63,6 +63,7 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Progress: progress.md
+  - Career: career.md
   - Curriculum:
       - curriculum/index.md
       - Developer Environment: curriculum/environment-and-programming.md
