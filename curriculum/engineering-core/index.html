@@ -521,6 +521,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-you-will-be-able-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will be able to do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-build" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -593,6 +604,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧪 Lab
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 Lab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trial-watch-a-request-fail-well-15-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trial · Watch a request fail well (~15 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#build-checklist" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -600,6 +634,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1839,6 +1878,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-you-will-be-able-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will be able to do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-build" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1911,6 +1961,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧪 Lab
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 Lab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trial-watch-a-request-fail-well-15-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trial · Watch a request fail well (~15 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#build-checklist" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1918,6 +1991,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1966,6 +2044,15 @@
 <h1 id="engineering-core-prerequisite-track">Engineering Core · Prerequisite Track<a class="headerlink" href="#engineering-core-prerequisite-track" title="Permanent link">&para;</a></h1>
 <p>This unnumbered track follows <a href="../environment-and-programming/">Developer Environment &amp; Programming Basics</a> and sits before Module 0. It is the minimum software-engineering foundation needed to get value from the AI-engineering modules without treating APIs, databases, tests, and deployment as magic.</p>
 <p>It is intentionally practical: learn each topic while building a small service, then reuse the same patterns throughout the course.</p>
+<h2 id="what-you-will-be-able-to-do">What you will be able to do<a class="headerlink" href="#what-you-will-be-able-to-do" title="Permanent link">&para;</a></h2>
+<p>By the end of this track, you will be able to:</p>
+<ul>
+<li>build and run a small API-backed service with a database, background job, and tests</li>
+<li>speak HTTP fluently: requests, status codes, timeouts, retries, and API contracts</li>
+<li>design a schema, write a migration, and use transactions deliberately</li>
+<li>ship through Git, CI/CD, and Docker with health checks and graceful shutdown</li>
+<li>treat model calls as unreliable network dependencies behind a small adapter boundary</li>
+</ul>
 <h2 id="the-build">🔨 The build<a class="headerlink" href="#the-build" title="Permanent link">&para;</a></h2>
 <p><strong><code>builds/engineering-core</code></strong> <em>(planned)</em> — a small API-backed application with a database, background job, tests, Docker, configuration, and a CI check. The application can be simple; the point is learning the engineering seams around an AI feature.</p>
 <h2 id="what-it-teaches">What it teaches<a class="headerlink" href="#what-it-teaches" title="Permanent link">&para;</a></h2>
@@ -1996,7 +2083,15 @@
 <li>Keep provider-specific code behind a small adapter boundary.</li>
 <li>Validate every model-produced object before it reaches application logic.</li>
 </ul>
-<h2 id="build-checklist">Build checklist<a class="headerlink" href="#build-checklist" title="Permanent link">&para;</a></h2>
+<h2 id="lab">🧪 Lab<a class="headerlink" href="#lab" title="Permanent link">&para;</a></h2>
+<p>Hands-on first: a ten-minute trial, then the build checklist.</p>
+<h3 id="trial-watch-a-request-fail-well-15-min">Trial · Watch a request fail well (~15 min)<a class="headerlink" href="#trial-watch-a-request-fail-well-15-min" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Run <code>curl -i https://httpbin.org/status/503</code> and read the status line — that is what a provider outage looks like to your code.</li>
+<li>In any small script, call <code>https://httpbin.org/delay/5</code> with a 2-second timeout, catch the timeout, and retry once.</li>
+<li>Log the failure as one structured line: timestamp, URL, status, elapsed milliseconds. Diagnosing a request from that one line is the habit this whole track builds.</li>
+</ol>
+<h3 id="build-checklist">Build checklist<a class="headerlink" href="#build-checklist" title="Permanent link">&para;</a></h3>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> The service has a documented local setup and a reproducible Docker command.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A database schema and migration can be created from scratch.</li>

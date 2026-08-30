@@ -633,6 +633,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-you-will-be-able-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will be able to do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-build" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -716,13 +727,41 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#build" class="md-nav__link">
+  <a href="#lab" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Build
+        🧪 Lab
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="🧪 Lab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trial-similarity-is-not-a-relationship-15-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trial · Similarity is not a relationship (~15 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build tasks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1850,6 +1889,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-you-will-be-able-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will be able to do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-build" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1933,13 +1983,41 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#build" class="md-nav__link">
+  <a href="#lab" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Build
+        🧪 Lab
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="🧪 Lab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trial-similarity-is-not-a-relationship-15-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trial · Similarity is not a relationship (~15 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build tasks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1986,6 +2064,16 @@
 
 
 <h1 id="module-3-retrieval-rag-memory">Module 3 · Retrieval, RAG &amp; Memory<a class="headerlink" href="#module-3-retrieval-rag-memory" title="Permanent link">&para;</a></h1>
+<h2 id="what-you-will-be-able-to-do">What you will be able to do<a class="headerlink" href="#what-you-will-be-able-to-do" title="Permanent link">&para;</a></h2>
+<p>By the end of this module, you will be able to:</p>
+<ul>
+<li>explain why retrieval exists and where most RAG failures actually originate</li>
+<li>design ingestion deliberately: parsing, chunking, metadata, freshness, and permissions</li>
+<li>build vector, hybrid, and reranked retrieval and measure retriever quality directly</li>
+<li>translate natural language into a validated SQL or Cypher query when the answer lives in structured data</li>
+<li>show with an example why similarity is not a relationship, and when GraphRAG earns its complexity</li>
+<li>design memory with write policies, provenance, and privacy in mind</li>
+</ul>
 <h2 id="the-build">🔨 The build<a class="headerlink" href="#the-build" title="Permanent link">&para;</a></h2>
 <p><strong><code>builds/03-rag-lab</code></strong> <em>(planned)</em> — ingest a corpus, parse and enrich it, build <strong>vector RAG</strong>, add <strong>hybrid search + a reranker</strong>, then build a <strong>GraphRAG</strong> variant over the same data. The payoff: find a multi-hop question the vector version fails and the graph version answers. Dockerized with a reproducible corpus and eval set.</p>
 <p>Build it, then the sections below explain why similarity is not a relationship.</p>
@@ -2023,7 +2111,28 @@
 <li>Why a pile of markdown files becomes expensive and difficult to govern at scale.</li>
 <li>Memory as a service exposed through a stable API or MCP server.</li>
 </ul>
-<h2 id="build">Build<a class="headerlink" href="#build" title="Permanent link">&para;</a></h2>
+<h2 id="lab">🧪 Lab<a class="headerlink" href="#lab" title="Permanent link">&para;</a></h2>
+<p>Hands-on first: a zero-setup trial, then the build tasks.</p>
+<h3 id="trial-similarity-is-not-a-relationship-15-min">Trial · Similarity is not a relationship (~15 min)<a class="headerlink" href="#trial-similarity-is-not-a-relationship-15-min" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Paste this into a chat and ask the model to answer <strong>using only these facts</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Facts:
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>1. Maya Chen is the CTO of Northwind Robotics.
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>2. Northwind Robotics is a subsidiary of Halcyon Group.
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>3. Halcyon Group is headquartered in Rotterdam.
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>4. Rotterdam's port is the largest in Europe.
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>5. Maya Chen previously worked at a large port-logistics company.
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>Question: In which city is Maya Chen's ultimate parent company headquartered?
+</code></pre></div>
+</li>
+<li>
+<p>The answer needs a two-hop chain (1 → 2 → 3). Now play the retriever: score each fact by keyword overlap with the question. Facts 1 and 5 look most "similar" to the query; fact 3 barely mentions any query term. A top-2 vector retriever would likely miss the answer.</p>
+</li>
+<li>Prove it: ask the same question giving the model only facts 1 and 5, and watch it fail or hallucinate. That failure is why hybrid search, query decomposition, and graph retrieval exist.</li>
+</ol>
+<h3 id="build-tasks">Build tasks<a class="headerlink" href="#build-tasks" title="Permanent link">&para;</a></h3>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Ingest a small corpus with source IDs, timestamps, permissions, and version metadata.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Build baseline RAG: ingest → chunk → embed → vector search → answer with citations.</li>

@@ -620,10 +620,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#a-first-setup-exercise" class="md-nav__link">
+  <a href="#lab-a-first-setup-exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
-        A first setup exercise
+        🧪 Lab · A first setup exercise
       
     </span>
   </a>
@@ -2021,10 +2021,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#a-first-setup-exercise" class="md-nav__link">
+  <a href="#lab-a-first-setup-exercise" class="md-nav__link">
     <span class="md-ellipsis">
       
-        A first setup exercise
+        🧪 Lab · A first setup exercise
       
     </span>
   </a>
@@ -2112,8 +2112,8 @@
 <p>The program reads them at runtime instead of having configuration hard-coded into the source code:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ANTHROPIC_API_KEY&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">model</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;MODEL&quot;</span><span class="p">,</span> <span class="s2">&quot;claude-opus-4-8&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"ANTHROPIC_API_KEY"</span><span class="p">)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">model</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"MODEL"</span><span class="p">,</span> <span class="s2">"claude-opus-4-8"</span><span class="p">)</span>
 </code></pre></div>
 <p>This gives us three benefits:</p>
 <ol>
@@ -2153,31 +2153,31 @@
 <h2 id="setting-a-variable-on-macos-or-linux">Setting a variable on macOS or Linux<a class="headerlink" href="#setting-a-variable-on-macos-or-linux" title="Permanent link">&para;</a></h2>
 <h3 id="for-one-command">For one command<a class="headerlink" href="#for-one-command" title="Permanent link">&para;</a></h3>
 <p>This sets the key only for that command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">ANTHROPIC_API_KEY</span><span class="o">=</span><span class="s2">&quot;your-key&quot;</span><span class="w"> </span>python<span class="w"> </span>app.py
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">ANTHROPIC_API_KEY</span><span class="o">=</span><span class="s2">"your-key"</span><span class="w"> </span>python<span class="w"> </span>app.py
 </code></pre></div>
 <h3 id="for-the-current-terminal-session">For the current terminal session<a class="headerlink" href="#for-the-current-terminal-session" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ANTHROPIC_API_KEY</span><span class="o">=</span><span class="s2">&quot;your-key&quot;</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MODEL</span><span class="o">=</span><span class="s2">&quot;claude-haiku-4-5&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ANTHROPIC_API_KEY</span><span class="o">=</span><span class="s2">"your-key"</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MODEL</span><span class="o">=</span><span class="s2">"claude-haiku-4-5"</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>python<span class="w"> </span>app.py
 </code></pre></div>
 <p>Closing the terminal removes these session variables.</p>
 <h3 id="for-future-terminals">For future terminals<a class="headerlink" href="#for-future-terminals" title="Permanent link">&para;</a></h3>
 <p>Most macOS users use zsh. Add the export to <code>~/.zshrc</code> and reload it:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export ANTHROPIC_API_KEY=&quot;your-key&quot;&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">'export ANTHROPIC_API_KEY="your-key"'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">source</span><span class="w"> </span>~/.zshrc
 </code></pre></div>
 <p>Linux users may use <code>~/.bashrc</code> or <code>~/.zshrc</code>, depending on their shell. You can check the shell with:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$SHELL</span><span class="s2">&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="nv">$SHELL</span><span class="s2">"</span>
 </code></pre></div>
 <p>For API keys, a keychain or secret manager is safer than placing the raw value in a shell profile. The shell-profile example is here to explain the mechanism, not to define the best production practice.</p>
 <h2 id="setting-a-variable-on-windows-powershell">Setting a variable on Windows PowerShell<a class="headerlink" href="#setting-a-variable-on-windows-powershell" title="Permanent link">&para;</a></h2>
 <p>For the current PowerShell session:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nv">$env:ANTHROPIC_API_KEY</span> <span class="p">=</span> <span class="s2">&quot;your-key&quot;</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nv">$env:MODEL</span> <span class="p">=</span> <span class="s2">&quot;claude-haiku-4-5&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nv">$env:ANTHROPIC_API_KEY</span> <span class="p">=</span> <span class="s2">"your-key"</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nv">$env:MODEL</span> <span class="p">=</span> <span class="s2">"claude-haiku-4-5"</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">python</span> <span class="n">app</span><span class="p">.</span><span class="n">py</span>
 </code></pre></div>
 <p>For a persistent user-level variable:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="no">[Environment]</span><span class="p">::</span><span class="n">SetEnvironmentVariable</span><span class="p">(</span><span class="s2">&quot;ANTHROPIC_API_KEY&quot;</span><span class="p">,</span> <span class="s2">&quot;your-key&quot;</span><span class="p">,</span> <span class="s2">&quot;User&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="no">[Environment]</span><span class="p">::</span><span class="n">SetEnvironmentVariable</span><span class="p">(</span><span class="s2">"ANTHROPIC_API_KEY"</span><span class="p">,</span> <span class="s2">"your-key"</span><span class="p">,</span> <span class="s2">"User"</span><span class="p">)</span>
 </code></pre></div>
 <p>Open a new terminal after changing a persistent variable. Existing processes do not automatically refresh their environment.</p>
 <h2 id="project-env-files">Project <code>.env</code> files<a class="headerlink" href="#project-env-files" title="Permanent link">&para;</a></h2>
@@ -2196,18 +2196,18 @@
 <h2 id="check-safely-without-revealing-the-key">Check safely without revealing the key<a class="headerlink" href="#check-safely-without-revealing-the-key" title="Permanent link">&para;</a></h2>
 <p>Do not paste your secret into chat, screenshots, logs, or Git. Check only whether it exists.</p>
 <p>macOS/Linux:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$ANTHROPIC_API_KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;API key is set&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;API key is missing&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">fi</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">"</span><span class="nv">$ANTHROPIC_API_KEY</span><span class="s2">"</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"API key is set"</span><span class="p">;</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"API key is missing"</span><span class="p">;</span><span class="w"> </span><span class="k">fi</span>
 </code></pre></div>
 <p>PowerShell:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$env:ANTHROPIC_API_KEY</span><span class="p">)</span> <span class="p">{</span> <span class="s2">&quot;API key is set&quot;</span> <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="s2">&quot;API key is missing&quot;</span> <span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$env:ANTHROPIC_API_KEY</span><span class="p">)</span> <span class="p">{</span> <span class="s2">"API key is set"</span> <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="s2">"API key is missing"</span> <span class="p">}</span>
 </code></pre></div>
 <p>Python:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;API key is set&quot;</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ANTHROPIC_API_KEY&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&quot;API key is missing&quot;</span><span class="p">)</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"API key is set"</span> <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"ANTHROPIC_API_KEY"</span><span class="p">)</span> <span class="k">else</span> <span class="s2">"API key is missing"</span><span class="p">)</span>
 </code></pre></div>
 <p>Never use <code>print(os.environ["ANTHROPIC_API_KEY"])</code> as a setup check.</p>
-<h2 id="a-first-setup-exercise">A first setup exercise<a class="headerlink" href="#a-first-setup-exercise" title="Permanent link">&para;</a></h2>
+<h2 id="lab-a-first-setup-exercise">🧪 Lab · A first setup exercise<a class="headerlink" href="#lab-a-first-setup-exercise" title="Permanent link">&para;</a></h2>
 <p>Start with the smallest setup snippet:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>python<span class="w"> </span>snippets/00-hello-env.py
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nv">MODEL</span><span class="o">=</span>demo-model<span class="w"> </span>python<span class="w"> </span>snippets/00-hello-env.py

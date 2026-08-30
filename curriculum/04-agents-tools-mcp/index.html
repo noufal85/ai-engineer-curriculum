@@ -661,6 +661,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-you-will-be-able-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will be able to do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-build" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -755,13 +766,41 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#build" class="md-nav__link">
+  <a href="#lab" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Build
+        🧪 Lab
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="🧪 Lab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trial-be-the-agent-runtime-15-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trial · Be the agent runtime (~15 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build tasks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1861,6 +1900,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-you-will-be-able-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will be able to do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-build" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1955,13 +2005,41 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#build" class="md-nav__link">
+  <a href="#lab" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Build
+        🧪 Lab
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="🧪 Lab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trial-be-the-agent-runtime-15-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trial · Be the agent runtime (~15 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build tasks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2008,6 +2086,16 @@
 
 
 <h1 id="module-4-agents-workflows-tools-mcp">Module 4 · Agents, Workflows, Tools &amp; MCP<a class="headerlink" href="#module-4-agents-workflows-tools-mcp" title="Permanent link">&para;</a></h1>
+<h2 id="what-you-will-be-able-to-do">What you will be able to do<a class="headerlink" href="#what-you-will-be-able-to-do" title="Permanent link">&para;</a></h2>
+<p>By the end of this module, you will be able to:</p>
+<ul>
+<li>hand-roll the plan → act → observe loop with bounded steps, budgets, and logging</li>
+<li>choose between a deterministic workflow, a single tool call, a bounded agent, and multi-agent orchestration</li>
+<li>write tool schemas and descriptions the model can actually use well</li>
+<li>persist, resume, cancel, and reconcile long-running work</li>
+<li>expose a capability as an MCP server and consume one from a client</li>
+<li>gate irreversible actions behind authorization and human approval</li>
+</ul>
 <h2 id="the-build">🔨 The build<a class="headerlink" href="#the-build" title="Permanent link">&para;</a></h2>
 <p><strong><code>builds/04-agent-and-mcp</code></strong> <em>(planned)</em> — a hand-rolled bounded workflow that uses 2–3 tools, persists state, logs every step, exposes one capability as an MCP server, and pauses for human approval before an irreversible action. Start as a local lab; Dockerize it when the server boundary or reproducibility becomes part of the lesson.</p>
 <p>Build it, then the sections below explain the loop and why bounds matter.</p>
@@ -2048,7 +2136,27 @@
 <li>Browser/computer use versus defined tool calls.</li>
 <li>Preventing destructive actions, data exfiltration, prompt injection, and runaway spend.</li>
 </ul>
-<h2 id="build">Build<a class="headerlink" href="#build" title="Permanent link">&para;</a></h2>
+<h2 id="lab">🧪 Lab<a class="headerlink" href="#lab" title="Permanent link">&para;</a></h2>
+<p>Hands-on first: a zero-setup trial, then the build tasks.</p>
+<h3 id="trial-be-the-agent-runtime-15-min">Trial · Be the agent runtime (~15 min)<a class="headerlink" href="#trial-be-the-agent-runtime-15-min" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Paste this into a chat:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>You are an agent with two tools:
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>- get_weather(city) -&gt; {"temp_c": number, "conditions": string}
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>- send_email(to, subject, body) -&gt; {"status": string}
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>To use a tool, reply with ONLY a JSON tool call. I will reply with the
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>tool result. Task: email dana@example.com whether she needs an umbrella
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>in Amsterdam tomorrow.
+</code></pre></div>
+</li>
+<li>
+<p>Play the runtime yourself: when the model emits a tool call, type a fake JSON result back, e.g. <code>{"temp_c": 9, "conditions": "heavy rain"}</code>. Continue until it emits the <code>send_email</code> call. You are hand-executing the plan → act → observe loop.</p>
+</li>
+<li>Now inject a failure — reply <code>{"error": "service unavailable"}</code> — and watch what it does: retry, give up, or hallucinate a forecast anyway. Whatever you just observed is the behavior the build must bound with step limits, error handling, and human gates.</li>
+</ol>
+<h3 id="build-tasks">Build tasks<a class="headerlink" href="#build-tasks" title="Permanent link">&para;</a></h3>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Hand-roll an agent/workflow loop with 2–3 tools, bounded steps, cancellation, and full logging.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Persist task state and resume after a simulated process restart.</li>

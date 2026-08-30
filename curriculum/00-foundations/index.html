@@ -549,6 +549,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-you-will-be-able-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will be able to do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#why-this-matters" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -748,6 +759,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧪 Lab
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 Lab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trial-poke-the-running-service-10-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trial · Poke the running service (~10 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#extend-the-build" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -755,6 +789,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1966,6 +2005,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-you-will-be-able-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will be able to do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#why-this-matters" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2165,6 +2215,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧪 Lab
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧪 Lab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trial-poke-the-running-service-10-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trial · Poke the running service (~10 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#extend-the-build" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2172,6 +2245,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2221,6 +2299,16 @@
 <p>Welcome. This is the friendly starting point for the course.</p>
 <p>If HTTP, async programming, SQL, testing, or Docker are unfamiliar, complete <a href="../environment-and-programming/">Developer Environment &amp; Programming Basics</a> and the <a href="../engineering-core/">Engineering Core prerequisite track</a> first.</p>
 <p>You do not need advanced mathematics to begin. You need a clear mental model of what AI systems are, what an LLM does, and how a small application talks to one.</p>
+<h2 id="what-you-will-be-able-to-do">What you will be able to do<a class="headerlink" href="#what-you-will-be-able-to-do" title="Permanent link">&para;</a></h2>
+<p>By the end of this module, you will be able to:</p>
+<ul>
+<li>place AI, machine learning, deep learning, and LLMs in one mental map</li>
+<li>explain training versus inference and why fluent output can still be wrong</li>
+<li>describe what happens when an application sends a prompt to a model</li>
+<li>run a small LLM-backed service under Docker and call both of its endpoints</li>
+<li>explain streaming as a UX decision and schema validation as a trust boundary</li>
+<li>state the cost/latency/quality tradeoff behind a model choice</li>
+</ul>
 <h2 id="why-this-matters">Why this matters<a class="headerlink" href="#why-this-matters" title="Permanent link">&para;</a></h2>
 <p>Once you understand the basic shape of an AI system, the later topics become easier to place. Retrieval gives a model access to useful information. Tools let it take actions. Evals tell us whether it worked. Production engineering makes the whole system reliable enough for real users.</p>
 <h2 id="what-is-ai">What is AI?<a class="headerlink" href="#what-is-ai" title="Permanent link">&para;</a></h2>
@@ -2373,7 +2461,31 @@
 <li><strong>Cost/latency/quality</strong> — the recurring design tradeoff.</li>
 <li><strong>Embeddings intuition</strong> — what a vector is; the deeper treatment arrives in Module 3.</li>
 </ul>
-<h2 id="extend-the-build">Extend the build<a class="headerlink" href="#extend-the-build" title="Permanent link">&para;</a></h2>
+<h2 id="lab">🧪 Lab<a class="headerlink" href="#lab" title="Permanent link">&para;</a></h2>
+<p>Hands-on first: poke the running service, then extend it.</p>
+<h3 id="trial-poke-the-running-service-10-min">Trial · Poke the running service (~10 min)<a class="headerlink" href="#trial-poke-the-running-service-10-min" title="Permanent link">&para;</a></h3>
+<p>With <code>00-hello-llm</code> up:</p>
+<ol>
+<li>
+<p>Watch streaming happen one chunk at a time:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>curl<span class="w"> </span>-N<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>localhost:8000/chat<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s1">'content-type: application/json'</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">'{"message": "Explain tokens in two sentences."}'</span>
+</code></pre></div>
+</li>
+<li>
+<p>Hit <code>/extract</code> three ways — an angry customer email, an empty string, and a few thousand words of pasted text:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>localhost:8000/extract<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s1">'content-type: application/json'</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">'{"text": "The blender broke after two weeks and support never replied. I want a refund."}'</span>
+</code></pre></div>
+<p>Watch what the schema validation accepts, rejects, and how the model fills <code>action_required</code>.</p>
+</li>
+<li>
+<p>Change <code>MODEL</code> in <code>.env</code> to a smaller model, restart, repeat step 1, and note the latency and quality difference.</p>
+</li>
+</ol>
+<h3 id="extend-the-build">Extend the build<a class="headerlink" href="#extend-the-build" title="Permanent link">&para;</a></h3>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Run <code>00-hello-llm</code> and hit both endpoints from the browser.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Add a <code>/classify</code> endpoint returning one enum label via a strict schema.</li>

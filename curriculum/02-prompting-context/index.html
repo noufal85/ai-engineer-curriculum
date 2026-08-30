@@ -605,6 +605,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-you-will-be-able-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will be able to do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-build" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -638,13 +649,41 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#build" class="md-nav__link">
+  <a href="#lab" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Build
+        🧪 Lab
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="🧪 Lab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trial-break-just-return-json-15-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trial · Break "just return JSON" (~15 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build tasks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1800,6 +1839,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-you-will-be-able-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will be able to do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-build" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1833,13 +1883,41 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#build" class="md-nav__link">
+  <a href="#lab" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Build
+        🧪 Lab
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="🧪 Lab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trial-break-just-return-json-15-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trial · Break "just return JSON" (~15 min)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build tasks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1886,6 +1964,16 @@
 
 
 <h1 id="module-2-prompting-context-engineering">Module 2 · Prompting &amp; Context Engineering<a class="headerlink" href="#module-2-prompting-context-engineering" title="Permanent link">&para;</a></h1>
+<h2 id="what-you-will-be-able-to-do">What you will be able to do<a class="headerlink" href="#what-you-will-be-able-to-do" title="Permanent link">&para;</a></h2>
+<p>By the end of this module, you will be able to:</p>
+<ul>
+<li>structure a prompt deliberately: roles, instructions, context, examples, output spec</li>
+<li>get reliable structured output with tool calling and schemas instead of hoping for valid JSON</li>
+<li>order context to beat "lost in the middle" and stay inside a token budget</li>
+<li>lay out prompts to hit the prompt cache and show the cost and latency savings</li>
+<li>decide when to decompose a task into a chain of calls versus keep it in one</li>
+<li>spot instruction drift and prompt-injection risk before they ship</li>
+</ul>
 <h2 id="the-build">🔨 The build<a class="headerlink" href="#the-build" title="Permanent link">&para;</a></h2>
 <p><strong><code>builds/02-reliable-extractor</code></strong> <em>(planned)</em> — take a flaky "please return JSON" prompt and make it <strong>reliable</strong> with tool-calling + schema validation and a <strong>cache-friendly</strong> prompt layout; the local lab measures the failure-rate drop and the latency/cost win over 100 runs. Dockerize it only if the experiment becomes a reusable service.</p>
 <p>Build it, then the sections below explain the levers you pulled.</p>
@@ -1902,7 +1990,25 @@
 <li><strong>Reasoning vs. instruction models</strong> — how prompting differs (don't over-scaffold a reasoning model's chain of thought).</li>
 <li><strong>Failure modes</strong> — prompt injection preview (full treatment in Module 6), instruction drift in long conversations, and over-constraining.</li>
 </ul>
-<h2 id="build">Build<a class="headerlink" href="#build" title="Permanent link">&para;</a></h2>
+<h2 id="lab">🧪 Lab<a class="headerlink" href="#lab" title="Permanent link">&para;</a></h2>
+<p>Hands-on first: a trial you can run right now with nothing but a chat UI or API key, then the build tasks.</p>
+<h3 id="trial-break-just-return-json-15-min">Trial · Break "just return JSON" (~15 min)<a class="headerlink" href="#trial-break-just-return-json-15-min" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Run this prompt 10 times (chat UI or a 5-line API script):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Extract the customer name, product, and complaint from this email as JSON:
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>"Hi, I bought the AcmePro blender three weeks ago and the lid cracked.
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Please sort this out. — Dana Whitfield"
+</code></pre></div>
+</li>
+<li>
+<p>Count how many of the 10 outputs a downstream parser would accept. A prose preamble ("Here is the JSON..."), a markdown fence, or a renamed key all count as failures.</p>
+</li>
+<li>Define the same three fields as a tool/function schema (or strict JSON mode) and run 10 more. Compare failure counts — that gap is the module's core lesson.</li>
+<li>Lost in the middle: bury one critical instruction ("respond in French") in the middle of a ~30-line prompt, then move it to the end. Compare compliance.</li>
+</ol>
+<h3 id="build-tasks">Build tasks<a class="headerlink" href="#build-tasks" title="Permanent link">&para;</a></h3>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Take a flaky "give me JSON" prompt and make it reliable with tool-calling + schema validation; measure the failure-rate drop over 100 runs.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Restructure a long prompt to be <strong>cache-friendly</strong> (stable prefix) and measure the latency/cost change.</li>
