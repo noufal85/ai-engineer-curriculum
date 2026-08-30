@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://noufal85.github.io/ai-engineer-curriculum/curriculum/00-foundations/">
       
       
-        <link rel="prev" href="../engineering-core/">
+        <link rel="prev" href="../">
       
       
         <link rel="next" href="../01-llm-internals/">
@@ -373,10 +373,6 @@
       
         
       
-        
-      
-        
-      
     
     
     
@@ -424,62 +420,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../environment-and-programming/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Developer Environment
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../engineering-core/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Engineering Core
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -2296,8 +2236,8 @@
 
 
 <h1 id="module-0-foundations-environment">Module 0 · Foundations &amp; Environment<a class="headerlink" href="#module-0-foundations-environment" title="Permanent link">&para;</a></h1>
-<p>Welcome. This is the friendly starting point for the course.</p>
-<p>If HTTP, async programming, SQL, testing, or Docker are unfamiliar, complete <a href="../environment-and-programming/">Developer Environment &amp; Programming Basics</a> and the <a href="../engineering-core/">Engineering Core prerequisite track</a> first.</p>
+<p>Welcome. This is the starting point for the course.</p>
+<p>We assume working familiarity with HTTP, async programming, SQL, testing, and Docker, plus basic AI literacy. If a term is unfamiliar, look it up in the <a href="../../concepts/">Concepts glossary</a> as you go.</p>
 <p>You do not need advanced mathematics to begin. You need a clear mental model of what AI systems are, what an LLM does, and how a small application talks to one.</p>
 <h2 id="what-you-will-be-able-to-do">What you will be able to do<a class="headerlink" href="#what-you-will-be-able-to-do" title="Permanent link">&para;</a></h2>
 <p>By the end of this module, you will be able to:</p>
@@ -2432,7 +2372,6 @@
 <p>We connect the model to search, databases, calculators, APIs, and human approval when those capabilities are required. The model can decide how to use those capabilities, but the application must enforce the boundaries.</p>
 <h2 id="the-build">🔨 The build<a class="headerlink" href="#the-build" title="Permanent link">&para;</a></h2>
 <p><strong><a href="https://github.com/noufal85/ai-engineer-curriculum/tree/main/builds/00-hello-llm"><code>builds/00-hello-llm</code></a></strong> — a Dockerized FastAPI service with two endpoints: one <strong>streams</strong> a model response token-by-token, the other returns a <strong>schema-validated object</strong> from free text.</p>
-<p>New to API keys or environment variables? Read <a href="../environment-and-programming/">Developer Environment &amp; Programming Basics</a> first.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span>builds/00-hello-llm
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>cp<span class="w"> </span>.env.example<span class="w"> </span>.env<span class="w">      </span><span class="c1"># add ANTHROPIC_API_KEY</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>--build<span class="w"> </span><span class="c1"># open http://localhost:8000</span>
@@ -2506,7 +2445,7 @@
 </ul>
 <h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
 <ul>
-<li>The <a href="../environment-and-programming/">Developer Environment &amp; Programming Basics</a> setup guide.</li>
+<li>The <a href="../../concepts/developer-environment/">Developer environment</a> and <a href="../../concepts/engineering-core/">Engineering core</a> concept glossaries for setup and tooling vocabulary.</li>
 <li>Anthropic API documentation — streaming and structured output sections.</li>
 <li>Karpathy's introductory LLM talks for intuition about tokens and next-token prediction.</li>
 <li>Pydantic (Python) or Zod (TypeScript) documentation.</li>
@@ -2547,7 +2486,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../engineering-core/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Engineering Core">
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Curriculum">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2557,7 +2496,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Engineering Core
+                Curriculum
               </div>
             </div>
           </a>
