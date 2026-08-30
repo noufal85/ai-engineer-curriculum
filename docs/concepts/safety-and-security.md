@@ -29,7 +29,7 @@ Non-negotiable, not a v2 feature. Mostly **→ [M6](../curriculum/06-production-
 
 - **PII** — personally identifiable information that must be handled according to policy and regulation. *→ [M6](../curriculum/06-production-systems.md)*
 - **PII masking / redaction** — removing or transforming sensitive data before it reaches models or logs. *→ [M6](../curriculum/06-production-systems.md)*
-- **Secrets management** — keeping API keys, tokens, and credentials out of code, prompts, and logs. *→ [Engineering Core](../curriculum/engineering-core.md), [M6](../curriculum/06-production-systems.md)*
+- **Secrets management** — keeping API keys, tokens, and credentials out of code, prompts, and logs. *→ [Engineering Core](engineering-core.md), [M6](../curriculum/06-production-systems.md)*
 - **Data retention** — defining how long prompts, outputs, traces, and source data are kept.
 - **Output handling** — validating and escaping model output before it reaches a database, browser, shell, or external system.
 - **Moderation** — screening inputs or outputs for prohibited or unsafe content.

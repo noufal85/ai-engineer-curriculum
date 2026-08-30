@@ -66,8 +66,6 @@ nav:
   - Career: career.md
   - Curriculum:
       - curriculum/index.md
-      - Developer Environment: curriculum/environment-and-programming.md
-      - Engineering Core: curriculum/engineering-core.md
       - 0 · Foundations: curriculum/00-foundations.md
       - 1 · LLM Internals: curriculum/01-llm-internals.md
       - 2 · Prompting & Context: curriculum/02-prompting-context.md

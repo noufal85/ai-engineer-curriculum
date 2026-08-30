@@ -19,11 +19,11 @@ Making AI systems fast, cheap, reliable, and operable. Mostly **→ [M6](../curr
 - **Model routing** — sending each request to the cheapest capable model. *→ [M6](../curriculum/06-production-systems.md)*
 - **Fallback / graceful degradation** — switching to a reduced or alternate experience when a dependency fails. *→ [M6](../curriculum/06-production-systems.md)*
 - **Rate limits** — requests- and tokens-per-minute caps. *→ [M6](../curriculum/06-production-systems.md)*
-- **Retries + exponential backoff** — surviving transient failures within a bounded policy. *→ [Engineering Core](../curriculum/engineering-core.md), [M6](../curriculum/06-production-systems.md)*
+- **Retries + exponential backoff** — surviving transient failures within a bounded policy. *→ [Engineering Core](engineering-core.md), [M6](../curriculum/06-production-systems.md)*
 - **Backpressure** — controlling admission when downstream capacity is exhausted. *→ [M6](../curriculum/06-production-systems.md)*
 - **Circuit breaker** — temporarily stopping calls to a failing dependency.
 - **Cost budget** — a per-request, per-user, or per-workflow spend limit. *→ [M6](../curriculum/06-production-systems.md)*
-- **Idempotency** — making repeated writes safe. *→ [Engineering Core](../curriculum/engineering-core.md), [M6](../curriculum/06-production-systems.md)*
+- **Idempotency** — making repeated writes safe. *→ [Engineering Core](engineering-core.md), [M6](../curriculum/06-production-systems.md)*
 
 ## Self-hosting and infrastructure
 

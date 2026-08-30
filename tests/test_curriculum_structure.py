@@ -9,10 +9,21 @@ class CurriculumStructureTests(unittest.TestCase):
     def read(self, relative_path: str) -> str:
         return (ROOT / relative_path).read_text()
 
-    def test_engineering_core_track_exists(self) -> None:
-        content = self.read("docs/curriculum/engineering-core.md")
-        for term in ("Engineering Core", "HTTP", "SQL", "testing", "CI/CD"):
-            self.assertIn(term, content)
+    def test_beginner_tracks_are_assumed_not_taught(self) -> None:
+        nav = self.read("mkdocs.yml")
+        curriculum_index = self.read("docs/curriculum/index.md")
+
+        for relative_path in (
+            "docs/curriculum/environment-and-programming.md",
+            "docs/curriculum/engineering-core.md",
+        ):
+            self.assertFalse((ROOT / relative_path).exists(), relative_path)
+        self.assertNotIn("curriculum/environment-and-programming.md", nav)
+        self.assertNotIn("curriculum/engineering-core.md", nav)
+
+        self.assertIn("What we assume", curriculum_index)
+        for term in ("HTTP", "SQL", "Docker"):
+            self.assertIn(term, curriculum_index)
 
     def test_new_concept_categories_exist(self) -> None:
         for relative_path in (
@@ -56,16 +67,14 @@ class CurriculumStructureTests(unittest.TestCase):
             self.assertIn(term, specializations_lower)
         self.assertIn("specializations.md", nav)
 
-    def test_beginner_environment_track_is_discoverable(self) -> None:
-        curriculum = self.read("docs/curriculum/environment-and-programming.md")
+    def test_environment_vocabulary_stays_available_in_concepts(self) -> None:
         concepts = self.read("docs/concepts/developer-environment.md")
         nav = self.read("mkdocs.yml")
 
-        curriculum_lower = curriculum.lower()
-        for term in ("environment variable", "export", ".env", "api key", "docker"):
-            self.assertIn(term, curriculum_lower)
         self.assertIn("developer-environment.md", nav)
-        self.assertIn("environment variables", concepts.lower())
+        concepts_lower = concepts.lower()
+        for term in ("environment variable", "api key"):
+            self.assertIn(term, concepts_lower)
 
     def test_foundations_has_beginner_ai_onramp_and_visuals(self) -> None:
         foundations = self.read("docs/curriculum/00-foundations.md")
@@ -197,12 +206,9 @@ class CurriculumStructureTests(unittest.TestCase):
             "docs/curriculum/05-evals-observability.md",
             "docs/curriculum/06-production-systems.md",
             "docs/curriculum/07-forward-deployed.md",
-            "docs/curriculum/engineering-core.md",
-            "docs/curriculum/environment-and-programming.md",
         )
         trial_pages = set(lab_pages) - {
             "docs/curriculum/01-llm-internals.md",
-            "docs/curriculum/environment-and-programming.md",
         }
 
         for relative_path in lab_pages:
@@ -225,8 +231,6 @@ class CurriculumStructureTests(unittest.TestCase):
             "docs/curriculum/06-production-systems.md",
             "docs/curriculum/07-forward-deployed.md",
             "docs/curriculum/08-capstones.md",
-            "docs/curriculum/engineering-core.md",
-            "docs/curriculum/environment-and-programming.md",
         ):
             content = self.read(relative_path)
             self.assertIn("## What you will be able to do", content, relative_path)

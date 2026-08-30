@@ -1,8 +1,8 @@
 # Module 0 · Foundations & Environment
 
-Welcome. This is the friendly starting point for the course.
+Welcome. This is the starting point for the course.
 
-If HTTP, async programming, SQL, testing, or Docker are unfamiliar, complete [Developer Environment & Programming Basics](environment-and-programming.md) and the [Engineering Core prerequisite track](engineering-core.md) first.
+We assume working familiarity with HTTP, async programming, SQL, testing, and Docker, plus basic AI literacy. If a term is unfamiliar, look it up in the [Concepts glossary](../concepts/index.md) as you go.
 
 You do not need advanced mathematics to begin. You need a clear mental model of what AI systems are, what an LLM does, and how a small application talks to one.
 
@@ -179,8 +179,6 @@ We connect the model to search, databases, calculators, APIs, and human approval
 
 **[`builds/00-hello-llm`](https://github.com/noufal85/ai-engineer-curriculum/tree/main/builds/00-hello-llm)** — a Dockerized FastAPI service with two endpoints: one **streams** a model response token-by-token, the other returns a **schema-validated object** from free text.
 
-New to API keys or environment variables? Read [Developer Environment & Programming Basics](environment-and-programming.md) first.
-
 ```bash
 cd builds/00-hello-llm
 cp .env.example .env      # add ANTHROPIC_API_KEY
@@ -263,7 +261,7 @@ With `00-hello-llm` up:
 
 ## Resources
 
-- The [Developer Environment & Programming Basics](environment-and-programming.md) setup guide.
+- The [Developer environment](../concepts/developer-environment.md) and [Engineering core](../concepts/engineering-core.md) concept glossaries for setup and tooling vocabulary.
 - Anthropic API documentation — streaming and structured output sections.
 - Karpathy's introductory LLM talks for intuition about tokens and next-token prediction.
 - Pydantic (Python) or Zod (TypeScript) documentation.

@@ -1,6 +1,8 @@
 # Curriculum
 
-An engineering prerequisite track plus nine sequenced modules. The prerequisite track establishes the software foundation; Modules 0–6 are the shared AI-engineering core, Module 7 is the FDE differentiator, and Module 8 contains capstones.
+Nine sequenced modules. Modules 0–6 are the shared AI-engineering core, Module 7 is the FDE differentiator, and Module 8 contains capstones.
+
+**What we assume:** working familiarity with programming and the software Engineering Core — HTTP and APIs, SQL, testing, Git, CI/CD, and Docker — plus basic AI literacy. The curriculum does not teach these; if a term is unfamiliar, the [Concepts glossary](../concepts/index.md) is the reference, starting with [Engineering core](../concepts/engineering-core.md) and [Developer environment](../concepts/developer-environment.md).
 
 **Every module has a primary hands-on artifact** — a snippet, local lab, or build. You run the artifact first, then the page explains what it does and the concept underneath.
 
@@ -15,4 +17,4 @@ Each module page contains:
 
 The larger builds live in [`builds/`](https://github.com/noufal85/ai-engineer-curriculum/tree/main/builds). Short exercises live in [`snippets/`](https://github.com/noufal85/ai-engineer-curriculum/tree/main/snippets).
 
-Start with [Developer Environment & Programming Basics](environment-and-programming.md), continue through the [Engineering Core prerequisite track](engineering-core.md), then run [Module 0 · Foundations](00-foundations.md) and its Dockerized example build, [`00-hello-llm`](https://github.com/noufal85/ai-engineer-curriculum/tree/main/builds/00-hello-llm).
+Start with [Module 0 · Foundations](00-foundations.md) and its Dockerized example build, [`00-hello-llm`](https://github.com/noufal85/ai-engineer-curriculum/tree/main/builds/00-hello-llm).

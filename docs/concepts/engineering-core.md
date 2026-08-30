@@ -1,6 +1,6 @@
 # Engineering Core
 
-The software-engineering vocabulary that makes AI systems deployable. Mostly **→ [Engineering Core](../curriculum/engineering-core.md)**, with AI-specific applications repeated throughout Modules 0–6.
+The software-engineering vocabulary that makes AI systems deployable. Assumed background for the curriculum, with AI-specific applications repeated throughout Modules 0–6.
 
 ## Application foundations
 

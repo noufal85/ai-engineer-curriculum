@@ -44,7 +44,7 @@ How a system knows things it was not trained on. Mostly **→ [M3](../curriculum
 
 - **Agent memory** — short-term context plus persisted or retrieved knowledge across sessions. *→ [M3](../curriculum/03-rag-memory.md), [M4](../curriculum/04-agents-tools-mcp.md)*
 - **Data pipeline / ingestion** — getting source data cleaned, enriched, and indexed. *→ [M3](../curriculum/03-rag-memory.md), [M6](../curriculum/06-production-systems.md), [M7](../curriculum/07-forward-deployed.md)*
-- **Data contract** — an agreement on field meaning, ownership, and change behavior. *→ [Engineering Core](../curriculum/engineering-core.md), [M6](../curriculum/06-production-systems.md), [M7](../curriculum/07-forward-deployed.md)*
+- **Data contract** — an agreement on field meaning, ownership, and change behavior. *→ [Engineering Core](engineering-core.md), [M6](../curriculum/06-production-systems.md), [M7](../curriculum/07-forward-deployed.md)*
 - **Freshness / point-in-time** — whether retrieved facts match the required time. *→ [M5](../curriculum/05-evals-observability.md), [M6](../curriculum/06-production-systems.md)*
 - **Deduplication** — removing repeated content before it pollutes retrieval. *→ [M6](../curriculum/06-production-systems.md)*
 - **Tacit knowledge** — undocumented rules needed to model a domain correctly. *→ [M7](../curriculum/07-forward-deployed.md)*

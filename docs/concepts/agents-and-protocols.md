@@ -21,7 +21,7 @@ Letting the model act — safely. Mostly **→ [M4](../curriculum/04-agents-tool
 - **Task state** — durable status, inputs, outputs, approvals, and errors for one piece of work.
 - **Checkpoint** — persisted progress from which a workflow can resume.
 - **Durable execution** — running long workflows through restarts, retries, and delays without losing state.
-- **Idempotent tool** — a tool whose repeated invocation has one intended effect. *→ [Engineering Core](../curriculum/engineering-core.md), [M6](../curriculum/06-production-systems.md)*
+- **Idempotent tool** — a tool whose repeated invocation has one intended effect. *→ [Engineering Core](engineering-core.md), [M6](../curriculum/06-production-systems.md)*
 - **Compensation** — a corrective action for a partially completed workflow.
 - **Escalation** — handing a task to a person or safer path when the model cannot proceed.
 

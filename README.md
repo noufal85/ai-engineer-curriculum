@@ -17,9 +17,9 @@ docker compose up --build # open http://localhost:8000
 - `docs/` — the "explain" half (MkDocs Material site). Curriculum, progress tracker, talk notes.
 - `snippets/` — short, dependency-light exercises for one concept at a time.
 - `builds/` — larger labs and services. Docker is used when isolation, multiple services, or reproducibility make it worthwhile.
-- `docs/curriculum/environment-and-programming.md` — beginner-friendly setup for terminals, environment variables, API keys, and Docker.
-- `docs/curriculum/engineering-core.md` — prerequisite software-engineering track before Module 0.
 - `docs/curriculum/specializations.md` — optional multimodal, adaptation, local-inference, and coding-agent tracks.
+
+The course assumes working familiarity with programming (HTTP, SQL, testing, Git, Docker) and basic AI concepts; the `docs/concepts/` glossary covers the vocabulary.
 
 ## Local site preview
 
