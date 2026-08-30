@@ -31,6 +31,7 @@ theme:
     - navigation.indexes
     - navigation.footer
     - toc.follow
+    - toc.integrate
     - content.code.copy
     - search.suggest
     - search.highlight
@@ -43,6 +44,7 @@ markdown_extensions:
   - footnotes
   - toc:
       permalink: true
+      toc_depth: 2
   - pymdownx.details
   - pymdownx.superfences:
       custom_fences:
