@@ -10,6 +10,7 @@ You do not need advanced mathematics to begin. You need a clear mental model of 
 
 By the end of this module, you will be able to:
 
+- tell the sixty-year story that led from rule-based AI to LLMs — and why each era gave way to the next
 - place AI, machine learning, deep learning, and LLMs in one mental map
 - explain training versus inference and why fluent output can still be wrong
 - describe what happens when an application sends a prompt to a model
@@ -21,11 +22,37 @@ By the end of this module, you will be able to:
 
 Once you understand the basic shape of an AI system, the later topics become easier to place. Retrieval gives a model access to useful information. Tools let it take actions. Evals tell us whether it worked. Production engineering makes the whole system reliable enough for real users.
 
-## What is AI?
+## From rules to LLMs: a short history
 
-**Artificial intelligence (AI)** is the broad field of building computer systems that perform tasks we associate with human intelligence: recognizing patterns, understanding language, making predictions, planning, or choosing an action.
+You cannot really understand what an LLM is — or why an entire industry reorganized itself around it — without the sixty-year argument that produced it. Each era below failed or plateaued in a way that caused the next one.
 
-AI is not one single technology. It is an umbrella term:
+```mermaid
+timeline
+    1956 : Dartmouth workshop coins "artificial intelligence"
+    1980s : Expert-systems boom, then the AI-winter bust
+    2006 : Netflix Prize — ML quietly runs real businesses
+    2012 : AlexNet wins ImageNet on gaming GPUs
+    2017 : Google publishes the transformer
+    2020 : GPT-3 puts a giant model behind an API
+    2022 : ChatGPT reaches 100M users in two months
+    2024+ : RAG, agents, MCP — the AI-engineering era
+```
+
+**1956–1980s · The rules era.** At a summer workshop at Dartmouth in 1956, a small group of researchers named the field "artificial intelligence" and made the founding bet: intelligence can be written down. For three decades the dominant approach was exactly the `rules + input → output` programming you already know, scaled up — experts encode their knowledge as thousands of hand-written rules. In the 1980s this became a genuine industry: corporations spent billions on **expert systems** and dedicated Lisp hardware to run them. Then reality won. The rules could not keep up with the messiness of the real world, maintenance costs exploded, the market collapsed, and funding froze — the **AI winter**. For years afterward, serious companies avoided the phrase "AI" entirely.
+
+**1990s–2000s · Machine learning flips the equation.** The recovery came from inverting the bet: stop writing rules, show the computer examples, and let it *learn* the rules — `examples → learned model`, then `model + new input → prediction`. That is **machine learning**, and it quietly ran profitable products long before anyone called it AI again: spam filters, credit-card fraud detection, Amazon's recommendations, Google's ad ranking. By 2006 Netflix was offering a $1M prize just to improve its recommender by 10%. Note the shape of the business value: narrow, one carefully engineered prediction task at a time, each needing its own data, features, and team.
+
+**2012 · Deep learning's ImageNet moment.** **Deep learning** — machine learning built from many-layered neural networks, whose learned numbers are called **parameters** — had existed for decades but was starved of compute and data. In 2012 a network called AlexNet, trained on two consumer gaming GPUs, entered the ImageNet image-recognition competition and nearly halved the error rate of every classical approach. The lesson landed instantly: neural networks *scale* with data and compute. Big tech pivoted within a couple of years, and GPUs — until then a gaming product — became strategic infrastructure, the beginning of NVIDIA's transformation into one of the most valuable companies on earth.
+
+**2017–2020 · The transformer and the API.** In 2017 Google researchers published *Attention Is All You Need*, introducing the **transformer** — an architecture that processes whole sequences in parallel and lets every token attend to every other token. Training on internet-scale text suddenly became practical, and one lab kept pulling the same lever: make it bigger. GPT-2 (2019) wrote coherent paragraphs; GPT-3 (2020), at 175 billion parameters, could follow instructions it had never been trained for. Just as important was the packaging: GPT-3 shipped as **an API**. For the first time you could rent general-purpose language capability over HTTP, metered by the token — no ML team, no GPUs, no training pipeline.
+
+**November 2022 · ChatGPT.** A chat interface wrapped around an instruction-tuned GPT model became the fastest-growing consumer product in history — 100 million users in two months. **Generative AI** — models that produce new text, code, and images rather than only classifying input — went from research demo to board-level budget line in a single quarter. Capital followed: Microsoft deepened its OpenAI investment, Google mobilized around Gemini, Anthropic scaled Claude, and open-weight models (Llama, Mistral) made capability a download.
+
+**2023–today · From chat to systems.** The frontier then shifted from the models to what you build *around* them: retrieval (RAG) to ground answers in your data, tool calling and agents to take actions, protocols like MCP (2024) to standardize how models reach systems, reasoning models that trade latency for reliability. Companies discovered that a demo is easy and a dependable product is hard — and a new role emerged for engineers who build on top of models through APIs rather than training them: the **AI engineer**. That role is what this course trains.
+
+## What is AI, then?
+
+After that history, the taxonomy is simple — each era nests inside the previous one:
 
 ```mermaid
 flowchart LR
@@ -36,36 +63,11 @@ flowchart LR
     LLM --> Apps["AI applications"]
 ```
 
-Here is the same relationship as a real-world reference diagram:
-
 ![AI, machine learning, and deep learning relationships](../assets/images/ai-ml-dl.svg)
 
 *Image credit: [AI-ML-DL.svg](../image-credits.md).*
 
-### Machine learning
-
-In traditional programming, a person writes rules that transform inputs into outputs:
-
-```text
-rules + input → output
-```
-
-In **machine learning**, we give a system examples and let it learn patterns that help it produce outputs for new inputs:
-
-```text
-examples → learned model
-learned model + new input → prediction
-```
-
-The model is not “thinking” in the human sense. It is calculating a prediction from patterns learned during training.
-
-### Deep learning
-
-**Deep learning** is machine learning built with large neural networks. Neural networks contain learned numbers called **parameters**. Modern language, image, audio, and video models are usually deep-learning systems.
-
-### Generative AI
-
-**Generative AI** produces new content: text, code, images, audio, or video. Instead of only classifying an input as “spam” or “not spam,” a generative model can write an email, summarize a document, or generate an image.
+**Artificial intelligence** is the umbrella: systems performing tasks we associate with human intelligence. **Machine learning** learns patterns from examples instead of hand-written rules. **Deep learning** is machine learning built from large neural networks. **Generative AI** produces new content rather than only classifying input — and an LLM is generative deep learning applied to language. Throughout, remember: the model is not "thinking" in the human sense; it is computing a prediction from patterns learned during training.
 
 ## What is an LLM?
 
@@ -110,7 +112,7 @@ This training-to-inference split is also shown in the following workflow diagram
 
 *Image credit: [Workflow of a machine-learning-based AI system](../image-credits.md).*
 
-This course focuses on **inference and application engineering**. You will learn how to choose models, provide useful context, validate outputs, connect tools, evaluate behavior, and operate the result.
+This course focuses on **inference and application engineering** — the discipline now called **AI engineering**: building on foundation models through prompting, retrieval, and tools rather than training models yourself. You will learn how to choose models, provide useful context, validate outputs, connect tools, evaluate behavior, and operate the result.
 
 ## What happens when our app uses an LLM?
 
@@ -131,13 +133,27 @@ sequenceDiagram
 
 Your code is the layer that makes the model useful and safe. It decides what to send, which model to use, what tools or data are available, how to validate the result, and what the user sees when something fails.
 
+On the wire, the request itself is small and boring — a model ID, a token budget, and the conversation so far:
+
+```json
+{
+  "model": "claude-opus-4-8",
+  "max_tokens": 1024,
+  "messages": [
+    {"role": "user", "content": "Summarize this support ticket: ..."}
+  ]
+}
+```
+
+Almost everything in this course — prompting, retrieval, tools, evals — is ultimately about what goes into that request and what you do with the response. Module 2 covers how to design its contents deliberately.
+
 ## Tokens, context, and prompts
 
 ### Tokens
 
 A **token** is a small piece of text that the model reads or writes. A token may be a whole word, part of a word, punctuation, or whitespace. Token counts affect:
 
-- API cost
+- API cost — providers meter per million input and output tokens, with output priced several times higher ([pricing](https://platform.claude.com/docs/en/pricing))
 - context-window limits
 - response length
 - latency
@@ -148,7 +164,7 @@ Do not worry about memorizing the exact tokenization rules yet. The practical ru
 
 The **context window** is the amount of text the model can consider for one request. It includes the instructions, conversation history, retrieved documents, tool results, and requested output.
 
-When an application has more information than fits in context, it needs retrieval, summarization, memory, or another context-management strategy. That is why Module 3 matters.
+When an application has more information than fits in context, it needs retrieval, summarization, memory, or another context-management strategy. That is why Module 3 matters. And even within the window, more context is not automatically better: accuracy degrades as context grows (sometimes called **context rot**), which is why Modules 2–3 treat context as something you curate, not just fit.
 
 ### Prompt
 
@@ -172,6 +188,7 @@ An LLM is not automatically:
 - a calculator
 - an authorized application user
 - a guaranteed source of truth
+- a system that remembers your previous request — the API is **stateless**; your application resends the conversation history on every turn
 
 We connect the model to search, databases, calculators, APIs, and human approval when those capabilities are required. The model can decide how to use those capabilities, but the application must enforce the boundaries.
 
@@ -259,10 +276,22 @@ With `00-hello-llm` up:
 - [ ] I can state the cost/latency/quality tradeoff for a design.
 - [ ] I extended the build with at least one new endpoint.
 
+## Suggested reading
+
+Ordered from "start here" to "go deeper". Every link was verified against external recommendations in August 2026.
+
+- [Large Language Models explained briefly](https://www.youtube.com/watch?v=LPZh9BOjkQs) — Grant Sanderson (3Blue1Brown), 2024, video, ~8 min. The fastest correct mental model of "an LLM is a next-token prediction function" — watch before anything else.
+- [Intro to Large Language Models](https://www.youtube.com/watch?v=zjkBMFhNj_g) — Andrej Karpathy, 2023, video, ~1 hr. The canonical busy person's intro: training versus inference, why fluent output can be wrong, and LLMs as a new computing platform. Notes in [Talk Notes](../notes/intro-to-large-language-models.md).
+- [The Rise of the AI Engineer](https://www.latent.space/p/ai-engineer) — swyx, 2023, essay, ~15 min. The essay that named the role this curriculum trains: an engineer building on the application side of the model API.
+- [Understanding GPT tokenizers](https://simonwillison.net/2023/Jun/8/gpt-tokenizers/) — Simon Willison, 2023, essay, ~10 min. Hands-on intuition, with an interactive tokenizer, for why tokens drive cost, context limits, and latency.
+- [Streaming Messages](https://platform.claude.com/docs/en/build-with-claude/streaming) — Anthropic docs, current, ~30 min. The SSE mechanics behind the build's `/chat` endpoint, including why partial output changes error handling.
+- [Structured outputs](https://platform.claude.com/docs/en/build-with-claude/structured-outputs) — Anthropic docs, current, ~30 min. Schema-constrained JSON and the Pydantic/Zod helpers — the "validation is a trust boundary" idea behind `/extract`, straight from the provider.
+- [What We've Learned From A Year of Building with LLMs](https://applied-llms.org/) — Yan, Bischof, Frye, Husain, Liu & Shankar, 2024, essay collection, ~1 hr. Practitioner field notes on prompting, evals, and cost/latency/quality tradeoffs — a preview of every later module from people who shipped.
+- [AI Engineering](https://huyenchip.com/books/) — Chip Huyen, 2025, book (paid, O'Reilly), ~15–20 hrs. The go-deeper reference for the whole course; read alongside Modules 1–6 rather than in one sitting.
+
 ## Resources
 
 - The [Developer environment](../concepts/developer-environment.md) and [Engineering core](../concepts/engineering-core.md) concept glossaries for setup and tooling vocabulary.
-- Anthropic API documentation — streaming and structured output sections.
-- Karpathy's introductory LLM talks for intuition about tokens and next-token prediction.
+- [Anthropic pricing](https://platform.claude.com/docs/en/pricing) — the per-million-token rates behind the cost column in your lab notes.
 - Pydantic (Python) or Zod (TypeScript) documentation.
 - The [build README](https://github.com/noufal85/ai-engineer-curriculum/tree/main/builds/00-hello-llm) — the model for every module's explain half.

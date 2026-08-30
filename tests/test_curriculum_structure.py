@@ -84,6 +84,8 @@ class CurriculumStructureTests(unittest.TestCase):
             self.assertIn(term, foundations_lower)
         self.assertIn("```mermaid", foundations_lower)
         self.assertIn("why this matters", foundations_lower)
+        self.assertIn("a short history", foundations_lower)
+        self.assertIn("## Suggested reading", foundations)
 
     def test_foundations_has_attributed_web_images(self) -> None:
         foundations = self.read("docs/curriculum/00-foundations.md")
