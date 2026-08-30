@@ -511,52 +511,24 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-is-ai" class="md-nav__link">
+  <a href="#from-rules-to-llms-a-short-history" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What is AI?
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="What is AI?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#machine-learning" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Machine learning
+        From rules to LLMs: a short history
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#deep-learning" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#what-is-ai-then" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Deep learning
+        What is AI, then?
       
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#generative-ai" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Generative AI
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -742,6 +714,17 @@
     <span class="md-ellipsis">
       
         Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggested-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suggested reading
       
     </span>
   </a>
@@ -1967,52 +1950,24 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-is-ai" class="md-nav__link">
+  <a href="#from-rules-to-llms-a-short-history" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What is AI?
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="What is AI?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#machine-learning" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Machine learning
+        From rules to LLMs: a short history
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#deep-learning" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#what-is-ai-then" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Deep learning
+        What is AI, then?
       
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#generative-ai" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Generative AI
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2205,6 +2160,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#suggested-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suggested reading
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#resources" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2242,6 +2208,7 @@
 <h2 id="what-you-will-be-able-to-do">What you will be able to do<a class="headerlink" href="#what-you-will-be-able-to-do" title="Permanent link">&para;</a></h2>
 <p>By the end of this module, you will be able to:</p>
 <ul>
+<li>tell the sixty-year story that led from rule-based AI to LLMs — and why each era gave way to the next</li>
 <li>place AI, machine learning, deep learning, and LLMs in one mental map</li>
 <li>explain training versus inference and why fluent output can still be wrong</li>
 <li>describe what happens when an application sends a prompt to a model</li>
@@ -2251,31 +2218,34 @@
 </ul>
 <h2 id="why-this-matters">Why this matters<a class="headerlink" href="#why-this-matters" title="Permanent link">&para;</a></h2>
 <p>Once you understand the basic shape of an AI system, the later topics become easier to place. Retrieval gives a model access to useful information. Tools let it take actions. Evals tell us whether it worked. Production engineering makes the whole system reliable enough for real users.</p>
-<h2 id="what-is-ai">What is AI?<a class="headerlink" href="#what-is-ai" title="Permanent link">&para;</a></h2>
-<p><strong>Artificial intelligence (AI)</strong> is the broad field of building computer systems that perform tasks we associate with human intelligence: recognizing patterns, understanding language, making predictions, planning, or choosing an action.</p>
-<p>AI is not one single technology. It is an umbrella term:</p>
+<h2 id="from-rules-to-llms-a-short-history">From rules to LLMs: a short history<a class="headerlink" href="#from-rules-to-llms-a-short-history" title="Permanent link">&para;</a></h2>
+<p>You cannot really understand what an LLM is — or why an entire industry reorganized itself around it — without the sixty-year argument that produced it. Each era below failed or plateaued in a way that caused the next one.</p>
+<pre class="mermaid"><code>timeline
+    1956 : Dartmouth workshop coins "artificial intelligence"
+    1980s : Expert-systems boom, then the AI-winter bust
+    2006 : Netflix Prize — ML quietly runs real businesses
+    2012 : AlexNet wins ImageNet on gaming GPUs
+    2017 : Google publishes the transformer
+    2020 : GPT-3 puts a giant model behind an API
+    2022 : ChatGPT reaches 100M users in two months
+    2024+ : RAG, agents, MCP — the AI-engineering era</code></pre>
+<p><strong>1956–1980s · The rules era.</strong> At a summer workshop at Dartmouth in 1956, a small group of researchers named the field "artificial intelligence" and made the founding bet: intelligence can be written down. For three decades the dominant approach was exactly the <code>rules + input → output</code> programming you already know, scaled up — experts encode their knowledge as thousands of hand-written rules. In the 1980s this became a genuine industry: corporations spent billions on <strong>expert systems</strong> and dedicated Lisp hardware to run them. Then reality won. The rules could not keep up with the messiness of the real world, maintenance costs exploded, the market collapsed, and funding froze — the <strong>AI winter</strong>. For years afterward, serious companies avoided the phrase "AI" entirely.</p>
+<p><strong>1990s–2000s · Machine learning flips the equation.</strong> The recovery came from inverting the bet: stop writing rules, show the computer examples, and let it <em>learn</em> the rules — <code>examples → learned model</code>, then <code>model + new input → prediction</code>. That is <strong>machine learning</strong>, and it quietly ran profitable products long before anyone called it AI again: spam filters, credit-card fraud detection, Amazon's recommendations, Google's ad ranking. By 2006 Netflix was offering a $1M prize just to improve its recommender by 10%. Note the shape of the business value: narrow, one carefully engineered prediction task at a time, each needing its own data, features, and team.</p>
+<p><strong>2012 · Deep learning's ImageNet moment.</strong> <strong>Deep learning</strong> — machine learning built from many-layered neural networks, whose learned numbers are called <strong>parameters</strong> — had existed for decades but was starved of compute and data. In 2012 a network called AlexNet, trained on two consumer gaming GPUs, entered the ImageNet image-recognition competition and nearly halved the error rate of every classical approach. The lesson landed instantly: neural networks <em>scale</em> with data and compute. Big tech pivoted within a couple of years, and GPUs — until then a gaming product — became strategic infrastructure, the beginning of NVIDIA's transformation into one of the most valuable companies on earth.</p>
+<p><strong>2017–2020 · The transformer and the API.</strong> In 2017 Google researchers published <em>Attention Is All You Need</em>, introducing the <strong>transformer</strong> — an architecture that processes whole sequences in parallel and lets every token attend to every other token. Training on internet-scale text suddenly became practical, and one lab kept pulling the same lever: make it bigger. GPT-2 (2019) wrote coherent paragraphs; GPT-3 (2020), at 175 billion parameters, could follow instructions it had never been trained for. Just as important was the packaging: GPT-3 shipped as <strong>an API</strong>. For the first time you could rent general-purpose language capability over HTTP, metered by the token — no ML team, no GPUs, no training pipeline.</p>
+<p><strong>November 2022 · ChatGPT.</strong> A chat interface wrapped around an instruction-tuned GPT model became the fastest-growing consumer product in history — 100 million users in two months. <strong>Generative AI</strong> — models that produce new text, code, and images rather than only classifying input — went from research demo to board-level budget line in a single quarter. Capital followed: Microsoft deepened its OpenAI investment, Google mobilized around Gemini, Anthropic scaled Claude, and open-weight models (Llama, Mistral) made capability a download.</p>
+<p><strong>2023–today · From chat to systems.</strong> The frontier then shifted from the models to what you build <em>around</em> them: retrieval (RAG) to ground answers in your data, tool calling and agents to take actions, protocols like MCP (2024) to standardize how models reach systems, reasoning models that trade latency for reliability. Companies discovered that a demo is easy and a dependable product is hard — and a new role emerged for engineers who build on top of models through APIs rather than training them: the <strong>AI engineer</strong>. That role is what this course trains.</p>
+<h2 id="what-is-ai-then">What is AI, then?<a class="headerlink" href="#what-is-ai-then" title="Permanent link">&para;</a></h2>
+<p>After that history, the taxonomy is simple — each era nests inside the previous one:</p>
 <pre class="mermaid"><code>flowchart LR
     AI["Artificial intelligence"] --&gt; ML["Machine learning"]
     ML --&gt; DL["Deep learning"]
     DL --&gt; FM["Foundation models"]
     FM --&gt; LLM["Large language models"]
     LLM --&gt; Apps["AI applications"]</code></pre>
-<p>Here is the same relationship as a real-world reference diagram:</p>
 <p><img alt="AI, machine learning, and deep learning relationships" src="../../assets/images/ai-ml-dl.svg" /></p>
 <p><em>Image credit: <a href="../../image-credits/">AI-ML-DL.svg</a>.</em></p>
-<h3 id="machine-learning">Machine learning<a class="headerlink" href="#machine-learning" title="Permanent link">&para;</a></h3>
-<p>In traditional programming, a person writes rules that transform inputs into outputs:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>rules + input → output
-</code></pre></div>
-<p>In <strong>machine learning</strong>, we give a system examples and let it learn patterns that help it produce outputs for new inputs:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>examples → learned model
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>learned model + new input → prediction
-</code></pre></div>
-<p>The model is not “thinking” in the human sense. It is calculating a prediction from patterns learned during training.</p>
-<h3 id="deep-learning">Deep learning<a class="headerlink" href="#deep-learning" title="Permanent link">&para;</a></h3>
-<p><strong>Deep learning</strong> is machine learning built with large neural networks. Neural networks contain learned numbers called <strong>parameters</strong>. Modern language, image, audio, and video models are usually deep-learning systems.</p>
-<h3 id="generative-ai">Generative AI<a class="headerlink" href="#generative-ai" title="Permanent link">&para;</a></h3>
-<p><strong>Generative AI</strong> produces new content: text, code, images, audio, or video. Instead of only classifying an input as “spam” or “not spam,” a generative model can write an email, summarize a document, or generate an image.</p>
+<p><strong>Artificial intelligence</strong> is the umbrella: systems performing tasks we associate with human intelligence. <strong>Machine learning</strong> learns patterns from examples instead of hand-written rules. <strong>Deep learning</strong> is machine learning built from large neural networks. <strong>Generative AI</strong> produces new content rather than only classifying input — and an LLM is generative deep learning applied to language. Throughout, remember: the model is not "thinking" in the human sense; it is computing a prediction from patterns learned during training.</p>
 <h2 id="what-is-an-llm">What is an LLM?<a class="headerlink" href="#what-is-an-llm" title="Permanent link">&para;</a></h2>
 <p>An <strong>LLM</strong>, or <strong>large language model</strong>, is a deep-learning model trained on a very large collection of text and code. Its core job is to predict what token is likely to come next:</p>
 <pre class="mermaid"><code>flowchart LR
@@ -2285,7 +2255,7 @@
     Probabilities --&gt; Next["One selected token"]
     Next --&gt; Text</code></pre>
 <p>For example, after seeing:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>The capital of France is
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>The capital of France is
 </code></pre></div>
 <p>the model assigns a high probability to the token <code>Paris</code>. It then repeats the process for the next token.</p>
 <p>This simple description explains several important facts:</p>
@@ -2321,7 +2291,7 @@
 <p>This training-to-inference split is also shown in the following workflow diagram:</p>
 <p><img alt="Machine-learning system workflow" src="../../assets/images/ml-system-workflow.png" /></p>
 <p><em>Image credit: <a href="../../image-credits/">Workflow of a machine-learning-based AI system</a>.</em></p>
-<p>This course focuses on <strong>inference and application engineering</strong>. You will learn how to choose models, provide useful context, validate outputs, connect tools, evaluate behavior, and operate the result.</p>
+<p>This course focuses on <strong>inference and application engineering</strong> — the discipline now called <strong>AI engineering</strong>: building on foundation models through prompting, retrieval, and tools rather than training models yourself. You will learn how to choose models, provide useful context, validate outputs, connect tools, evaluate behavior, and operate the result.</p>
 <h2 id="what-happens-when-our-app-uses-an-llm">What happens when our app uses an LLM?<a class="headerlink" href="#what-happens-when-our-app-uses-an-llm" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>sequenceDiagram
     participant U as User
@@ -2336,11 +2306,21 @@
     V--&gt;&gt;A: Accepted object or error
     A--&gt;&gt;U: Useful response</code></pre>
 <p>Your code is the layer that makes the model useful and safe. It decides what to send, which model to use, what tools or data are available, how to validate the result, and what the user sees when something fails.</p>
+<p>On the wire, the request itself is small and boring — a model ID, a token budget, and the conversation so far:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"claude-opus-4-8"</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">"max_tokens"</span><span class="p">:</span><span class="w"> </span><span class="mi">1024</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">"messages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="p">{</span><span class="nt">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="p">,</span><span class="w"> </span><span class="nt">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Summarize this support ticket: ..."</span><span class="p">}</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span>
+</code></pre></div>
+<p>Almost everything in this course — prompting, retrieval, tools, evals — is ultimately about what goes into that request and what you do with the response. Module 2 covers how to design its contents deliberately.</p>
 <h2 id="tokens-context-and-prompts">Tokens, context, and prompts<a class="headerlink" href="#tokens-context-and-prompts" title="Permanent link">&para;</a></h2>
 <h3 id="tokens">Tokens<a class="headerlink" href="#tokens" title="Permanent link">&para;</a></h3>
 <p>A <strong>token</strong> is a small piece of text that the model reads or writes. A token may be a whole word, part of a word, punctuation, or whitespace. Token counts affect:</p>
 <ul>
-<li>API cost</li>
+<li>API cost — providers meter per million input and output tokens, with output priced several times higher (<a href="https://platform.claude.com/docs/en/pricing">pricing</a>)</li>
 <li>context-window limits</li>
 <li>response length</li>
 <li>latency</li>
@@ -2348,7 +2328,7 @@
 <p>Do not worry about memorizing the exact tokenization rules yet. The practical rule is: longer input and longer output generally cost more and take longer.</p>
 <h3 id="context-window">Context window<a class="headerlink" href="#context-window" title="Permanent link">&para;</a></h3>
 <p>The <strong>context window</strong> is the amount of text the model can consider for one request. It includes the instructions, conversation history, retrieved documents, tool results, and requested output.</p>
-<p>When an application has more information than fits in context, it needs retrieval, summarization, memory, or another context-management strategy. That is why Module 3 matters.</p>
+<p>When an application has more information than fits in context, it needs retrieval, summarization, memory, or another context-management strategy. That is why Module 3 matters. And even within the window, more context is not automatically better: accuracy degrades as context grows (sometimes called <strong>context rot</strong>), which is why Modules 2–3 treat context as something you curate, not just fit.</p>
 <h3 id="prompt">Prompt<a class="headerlink" href="#prompt" title="Permanent link">&para;</a></h3>
 <p>A <strong>prompt</strong> is the input we send to the model. It can include:</p>
 <ul>
@@ -2368,13 +2348,14 @@
 <li>a calculator</li>
 <li>an authorized application user</li>
 <li>a guaranteed source of truth</li>
+<li>a system that remembers your previous request — the API is <strong>stateless</strong>; your application resends the conversation history on every turn</li>
 </ul>
 <p>We connect the model to search, databases, calculators, APIs, and human approval when those capabilities are required. The model can decide how to use those capabilities, but the application must enforce the boundaries.</p>
 <h2 id="the-build">🔨 The build<a class="headerlink" href="#the-build" title="Permanent link">&para;</a></h2>
 <p><strong><a href="https://github.com/noufal85/ai-engineer-curriculum/tree/main/builds/00-hello-llm"><code>builds/00-hello-llm</code></a></strong> — a Dockerized FastAPI service with two endpoints: one <strong>streams</strong> a model response token-by-token, the other returns a <strong>schema-validated object</strong> from free text.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span>builds/00-hello-llm
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>cp<span class="w"> </span>.env.example<span class="w"> </span>.env<span class="w">      </span><span class="c1"># add ANTHROPIC_API_KEY</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>--build<span class="w"> </span><span class="c1"># open http://localhost:8000</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span>builds/00-hello-llm
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>cp<span class="w"> </span>.env.example<span class="w"> </span>.env<span class="w">      </span><span class="c1"># add ANTHROPIC_API_KEY</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>--build<span class="w"> </span><span class="c1"># open http://localhost:8000</span>
 </code></pre></div>
 <p>Run it before reading on. Many later artifacts are variations on these two moves, but some topics will stay as small snippets or local experiments.</p>
 <h2 id="what-we-built">What we built<a class="headerlink" href="#what-we-built" title="Permanent link">&para;</a></h2>
@@ -2407,16 +2388,16 @@
 <ol>
 <li>
 <p>Watch streaming happen one chunk at a time:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>curl<span class="w"> </span>-N<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>localhost:8000/chat<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s1">'content-type: application/json'</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">'{"message": "Explain tokens in two sentences."}'</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl<span class="w"> </span>-N<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>localhost:8000/chat<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s1">'content-type: application/json'</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">'{"message": "Explain tokens in two sentences."}'</span>
 </code></pre></div>
 </li>
 <li>
 <p>Hit <code>/extract</code> three ways — an angry customer email, an empty string, and a few thousand words of pasted text:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>localhost:8000/extract<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s1">'content-type: application/json'</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">'{"text": "The blender broke after two weeks and support never replied. I want a refund."}'</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>localhost:8000/extract<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s1">'content-type: application/json'</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">'{"text": "The blender broke after two weeks and support never replied. I want a refund."}'</span>
 </code></pre></div>
 <p>Watch what the schema validation accepts, rejects, and how the model fills <code>action_required</code>.</p>
 </li>
@@ -2443,11 +2424,22 @@
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> I can state the cost/latency/quality tradeoff for a design.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> I extended the build with at least one new endpoint.</li>
 </ul>
+<h2 id="suggested-reading">Suggested reading<a class="headerlink" href="#suggested-reading" title="Permanent link">&para;</a></h2>
+<p>Ordered from "start here" to "go deeper". Every link was verified against external recommendations in August 2026.</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=LPZh9BOjkQs">Large Language Models explained briefly</a> — Grant Sanderson (3Blue1Brown), 2024, video, ~8 min. The fastest correct mental model of "an LLM is a next-token prediction function" — watch before anything else.</li>
+<li><a href="https://www.youtube.com/watch?v=zjkBMFhNj_g">Intro to Large Language Models</a> — Andrej Karpathy, 2023, video, ~1 hr. The canonical busy person's intro: training versus inference, why fluent output can be wrong, and LLMs as a new computing platform. Notes in <a href="../../notes/intro-to-large-language-models/">Talk Notes</a>.</li>
+<li><a href="https://www.latent.space/p/ai-engineer">The Rise of the AI Engineer</a> — swyx, 2023, essay, ~15 min. The essay that named the role this curriculum trains: an engineer building on the application side of the model API.</li>
+<li><a href="https://simonwillison.net/2023/Jun/8/gpt-tokenizers/">Understanding GPT tokenizers</a> — Simon Willison, 2023, essay, ~10 min. Hands-on intuition, with an interactive tokenizer, for why tokens drive cost, context limits, and latency.</li>
+<li><a href="https://platform.claude.com/docs/en/build-with-claude/streaming">Streaming Messages</a> — Anthropic docs, current, ~30 min. The SSE mechanics behind the build's <code>/chat</code> endpoint, including why partial output changes error handling.</li>
+<li><a href="https://platform.claude.com/docs/en/build-with-claude/structured-outputs">Structured outputs</a> — Anthropic docs, current, ~30 min. Schema-constrained JSON and the Pydantic/Zod helpers — the "validation is a trust boundary" idea behind <code>/extract</code>, straight from the provider.</li>
+<li><a href="https://applied-llms.org/">What We've Learned From A Year of Building with LLMs</a> — Yan, Bischof, Frye, Husain, Liu &amp; Shankar, 2024, essay collection, ~1 hr. Practitioner field notes on prompting, evals, and cost/latency/quality tradeoffs — a preview of every later module from people who shipped.</li>
+<li><a href="https://huyenchip.com/books/">AI Engineering</a> — Chip Huyen, 2025, book (paid, O'Reilly), ~15–20 hrs. The go-deeper reference for the whole course; read alongside Modules 1–6 rather than in one sitting.</li>
+</ul>
 <h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
 <ul>
 <li>The <a href="../../concepts/developer-environment/">Developer environment</a> and <a href="../../concepts/engineering-core/">Engineering core</a> concept glossaries for setup and tooling vocabulary.</li>
-<li>Anthropic API documentation — streaming and structured output sections.</li>
-<li>Karpathy's introductory LLM talks for intuition about tokens and next-token prediction.</li>
+<li><a href="https://platform.claude.com/docs/en/pricing">Anthropic pricing</a> — the per-million-token rates behind the cost column in your lab notes.</li>
 <li>Pydantic (Python) or Zod (TypeScript) documentation.</li>
 <li>The <a href="https://github.com/noufal85/ai-engineer-curriculum/tree/main/builds/00-hello-llm">build README</a> — the model for every module's explain half.</li>
 </ul>
