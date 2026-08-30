@@ -187,6 +187,50 @@ class CurriculumStructureTests(unittest.TestCase):
         ):
             self.assertIn(term, attention)
 
+    def test_each_core_module_has_a_separated_lab_section(self) -> None:
+        lab_pages = (
+            "docs/curriculum/00-foundations.md",
+            "docs/curriculum/01-llm-internals.md",
+            "docs/curriculum/02-prompting-context.md",
+            "docs/curriculum/03-rag-memory.md",
+            "docs/curriculum/04-agents-tools-mcp.md",
+            "docs/curriculum/05-evals-observability.md",
+            "docs/curriculum/06-production-systems.md",
+            "docs/curriculum/07-forward-deployed.md",
+            "docs/curriculum/engineering-core.md",
+            "docs/curriculum/environment-and-programming.md",
+        )
+        trial_pages = set(lab_pages) - {
+            "docs/curriculum/01-llm-internals.md",
+            "docs/curriculum/environment-and-programming.md",
+        }
+
+        for relative_path in lab_pages:
+            content = self.read(relative_path)
+            self.assertIn("## 🧪 Lab", content, relative_path)
+            if relative_path in trial_pages:
+                self.assertIn("### Trial ·", content, relative_path)
+
+        curriculum_index = self.read("docs/curriculum/index.md")
+        self.assertIn("🧪 Lab", curriculum_index)
+
+    def test_each_module_states_learning_objectives(self) -> None:
+        for relative_path in (
+            "docs/curriculum/00-foundations.md",
+            "docs/curriculum/01-llm-internals.md",
+            "docs/curriculum/02-prompting-context.md",
+            "docs/curriculum/03-rag-memory.md",
+            "docs/curriculum/04-agents-tools-mcp.md",
+            "docs/curriculum/05-evals-observability.md",
+            "docs/curriculum/06-production-systems.md",
+            "docs/curriculum/07-forward-deployed.md",
+            "docs/curriculum/08-capstones.md",
+            "docs/curriculum/engineering-core.md",
+            "docs/curriculum/environment-and-programming.md",
+        ):
+            content = self.read(relative_path)
+            self.assertIn("## What you will be able to do", content, relative_path)
+
     def test_career_page_tracks_ai_engineer_and_fde_jobs_to_linkedin(self) -> None:
         career = self.read("docs/career.md")
         nav = self.read("mkdocs.yml")

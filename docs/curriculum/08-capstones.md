@@ -1,5 +1,15 @@
 # Module 8 · Capstones
 
+## What you will be able to do
+
+By the end of this module, you will be able to:
+
+- scope a capstone around a customer-value narrative and explicit acceptance criteria
+- integrate the whole stack — retrieval, agents, evals, observability, and production hardening — in one system
+- demonstrate quality with an eval suite and tracing rather than a one-off demo
+- defend your design tradeoffs in a written design document
+- present the finished system as a portfolio piece: deployment, walkthrough, and rubric self-assessment
+
 ## 🔨 Builds
 
 Each capstone is a Dockerized build with a public or reviewable deployment, an eval suite, tracing, a design document, and a customer-value narrative. Pick one or two and go deep; a finished capstone is worth more than ten started tutorials.

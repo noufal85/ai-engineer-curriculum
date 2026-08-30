@@ -1,5 +1,16 @@
 # Module 7 · Forward-Deployed Craft
 
+## What you will be able to do
+
+By the end of this module, you will be able to:
+
+- run discovery interviews that surface tacit rules, exceptions, and ownership
+- find a narrow, demoable wedge with measurable value instead of building a platform too early
+- model an unfamiliar domain as a graph with multiple lenses and stitched sources
+- serve a capability into the surface where users already work
+- prove value with an A/B demo and evals written in the customer's language
+- plan adoption, feedback, and handoff so the system survives your exit
+
 ## 🔨 The build
 
 **`builds/07-domain-twin`** _(planned)_ — pick a domain you do not know, run a discovery interview, model it as a graph with at least two hierarchy lenses, stitch at least two sources, serve it via MCP, and run an A/B demo answering a question the domain owner actually cares about.
@@ -34,7 +45,17 @@ This is the FDE differentiator. Models, interfaces, and agent frameworks commodi
 - Training, change management, ownership, runbooks, and a handoff package.
 - Maintaining the feedback loop after the FDE leaves.
 
-## Build
+## 🧪 Lab
+
+Hands-on first: a trial that needs one other human, then the build tasks.
+
+### Trial · Mine tacit knowledge (~20 min)
+
+1. Find one person who runs a workflow you do not know — expenses, hiring, dispatching, grading. Interview them for 15 minutes using only three questions: "Walk me through the last time you did it." "What do you check before it counts as done?" "When did it last go wrong?"
+2. Write down 5 rules they follow that are documented nowhere. That list is tacit knowledge — the thing this module exists to capture.
+3. For each rule, note which system (spreadsheet, email, app) holds the data behind it. Undocumented rules spanning siloed systems are exactly the seams the domain-twin build models.
+
+### Build tasks
 
 - [ ] Pick a domain you do not know and run a documented discovery interview.
 - [ ] Produce a tacit-knowledge document with terms, rules, exceptions, owners, and open questions.

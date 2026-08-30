@@ -1,5 +1,16 @@
 # Module 3 · Retrieval, RAG & Memory
 
+## What you will be able to do
+
+By the end of this module, you will be able to:
+
+- explain why retrieval exists and where most RAG failures actually originate
+- design ingestion deliberately: parsing, chunking, metadata, freshness, and permissions
+- build vector, hybrid, and reranked retrieval and measure retriever quality directly
+- translate natural language into a validated SQL or Cypher query when the answer lives in structured data
+- show with an example why similarity is not a relationship, and when GraphRAG earns its complexity
+- design memory with write policies, provenance, and privacy in mind
+
 ## 🔨 The build
 
 **`builds/03-rag-lab`** _(planned)_ — ingest a corpus, parse and enrich it, build **vector RAG**, add **hybrid search + a reranker**, then build a **GraphRAG** variant over the same data. The payoff: find a multi-hop question the vector version fails and the graph version answers. Dockerized with a reproducible corpus and eval set.
@@ -43,7 +54,29 @@ Models do not know your private data, and you cannot fit everything into the con
 - Why a pile of markdown files becomes expensive and difficult to govern at scale.
 - Memory as a service exposed through a stable API or MCP server.
 
-## Build
+## 🧪 Lab
+
+Hands-on first: a zero-setup trial, then the build tasks.
+
+### Trial · Similarity is not a relationship (~15 min)
+
+1. Paste this into a chat and ask the model to answer **using only these facts**:
+
+    ```text
+    Facts:
+    1. Maya Chen is the CTO of Northwind Robotics.
+    2. Northwind Robotics is a subsidiary of Halcyon Group.
+    3. Halcyon Group is headquartered in Rotterdam.
+    4. Rotterdam's port is the largest in Europe.
+    5. Maya Chen previously worked at a large port-logistics company.
+
+    Question: In which city is Maya Chen's ultimate parent company headquartered?
+    ```
+
+2. The answer needs a two-hop chain (1 → 2 → 3). Now play the retriever: score each fact by keyword overlap with the question. Facts 1 and 5 look most "similar" to the query; fact 3 barely mentions any query term. A top-2 vector retriever would likely miss the answer.
+3. Prove it: ask the same question giving the model only facts 1 and 5, and watch it fail or hallucinate. That failure is why hybrid search, query decomposition, and graph retrieval exist.
+
+### Build tasks
 
 - [ ] Ingest a small corpus with source IDs, timestamps, permissions, and version metadata.
 - [ ] Build baseline RAG: ingest → chunk → embed → vector search → answer with citations.

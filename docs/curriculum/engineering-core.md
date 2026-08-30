@@ -4,6 +4,16 @@ This unnumbered track follows [Developer Environment & Programming Basics](envir
 
 It is intentionally practical: learn each topic while building a small service, then reuse the same patterns throughout the course.
 
+## What you will be able to do
+
+By the end of this track, you will be able to:
+
+- build and run a small API-backed service with a database, background job, and tests
+- speak HTTP fluently: requests, status codes, timeouts, retries, and API contracts
+- design a schema, write a migration, and use transactions deliberately
+- ship through Git, CI/CD, and Docker with health checks and graceful shutdown
+- treat model calls as unreliable network dependencies behind a small adapter boundary
+
 ## 🔨 The build
 
 **`builds/engineering-core`** _(planned)_ — a small API-backed application with a database, background job, tests, Docker, configuration, and a CI check. The application can be simple; the point is learning the engineering seams around an AI feature.
@@ -37,7 +47,17 @@ It is intentionally practical: learn each topic while building a small service, 
 - Keep provider-specific code behind a small adapter boundary.
 - Validate every model-produced object before it reaches application logic.
 
-## Build checklist
+## 🧪 Lab
+
+Hands-on first: a ten-minute trial, then the build checklist.
+
+### Trial · Watch a request fail well (~15 min)
+
+1. Run `curl -i https://httpbin.org/status/503` and read the status line — that is what a provider outage looks like to your code.
+2. In any small script, call `https://httpbin.org/delay/5` with a 2-second timeout, catch the timeout, and retry once.
+3. Log the failure as one structured line: timestamp, URL, status, elapsed milliseconds. Diagnosing a request from that one line is the habit this whole track builds.
+
+### Build checklist
 
 - [ ] The service has a documented local setup and a reproducible Docker command.
 - [ ] A database schema and migration can be created from scratch.

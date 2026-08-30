@@ -90,7 +90,7 @@ Tokenization is not just preprocessing. It affects the application you build:
 !!! example "A useful surprise"
     `cat`, `catalog`, `CAT`, and ` cat` may not begin with the same token. To a tokenizer, capitalization and leading whitespace can matter.
 
-### Try it · Token detective
+### 🧪 Lab · Token detective
 
 Open a tokenizer playground and inspect:
 
@@ -176,7 +176,7 @@ The practical response is not “tell the model to stop hallucinating.” Use sy
 
 You will build these controls in Modules 3–6.
 
-### Try it · Prediction, not recollection
+### 🧪 Lab · Prediction, not recollection
 
 Complete each fragment before asking a model to do it:
 
@@ -243,7 +243,7 @@ In standard self-attention, tokens compare information across many token pairs. 
 
 During generation, a **key-value cache** lets the model reuse work from earlier tokens instead of recomputing the whole sequence from scratch. This makes generation practical, while the growing context still consumes memory.
 
-### Try it · Find the signal
+### 🧪 Lab · Find the signal
 
 Ask a model a precise question using:
 
@@ -307,7 +307,7 @@ At `top_p = 0.9`, the model ignores the low-probability tail after enough candid
 !!! warning "Deterministic is not the same as correct"
     A repeatable wrong answer is still wrong. Low temperature reduces variation; it does not verify facts. Exact reproducibility can also depend on provider implementation, model updates, and other decoding settings.
 
-### Try it · Change one knob
+### 🧪 Lab · Change one knob
 
 For the sky prompt from the build, compare temperature `0`, `0.7`, and `1.2`. Run each setting at least three times.
 
@@ -499,7 +499,7 @@ sequenceDiagram
 
 The model supplies probabilistic capability. The application supplies current data, tools, validation, authorization, observability, and product judgment.
 
-## Build tasks
+## 🧪 Lab · Build tasks
 
 - [ ] Inspect how a tokenizer splits ordinary, unusual, multilingual, and JSON text.
 - [ ] Run one prompt at temperature `0`, `0.7`, and `1.2`, at least three times each.

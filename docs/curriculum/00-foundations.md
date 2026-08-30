@@ -6,6 +6,17 @@ If HTTP, async programming, SQL, testing, or Docker are unfamiliar, complete [De
 
 You do not need advanced mathematics to begin. You need a clear mental model of what AI systems are, what an LLM does, and how a small application talks to one.
 
+## What you will be able to do
+
+By the end of this module, you will be able to:
+
+- place AI, machine learning, deep learning, and LLMs in one mental map
+- explain training versus inference and why fluent output can still be wrong
+- describe what happens when an application sends a prompt to a model
+- run a small LLM-backed service under Docker and call both of its endpoints
+- explain streaming as a UX decision and schema validation as a trust boundary
+- state the cost/latency/quality tradeoff behind a model choice
+
 ## Why this matters
 
 Once you understand the basic shape of an AI system, the later topics become easier to place. Retrieval gives a model access to useful information. Tools let it take actions. Evals tell us whether it worked. Production engineering makes the whole system reliable enough for real users.
@@ -203,7 +214,35 @@ Now reach for these concepts when the build makes them relevant:
 - **Cost/latency/quality** — the recurring design tradeoff.
 - **Embeddings intuition** — what a vector is; the deeper treatment arrives in Module 3.
 
-## Extend the build
+## 🧪 Lab
+
+Hands-on first: poke the running service, then extend it.
+
+### Trial · Poke the running service (~10 min)
+
+With `00-hello-llm` up:
+
+1. Watch streaming happen one chunk at a time:
+
+    ```bash
+    curl -N -X POST localhost:8000/chat \
+      -H 'content-type: application/json' \
+      -d '{"message": "Explain tokens in two sentences."}'
+    ```
+
+2. Hit `/extract` three ways — an angry customer email, an empty string, and a few thousand words of pasted text:
+
+    ```bash
+    curl -X POST localhost:8000/extract \
+      -H 'content-type: application/json' \
+      -d '{"text": "The blender broke after two weeks and support never replied. I want a refund."}'
+    ```
+
+    Watch what the schema validation accepts, rejects, and how the model fills `action_required`.
+
+3. Change `MODEL` in `.env` to a smaller model, restart, repeat step 1, and note the latency and quality difference.
+
+### Extend the build
 
 - [ ] Run `00-hello-llm` and hit both endpoints from the browser.
 - [ ] Add a `/classify` endpoint returning one enum label via a strict schema.

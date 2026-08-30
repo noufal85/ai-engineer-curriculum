@@ -178,7 +178,7 @@ print("API key is set" if os.environ.get("ANTHROPIC_API_KEY") else "API key is m
 
 Never use `print(os.environ["ANTHROPIC_API_KEY"])` as a setup check.
 
-## A first setup exercise
+## 🧪 Lab · A first setup exercise
 
 Start with the smallest setup snippet:
 
