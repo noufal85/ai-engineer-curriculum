@@ -198,6 +198,12 @@ class CurriculumStructureTests(unittest.TestCase):
         ):
             self.assertIn(term, attention)
 
+    # Modules whose lab work has moved into the Labs section. The module page
+    # keeps a pointer; the trial and build tasks live on the lab page.
+    MIGRATED_LABS = {
+        "docs/curriculum/00-foundations.md": "docs/labs/00-foundations.md",
+    }
+
     def test_each_core_module_has_a_separated_lab_section(self) -> None:
         lab_pages = (
             "docs/curriculum/00-foundations.md",
@@ -215,12 +221,43 @@ class CurriculumStructureTests(unittest.TestCase):
 
         for relative_path in lab_pages:
             content = self.read(relative_path)
-            self.assertIn("## 🧪 Lab", content, relative_path)
-            if relative_path in trial_pages:
-                self.assertIn("### Trial ·", content, relative_path)
+            self.assertIn("## \U0001F9EA Lab", content, relative_path)
+
+            migrated = self.MIGRATED_LABS.get(relative_path)
+            if migrated is not None:
+                self.assertIn("../labs/", content, relative_path)
+                self.assertIn("## Trial \u00B7", self.read(migrated), migrated)
+            elif relative_path in trial_pages:
+                self.assertIn("### Trial \u00B7", content, relative_path)
 
         curriculum_index = self.read("docs/curriculum/index.md")
-        self.assertIn("🧪 Lab", curriculum_index)
+        self.assertIn("\U0001F9EA Lab", curriculum_index)
+
+    def test_labs_section_leads_with_workspace_setup(self) -> None:
+        nav = self.read("mkdocs.yml")
+        self.assertIn("  - Labs:", nav)
+
+        for relative_path in (
+            "docs/labs/index.md",
+            "docs/labs/setup.md",
+            "docs/labs/00-foundations.md",
+        ):
+            self.assertTrue((ROOT / relative_path).exists(), relative_path)
+            self.assertIn(f"labs/{Path(relative_path).name}", nav, relative_path)
+
+        setup = self.read("docs/labs/setup.md")
+        for token in (
+            "docker compose version",
+            "hello-world",
+            "ANTHROPIC_API_KEY",
+            "docker compose down",
+        ):
+            self.assertIn(token, setup, token)
+
+        # The setup lab installs Docker. Teaching Docker stays out of the
+        # curriculum, which lists it as an assumed prerequisite.
+        self.assertIn("does not teach Docker", setup)
+        self.assertIn("Docker", self.read("docs/curriculum/index.md"))
 
     def test_each_module_states_learning_objectives(self) -> None:
         for relative_path in (

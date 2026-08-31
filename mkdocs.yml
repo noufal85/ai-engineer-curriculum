@@ -78,6 +78,10 @@ nav:
       - 7 · The Forward-Deployed Craft: curriculum/07-forward-deployed.md
       - 8 · Capstones: curriculum/08-capstones.md
       - Optional Specializations: curriculum/specializations.md
+  - Labs:
+      - labs/index.md
+      - Setup · Docker & API key: labs/setup.md
+      - 0 · Foundations: labs/00-foundations.md
   - Concepts:
       - concepts/index.md
       - Developer Environment: concepts/developer-environment.md

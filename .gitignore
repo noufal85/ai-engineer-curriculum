@@ -4,3 +4,5 @@ __pycache__/
 .DS_Store
 .env
 **/.env
+CLAUDE.local.md
+_to_delete/

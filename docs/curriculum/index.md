@@ -11,9 +11,11 @@ Each module page contains:
 - **What you will be able to do** — the module's learning objectives in one glance.
 - **🔨 The artifact** — the smallest useful thing to run. Start here.
 - **What it teaches** — the concept explained through the artifact.
-- **🧪 Lab** — a quick hands-on trial you can run immediately, followed by the build tasks. Do, don't just read.
+- **🧪 Lab** — a pointer to that module's page in [Labs](../labs/index.md), where the trial and build tasks live. Do, don't just read.
 - **Checklist** — ticks when the artifact runs and you can defend the tradeoff.
 - **Failure modes** — what breaks, how to observe it, and what to try next.
+
+Every module's hands-on work lives in the [Labs](../labs/index.md) section, one lab per module, starting with a [Setup lab](../labs/setup.md) that gets Docker and an API key working.
 
 The larger builds live in [`builds/`](https://github.com/noufal85/ai-engineer-curriculum/tree/main/builds). Short exercises live in [`snippets/`](https://github.com/noufal85/ai-engineer-curriculum/tree/main/snippets).
 

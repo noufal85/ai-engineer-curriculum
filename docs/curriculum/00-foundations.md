@@ -231,39 +231,9 @@ Now reach for these concepts when the build makes them relevant:
 
 ## 🧪 Lab
 
-Hands-on first: poke the running service, then extend it.
+The hands-on work for this module lives in **[Lab 0 · Foundations](../labs/00-foundations.md)** — a trial against the running service, then the build extensions.
 
-### Trial · Poke the running service (~10 min)
-
-With `00-hello-llm` up:
-
-1. Watch streaming happen one chunk at a time:
-
-    ```bash
-    curl -N -X POST localhost:8000/chat \
-      -H 'content-type: application/json' \
-      -d '{"message": "Explain tokens in two sentences."}'
-    ```
-
-2. Hit `/extract` three ways — an angry customer email, an empty string, and a few thousand words of pasted text:
-
-    ```bash
-    curl -X POST localhost:8000/extract \
-      -H 'content-type: application/json' \
-      -d '{"text": "The blender broke after two weeks and support never replied. I want a refund."}'
-    ```
-
-    Watch what the schema validation accepts, rejects, and how the model fills `action_required`.
-
-3. Change `MODEL` in `.env` to a smaller model, restart, repeat step 1, and note the latency and quality difference.
-
-### Extend the build
-
-- [ ] Run `00-hello-llm` and hit both endpoints from the browser.
-- [ ] Add a `/classify` endpoint returning one enum label via a strict schema.
-- [ ] Fire 10 `/extract` calls concurrently without tripping rate limits.
-- [ ] Switch `MODEL` to Haiku and describe the cost/latency/quality difference.
-- [ ] Explain why streaming changes error handling.
+If Docker is not yet set up on your machine, do **[Lab · Setup](../labs/setup.md)** first.
 
 ## Checklist
 
