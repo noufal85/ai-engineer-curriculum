@@ -872,6 +872,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-you-will-be-able-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you will be able to do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#trial-poke-the-running-service-10-min" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1856,6 +1867,15 @@
 <h1 id="lab-0-foundations">Lab 0 · Foundations<a class="headerlink" href="#lab-0-foundations" title="Permanent link">&para;</a></h1>
 <p><strong>Module:</strong> <a href="../../curriculum/00-foundations/">0 · Foundations</a> · <strong>Needs:</strong> <a href="../setup/">Setup</a> done, <code>00-hello-llm</code> running</p>
 <p>Two things are true about an LLM service and neither is obvious from reading about it: output arrives in pieces, and a schema is the only thing standing between a model's confidence and your database. This lab makes both concrete on a service you can break without consequence.</p>
+<h2 id="what-you-will-be-able-to-do">What you will be able to do<a class="headerlink" href="#what-you-will-be-able-to-do" title="Permanent link">&para;</a></h2>
+<p>By the end of this lab, you will be able to:</p>
+<ul>
+<li>watch a streamed response arrive chunk by chunk and explain what buffering hides</li>
+<li>probe a schema-validated endpoint with good, empty, and oversized input — and explain why a confidently-shaped object still deserves distrust</li>
+<li>extend the service with a schema-constrained <code>/classify</code> endpoint that rejects invalid labels</li>
+<li>swap models and record time-to-first-token, latency, and quality as evidence for a model choice</li>
+<li>explain why streaming makes error handling harder</li>
+</ul>
 <p>Start it if it is not already up:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>builds/00-hello-llm
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>--build
