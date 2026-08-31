@@ -4,6 +4,16 @@
 
 Two things are true about an LLM service and neither is obvious from reading about it: output arrives in pieces, and a schema is the only thing standing between a model's confidence and your database. This lab makes both concrete on a service you can break without consequence.
 
+## What you will be able to do
+
+By the end of this lab, you will be able to:
+
+- watch a streamed response arrive chunk by chunk and explain what buffering hides
+- probe a schema-validated endpoint with good, empty, and oversized input — and explain why a confidently-shaped object still deserves distrust
+- extend the service with a schema-constrained `/classify` endpoint that rejects invalid labels
+- swap models and record time-to-first-token, latency, and quality as evidence for a model choice
+- explain why streaming makes error handling harder
+
 Start it if it is not already up:
 
 ```bash

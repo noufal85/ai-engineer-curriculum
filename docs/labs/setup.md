@@ -4,6 +4,15 @@
 
 This lab installs tools. It does not teach Docker — the curriculum [assumes it](../curriculum/index.md), and Module 0 is where Compose becomes a lesson rather than a prerequisite. If every command below already works on your machine, skip to [Lab 0](00-foundations.md).
 
+## What you will be able to do
+
+By the end of this lab, you will be able to:
+
+- run Docker Engine and Compose v2 on your machine, without `sudo`
+- wire an API key into a project safely through a gitignored `.env`
+- start, health-check, and cleanly tear down a Dockerized service
+- check what disk Docker is holding before it becomes a problem
+
 ## 1 · Install Docker
 
 You need the engine and the `compose` plugin. Docker Desktop bundles both.

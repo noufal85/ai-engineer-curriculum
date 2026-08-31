@@ -13,6 +13,7 @@ Labs 1–8 land as their builds are written; [`builds/`](https://github.com/nouf
 
 ## How a lab is shaped
 
+- **What you will be able to do** — the lab's learning objectives, stated up front.
 - **Trial** — 10–20 minutes, run it now. Often needs nothing but a chat window or one `curl`. The trial is designed to *fail* in an instructive way; that failure is the lesson.
 - **Build tasks** — the substantial work, written as a checklist you can tick.
 - **What to record** — labs ask for numbers, not impressions. Latency, token counts, cost, and pass rates are what make a later module's comparison meaningful.

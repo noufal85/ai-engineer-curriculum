@@ -245,6 +245,11 @@ class CurriculumStructureTests(unittest.TestCase):
             self.assertTrue((ROOT / relative_path).exists(), relative_path)
             self.assertIn(f"labs/{Path(relative_path).name}", nav, relative_path)
 
+        for relative_path in ("docs/labs/setup.md", "docs/labs/00-foundations.md"):
+            self.assertIn(
+                "## What you will be able to do", self.read(relative_path), relative_path
+            )
+
         setup = self.read("docs/labs/setup.md")
         for token in (
             "docker compose version",
