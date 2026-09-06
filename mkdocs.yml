@@ -96,6 +96,9 @@ nav:
       - Platform & SRE: concepts/platform-and-sre.md
       - Product & Adoption: concepts/product-and-adoption.md
       - Safety & Security: concepts/safety-and-security.md
+  - System Design for AI Applications:
+      - system-design/index.md
+      - Retrieval with Amazon OpenSearch: system-design/opensearch-retrieval.md
   - Papers:
       - papers/index.md
       - AlexNet: papers/alexnet.md

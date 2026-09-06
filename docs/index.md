@@ -49,6 +49,8 @@ Modules 0–6 are shared. Module 7 is the FDE differentiator. Module 8 proves in
 
 ## Track yourself
 
+Explore [System Design for AI Applications](system-design/index.md) for worked architectures that connect retrieval, models, data pipelines, security, and operations. Start with [Retrieval with Amazon OpenSearch](system-design/opensearch-retrieval.md): an enterprise knowledge assistant and a product-discovery assistant.
+
 Use the [Progress](progress.md) page. A checkbox only ticks when the build runs, the required behavior is measured, and you can defend the design tradeoff.
 
 The [Concepts](concepts/index.md) glossary is the vocabulary map; module pages and builds are where the vocabulary becomes skill.
