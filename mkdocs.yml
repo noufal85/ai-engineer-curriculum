@@ -98,7 +98,42 @@ nav:
       - Safety & Security: concepts/safety-and-security.md
   - System Design for AI Applications:
       - system-design/index.md
-      - Retrieval with Amazon OpenSearch: system-design/opensearch-retrieval.md
+      - Design Study Catalog: system-design/catalog.md
+      - Retrieval, Search & Knowledge:
+          - "R01 · Retrieval with Amazon OpenSearch": system-design/opensearch-retrieval.md
+          - "R02 · Retrieval with PostgreSQL and pgvector": system-design/postgres-pgvector.md
+          - "R03 · Retrieval with a dedicated vector database": system-design/vector-databases.md
+          - "R04 · Managed RAG with Amazon Bedrock Knowledge Bases": system-design/bedrock-knowledge-bases.md
+          - "R05 · Enterprise retrieval with Azure AI Search": system-design/azure-ai-search.md
+          - "R06 · GraphRAG with Neo4j or Amazon Neptune": system-design/graphrag.md
+          - "R07 · Permission-aware retrieval across multiple sources": system-design/federated-retrieval.md
+          - "R08 · Long-term memory for AI applications": system-design/long-term-memory.md
+      - Agents, Workflows & Tools:
+          - "A01 · Durable AI workflows with Temporal or AWS Step Functions": system-design/durable-workflows.md
+          - "A02 · Tool-using agents with LangGraph or an agents SDK": system-design/tool-using-agents.md
+          - "A03 · An MCP tool gateway for enterprise applications": system-design/mcp-tool-gateway.md
+          - "A04 · Natural-language analytics over SQL": system-design/natural-language-sql.md
+          - "A05 · A coding agent with isolated execution": system-design/coding-agent-sandboxes.md
+          - "A06 · A browser agent for business tasks": system-design/browser-agents.md
+          - "A07 · Multi-agent task coordination": system-design/multi-agent-coordination.md
+      - Documents, Audio & Multimodal:
+          - "D01 · Document intelligence with Amazon Textract and LLMs": system-design/document-intelligence.md
+          - "D02 · Multimodal retrieval over text, tables, and images": system-design/multimodal-retrieval.md
+          - "D03 · A real-time voice assistant": system-design/realtime-voice.md
+          - "D04 · A meeting intelligence pipeline": system-design/meeting-intelligence.md
+          - "D05 · Video understanding and retrieval": system-design/video-retrieval.md
+      - Model Serving & Inference:
+          - "S01 · A multi-provider LLM gateway": system-design/llm-gateway.md
+          - "S02 · Self-hosted inference with vLLM or NVIDIA Triton": system-design/self-hosted-inference.md
+          - "S03 · An asynchronous batch inference platform": system-design/batch-inference.md
+          - "S04 · Caching for AI applications with Redis": system-design/ai-caching.md
+          - "S05 · Edge and on-device AI": system-design/edge-on-device-ai.md
+      - Data, Evaluation & Operations:
+          - "P01 · Fresh retrieval indexes with Kafka or Amazon Kinesis": system-design/streaming-indexes.md
+          - "P02 · An evaluation and observability platform for AI": system-design/evaluation-observability.md
+          - "P03 · A feedback and model-adaptation pipeline": system-design/feedback-model-adaptation.md
+          - "P04 · A secure multi-tenant AI platform": system-design/secure-multi-tenant-platform.md
+          - "P05 · An AI incident-triage copilot": system-design/incident-triage-copilot.md
   - Papers:
       - papers/index.md
       - AlexNet: papers/alexnet.md

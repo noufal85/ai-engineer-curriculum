@@ -6,13 +6,13 @@ This chapter develops two designs: an internal knowledge assistant and a product
 
 !!! note "Scope and evidence"
 
-    These are proposed architectures, not deployed systems or benchmark results. Workload sizes, thresholds, and candidate counts below are teaching assumptions. References link to AWS and OpenSearch documentation; upstream OpenSearch features do not automatically have parity with every AWS engine version, Region, or Serverless collection type. Verify support for your selected deployment before implementation.
+    **Documentation reviewed: September 7, 2026 (UTC).** These are proposed architectures, not deployed systems or benchmark results. Workload sizes, thresholds, and candidate counts below are teaching assumptions. References link to AWS and OpenSearch documentation; upstream OpenSearch features do not automatically have parity with every AWS engine version, Region, or Serverless collection type. Verify support for your selected deployment before implementation.
 
 ## 1. What OpenSearch is—and what it does in an AI application
 
 **OpenSearch** is an Apache-2.0-licensed search and analytics engine built on Apache Lucene. It indexes JSON documents and exposes HTTP APIs for ingestion, queries, aggregations, and administration. OpenSearch Dashboards provides a UI for exploration and operations. The project originated as a fork of Elasticsearch and Kibana; current APIs, plugins, and licensing should not be assumed interchangeable.
 
-**Amazon OpenSearch Service** is AWS's managed offering. With provisioned domains, you choose an engine version and infrastructure configuration; AWS handles parts of provisioning, replacement, backups, and maintenance. **Amazon OpenSearch Serverless** exposes collections and manages underlying capacity. Self-managed OpenSearch is a third option with greater control and greater operational responsibility. [1][2]
+**Amazon OpenSearch Service** is AWS's managed offering. With provisioned domains, you choose an engine version and infrastructure configuration; AWS handles parts of provisioning, replacement, backups, and maintenance. **Amazon OpenSearch Serverless** exposes collections and manages underlying capacity. Self-managed OpenSearch is a third option with greater control and greater operational responsibility. [^1][^2]
 
 OpenSearch retrieves candidate evidence. An embedding model produces vectors; a reranker can improve the candidate ordering; an LLM synthesizes an answer from the selected evidence. These are separate responsibilities, even when an integration hides some boundaries.
 
@@ -71,13 +71,13 @@ Lexical retrieval excels at `ERR_AUTH_401`, a policy title, or an exact model nu
 
 An embedding model maps text into a fixed-dimensional vector. Nearest-neighbor search retrieves nearby vectors using a compatible distance or similarity metric. The document and query embeddings must use compatible model versions and preprocessing. A vector from a different model is not interchangeable merely because its dimension matches.
 
-Exact nearest-neighbor search scores all eligible vectors and can be useful for small filtered subsets. Approximate nearest-neighbor search (ANN) trades some recall for speed. HNSW navigates a graph of vectors; increasing graph/search effort can improve recall while increasing memory, build cost, or latency. Engine support and tunable parameters differ across versions and deployments. [3]
+Exact nearest-neighbor search scores all eligible vectors and can be useful for small filtered subsets. Approximate nearest-neighbor search (ANN) trades some recall for speed. HNSW navigates a graph of vectors; increasing graph/search effort can improve recall while increasing memory, build cost, or latency. Engine support and tunable parameters differ across versions and deployments. [^3]
 
 Vector search understands paraphrases better than literal matching, but similarity does not establish truth, authorization, or logical relationships. A semantically similar outdated policy is still a bad answer. Quantization and disk-oriented vector options can lower memory cost, with recall and latency trade-offs that must be measured on the actual corpus.
 
 ### Hybrid retrieval, fusion, and reranking
 
-Hybrid retrieval combines lexical and vector candidates. Raw BM25 scores and vector similarities have different scales; do not simply add them. OpenSearch search pipelines can normalize and combine scores. Rank-based fusion is another approach, implemented in a supported engine feature or in the application. [4]
+Hybrid retrieval combines lexical and vector candidates. Raw BM25 scores and vector similarities have different scales; do not simply add them. OpenSearch search pipelines can normalize and combine scores. Rank-based fusion is another approach, implemented in a supported engine feature or in the application. [^4]
 
 A portable application-side option is reciprocal rank fusion:
 
@@ -89,7 +89,7 @@ A reranker evaluates the query and candidate text together. It can improve relev
 
 ### Filters, facets, and other useful capabilities
 
-Filters constrain retrieval by tenant, entitlement, locale, time, document state, or price. Apply mandatory constraints to **both** lexical and vector branches. For ANN, filter placement matters: retrieving globally and filtering the top results afterward can return too few authorized candidates. Use supported efficient filtering within vector retrieval and test selective filters against an exact-search reference. [5]
+Filters constrain retrieval by tenant, entitlement, locale, time, document state, or price. Apply mandatory constraints to **both** lexical and vector branches. For ANN, filter placement matters: retrieving globally and filtering the top results afterward can return too few authorized candidates. Use supported efficient filtering within vector retrieval and test selective filters against an exact-search reference. [^5]
 
 Aggregations power facets and counts; highlighting helps show why text matched. Search pipelines organize processing. Bulk APIs improve ingestion throughput. Aliases support index migrations on compatible deployments. Index State Management can automate lifecycle operations. Dashboards, logs, metrics, and security controls support operations. ML connectors and neural-search integrations can invoke models, but introduce their own credentials, network paths, quotas, and model/version dependencies.
 
@@ -107,13 +107,29 @@ Sparse neural retrieval is another option: learned weighted terms can improve se
 | Compatibility | AWS supports a defined subset of upstream versions/features | Supported APIs and features depend on collection type and service capabilities |
 | Good starting case | Sustained workloads needing predictable tuning and established search operations | Teams prioritizing managed capacity and accepting the collection feature set |
 
-Serverless is not automatically cheaper for small or idle workloads: examine minimum/baseline capacity, redundancy configuration, shared capacity behavior, and current regional pricing. Provisioned capacity is not automatically cheaper either; include idle headroom, upgrades, and engineering time. Obtain estimates from the current pricing page rather than treating example prices as durable facts. [2][6]
+Serverless is not automatically cheaper for every workload: examine the collection generation, idle scaling behavior, minimum/baseline capacity where applicable, redundancy configuration, shared capacity behavior, and current regional pricing. AWS's current documentation distinguishes **NextGen** and **Classic** vector collections; cost and refresh assumptions from Classic must not be applied to NextGen. Provisioned capacity is not automatically cheaper either; include idle headroom, upgrades, and engineering time. Obtain estimates from the current pricing page rather than treating example prices as durable facts. [^2][^6]
+
+### NextGen and Classic vector collections
+
+The AWS vector-collection documentation reviewed for this chapter describes these differences. Treat the table as a dated compatibility check, not a promise that every Region or existing collection supports the same configuration. [^2]
+
+| Detail | NextGen vector collections | Classic vector collections |
+|---|---|---|
+| Idle behavior | Documentation describes indexing and search scaling to zero when idle | Evaluate the Classic OCU and redundancy configuration separately |
+| Search visibility | Documented refresh interval of 10 seconds | Documented refresh interval of 60 seconds |
+| Mapping and storage defaults | Managed engine/mode selection; 32x compression by default, with documented alternatives | Engine-specific configuration and separately supported quantization/disk options |
+| Index building | GPU acceleration enabled by default, with a documented per-index control | Check the feature and configuration supported by the existing collection |
+| Retrieval constraint to check | Radial search is not supported with 32x compression | Documented restrictions include no Lucene ANN, IVF/IVFQ, or inline/stored scripts |
+
+These distinctions change the design: a cache miss after a write may be a visibility delay rather than a lost update; compression requires an explicit recall evaluation; an upstream mapping may need adaptation. The float32 capacity calculation later in this chapter remains an uncompressed baseline, not the NextGen physical storage estimate.
 
 For a production provisioned domain, consider a supported multi-AZ deployment, dedicated cluster-manager nodes, and replicas sized to survive failure. Verify the exact Multi-AZ with Standby requirements for the chosen configuration. For Serverless, choose the collection type and redundancy settings appropriate to the retrieval workload. Validate required vector fields, hybrid processing, aliases, update/delete operations, and refresh behavior before selecting it.
 
-Applications should sign AWS requests with SigV4 using workload roles and temporary credentials. The signing service differs: `es` for provisioned domains and `aoss` for Serverless. Keep endpoints private where required. Encrypt data at rest and in transit, use least-privilege roles, and avoid routing user requests directly to a broadly privileged cluster endpoint. Authentication to AWS does not itself enforce each end user's document entitlements. [7]
+Applications should sign AWS requests with SigV4 using workload roles and temporary credentials. The signing service differs: `es` for provisioned domains and `aoss` for Serverless. Keep endpoints private where required. Encrypt data at rest and in transit, use least-privilege roles, and avoid routing user requests directly to a broadly privileged cluster endpoint. Authentication to AWS does not itself enforce each end user's document entitlements. [^7][^9]
 
-Amazon Bedrock Knowledge Bases can manage parts of ingestion and retrieval with a supported OpenSearch backend. It can reduce custom plumbing, but check backend compatibility, metadata-filter behavior, supported transformations, and control over ranking. A custom retrieval API is useful when you need explicit authorization, fusion, reranking, or freshness semantics. [8]
+Provisioned-domain fine-grained access control includes document- and field-level controls. Serverless data access policies operate on collection and index resources; their permissions are additive, so adding a more restrictive policy does not cancel an existing broader grant. Keep end-user authorization explicit in the retrieval application rather than assuming these policy models are interchangeable. [^7]
+
+Amazon Bedrock Knowledge Bases can manage parts of ingestion and retrieval with a supported OpenSearch backend. The current Bedrock documentation distinguishes managed and customer-managed knowledge bases, with different infrastructure ownership and permission/integration capabilities. It can reduce custom plumbing, but check that specific knowledge-base mode, backend compatibility, metadata-filter behavior, supported transformations, and control over ranking. A custom retrieval API is useful when you need explicit authorization, fusion, reranking, or freshness semantics. See the [Bedrock design study](bedrock-knowledge-bases.md) for the dedicated comparison. [^8]
 
 ## 5. Design A: permission-aware enterprise knowledge assistant
 
@@ -121,7 +137,7 @@ Amazon Bedrock Knowledge Bases can manage parts of ingestion and retrieval with 
 
 Employees ask questions about policies, engineering runbooks, and support knowledge. Answers must cite accessible source passages and abstain when evidence is insufficient.
 
-Assume one million source documents, averaging eight chunks each; 50 peak queries/second; a target of p95 retrieval below 400 ms and p95 complete answers below five seconds. These are budgets to test, not promises. Assume normal content updates should appear within five minutes. **Access revocations must take effect at the authorization boundary immediately**, even if the index lags.
+Assume one million source documents, averaging eight chunks each; 50 peak queries/second; a target of p95 retrieval below 400 ms and p95 complete answers below five seconds. These are budgets to test, not promises. Assume normal content updates should appear within five minutes. **New requests must check current access at the authorization boundary**, even if the index lags. Revocation during an in-flight request needs an explicit cancellation and output policy.
 
 ### Architecture
 
@@ -185,7 +201,9 @@ The source URI should be an approved repository link, not an unrestricted URL ta
 5. Rerank, deduplicate, and build a bounded context with stable citation IDs. Ask the model to answer from the evidence and explicitly report missing support.
 6. Validate that cited IDs came from the selected evidence. Citation validity alone does not prove entailment; evaluate whether the cited passage actually supports the claim.
 
-The current authorization check closes the gap between immediate revocation and eventual index refresh. If authorization is unavailable, fail closed. Avoid cross-user answer caches unless keys and access checks include tenant, current entitlement state, source version, and model configuration. Avoid logging raw private chunks; traces and evaluation datasets need their own access controls.
+The current authorization check closes the gap between a revoked grant and eventual index refresh. Record the authorization revision used for the request, and recheck access before delivering a generated answer when the product requires protection against mid-request revocation. If access changed, discard the affected answer and retry with currently permitted evidence or abstain. Cancellation can suppress further processing and output; it cannot retract text already sent to an inference provider. Define that processing boundary before promising immediate revocation everywhere.
+
+If authorization is unavailable, fail closed. Avoid cross-user answer caches unless keys and access checks include tenant, current entitlement state, source version, and model configuration. Avoid logging raw private chunks; traces and evaluation datasets need their own access controls.
 
 Treat retrieved text as untrusted input. It may contain instructions to reveal secrets or call tools. Keep tool execution behind application policy and authorization; a relevant passage must not grant privileges.
 
@@ -340,13 +358,20 @@ Defend these changes to the design:
 7. Under what measured conditions would you replace OpenSearch with PostgreSQL plus pgvector?
 8. What remains usable when the embedding model, reranker, or LLM is unavailable?
 
+## Related studies
+
+- [R02 · Retrieval with PostgreSQL and pgvector](postgres-pgvector.md)
+- [R03 · Retrieval with a dedicated vector database](vector-databases.md)
+- [P01 · Fresh retrieval indexes with Kafka or Amazon Kinesis](streaming-indexes.md)
+
 ## References
 
-1. [AWS: What is Amazon OpenSearch Service?](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/what-is.html) — managed service scope and concepts.
-2. [AWS: What is Amazon OpenSearch Serverless?](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html) and [Serverless vector search](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vector-search.html) — collections, operating model, and current limitations.
-3. [OpenSearch: Vector search](https://docs.opensearch.org/latest/vector-search/) and [k-NN methods and engines](https://docs.opensearch.org/latest/mappings/supported-field-types/knn-methods-engines/) — algorithms, metrics, and engine-specific configuration.
-4. [OpenSearch: Hybrid search](https://docs.opensearch.org/latest/vector-search/ai-search/hybrid-search/index/) and [normalization processor](https://docs.opensearch.org/latest/search-plugins/search-pipelines/normalization-processor/) — combining lexical and semantic relevance.
-5. [OpenSearch: Filtering in k-NN search](https://docs.opensearch.org/latest/vector-search/filter-search-knn/index/) — filtering strategies and recall behavior.
-6. [AWS: OpenSearch Service pricing](https://aws.amazon.com/opensearch-service/pricing/) — obtain current regional cost inputs.
-7. [AWS: Fine-grained access control](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html) and [Serverless data access control](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-data-access.html) — distinct authorization models.
-8. [AWS: Amazon Bedrock Knowledge Bases](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html) — managed RAG capabilities and supported integrations.
+[^1]: [AWS: What is Amazon OpenSearch Service?](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/what-is.html) — managed service scope and concepts.
+[^2]: [AWS: What is Amazon OpenSearch Serverless?](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html) and [Serverless vector search](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vector-search.html) — collections, operating model, and current limitations.
+[^3]: [OpenSearch: Vector search](https://docs.opensearch.org/latest/vector-search/) and [k-NN methods and engines](https://docs.opensearch.org/latest/mappings/supported-field-types/knn-methods-engines/) — algorithms, metrics, and engine-specific configuration.
+[^4]: [OpenSearch: Hybrid search](https://docs.opensearch.org/latest/vector-search/ai-search/hybrid-search/index/) and [normalization processor](https://docs.opensearch.org/latest/search-plugins/search-pipelines/normalization-processor/) — combining lexical and semantic relevance.
+[^5]: [OpenSearch: Filtering in k-NN search](https://docs.opensearch.org/latest/vector-search/filter-search-knn/index/) — filtering strategies and recall behavior.
+[^6]: [AWS: OpenSearch Service pricing](https://aws.amazon.com/opensearch-service/pricing/) — obtain current regional cost inputs.
+[^7]: [AWS: Fine-grained access control](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html) and [Serverless data access control](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-data-access.html) — distinct authorization models.
+[^8]: [AWS: Amazon Bedrock Knowledge Bases](https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html) — managed RAG capabilities and supported integrations.
+[^9]: [AWS: Comparing OpenSearch Service and Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-comparison.html) — resource models, API differences, security, upgrades, and request signing.
