@@ -27,6 +27,7 @@ Short concepts should use a [snippet](../snippets/README.md) or local lab instea
 | 00 | [`hello-llm`](00-hello-llm/) | [0](../docs/curriculum/00-foundations.md) | Dockerized build | Streaming + schema-validated output |
 | 01 | _planned_ | 1 | Snippet/local lab | Model, sampling, and cost tradeoffs |
 | 02 | _planned_ | 2 | Local lab | Structured output, context, and caching |
+| 03 | [`embeddings-lab`](03-embeddings-lab/) | [Embeddings](../docs/curriculum/03-embeddings.md) | Local lab | Vector geometry, real sentence embeddings, semantic search, chunking, and labeled retrieval evaluation |
 | 03 | _planned_ | 3 | Dockerized build | Ingestion, RAG, hybrid retrieval, reranking, and GraphRAG |
 | 04 | _planned_ | 4 | Local lab/service | A bounded workflow/agent + MCP server |
 | 05 | _planned_ | 5 | Local lab | Eval harness, tracing, regression gates, and red-teaming |

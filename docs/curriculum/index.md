@@ -6,6 +6,8 @@ Nine sequenced modules. Modules 0–6 are the shared AI-engineering core, Module
 
 **Every module has a primary hands-on artifact** — a snippet, local lab, or build. You run the artifact first, then the page explains what it does and the concept underneath.
 
+Before Module 3, work through [Embeddings — from vectors to semantic search](03-embeddings.md) and its [local lab](../labs/03-embeddings.md). Five examples connect the mathematics to real model output and measured retrieval quality.
+
 Each module page contains:
 
 - **What you will be able to do** — the module's learning objectives in one glance.

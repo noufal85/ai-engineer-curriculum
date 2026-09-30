@@ -71,6 +71,7 @@ nav:
       - 0 · Foundations: curriculum/00-foundations.md
       - 1 · LLM Internals: curriculum/01-llm-internals.md
       - 2 · Prompting & Context: curriculum/02-prompting-context.md
+      - Embeddings · Before Module 3: curriculum/03-embeddings.md
       - 3 · Retrieval, RAG & Memory: curriculum/03-rag-memory.md
       - 4 · Agents, Tools & MCP: curriculum/04-agents-tools-mcp.md
       - 5 · Evals & Observability: curriculum/05-evals-observability.md
@@ -82,6 +83,7 @@ nav:
       - labs/index.md
       - Setup · Docker & API key: labs/setup.md
       - 0 · Foundations: labs/00-foundations.md
+      - 3 · Embeddings: labs/03-embeddings.md
   - Concepts:
       - concepts/index.md
       - Developer Environment: concepts/developer-environment.md

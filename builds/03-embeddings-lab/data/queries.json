@@ -1,0 +1,27 @@
+{
+  "dev": [
+    {"id": "dev-01", "text": "I forgot my password. How can I get back into my account?", "relevant_ids": ["doc-01"]},
+    {"id": "dev-02", "text": "I need a PDF receipt for last month's payment.", "relevant_ids": ["doc-08"]},
+    {"id": "dev-03", "text": "I do not want my paid plan to renew, but I want to keep my files.", "relevant_ids": ["doc-10"]},
+    {"id": "dev-04", "text": "How do I bring back a document I accidentally put in the trash?", "relevant_ids": ["doc-15"]},
+    {"id": "dev-05", "text": "What should my program do after HTTP 429?", "relevant_ids": ["doc-19"]},
+    {"id": "dev-06", "text": "Can I stop a copied public URL from exposing my document?", "relevant_ids": ["doc-17"]},
+    {"id": "dev-07", "text": "Which instructions cover both changing a known password and resetting a forgotten one?", "relevant_ids": ["doc-01", "doc-02"]},
+    {"id": "dev-08", "text": "What is the maximum attachment size in a support ticket?", "relevant_ids": ["doc-24"]}
+  ],
+  "test": [
+    {"id": "test-01", "text": "My authenticator phone is gone. Is there another way to log in?", "relevant_ids": ["doc-03"]},
+    {"id": "test-02", "text": "How can a new coworker join our workspace?", "relevant_ids": ["doc-05"]},
+    {"id": "test-03", "text": "The card we use for payments has expired. Where do I replace it?", "relevant_ids": ["doc-09"]},
+    {"id": "test-04", "text": "I want a downloadable copy of all our workspace records.", "relevant_ids": ["doc-13"]},
+    {"id": "test-05", "text": "Why did my webhook receiver get the same event again?", "relevant_ids": ["doc-20"]},
+    {"id": "test-06", "text": "I want fewer activity emails without missing security warnings.", "relevant_ids": ["doc-22"]},
+    {"id": "test-07", "text": "Show the instructions for both making a document public and turning that access off.", "relevant_ids": ["doc-16", "doc-17"]},
+    {"id": "test-08", "text": "Does changing my local time zone move the date on my invoice?", "relevant_ids": ["doc-23"]}
+  ],
+  "no_answer": [
+    {"id": "probe-01", "text": "Do you offer a student discount?"},
+    {"id": "probe-02", "text": "Where is the nearest train station?"},
+    {"id": "probe-03", "text": "Can I pay invoices with cryptocurrency?"}
+  ]
+}

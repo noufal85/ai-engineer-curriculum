@@ -13,6 +13,8 @@ By the end of this module, you will be able to:
 
 ## 🔨 The build
 
+Start with the [Embeddings chapter](03-embeddings.md) and its [local lab](../labs/03-embeddings.md): five runnable examples cover vector geometry, sentence similarity, semantic search, chunking, and labeled retrieval evaluation. This gives you a measured retriever before adding generation or database infrastructure.
+
 **`builds/03-rag-lab`** _(planned)_ — ingest a corpus, parse and enrich it, build **vector RAG**, add **hybrid search + a reranker**, then build a **GraphRAG** variant over the same data. The payoff: find a multi-hop question the vector version fails and the graph version answers. Dockerized with a reproducible corpus and eval set.
 
 Build it, then the sections below explain why similarity is not a relationship.

@@ -4,6 +4,8 @@ How a system knows things it was not trained on. Mostly **→ [M3](../curriculum
 
 ## Embeddings and similarity
 
+Work through the [Embeddings chapter](../curriculum/03-embeddings.md) and [five-example local lab](../labs/03-embeddings.md) for the mechanics, worked calculations, and retrieval experiments behind these terms.
+
 - **Embedding** — a vector that encodes the meaning of text or another modality. *→ [M3](../curriculum/03-rag-memory.md)*
 - **Embedding model** — a model that produces embeddings, separate from a chat model. *→ [M3](../curriculum/03-rag-memory.md)*
 - **Cosine similarity / dot product** — measures of vector closeness. *→ [M3](../curriculum/03-rag-memory.md)*
