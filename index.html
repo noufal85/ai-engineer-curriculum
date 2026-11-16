@@ -27,7 +27,7 @@
     
     
       
-        <title>Explore AI engineering - AI Engineer / FDE Curriculum</title>
+        <title>Learn AI engineering - AI Engineer / FDE Curriculum</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#what-are-you-trying-to-build" class="md-skip">
+        <a href="#learn-to-build-ai-applications" class="md-skip">
           Skip to content
         </a>
       
@@ -196,6 +196,12 @@
   <button class="workspace-rail__close" type="button" aria-label="Close topic navigation" data-workspace-close>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
   </button>
+  <nav class="workspace-course-nav" aria-label="Course learning path">
+    <a class="workspace-course-plan" href="curriculum/">
+      <span>Course plan<small>Six stages, in order</small></span>
+    </a>
+    <a class="workspace-course-start" href="curriculum/00-foundations/">Start course</a>
+  </nav>
   <nav class="workspace-topic-nav" aria-label="Topics">
     <p class="workspace-rail__label">Explore a topic</p>
     <ul>
@@ -264,7 +270,6 @@
   <nav class="workspace-library-nav" aria-label="Course collections">
     <p class="workspace-rail__label">Browse the collection</p>
     <ul>
-      <li><a href="curriculum/">Course map</a></li>
       <li><a href="labs/">All labs</a></li>
       <li><a href="system-design/">Design studies</a></li>
       <li><a href="concepts/">Reference</a></li>
@@ -280,6 +285,7 @@
   
 
           
+  
   
   
   <div class="md-content workspace-content workspace-content--hub"
@@ -301,10 +307,51 @@
 
 <div class="workspace-hub">
 <div class="hub-intro">
-<h1 id="what-are-you-trying-to-build">What are you trying to build?<a class="headerlink" href="#what-are-you-trying-to-build" title="Permanent link">&para;</a></h1>
-<p class="hub-lead">Find a concept. Try it. See where it takes you.</p>
-<p>Explore AI engineering through explanations, practical experiments, and worked designs. Start with a task, or follow the course from the beginning.</p>
+<h1 id="learn-to-build-ai-applications">Learn to build AI applications<a class="headerlink" href="#learn-to-build-ai-applications" title="Permanent link">&para;</a></h1>
+<p class="hub-lead">A practical course from your first model call to a measured capstone.</p>
+<p>Follow six stages covering models, prompting, retrieval, agents, evaluation, production, and customer delivery. Learn each piece, practice it, then connect the pieces in an application you can explain and evaluate.</p>
+<div class="feature-actions">
+<p><a class="primary" href="curriculum/00-foundations/">Start the course</a>
+<a class="secondary" href="curriculum/">View full course plan</a></p>
 </div>
+</div>
+<section class="course-overview">
+<h2 id="your-course-plan">Your course plan<a class="headerlink" href="#your-course-plan" title="Permanent link">&para;</a></h2>
+<p>Work through these stages in order. The full plan lists prerequisites, available practice, and a checkpoint for each stage.</p>
+<ol class="course-stages">
+<li>
+<h3 id="foundations"><a href="curriculum/#stage-1-foundations">Foundations</a><a class="headerlink" href="#foundations" title="Permanent link">&para;</a></h3>
+<p>Modules 0–1: AI concepts, model calls, tokens, attention, sampling, and model choice.</p>
+<p class="course-stage-outcome">Outcome: Run your first service and explain how a model produces its response.</p>
+</li>
+<li>
+<h3 id="prompting"><a href="curriculum/#stage-2-prompting">Prompting</a><a class="headerlink" href="#prompting" title="Permanent link">&para;</a></h3>
+<p>Module 2: Instructions, examples, structured output, context, and decomposition.</p>
+<p class="course-stage-outcome">Outcome: Define a clear task and check whether the output meets its contract.</p>
+</li>
+<li>
+<h3 id="retrieval"><a href="curriculum/#stage-3-retrieval">Retrieval</a><a class="headerlink" href="#retrieval" title="Permanent link">&para;</a></h3>
+<p>Embeddings, then Module 3: Semantic search, chunking, retrieval evaluation, RAG, and memory.</p>
+<p class="course-stage-outcome">Outcome: Run a small search experiment and explain the evidence behind a result.</p>
+</li>
+<li>
+<h3 id="agents"><a href="curriculum/#stage-4-agents">Agents</a><a class="headerlink" href="#agents" title="Permanent link">&para;</a></h3>
+<p>Module 4: Tool calls, workflows, state, MCP, stopping conditions, and approvals.</p>
+<p class="course-stage-outcome">Outcome: Trace a bounded tool workflow and identify where the application must stay in control.</p>
+</li>
+<li>
+<h3 id="evaluation-production"><a href="curriculum/#stage-5-evaluation-and-production">Evaluation &amp; production</a><a class="headerlink" href="#evaluation-production" title="Permanent link">&para;</a></h3>
+<p>Modules 5–6: Test datasets, tracing, reliability, cost, security, and releases.</p>
+<p class="course-stage-outcome">Outcome: Define quality checks and plan how the application handles failures.</p>
+</li>
+<li>
+<h3 id="delivery-capstone"><a href="curriculum/#stage-6-delivery-and-capstone">Delivery &amp; capstone</a><a class="headerlink" href="#delivery-capstone" title="Permanent link">&para;</a></h3>
+<p>Modules 7–8: User workflows, domain modeling, adoption, handoff, and an integrated project.</p>
+<p class="course-stage-outcome">Outcome: Build and defend one capstone with measured results and clear ownership.</p>
+</li>
+</ol>
+</section>
+<p>Looking something up? Browse the same lessons, practice, and references by topic below.</p>
 <div class="hub-tasks">
 <p><a href="topics/retrieval/">Search my data</a>
 <a href="topics/agents/">Build an agent</a>
@@ -378,7 +425,7 @@
 </aside>
 </div>
 <div class="hub-bottom">
-<p><strong>New to AI engineering?</strong> <a href="topics/models/">Start with foundations</a>, then follow the <a href="curriculum/">course sequence</a>. Working familiarity with programming is assumed; use the glossary when a term is unfamiliar.</p>
+<p><strong>Ready to begin?</strong> <a href="curriculum/00-foundations/">Start the course</a>, or check the <a href="curriculum/">prerequisites and full plan</a>. Working familiarity with programming is assumed; use the glossary when a term is unfamiliar.</p>
 </div>
 </div>
 
@@ -400,6 +447,7 @@
 
       
     </article>
+    
   </div>
 
           

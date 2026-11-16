@@ -29,7 +29,7 @@
     
     
       
-        <title>Curriculum - AI Engineer / FDE Curriculum</title>
+        <title>Course plan - AI Engineer / FDE Curriculum</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#curriculum" class="md-skip">
+        <a href="#your-ai-engineering-course-plan" class="md-skip">
           Skip to content
         </a>
       
@@ -198,6 +198,12 @@
   <button class="workspace-rail__close" type="button" aria-label="Close topic navigation" data-workspace-close>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
   </button>
+  <nav class="workspace-course-nav" aria-label="Course learning path">
+    <a class="workspace-course-plan" href="./" aria-current="page">
+      <span>Course plan<small>Six stages, in order</small></span>
+    </a>
+    <a class="workspace-course-start" href="00-foundations/">Start course</a>
+  </nav>
   <nav class="workspace-topic-nav" aria-label="Topics">
     <p class="workspace-rail__label">Explore a topic</p>
     <ul>
@@ -266,7 +272,6 @@
   <nav class="workspace-library-nav" aria-label="Course collections">
     <p class="workspace-rail__label">Browse the collection</p>
     <ul>
-      <li><a href="./" aria-current="page">Course map</a></li>
       <li><a href="../labs/">All labs</a></li>
       <li><a href="../system-design/">Design studies</a></li>
       <li><a href="../concepts/">Reference</a></li>
@@ -292,12 +297,131 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before you start
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-work-through-the-course" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to work through the course
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stage-1-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 1 · Foundations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stage-2-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 2 · Prompting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stage-3-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 3 · Retrieval
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stage-4-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 4 · Agents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stage-5-evaluation-and-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 5 · Evaluation &amp; production
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stage-6-delivery-and-capstone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 6 · Delivery &amp; capstone
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#after-the-core-choose-a-specialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        After the core · Choose a specialization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference-paths-for-deeper-study" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference paths for deeper study
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
       </details>
     </aside>
   
 
           
+  
   
   
   <div class="md-content workspace-content"
@@ -312,6 +436,7 @@
           
         </nav>
         
+        
       </div>
     
     <article class="md-content__inner md-typeset workspace-reader">
@@ -323,23 +448,140 @@
   
 
 
-<h1 id="curriculum">Curriculum<a class="headerlink" href="#curriculum" title="Permanent link">&para;</a></h1>
-<p>Nine sequenced modules. Modules 0–6 are the shared AI-engineering core, Module 7 is the FDE differentiator, and Module 8 contains capstones.</p>
-<p><strong>What we assume:</strong> working familiarity with programming and the software Engineering Core — HTTP and APIs, SQL, testing, Git, CI/CD, and Docker — plus basic AI literacy. The curriculum does not teach these; if a term is unfamiliar, the <a href="../concepts/">Concepts glossary</a> is the reference, starting with <a href="../concepts/engineering-core/">Engineering core</a> and <a href="../concepts/developer-environment/">Developer environment</a>.</p>
-<p><strong>Every module has a primary hands-on artifact</strong> — a snippet, local lab, or build. You run the artifact first, then the page explains what it does and the concept underneath.</p>
-<p>Before Module 3, work through <a href="03-embeddings/">Embeddings — from vectors to semantic search</a> and its <a href="../labs/03-embeddings/">local lab</a>. Five examples connect the mathematics to real model output and measured retrieval quality.</p>
-<p>Each module page contains:</p>
+<h1 id="your-ai-engineering-course-plan">Your AI engineering course plan<a class="headerlink" href="#your-ai-engineering-course-plan" title="Permanent link">&para;</a></h1>
+<p>Follow six stages from a first model call to a capstone you can demonstrate and defend. The core contains nine modules, with an embeddings chapter and lab before Module 3.</p>
+<p><strong>The goal:</strong> build an AI application around a real task, connect it to useful data and tools, evaluate its behavior, and explain its reliability, security, cost, and delivery decisions. This is a course in <strong>applied AI engineering</strong>, focused on LLM-backed applications.</p>
+<p><a class="primary" href="00-foundations/">Start the course</a></p>
+<h2 id="before-you-start">Before you start<a class="headerlink" href="#before-you-start" title="Permanent link">&para;</a></h2>
+<p><strong>What we assume:</strong> working familiarity with programming and the software <strong>Engineering Core</strong> — HTTP and APIs, JSON, SQL, testing, Git, CI/CD, and basic Docker usage. You should be able to run a Python script and inspect a list or array. These software skills are prerequisites; AI concepts begin with the Foundations chapter.</p>
+<p>Use the <a href="../concepts/engineering-core/">Engineering core</a> and <a href="../concepts/developer-environment/">Developer environment</a> glossaries when a term is unfamiliar. No advanced mathematics is required to start; the embeddings chapter introduces the vector operations used in its lab.</p>
+<p>For the Foundations service, complete the <a href="../labs/setup/">Setup guide</a>: it prepares Docker and an Anthropic API key. The Embeddings lab has separate Python setup and needs no API key or Docker; its learned examples download a model once and run locally.</p>
+<h2 id="how-to-work-through-the-course">How to work through the course<a class="headerlink" href="#how-to-work-through-the-course" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Follow the chapters and practice links in each stage's order.</li>
+<li>Read the objective, predict a result, and run the available experiment or chapter exercise.</li>
+<li>Change one thing and record the result, including failures and limitations.</li>
+<li>Use the stage checkpoint to explain what you learned before moving on. Keep evidence in your notes and <a href="../progress/">progress checklist</a>.</li>
+</ol>
+<p><strong>Practice available today:</strong> two runnable labs, Foundations and Embeddings, plus the setup guide. Other core chapters include inline trials and build tasks. Their larger implementations are explicitly marked <strong>planned</strong>; capstones and specializations are projects for you to implement.</p>
+<table>
+<thead>
+<tr>
+<th>Practice format</th>
+<th>What you do</th>
+<th>Where it is available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Service lab</td>
+<td>Run an existing service, inspect its behavior, and extend it</td>
+<td><a href="../labs/00-foundations/">Foundations lab</a></td>
+</tr>
+<tr>
+<td>Local Python lab</td>
+<td>Run controlled experiments and compare their results</td>
+<td><a href="../labs/03-embeddings/">Embeddings lab</a></td>
+</tr>
+<tr>
+<td>Inline exercise</td>
+<td>Follow the chapter's <strong>🧪 Lab</strong> or trial using a chat interface, your notes, or an earlier build</td>
+<td>LLM Internals and Modules 2–7</td>
+</tr>
+<tr>
+<td>Project brief</td>
+<td>Implement the described system and collect your own evidence</td>
+<td>Planned module builds, capstones, and specializations</td>
+</tr>
+</tbody>
+</table>
+<p>Use the smallest useful format: a snippet, a local experiment, or a service. A build is Dockerized only when its dependencies, service boundaries, or reproducibility justify it.</p>
+<h2 id="stage-1-foundations">Stage 1 · Foundations<a class="headerlink" href="#stage-1-foundations" title="Permanent link">&para;</a></h2>
+<p><strong>Work through in order:</strong></p>
+<ol>
+<li><a href="00-foundations/">Module 0 · Foundations &amp; Environment</a>.</li>
+<li><a href="../labs/setup/">Setup</a>, then the <a href="../labs/00-foundations/">Foundations lab</a>.</li>
+<li><a href="01-llm-internals/">Module 1 · LLM Internals</a>, including its small experiments.</li>
+</ol>
+<p><strong>Topics covered:</strong> AI, machine learning, and LLMs; training versus inference; model APIs; streaming and schema validation; tokenization, attention, sampling, context windows, training stages, reasoning, and model selection.</p>
+<p><strong>Practice:</strong> run the existing Foundations service, inspect streaming and structured output, and compare behavior after changing a model setting. Module 1 has inline experiments; its model-playground script is planned.</p>
+<p><strong>Checkpoint:</strong> explain a request from input text to model output, show a streamed response and a validated object, and record one quality/latency trade-off. Explain why fluent output can still be wrong.</p>
+<h2 id="stage-2-prompting">Stage 2 · Prompting<a class="headerlink" href="#stage-2-prompting" title="Permanent link">&para;</a></h2>
+<p><strong>Work through:</strong> <a href="02-prompting-context/">Module 2 · Prompting &amp; Context Engineering</a>.</p>
+<p><strong>Topics covered:</strong> roles and instructions; examples; output schemas; tool/function calling for structured output; context selection and ordering; token budgets; decomposition; prompt caching; instruction drift and injection risk.</p>
+<p><strong>Practice:</strong> use the chapter's JSON-output trial, compare repeated responses, and revisit schema validation in your Foundations service. The reliable-extractor build is planned.</p>
+<p><strong>Checkpoint:</strong> write a clear input/output contract, compare two prompt or context arrangements on the same cases, and record which outputs meet the contract. Identify what application code must validate.</p>
+<h2 id="stage-3-retrieval">Stage 3 · Retrieval<a class="headerlink" href="#stage-3-retrieval" title="Permanent link">&para;</a></h2>
+<p><strong>Work through in order:</strong></p>
+<ol>
+<li><a href="03-embeddings/">Embeddings · From vectors to semantic search</a>.</li>
+<li><a href="../labs/03-embeddings/">Embeddings lab</a>.</li>
+<li><a href="03-rag-memory/">Module 3 · Retrieval, RAG &amp; Memory</a>.</li>
+</ol>
+<p><strong>Topics covered:</strong> vectors and similarity; embedding models; text preparation, truncation, and chunking; semantic search; Recall@k and MRR@k; ingestion and metadata; lexical and hybrid retrieval; reranking and query rewriting; text-to-SQL/Cypher; graphs, memory, freshness, and permissions.</p>
+<p><strong>Practice:</strong> run all five local embedding experiments, compare retrieval configurations, and inspect missing-answer cases. Follow the RAG chapter's relationship-reasoning trial. The complete RAG/GraphRAG build is planned.</p>
+<p><strong>Checkpoint:</strong> retrieve a relevant source passage, explain a failed match, report development and held-out retrieval results separately, and describe when a relational query or explicit relationship is more useful than similarity search.</p>
+<h2 id="stage-4-agents">Stage 4 · Agents<a class="headerlink" href="#stage-4-agents" title="Permanent link">&para;</a></h2>
+<p><strong>Work through:</strong> <a href="04-agents-tools-mcp/">Module 4 · Agents, Workflows, Tools &amp; MCP</a>.</p>
+<p><strong>Topics covered:</strong> tool schemas; the plan–act–observe loop; deterministic workflows versus model decisions; state, persistence, and recovery; retries, idempotency, and cancellation; MCP discovery, authentication, and authorization; budgets, stopping conditions, sandboxing, and human approval.</p>
+<p><strong>Practice:</strong> play the agent runtime by hand in the chapter's trial. Trace a proposed tool call, provide its result, and identify where the application should stop or request review. The runnable agent-and-MCP build is planned.</p>
+<p><strong>Checkpoint:</strong> draw and trace one bounded workflow, define the inputs and outputs of its tools, and explain how it handles a tool failure, repeated action, or exhausted budget.</p>
+<h2 id="stage-5-evaluation-and-production">Stage 5 · Evaluation &amp; production<a class="headerlink" href="#stage-5-evaluation-and-production" title="Permanent link">&para;</a></h2>
+<p><strong>Work through in order:</strong></p>
+<ol>
+<li><a href="05-evals-observability/">Module 5 · Evals &amp; Observability</a>.</li>
+<li><a href="06-production-systems/">Module 6 · Production Systems, Platform &amp; Security</a>.</li>
+</ol>
+<p><strong>Topics covered:</strong> labeled representative and adversarial datasets; programmatic, human, and model grading; judge calibration; tracing; regression checks; latency and cost budgets; timeouts, retries, and fallbacks; caching and routing; SLOs, releases, and rollback; tenant isolation, permissions, privacy, PII, governance, and prompt-injection defenses.</p>
+<p><strong>Practice:</strong> use the paper-and-pencil evaluation trial, apply a small evaluation set to an earlier experiment, and follow the security trial in Module 6. The evaluation harness and hardened serving-layer builds are planned.</p>
+<p><strong>Checkpoint:</strong> define measurable success and a regression case for your application, identify the trace evidence needed to diagnose a failure, and write a recovery plan for a provider outage or denied data access. Record what you tested and what still needs implementation.</p>
+<h2 id="stage-6-delivery-and-capstone">Stage 6 · Delivery &amp; capstone<a class="headerlink" href="#stage-6-delivery-and-capstone" title="Permanent link">&para;</a></h2>
+<p><strong>Work through in order:</strong></p>
+<ol>
+<li><a href="07-forward-deployed/">Module 7 · Forward-Deployed Craft</a>.</li>
+<li><a href="08-capstones/">Module 8 · Capstones</a>, then choose one project.</li>
+</ol>
+<p><strong>Topics covered:</strong> customer discovery; tacit rules; domain modeling and entity relationships; source ownership; user workflows; adoption, feedback, handoff, and integrated system design.</p>
+<p><strong>Practice:</strong> conduct the discovery exercise and capture the rules behind a real workflow. Then implement a capstone: a grounded RAG assistant, bounded agent with MCP tools, GraphRAG domain twin, or cost/latency optimization project. The domain-twin module build is planned; the capstones provide briefs, acceptance criteria, and a rubric.</p>
+<p><strong>Checkpoint:</strong> demonstrate one completed project with an evaluation set, failure evidence, a design explanation, and an ownership/handoff plan. Use the <a href="08-capstones/">capstone definition of done and rubric</a> to assess the actual implementation.</p>
+<h2 id="after-the-core-choose-a-specialization">After the core · Choose a specialization<a class="headerlink" href="#after-the-core-choose-a-specialization" title="Permanent link">&para;</a></h2>
+<p>Choose a track when your capstone or work needs it. These are outlines and suggested builds, with their own data, evaluation, and operating questions.</p>
+<table>
+<thead>
+<tr>
+<th>Track</th>
+<th>Additional topics</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="specializations/#multimodal-and-realtime-systems">Multimodal and realtime systems</a></td>
+<td>Images, OCR, tables, image generation, speech, video, and modality-specific evaluation</td>
+</tr>
+<tr>
+<td><a href="specializations/#model-adaptation-and-open-weights">Model adaptation and open weights</a></td>
+<td>Dataset curation, fine-tuning, LoRA/QLoRA, distillation, quantization, licensing, and baselines</td>
+</tr>
+<tr>
+<td><a href="specializations/#local-inference-and-model-serving">Local inference and model serving</a></td>
+<td>Local runtimes, GPU/VRAM sizing, batching, privacy, capacity, and load testing</td>
+</tr>
+<tr>
+<td><a href="specializations/#coding-and-sandboxed-agents">Coding and sandboxed agents</a></td>
+<td>Repository context, restricted execution, test feedback, review, and rollback</td>
+</tr>
+</tbody>
+</table>
+<p>Deeper study of classical machine learning, mathematical optimization, or training models from scratch belongs in a separate learning track.</p>
+<h2 id="reference-paths-for-deeper-study">Reference paths for deeper study<a class="headerlink" href="#reference-paths-for-deeper-study" title="Permanent link">&para;</a></h2>
+<p>Use these after the core, or open an individual reference when a lesson raises a specific question. They supplement the sequence above.</p>
 <ul>
-<li><strong>What you will be able to do</strong> — the module's learning objectives in one glance.</li>
-<li><strong>🔨 The artifact</strong> — the smallest useful thing to run. Start here.</li>
-<li><strong>What it teaches</strong> — the concept explained through the artifact.</li>
-<li><strong>🧪 Lab</strong> — a pointer to that module's page in <a href="../labs/">Labs</a>, where the trial and build tasks live. Do, don't just read.</li>
-<li><strong>Checklist</strong> — ticks when the artifact runs and you can defend the tradeoff.</li>
-<li><strong>Failure modes</strong> — what breaks, how to observe it, and what to try next.</li>
+<li><strong>System design:</strong> browse the <a href="../system-design/catalog/">30-study catalog</a> by retrieval, agents, multimodal applications, serving, or operations. The catalog is unranked; choose a design relevant to your project and defend its trade-offs.</li>
+<li><strong>Papers:</strong> follow the <a href="../papers/">paper reading paths</a>. The LLM path connects residual networks, attention, BERT, and GPT-3; the image path connects AlexNet, ResNet, and GANs.</li>
+<li><strong>Talks and domain knowledge:</strong> explore <a href="../notes/">talk notes</a>, including graph memory and domain modeling, when you need a different explanation or a concrete application perspective.</li>
+<li><strong>Vocabulary and further resources:</strong> keep the <a href="../concepts/">Concepts glossary</a> nearby and use <a href="../resources/">Resources</a> to extend a topic deliberately.</li>
 </ul>
-<p>Every module's hands-on work lives in the <a href="../labs/">Labs</a> section, one lab per module, starting with a <a href="../labs/setup/">Setup lab</a> that gets Docker and an API key working.</p>
-<p>The larger builds live in <a href="https://github.com/noufal85/ai-engineer-curriculum/tree/main/builds"><code>builds/</code></a>. Short exercises live in <a href="https://github.com/noufal85/ai-engineer-curriculum/tree/main/snippets"><code>snippets/</code></a>.</p>
-<p>Start with <a href="00-foundations/">Module 0 · Foundations</a> and its Dockerized example build, <a href="https://github.com/noufal85/ai-engineer-curriculum/tree/main/builds/00-hello-llm"><code>00-hello-llm</code></a>.</p>
+<p><a class="primary" href="00-foundations/">Begin Stage 1</a></p>
 
 
 
@@ -357,6 +599,7 @@
 
       
     </article>
+    
   </div>
 
           
