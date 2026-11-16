@@ -1,5 +1,5 @@
 ---
-title: Explore AI engineering
+title: Learn AI engineering
 workspace_layout: hub
 hide:
   - toc
@@ -8,14 +8,92 @@ hide:
 <div class="workspace-hub" markdown="1">
 <div class="hub-intro" markdown="1">
 
-# What are you trying to build?
+# Learn to build AI applications
 
-Find a concept. Try it. See where it takes you.
+A practical course from your first model call to a measured capstone.
 { .hub-lead }
 
-Explore AI engineering through explanations, practical experiments, and worked designs. Start with a task, or follow the course from the beginning.
+Follow six stages covering models, prompting, retrieval, agents, evaluation, production, and customer delivery. Learn each piece, practice it, then connect the pieces in an application you can explain and evaluate.
+
+<div class="feature-actions" markdown="1">
+
+[Start the course](curriculum/00-foundations.md){ .primary }
+[View full course plan](curriculum/index.md){ .secondary }
 
 </div>
+</div>
+<section class="course-overview" markdown="1">
+
+## Your course plan
+
+Work through these stages in order. The full plan lists prerequisites, available practice, and a checkpoint for each stage.
+
+<ol class="course-stages" markdown="1">
+<li markdown="block">
+
+### [Foundations](curriculum/index.md#stage-1-foundations)
+
+Modules 0–1: AI concepts, model calls, tokens, attention, sampling, and model choice.
+
+Outcome: Run your first service and explain how a model produces its response.
+{ .course-stage-outcome }
+
+</li>
+<li markdown="block">
+
+### [Prompting](curriculum/index.md#stage-2-prompting)
+
+Module 2: Instructions, examples, structured output, context, and decomposition.
+
+Outcome: Define a clear task and check whether the output meets its contract.
+{ .course-stage-outcome }
+
+</li>
+<li markdown="block">
+
+### [Retrieval](curriculum/index.md#stage-3-retrieval)
+
+Embeddings, then Module 3: Semantic search, chunking, retrieval evaluation, RAG, and memory.
+
+Outcome: Run a small search experiment and explain the evidence behind a result.
+{ .course-stage-outcome }
+
+</li>
+<li markdown="block">
+
+### [Agents](curriculum/index.md#stage-4-agents)
+
+Module 4: Tool calls, workflows, state, MCP, stopping conditions, and approvals.
+
+Outcome: Trace a bounded tool workflow and identify where the application must stay in control.
+{ .course-stage-outcome }
+
+</li>
+<li markdown="block">
+
+### [Evaluation & production](curriculum/index.md#stage-5-evaluation-and-production)
+
+Modules 5–6: Test datasets, tracing, reliability, cost, security, and releases.
+
+Outcome: Define quality checks and plan how the application handles failures.
+{ .course-stage-outcome }
+
+</li>
+<li markdown="block">
+
+### [Delivery & capstone](curriculum/index.md#stage-6-delivery-and-capstone)
+
+Modules 7–8: User workflows, domain modeling, adoption, handoff, and an integrated project.
+
+Outcome: Build and defend one capstone with measured results and clear ownership.
+{ .course-stage-outcome }
+
+</li>
+</ol>
+</section>
+
+Looking something up? Browse the same lessons, practice, and references by topic below.
+
 <div class="hub-tasks" markdown="1">
 
 [Search my data](topics/retrieval.md)
@@ -135,7 +213,7 @@ The [Foundations lab](labs/00-foundations.md) uses a running service, Docker, an
 </div>
 <div class="hub-bottom" markdown="1">
 
-**New to AI engineering?** [Start with foundations](topics/models.md), then follow the [course sequence](curriculum/index.md). Working familiarity with programming is assumed; use the glossary when a term is unfamiliar.
+**Ready to begin?** [Start the course](curriculum/00-foundations.md), or check the [prerequisites and full plan](curriculum/index.md). Working familiarity with programming is assumed; use the glossary when a term is unfamiliar.
 
 </div>
 </div>

@@ -61,14 +61,33 @@ PAIRS = {
     "curriculum/03-embeddings.md": "labs/03-embeddings.md",
 }
 
-COURSE = [
-    "curriculum/00-foundations.md", "labs/00-foundations.md",
-    "curriculum/01-llm-internals.md", "curriculum/02-prompting-context.md",
-    "curriculum/03-embeddings.md", "labs/03-embeddings.md",
-    "curriculum/03-rag-memory.md", "curriculum/04-agents-tools-mcp.md",
-    "curriculum/05-evals-observability.md", "curriculum/06-production-systems.md",
-    "curriculum/07-forward-deployed.md", "curriculum/08-capstones.md",
+COURSE_STAGES = [
+    ("Foundations", "stage-1-foundations", (
+        ("curriculum/00-foundations.md", "Foundations & environment"),
+        ("labs/00-foundations.md", "Foundations lab"),
+        ("curriculum/01-llm-internals.md", "LLM internals"),
+    )),
+    ("Prompting & context", "stage-2-prompting", (
+        ("curriculum/02-prompting-context.md", "Prompting & context engineering"),
+    )),
+    ("Retrieval & knowledge", "stage-3-retrieval", (
+        ("curriculum/03-embeddings.md", "Embeddings"),
+        ("labs/03-embeddings.md", "Embeddings lab"),
+        ("curriculum/03-rag-memory.md", "Retrieval, RAG & memory"),
+    )),
+    ("Agents & workflows", "stage-4-agents", (
+        ("curriculum/04-agents-tools-mcp.md", "Agents, workflows, tools & MCP"),
+    )),
+    ("Evaluation & production", "stage-5-evaluation-and-production", (
+        ("curriculum/05-evals-observability.md", "Evals & observability"),
+        ("curriculum/06-production-systems.md", "Production systems, platform & security"),
+    )),
+    ("Delivery & capstone", "stage-6-delivery-and-capstone", (
+        ("curriculum/07-forward-deployed.md", "Forward-deployed craft"),
+        ("curriculum/08-capstones.md", "Capstones"),
+    )),
 ]
+COURSE = [source for _, _, steps in COURSE_STAGES for source, _ in steps]
 
 INLINE_LABS = set(COURSE) - set(PAIRS) - set(PAIRS.values()) - {"curriculum/08-capstones.md"}
 
@@ -79,6 +98,38 @@ def page_url(source):
     if source.endswith("/index.md"):
         return source[:-8]
     return source[:-3] + "/"
+
+
+def course_for(source, available):
+    steps = [
+        (target, label, number, title, anchor)
+        for number, (title, anchor, group) in enumerate(COURSE_STAGES, start=1)
+        for target, label in group
+        if target in available
+    ]
+    current = next((i for i, step in enumerate(steps) if step[0] == source), None)
+    if current is None:
+        return None
+
+    def link(index):
+        if not 0 <= index < len(steps):
+            return None
+        target, label, *_ = steps[index]
+        return {"source": target, "label": label, "url": page_url(target)}
+
+    _, label, stage_number, title, anchor = steps[current]
+    return {
+        "position": current + 1,
+        "total": len(steps),
+        "label": label,
+        "stage": {
+            "number": stage_number, "total": len(COURSE_STAGES),
+            "title": title, "url": "curriculum/#" + anchor,
+        },
+        "plan_url": "curriculum/",
+        "previous": link(current - 1),
+        "next": link(current + 1),
+    }
 
 
 def workspace_for(source, available):
@@ -111,6 +162,7 @@ def workspace_for(source, available):
         "topic": topic,
         "kind": kind,
         "tabs": tabs,
+        "course": course_for(source, available),
         "is_hub": source == "index.md" or source.startswith("topics/"),
     }
 

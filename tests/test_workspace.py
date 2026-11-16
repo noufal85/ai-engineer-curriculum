@@ -71,6 +71,60 @@ class WorkspaceNavigationTests(unittest.TestCase):
             self.assertIn(topic["source"], self.pages)
             self.assertEqual(topic["url"], f"topics/{topic['id']}/")
 
+    def test_course_can_be_followed_in_order_from_foundations_to_capstone(self):
+        source = "curriculum/00-foundations.md"
+        visited = []
+        previous = None
+        stages = []
+        while source:
+            self.assertNotIn(source, visited, "The course must not loop")
+            context = self.workspace.workspace_for(source, self.pages).get("course")
+            self.assertIsNotNone(context, "Course pages need sequential navigation")
+            self.assertEqual(context["position"], len(visited) + 1)
+            self.assertEqual(context["total"], len(self.workspace.COURSE))
+            self.assertEqual(context["previous"]["source"] if context["previous"] else None, previous)
+            visited.append(source)
+            stages.append(context["stage"]["number"])
+            previous = source
+            source = context["next"]["source"] if context["next"] else None
+        self.assertEqual(visited, self.workspace.COURSE)
+        self.assertEqual(visited[-1], "curriculum/08-capstones.md")
+        self.assertEqual(sorted(set(stages)), list(range(1, 7)))
+        self.assertEqual(stages, sorted(stages))
+        self.assertLess(visited.index("curriculum/03-embeddings.md"), visited.index("labs/03-embeddings.md"))
+        self.assertLess(visited.index("labs/03-embeddings.md"), visited.index("curriculum/03-rag-memory.md"))
+
+    def test_course_navigation_skips_unavailable_steps(self):
+        pages = self.pages - {"labs/03-embeddings.md"}
+        context = self.workspace.workspace_for("curriculum/03-embeddings.md", pages).get("course")
+        self.assertIsNotNone(context, "The chapter needs a next course step")
+        self.assertEqual(context["next"]["source"], "curriculum/03-rag-memory.md")
+        self.assertEqual(context["total"], len(self.workspace.COURSE) - 1)
+
+    def test_course_stage_links_resolve_to_the_full_plan(self):
+        plan = Markdown(extensions=["toc", "attr_list"])
+        plan.convert((ROOT / "docs/curriculum/index.md").read_text())
+
+        def ids(tokens):
+            return {token["id"] for token in tokens} | {value for token in tokens for value in ids(token["children"])}
+
+        anchors = ids(plan.toc_tokens)
+        for source in self.workspace.COURSE:
+            context = self.workspace.workspace_for(source, self.pages).get("course")
+            self.assertIsNotNone(context)
+            self.assertEqual(context["plan_url"], "curriculum/")
+            self.assertIn(context["stage"]["url"].split("#")[1], anchors)
+            self.assertEqual(context["stage"]["total"], 6)
+            for direction in ("previous", "next"):
+                if context[direction]:
+                    target = context[direction]
+                    self.assertIn(target["source"], self.pages)
+                    self.assertEqual(target["url"], self.workspace.page_url(target["source"]))
+
+    def test_reference_pages_are_not_assigned_a_course_step(self):
+        for source in ("index.md", "topics/models.md", "concepts/foundations.md", "papers/bert.md"):
+            self.assertIsNone(self.workspace.workspace_for(source, self.pages).get("course"))
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -106,6 +106,12 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 .workspace-brand__mark { display: grid; place-items: center; border: 1px solid #8993ab; border-radius: .45rem; width: 1.9rem; height: 2rem; flex: 0 0 auto; font-size: 1rem; letter-spacing: -.08em; padding-right: .1rem; }
 .workspace-brand small { display: block; margin-top: .4rem; color: var(--workspace-rail-muted); font-size: .56rem; font-weight: 400; line-height: 1.55; }
 .workspace-rail__label { padding: 0 .7rem; color: #aebbd7; font-size: .66rem; font-weight: 500; margin: 0 0 .65rem; }
+.workspace-course-nav { display: grid; gap: .55rem; padding: 0 .25rem 1.15rem; border-bottom: 1px solid #46516a; }
+.workspace-course-plan { display: block; padding: .55rem .5rem; color: #ffffff; font-size: .88rem; font-weight: 600; line-height: 1.4; border-radius: .35rem; }
+.workspace-course-plan small { display: block; margin-top: .25rem; color: var(--workspace-rail-muted); font-size: .64rem; font-weight: 400; }
+.workspace-course-plan:hover, .workspace-course-plan[aria-current] { background: #485373; color: #ffffff; }
+.workspace-course-start { display: block; padding: .6rem .75rem; border: 1px solid #bcaef0; border-radius: .35rem; color: #30264e; background: #ded6f8; font-size: .75rem; font-weight: 600; text-align: center; }
+.workspace-course-start:hover { color: #261d40; background: #eee9fc; }
 .workspace-rail ul { list-style: none; margin: 0; padding: 0; }
 .workspace-rail li { margin: 0; }
 .workspace-topic-nav ul { display: grid; gap: .3rem; }
@@ -145,6 +151,10 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 .workspace-breadcrumb { display: flex; align-items: center; flex-wrap: wrap; gap: .6rem; font-size: .7rem; color: #8790a6; margin-bottom: .8rem; }
 .workspace-breadcrumb a { color: var(--workspace-muted); }
 .workspace-breadcrumb a:hover { color: var(--workspace-accent); }
+.workspace-course-location { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem 1rem; flex-wrap: wrap; margin: .1rem 0 .85rem; font-size: .7rem; line-height: 1.6; }
+.workspace-course-location a { color: var(--workspace-accent); }
+.workspace-course-location a:hover { text-decoration: underline; text-underline-offset: .2em; }
+.workspace-course-location > span { color: var(--workspace-muted); font-size: .65rem; white-space: nowrap; }
 .workspace-modes { display: flex; align-items: center; gap: .25rem; border-bottom: 1px solid var(--workspace-line); }
 .workspace-modes a { display: block; padding: .7rem 1rem; color: var(--workspace-muted); font-size: .78rem; border-bottom: 2px solid transparent; }
 .workspace-modes a[aria-current] { color: var(--workspace-accent); border-bottom-color: var(--workspace-accent); font-weight: 600; }
@@ -185,6 +195,18 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 .workspace-reader [id] { scroll-margin-top: 5.5rem; }
 .workspace-reader .mermaid { overflow: auto; margin: 1.2rem 0; }
 .workspace-reader .mermaid svg { max-width: 100%; height: auto; }
+.workspace-course-pagination { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .7rem; margin-top: 1.15rem; }
+.workspace-course-pagination > a { min-width: 0; }
+.workspace-course-previous, .workspace-course-next { display: flex; flex-direction: column; justify-content: center; gap: .35rem; padding: .85rem 1rem; background: var(--workspace-paper); border: 1px solid var(--workspace-line); border-radius: .4rem; line-height: 1.5; }
+.workspace-course-previous { grid-column: 1; }
+.workspace-course-next { grid-column: 2; text-align: right; }
+.workspace-course-pagination--edge :is(.workspace-course-previous, .workspace-course-next) { grid-column: 1 / -1; text-align: left; }
+.workspace-course-pagination :is(.workspace-course-previous, .workspace-course-next):hover { border-color: var(--workspace-accent); }
+.workspace-course-pagination :is(.workspace-course-previous, .workspace-course-next) > span { color: var(--workspace-muted); font-size: .64rem; }
+.workspace-course-pagination strong { color: var(--workspace-ink); font-size: .8rem; font-weight: 600; overflow-wrap: anywhere; }
+.workspace-course-next strong { color: var(--workspace-accent); }
+.workspace-course-return { grid-column: 1 / -1; justify-self: center; padding: .4rem .6rem; color: var(--workspace-muted); font-size: .68rem; }
+.workspace-course-return:hover { color: var(--workspace-accent); text-decoration: underline; }
 
 .workspace-outline { grid-column: 2; grid-row: 1; min-width: 0; align-self: start; position: sticky; top: 6.1rem; max-height: calc(100vh - 7.5rem); overflow: auto; scrollbar-width: thin; scrollbar-color: #c4cadb transparent; padding-top: .2rem; }
 .workspace-outline summary { list-style: none; font-size: .7rem; color: var(--workspace-muted); font-weight: 600; cursor: pointer; padding: 0 0 .7rem; }
@@ -204,6 +226,18 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 .workspace-reader--hub h1 { font-size: 2.35rem; line-height: 1.16; margin: 0 0 .75rem; max-width: 38ch; }
 .workspace-reader--hub .hub-lead { color: var(--workspace-muted); font-size: .91rem; line-height: 1.75; max-width: 65ch; margin: 0; }
 .hub-intro { margin-bottom: 1.5rem; }
+.hub-intro .feature-actions { margin-top: 1rem; }
+.course-overview { margin: 1.8rem 0 2.1rem; padding: 1.45rem 1.6rem .45rem; background: var(--workspace-paper); border: 1px solid var(--workspace-line); border-radius: var(--workspace-radius); }
+.course-overview > h2 { margin: 0 0 .75rem; font-size: 1.45rem; }
+.workspace-reader .course-stages { list-style: decimal; margin: 0; padding: 0 0 0 1.55rem; }
+.workspace-reader .course-stages > li { padding: 1rem 0 1rem .4rem; margin: 0; border-bottom: 1px solid var(--workspace-line); }
+.workspace-reader .course-stages > li:last-child { border-bottom: 0; }
+.workspace-reader .course-stages > li::marker { color: var(--workspace-accent); font-size: .92rem; font-weight: 600; }
+.course-stages h3 { margin: 0 0 .35rem; font-size: 1rem; line-height: 1.5; }
+.course-stages h3 a { color: var(--workspace-ink); }
+.course-stages h3 a:hover { color: var(--workspace-accent); }
+.course-stages p { font-size: .8rem; line-height: 1.75; max-width: 80ch; margin: .3rem 0; }
+.course-stages .course-stage-outcome { margin-top: .4rem; color: var(--workspace-muted); font-size: .74rem; }
 .hub-tasks { display: flex; flex-wrap: wrap; gap: .45rem; margin: 1.4rem 0 1.7rem; }
 .hub-tasks p { display: contents; }
 .hub-tasks a { display: inline-block; border: 1px solid var(--workspace-line); padding: .35rem .65rem; border-radius: .3rem; color: var(--workspace-muted); font-size: .68rem; text-decoration: none; }
@@ -328,6 +362,10 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   .md-main__inner { padding: 1.15rem .9rem 1.5rem; gap: .85rem; }
   .workspace-context { margin-bottom: .9rem; }
   .workspace-breadcrumb { font-size: .65rem; }
+  .workspace-course-location { font-size: .66rem; margin-bottom: .65rem; }
+  .workspace-course-pagination { gap: .6rem; }
+  .workspace-course-previous, .workspace-course-next { padding: .75rem .7rem; }
+  .workspace-course-pagination strong { font-size: .74rem; }
   .workspace-modes a { font-size: .77rem; padding: .65rem .9rem; }
   .workspace-reader { padding: 1.15rem 1.05rem 1.4rem; font-size: .85rem; border-radius: .5rem; }
   .workspace-reader h1 { font-size: 1.65rem; margin-bottom: 1.1rem; }
@@ -342,6 +380,13 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   .workspace-reader--hub h1 { font-size: 1.95rem; }
   .workspace-reader--hub .hub-lead { font-size: .85rem; }
   .hub-intro { margin-bottom: 1.2rem; }
+  .course-overview { margin: 1.4rem 0 1.7rem; padding: 1.1rem 1rem .3rem; }
+  .course-overview > h2 { font-size: 1.3rem; }
+  .workspace-reader .course-stages { padding-left: 1.25rem; }
+  .workspace-reader .course-stages > li { padding: .85rem 0 .85rem .2rem; }
+  .course-stages h3 { font-size: .95rem; }
+  .course-stages p { font-size: .77rem; }
+  .course-stages .course-stage-outcome { font-size: .71rem; }
   .hub-tasks { gap: .35rem; margin: 1rem 0 1.3rem; }
   .hub-tasks a { font-size: .65rem; padding: .35rem .55rem; }
   .topic-panel-head { padding: 1.1rem 1.05rem .2rem; }

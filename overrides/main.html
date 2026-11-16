@@ -32,6 +32,7 @@
 {% block container %}
   {% set workspace = page.meta.workspace if page and page.meta and page.meta.workspace else {} %}
   {% set topic = workspace.topic | default({}, true) %}
+  {% set course = workspace.course | default({}, true) %}
   <div class="md-content workspace-content{% if workspace.is_hub %} workspace-content--hub{% endif %}"
        data-md-component="content"
        data-workspace-kind="{{ workspace.kind | default('page', true) }}"
@@ -46,6 +47,12 @@
             <a href="{{ workspace.topic.url | url }}">{{ workspace.topic.label }}</a>
           {% endif %}
         </nav>
+        {% if course %}
+          <div class="workspace-course-location">
+            <a href="{{ course.stage.url | url }}">Stage {{ course.stage.number }} of {{ course.stage.total }} · {{ course.stage.title }}</a>
+            <span>Step {{ course.position }} of {{ course.total }}</span>
+          </div>
+        {% endif %}
         {% if workspace.tabs %}
           <nav class="workspace-modes" aria-label="Lesson mode">
             {% for tab in workspace.tabs %}
@@ -60,5 +67,22 @@
         {% include "partials/content.html" %}
       {% endblock %}
     </article>
+    {% if course %}
+      <nav class="workspace-course-pagination{% if not course.previous or not course.next %} workspace-course-pagination--edge{% endif %}" aria-label="Course step navigation">
+        {% if course.previous %}
+          <a class="workspace-course-previous" href="{{ course.previous.url | url }}" rel="prev">
+            <span>Previous step</span>
+            <strong>{{ course.previous.label }}</strong>
+          </a>
+        {% endif %}
+        {% if course.next %}
+          <a class="workspace-course-next" href="{{ course.next.url | url }}" rel="next">
+            <span>Next step</span>
+            <strong>{{ course.next.label }}</strong>
+          </a>
+        {% endif %}
+        <a class="workspace-course-return" href="{{ course.plan_url | url }}">View full course plan</a>
+      </nav>
+    {% endif %}
   </div>
 {% endblock %}

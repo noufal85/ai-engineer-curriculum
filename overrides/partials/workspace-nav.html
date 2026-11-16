@@ -8,6 +8,12 @@
   <button class="workspace-rail__close" type="button" aria-label="Close topic navigation" data-workspace-close>
     {% include ".icons/material/close.svg" %}
   </button>
+  <nav class="workspace-course-nav" aria-label="Course learning path">
+    <a class="workspace-course-plan" href="{{ 'curriculum/' | url }}"{% if current_url == 'curriculum/' %} aria-current="page"{% endif %}>
+      <span>Course plan<small>Six stages, in order</small></span>
+    </a>
+    <a class="workspace-course-start" href="{{ 'curriculum/00-foundations/' | url }}">Start course</a>
+  </nav>
   <nav class="workspace-topic-nav" aria-label="Topics">
     <p class="workspace-rail__label">Explore a topic</p>
     <ul>
@@ -31,7 +37,6 @@
   <nav class="workspace-library-nav" aria-label="Course collections">
     <p class="workspace-rail__label">Browse the collection</p>
     <ul>
-      <li><a href="{{ 'curriculum/' | url }}"{% if current_url == 'curriculum/' %} aria-current="page"{% endif %}>Course map</a></li>
       <li><a href="{{ 'labs/' | url }}"{% if current_url == 'labs/' %} aria-current="page"{% endif %}>All labs</a></li>
       <li><a href="{{ 'system-design/' | url }}"{% if current_url.startswith('system-design/') %} aria-current="page"{% endif %}>Design studies</a></li>
       <li><a href="{{ 'concepts/' | url }}"{% if current_url.startswith('concepts/') %} aria-current="page"{% endif %}>Reference</a></li>
