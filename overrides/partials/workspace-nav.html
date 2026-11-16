@@ -1,0 +1,44 @@
+{% set workspace = page.meta.workspace if page and page.meta and page.meta.workspace else {} %}
+{% set current_url = page.url if page and page.url else '' %}
+<aside class="workspace-rail" id="workspace-topics" aria-label="Topic navigation">
+  <a class="workspace-brand" href="{{ '' | url }}">
+    <span class="workspace-brand__mark" aria-hidden="true">ai</span>
+    <span>Engineer curriculum<small>Build understanding. Build systems.</small></span>
+  </a>
+  <button class="workspace-rail__close" type="button" aria-label="Close topic navigation" data-workspace-close>
+    {% include ".icons/material/close.svg" %}
+  </button>
+  <nav class="workspace-topic-nav" aria-label="Topics">
+    <p class="workspace-rail__label">Explore a topic</p>
+    <ul>
+      {% for topic in config.extra.workspace_topics | default([], true) %}
+        <li>
+          <a href="{{ topic.url | url }}" data-workspace-topic-link="{{ topic.id }}"{% if workspace.topic and workspace.topic.id == topic.id %} aria-current="page"{% endif %}>
+            <span class="workspace-topic-icon" aria-hidden="true">
+              {% if topic.id == "models" %}{% include ".icons/material/cube-outline.svg" %}
+              {% elif topic.id == "prompting" %}{% include ".icons/material/text-box-outline.svg" %}
+              {% elif topic.id == "retrieval" %}{% include ".icons/material/magnify.svg" %}
+              {% elif topic.id == "agents" %}{% include ".icons/material/source-branch.svg" %}
+              {% elif topic.id == "evaluation" %}{% include ".icons/material/check-decagram-outline.svg" %}
+              {% else %}{% include ".icons/material/layers-outline.svg" %}{% endif %}
+            </span>
+            <span>{{ topic.label }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <nav class="workspace-library-nav" aria-label="Course collections">
+    <p class="workspace-rail__label">Browse the collection</p>
+    <ul>
+      <li><a href="{{ 'curriculum/' | url }}"{% if current_url == 'curriculum/' %} aria-current="page"{% endif %}>Course map</a></li>
+      <li><a href="{{ 'labs/' | url }}"{% if current_url == 'labs/' %} aria-current="page"{% endif %}>All labs</a></li>
+      <li><a href="{{ 'system-design/' | url }}"{% if current_url.startswith('system-design/') %} aria-current="page"{% endif %}>Design studies</a></li>
+      <li><a href="{{ 'concepts/' | url }}"{% if current_url.startswith('concepts/') %} aria-current="page"{% endif %}>Reference</a></li>
+    </ul>
+  </nav>
+  <div class="workspace-rail__footer">
+    <a href="{{ 'progress/' | url }}"{% if current_url == 'progress/' %} aria-current="page"{% endif %}>Your learning progress</a>
+    <p>Work through a topic, try the lab, and keep the evidence.</p>
+  </div>
+</aside>

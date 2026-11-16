@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block header %}
+  {% include "partials/workspace-header.html" %}
+{% endblock %}
+
+{% block footer %}
+  <nav class="workspace-utility" aria-label="More curriculum resources">
+    <a href="{{ 'resources/' | url }}">Resources</a>
+    <a href="{{ 'papers/' | url }}">Papers</a>
+    <a href="{{ 'notes/' | url }}">Reading notes</a>
+    <a href="{{ 'career/' | url }}">Career</a>
+    <a href="{{ 'image-credits/' | url }}">Image credits</a>
+  </nav>
+  {{ super() }}
+{% endblock %}
+
+{% block site_nav %}
+  {% include "partials/workspace-nav.html" %}
+  {% set workspace = page.meta.workspace if page and page.meta and page.meta.workspace else {} %}
+  {% set hidden_parts = page.meta.hide if page and page.meta and page.meta.hide else [] %}
+  {% if page and page.toc and not workspace.is_hub and "toc" not in hidden_parts %}
+    <aside class="workspace-outline" aria-label="Page outline">
+      <details class="workspace-outline__details" open>
+        <summary>On this page</summary>
+        {% include "partials/toc.html" %}
+      </details>
+    </aside>
+  {% endif %}
+{% endblock %}
+
+{% block container %}
+  {% set workspace = page.meta.workspace if page and page.meta and page.meta.workspace else {} %}
+  {% set topic = workspace.topic | default({}, true) %}
+  <div class="md-content workspace-content{% if workspace.is_hub %} workspace-content--hub{% endif %}"
+       data-md-component="content"
+       data-workspace-kind="{{ workspace.kind | default('page', true) }}"
+       data-workspace-topic="{{ topic.id | default('', true) }}"
+       data-workspace-topic-label="{{ topic.label | default('', true) }}">
+    {% if not workspace.is_hub %}
+      <div class="workspace-context">
+        <nav class="workspace-breadcrumb" aria-label="Breadcrumb">
+          <a href="{{ '' | url }}">Workspace</a>
+          {% if workspace.topic %}
+            <span aria-hidden="true">/</span>
+            <a href="{{ workspace.topic.url | url }}">{{ workspace.topic.label }}</a>
+          {% endif %}
+        </nav>
+        {% if workspace.tabs %}
+          <nav class="workspace-modes" aria-label="Lesson mode">
+            {% for tab in workspace.tabs %}
+              <a href="{{ tab.url | url }}"{% if tab.active %} aria-current="page"{% endif %}>{{ tab.label }}</a>
+            {% endfor %}
+          </nav>
+        {% endif %}
+      </div>
+    {% endif %}
+    <article class="md-content__inner md-typeset workspace-reader{% if workspace.is_hub %} workspace-reader--hub{% endif %}">
+      {% block content %}
+        {% include "partials/content.html" %}
+      {% endblock %}
+    </article>
+  </div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% set workspace = page.meta.workspace if page and page.meta and page.meta.workspace else {} %}
+{% set topic = workspace.topic | default({}, true) %}
+<header class="md-header workspace-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Workspace controls">
+    <button class="workspace-menu-toggle" type="button" aria-controls="workspace-topics" aria-expanded="false" aria-label="Open topic navigation" data-workspace-menu>
+      {% include ".icons/material/menu.svg" %}
+      <span>Topics</span>
+    </button>
+    <noscript><label class="workspace-menu-toggle" for="__drawer">Topics</label></noscript>
+    <div class="workspace-header__title">
+      <a href="{{ '' | url }}">AI Engineer</a>
+      <span aria-hidden="true">/</span>
+      <span data-workspace-header-topic>{{ topic.label | default('Learning workspace', true) }}</span>
+    </div>
+    <div class="workspace-header__actions">
+      {% if config.theme.palette and config.theme.palette is not mapping %}
+        {% include "partials/palette.html" %}
+        {% include "partials/javascripts/palette.html" %}
+      {% endif %}
+      {% if "material/search" in config.plugins %}
+        {% set search = config.plugins["material/search"] | attr("config") %}
+        {% if search.enabled %}
+          <button class="md-header__button md-icon workspace-search-toggle" type="button" aria-label="Search the curriculum" data-workspace-search>
+            {% include ".icons/material/magnify.svg" %}
+          </button>
+          {% include "partials/search.html" %}
+        {% endif %}
+      {% endif %}
+      {% if config.repo_url %}
+        <a class="workspace-source" href="{{ config.repo_url }}" aria-label="View curriculum source on GitHub">
+          {% include ".icons/material/github.svg" %}<span>Source</span>
+        </a>
+      {% endif %}
+    </div>
+  </nav>
+</header>

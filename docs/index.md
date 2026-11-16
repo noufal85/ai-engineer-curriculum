@@ -1,56 +1,141 @@
-# AI Engineer / Forward-Deployed Engineer Curriculum
+---
+title: Explore AI engineering
+workspace_layout: hub
+hide:
+  - toc
+---
 
-A self-tracked, **build-first** path through AI engineering and the forward-deployed engineer (FDE) craft.
+<div class="workspace-hub" markdown="1">
+<div class="hub-intro" markdown="1">
 
-!!! quote "How this works"
+# What are you trying to build?
 
-    **Do the smallest useful experiment first.** Some topics use a five-line snippet, some use a local script, and some need a service or multi-component build. You run the artifact, observe where it breaks, then study the concept underneath.
+Find a concept. Try it. See where it takes you.
+{ .hub-lead }
 
-## The learning path
+Explore AI engineering through explanations, practical experiments, and worked designs. Start with a task, or follow the course from the beginning.
 
-1. **Shared AI-engineering core** — models, prompting, retrieval, agents, evals, and production systems.
-2. **FDE craft** — discovery, tacit knowledge, domain modeling, customer delivery, and adoption.
-3. **Capstones and specializations** — integrate the system end to end or go deeper in a chosen area.
+</div>
+<div class="hub-tasks" markdown="1">
 
-Working familiarity with programming (HTTP, SQL, testing, Git, Docker) and basic AI concepts is assumed throughout.
+[Search my data](topics/retrieval.md)
+[Build an agent](topics/agents.md)
+[Measure quality](topics/evaluation.md)
+[Ship a reliable app](topics/production.md)
 
-## Three rules
+</div>
+<div class="hub-grid" markdown="1">
+<div class="hub-main" markdown="1">
+<section class="topic-panel" markdown="1">
+<div class="topic-panel-head" markdown="1">
 
-1. **Everything important gets practiced.** Reference vocabulary can stay lightweight; working knowledge gets a snippet, lab, or build.
-2. **Use the lightest format that teaches the idea.** Snippets should stay small. Docker is reserved for services, multi-component systems, isolation, and reproducibility.
-3. **Every claim is measured.** Track quality, latency, cost, security, and user value instead of relying on a successful demo.
+## Explore a topic
 
-## Learning formats
+Keep the explanation, practice, and useful references together.
 
-| Format | Use it when | Typical shape |
-|---|---|---|
-| **Snippet** | One concept can be demonstrated in minutes | One file, standard library or one small dependency |
-| **Local lab** | The learner needs a few files or repeated experiments | A small folder, virtual environment, and a local command |
-| **Dockerized build** | The lesson needs a service boundary, multiple dependencies, or reproducibility | A self-contained folder with Docker and an operational README |
+</div>
+<div class="topic-list" markdown="1">
+<div class="topic-row" markdown="1">
 
-## Start here
+### [Models & foundations](topics/models.md)
 
-This course assumes working familiarity with programming — HTTP, SQL, testing, Git, Docker — and basic AI concepts. Run [Build 00 · hello-llm](https://github.com/noufal85/ai-engineer-curriculum/tree/main/builds/00-hello-llm), read [Module 0 · Foundations](curriculum/00-foundations.md), and use the [Concepts](concepts/index.md) glossary to fill any vocabulary gaps.
+Understand tokens, model behavior, and your first working AI service.
 
-```bash
-git clone https://github.com/noufal85/ai-engineer-curriculum
-cd ai-engineer-curriculum/builds/00-hello-llm
-cp .env.example .env      # add your provider key
-docker compose up --build # open http://localhost:8000
-```
+Core chapters · Foundations lab
+{ .topic-row-meta }
 
-## Two roles, one core
+</div>
+<div class="topic-row" markdown="1">
 
-**AI Engineer** builds LLM-powered products that survive real users, real data, and real operating constraints.
+### [Prompting & context](topics/prompting.md)
 
-**Forward-Deployed Engineer** adds customer discovery, domain modeling, tacit-knowledge capture, demos, adoption, and handoff.
+Shape the instructions, evidence, and output your application needs.
 
-Modules 0–6 are shared. Module 7 is the FDE differentiator. Module 8 proves integration. Optional specializations cover multimodal systems, model adaptation, local inference, and sandboxed coding agents.
+Chapter exercises · Schema-validation practice
+{ .topic-row-meta }
 
-## Track yourself
+</div>
+<div class="topic-row" markdown="1">
 
-Explore [System Design for AI Applications](system-design/index.md) for worked architectures that connect retrieval, models, data pipelines, security, and operations. Start with [Retrieval with Amazon OpenSearch](system-design/opensearch-retrieval.md): an enterprise knowledge assistant and a product-discovery assistant.
+### [Retrieval & knowledge](topics/retrieval.md)
 
-Use the [Progress](progress.md) page. A checkbox only ticks when the build runs, the required behavior is measured, and you can defend the design tradeoff.
+Make your data searchable, retrieve useful evidence, and investigate the misses.
 
-The [Concepts](concepts/index.md) glossary is the vocabulary map; module pages and builds are where the vocabulary becomes skill.
+Embeddings lab · RAG, graphs & memory
+{ .topic-row-meta }
+
+</div>
+<div class="topic-row" markdown="1">
+
+### [Agents & workflows](topics/agents.md)
+
+Connect models to tools and reason about state, boundaries, and stopping conditions.
+
+Chapter exercises · Workflow design studies
+{ .topic-row-meta }
+
+</div>
+<div class="topic-row" markdown="1">
+
+### [Evaluation & quality](topics/evaluation.md)
+
+Measure the behavior you need and turn failures into repeatable checks.
+
+Chapter exercises · Retrieval evaluation
+{ .topic-row-meta }
+
+</div>
+<div class="topic-row" markdown="1">
+
+### [Production & delivery](topics/production.md)
+
+Connect reliability, security, customer workflows, and operating ownership.
+
+Production & FDE chapters · Capstone briefs
+{ .topic-row-meta }
+
+</div>
+</div>
+</section>
+</div>
+<aside class="hub-side" markdown="1">
+<section class="feature-box" markdown="1">
+
+## Make meaning searchable.
+
+Compare sentence vectors, build a small semantic search experiment, and inspect the matches that go wrong.
+
+The embeddings lab has five experiments over 24 synthetic support articles. Start with Python; later examples download a model and run locally. No API key or Docker is required.
+
+<div class="feature-actions" markdown="1">
+
+[Try embeddings](labs/03-embeddings.md){ .primary }
+[Read first](curriculum/03-embeddings.md){ .secondary }
+
+</div>
+</section>
+<section class="reference-block" markdown="1">
+
+## Go a little deeper
+
+Use these alongside your experiments.
+
+- [Browse 30 system-design studies](system-design/catalog.md)
+- [Look up a concept](concepts/index.md)
+- [Understand the influential papers](papers/index.md)
+- [Read the talk notes](notes/index.md)
+- [Find courses and resources](resources.md)
+
+## Choose your practice
+
+The [Foundations lab](labs/00-foundations.md) uses a running service, Docker, and an Anthropic API key. The [Embeddings lab](labs/03-embeddings.md) runs locally in Python. Other chapters contain exercises and identify larger builds that are still planned.
+
+</section>
+</aside>
+</div>
+<div class="hub-bottom" markdown="1">
+
+**New to AI engineering?** [Start with foundations](topics/models.md), then follow the [course sequence](curriculum/index.md). Working familiarity with programming is assumed; use the glossary when a term is unfamiliar.
+
+</div>
+</div>

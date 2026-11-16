@@ -7,34 +7,40 @@ repo_name: noufal85/ai-engineer-curriculum
 
 theme:
   name: material
+  custom_dir: overrides
+  font: false
   icon:
     logo: material/school
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
+    - scheme: default
       primary: indigo
       accent: indigo
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+    - scheme: slate
       primary: indigo
       accent: indigo
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
   features:
-    - navigation.instant
     - navigation.tracking
     - navigation.top
     - navigation.indexes
-    - navigation.footer
     - toc.follow
-    - toc.integrate
     - content.code.copy
     - search.suggest
     - search.highlight
+
+hooks:
+  - hooks/workspace.py
+
+extra_css:
+  - stylesheets/workspace.css
+
+extra_javascript:
+  - javascripts/workspace.js
 
 markdown_extensions:
   - admonition
@@ -64,6 +70,13 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Explore topics:
+      - Models & foundations: topics/models.md
+      - Prompting & context: topics/prompting.md
+      - Retrieval & knowledge: topics/retrieval.md
+      - Agents & workflows: topics/agents.md
+      - Evaluation & quality: topics/evaluation.md
+      - Production & delivery: topics/production.md
   - Progress: progress.md
   - Career: career.md
   - Curriculum:
